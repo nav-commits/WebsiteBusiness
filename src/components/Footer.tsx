@@ -1,5 +1,5 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
-
+import { Mail, Phone, MapPin } from "lucide-react";
+import {Link} from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
@@ -22,26 +22,38 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="/services" className="hover:text-indigo-400">Services</a></li>
-              <li><a href="/portfolio" className="hover:text-indigo-400">Portfolio</a></li>
-              <li><a href="/contact" className="hover:text-indigo-400">Get Started</a></li>
+              <li>
+                <Link to="/services" className="hover:text-indigo-400">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/portfolio" className="hover:text-indigo-400">
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-indigo-400">
+                  Get Started
+                </Link>
+              </li>
             </ul>
           </div>
-          
           <div>
             <h3 className="text-lg font-semibold mb-4">Working Hours</h3>
             <p className="text-gray-300">
-              Monday - Friday: 9:00 AM - 5:00 PM<br />
-              Saturday: 10:00 AM - 4:00 PM<br />
+              Monday - Friday: 9:00 AM - 5:00 PM
+              <br />
+              Saturday: 10:00 AM - 4:00 PM
+              <br />
               Sunday: Closed
             </p>
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-300">
             © {new Date().getFullYear()} Nav Dhamrait. All rights reserved.
