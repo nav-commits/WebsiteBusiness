@@ -4,21 +4,21 @@ const Portfolio = () => {
   const projects = [
     {
       title: 'CMT Security Services',
-      image: '/assets/security.png',
+      image: 'security.png',
       description: 'Committed to protecting your business and community with innovative security solutions. We specialize in Event Security, Residential Security, Commercial Security, Close Security, and Retail Loss Prevention.',
       features: ['Comprehensive Security Solutions', 'Trusted & Professional Team', 'Client-Focused Approach', '24/7 Protection & Reliability'],
       link: 'https://cmtsecured.ca/'
     },
     {
       title: 'Ajay Kalha Tax Services',
-      image: '/assets/accounting.png',
+      image: 'accounting.png',
       description: 'We provide comprehensive accounting services tailored to your business needs. From bookkeeping to preparing accurate financial statements, our team ensures your finances are in order, giving you insight and clarity for informed decisions.',
       features: ['User-Friendly Navigation', 'Informative Blog Section', 'Client Testimonials', 'Quick Contact & Consultation'],
       link: 'https://aktax.org/'
     },
     {
       title: 'The Healing Hive',
-      image: 'assets/Psychotherapy.png',
+      image: '/Psychotherapy.png',
       description: 'Providing compassionate therapy services for anxiety, self-worth, life transitions, and trauma through virtual sessions across Canada.',
       features: ['Booking System', 'Comprehensive Services Overview', 'Meet the Therapist Section', 'Secure & Confidential Contact'],
       link: 'https://thehealinghive.net/'

@@ -90,7 +90,7 @@ const Home = () => {
             {/* Project 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/assets/security.png"
+                src="/security.png"
                 alt="CMT Security Services"
                 className="w-full h-48 object-cover"
               />
@@ -110,7 +110,7 @@ const Home = () => {
             {/* Project 2 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/assets/accounting.png"
+                src="/accounting.png"
                 alt="Ajay Kalha Tax Services"
                 className="w-full h-48 object-cover"
               />
@@ -130,7 +130,7 @@ const Home = () => {
             {/* Project 3 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="assets/Psychotherapy.png"
+                src="/Psychotherapy.png"
                 alt="The Healing Hive"
                 className="w-full h-48 object-cover"
               />
