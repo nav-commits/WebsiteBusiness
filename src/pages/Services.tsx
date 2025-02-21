@@ -45,8 +45,7 @@ const Services = () => {
             Affordable & Modern WordPress Websites for Your Business
           </h1>
           <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-            As a solo web designer, I offer customized, high-performance websites built on WordPress. 
-            My services cater to small businesses looking to improve their online presence.
+          As a web designer, I offer customized, high-performance websites built on WordPress. My services cater to small businesses looking to improve their online presence.
           </p>
         </div>
       </section>
