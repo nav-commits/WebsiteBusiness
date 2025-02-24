@@ -1,24 +1,28 @@
-import { ArrowRight, CheckCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const processSteps = [
     {
-      title: 'Consultation & Planning',
-      description: 'We discuss your goals, requirements, and vision for your website.'
+      title: "Consultation & Planning",
+      description:
+        "We discuss your goals, requirements, and vision for your website.",
     },
     {
-      title: 'Design & Development',
-      description: 'I present a selection of website designs or templates for you to choose from, then proceed with crafting a fully customized site, ensuring precision and attention to detail in every aspect.'
+      title: "Design & Development",
+      description:
+        "I present a selection of website designs or templates for you to choose from, then proceed with crafting a fully customized site, ensuring precision and attention to detail in every aspect.",
     },
     {
-      title: 'Testing & Revisions',
-      description: 'Thorough testing and refinements to ensure everything works perfectly.'
+      title: "Testing & Revisions",
+      description:
+        "Thorough testing and refinements to ensure everything works perfectly.",
     },
     {
-      title: 'Launch & Support',
-      description: 'Your website goes live with ongoing support to ensure continued success.'
-    }
+      title: "Launch & Support",
+      description:
+        "Your website goes live with ongoing support to ensure continued success.",
+    },
   ];
 
   return (
@@ -31,14 +35,17 @@ const About = () => {
           </h1>
           <div className="bg-white rounded-lg shadow-lg p-8">
             <p className="text-lg text-gray-700 mb-6">
-              With 3 years of experience in web design, I've had the pleasure of helping small 
-              businesses improve their online presence. I'm a one-person team, offering custom 
-              WordPress designs, focusing on simplicity, mobile optimization, and high performance.
+              As an experienced web designer, I’ve had the pleasure of helping
+              businesses of all sizes enhance their online presence. I'm a
+              one-person team, offering custom WordPress designs that focus on
+              simplicity, mobile optimization, and high performance.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              What sets me apart is my dedication to understanding each client's unique needs 
-              and delivering solutions that not only look great but drive real business results.
+              What sets me apart is my dedication to understanding each client's
+              unique needs and delivering solutions that not only look great but
+              also drive real business results.
             </p>
+
             <Link
               to="/contact"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
@@ -57,15 +64,18 @@ const About = () => {
             My Process
           </h2>
           <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            I believe in keeping the process simple and transparent. From the initial 
-            consultation to launch, I ensure that you're involved every step of the way.
+            I believe in keeping the process simple and transparent. From the
+            initial consultation to launch, I ensure that you're involved every
+            step of the way.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="bg-gray-50 rounded-lg p-6">
                 <div className="flex items-center mb-4">
                   <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />
-                  <h3 className="text-xl font-semibold text-gray-900">{step.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {step.title}
+                  </h3>
                 </div>
                 <p className="text-gray-600">{step.description}</p>
               </div>

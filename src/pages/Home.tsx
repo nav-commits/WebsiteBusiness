@@ -9,7 +9,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              High-Performing Websites for Small Businesses
+              High-Performing Websites for Businesses of All Sizes
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-indigo-100">
               Modern. Fast. Mobile-Friendly. Get Your Business Online Today.
@@ -33,16 +33,10 @@ const Home = () => {
               Welcome to Your Next Web Design Partner
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              Hi, I'm Nav Dhamrait, a passionate WordPress web designer
-              dedicated to helping small businesses build their online presence.
-              I create modern, high-performing websites that are easy to use and
-              designed to convert visitors into customers.
+              Hi, I'm Nav Dhamrait, a passionate WordPress web designer dedicated to helping businesses build their online presence. I create modern, high-performing websites that are easy to use and designed to convert visitors into customers.
             </p>
             <p className="text-lg text-gray-600 mb-6">
-              I’ve worked with local businesses in security, finance, and
-              wellness, delivering websites that stand out and drive results.
-              Whether you need a simple website or a fully customized solution,
-              I’m here to make the process smooth and hassle-free.
+              I’ve worked with businesses in security, finance, and wellness, delivering websites that stand out and drive results. Whether you need a simple website or a fully customized solution, I’m here to make the process smooth and hassle-free.
             </p>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg shadow-md">
@@ -51,20 +45,16 @@ const Home = () => {
             </h3>
             <ul className="text-lg text-gray-600 space-y-4">
               <li className="flex items-start">
-                <span className="mr-2">✔️</span> Custom WordPress websites that
-                look great & perform well
+                <span className="mr-2">✔️</span> Custom WordPress websites that look great & perform well
               </li>
               <li className="flex items-start">
-                <span className="mr-2">✔️</span> SEO-optimized & mobile-friendly
-                for better rankings
+                <span className="mr-2">✔️</span> SEO-optimized & mobile-friendly for better rankings
               </li>
               <li className="flex items-start">
-                <span className="mr-2">✔️</span> Affordable pricing with free
-                hosting setup
+                <span className="mr-2">✔️</span> Affordable pricing with free hosting setup
               </li>
               <li className="flex items-start">
-                <span className="mr-2">✔️</span> Reliable support & maintenance
-                to keep your site running smoothly
+                <span className="mr-2">✔️</span> Reliable support & maintenance to keep your site running smoothly
               </li>
             </ul>
             <div className="mt-6 text-center">
@@ -89,57 +79,33 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="/security.png"
-                alt="CMT Security Services"
-                className="w-full h-48 object-cover"
-              />
+              <img src="/security.png" alt="CMT Security Services" className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  CMT Security Services
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">CMT Security Services</h3>
                 <p className="text-gray-600">
-                  Committed to protecting your business and community with
-                  innovative security solutions. We specialize in Event
-                  Security, Residential Security, Commercial Security, Close
-                  Security, and Retail Loss Prevention.
+                  Committed to protecting your business and community with innovative security solutions. We specialize in Event Security, Residential Security, Commercial Security, Close Security, and Retail Loss Prevention.
                 </p>
               </div>
             </div>
 
             {/* Project 2 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="/accounting.png"
-                alt="Ajay Kalha Tax Services"
-                className="w-full h-48 object-cover"
-              />
+              <img src="/accounting.png" alt="Ajay Kalha Tax Services" className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  Ajay Kalha Tax Services
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">Ajay Kalha Tax Services</h3>
                 <p className="text-gray-600">
-                  We provide comprehensive accounting services tailored to your
-                  business needs. From bookkeeping to preparing accurate
-                  financial statements, our team ensures your finances are in
-                  order, giving you insight and clarity for informed decisions.
+                  We provide comprehensive accounting services tailored to your business needs. From bookkeeping to preparing accurate financial statements, our team ensures your finances are in order, giving you insight and clarity for informed decisions.
                 </p>
               </div>
             </div>
 
             {/* Project 3 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img
-                src="/Psychotherapy.png"
-                alt="The Healing Hive"
-                className="w-full h-48 object-cover"
-              />
+              <img src="/Psychotherapy.png" alt="The Healing Hive" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">The Healing Hive</h3>
                 <p className="text-gray-600">
-                  Providing compassionate therapy services for anxiety,
-                  self-worth, life transitions, and trauma through virtual
-                  sessions across Canada.
+                  Providing compassionate therapy services for anxiety, self-worth, life transitions, and trauma through virtual sessions across Canada.
                 </p>
               </div>
             </div>

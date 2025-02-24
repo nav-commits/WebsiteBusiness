@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code2 } from 'lucide-react';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X,} from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -23,8 +23,12 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <Code2 className="h-8 w-8 text-indigo-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">Nav Dhamrait</span>
+              <div className="h-9 w-10 flex items-center justify-center bg-indigo-600 text-white font-bold text-2xl rounded-md">
+                ND
+              </div>
+              <span className="ml-2 text-xl font-bold text-gray-900">
+                Nav Dhamrait
+              </span>
             </Link>
           </div>
 
@@ -36,8 +40,8 @@ const Navbar = () => {
                 to={item.href}
                 className={`${
                   isActive(item.href)
-                    ? 'text-indigo-600'
-                    : 'text-gray-700 hover:text-indigo-600'
+                    ? "text-indigo-600"
+                    : "text-gray-700 hover:text-indigo-600"
                 } px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 {item.name}
@@ -71,8 +75,8 @@ const Navbar = () => {
                 to={item.href}
                 className={`${
                   isActive(item.href)
-                    ? 'bg-indigo-50 text-indigo-600'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600'
+                    ? "bg-indigo-50 text-indigo-600"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
                 } block px-3 py-2 text-base font-medium`}
                 onClick={() => setIsOpen(false)}
               >
