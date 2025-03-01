@@ -81,133 +81,141 @@ const Home = () => {
       </section>
 
       {/* Featured Work */}
-      import Link from 'next/link'; // Import Link component from Next.js
 
-<section className="py-20 bg-gray-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-      Featured Projects
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* Project 1 */}
-      <div className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
-        <img
-          src="/security.png"
-          alt="CMT Security Services"
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-6 flex-grow">
-          <h3 className="text-xl font-semibold mb-2">
-            CMT Security Services
-          </h3>
-          <p className="text-gray-600">
-            Committed to protecting your business and community with
-            innovative security solutions. We specialize in Event Security,
-            Residential Security, Commercial Security, Close Security, and
-            Retail Loss Prevention.
-          </p>
-        </div>
-        <div className="p-6">
-          <Link to="/portfolio" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 w-full justify-center">
-            View Project
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="ml-2 h-5 w-5"
-            >
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </Link>
-        </div>
-      </div>
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Project 1 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
+              <img
+                src="/security.png"
+                alt="CMT Security Services"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6 flex-grow">
+                <h3 className="text-xl font-semibold mb-2">
+                  CMT Security Services
+                </h3>
+                <p className="text-gray-600">
+                  Committed to protecting your business and community with
+                  innovative security solutions. We specialize in Event
+                  Security, Residential Security, Commercial Security, Close
+                  Security, and Retail Loss Prevention.
+                </p>
+              </div>
+              <div className="p-6">
+                <Link
+                  to="/portfolio"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 w-full justify-center"
+                >
+                  View Project
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-2 h-5 w-5"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
 
-      {/* Project 2 */}
-      <div className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
-        <img
-          src="/accounting.png"
-          alt="Ajay Kalha Tax Services"
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-6 flex-grow">
-          <h3 className="text-xl font-semibold mb-2">
-            Ajay Kalha Tax Services
-          </h3>
-          <p className="text-gray-600">
-            We provide comprehensive accounting services tailored to your
-            business needs. From bookkeeping to preparing accurate financial
-            statements, our team ensures your finances are in order, giving you
-            insight and clarity for informed decisions.
-          </p>
-        </div>
-        <div className="p-6">
-          <Link to="/portfolio" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 w-full justify-center">
-            View Project
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="ml-2 h-5 w-5"
-            >
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </Link>
-        </div>
-      </div>
+            {/* Project 2 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
+              <img
+                src="/accounting.png"
+                alt="Ajay Kalha Tax Services"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6 flex-grow">
+                <h3 className="text-xl font-semibold mb-2">
+                  Ajay Kalha Tax Services
+                </h3>
+                <p className="text-gray-600">
+                  We provide comprehensive accounting services tailored to your
+                  business needs. From bookkeeping to preparing accurate
+                  financial statements, our team ensures your finances are in
+                  order, giving you insight and clarity for informed decisions.
+                </p>
+              </div>
+              <div className="p-6">
+                <Link
+                  to="/portfolio"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 w-full justify-center"
+                >
+                  View Project
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-2 h-5 w-5"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
 
-      {/* Project 3 */}
-      <div className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
-        <img
-          src="/Psychotherapy.png"
-          alt="The Healing Hive"
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-6 flex-grow">
-          <h3 className="text-xl font-semibold mb-2">The Healing Hive</h3>
-          <p className="text-gray-600">
-            Providing compassionate therapy services for anxiety, self-worth,
-            life transitions, and trauma through virtual sessions across Canada.
-          </p>
+            {/* Project 3 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col">
+              <img
+                src="/Psychotherapy.png"
+                alt="The Healing Hive"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6 flex-grow">
+                <h3 className="text-xl font-semibold mb-2">The Healing Hive</h3>
+                <p className="text-gray-600">
+                  Providing compassionate therapy services for anxiety,
+                  self-worth, life transitions, and trauma through virtual
+                  sessions across Canada.
+                </p>
+              </div>
+              <div className="p-6">
+                <Link
+                  to="/portfolio"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 w-full justify-center"
+                >
+                  View Project
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-2 h-5 w-5"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="p-6">
-          <Link to="/portfolio" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 w-full justify-center">
-            View Project
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="ml-2 h-5 w-5"
-            >
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </Link>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
     </div>
   );
 };
