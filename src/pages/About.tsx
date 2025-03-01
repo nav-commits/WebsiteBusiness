@@ -27,35 +27,36 @@ const About = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-            About Me
-          </h1>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <p className="text-lg text-gray-700 mb-6">
-              As an experienced web designer, I’ve had the pleasure of helping
-              businesses of all sizes enhance their online presence. I'm a
-              one-person team, offering custom WordPress designs that focus on
-              simplicity, mobile optimization, and high performance.
-            </p>
-            <p className="text-lg text-gray-700 mb-6">
-              What sets me apart is my dedication to understanding each client's
-              unique needs and delivering solutions that not only look great but
-              also drive real business results.
-            </p>
+      
+     {/* Hero Section */}
+{/* Hero Section */}
+<section className="bg-gray-50 py-20">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+      About Me
+    </h1>
+    <div className="bg-white rounded-lg shadow-lg p-8">
+      <p className="text-lg text-gray-700 mb-6">
+        I’m a Web Developer & Designer with a passion for helping businesses create stunning, high-performance websites. I specialize in WordPress and other CMS platforms, focusing on clean, mobile-friendly, and SEO-optimized designs.
+      </p>
+      <p className="text-lg text-gray-700 mb-6">
+        What sets me apart? I listen to your goals, craft a custom solution, and deliver a website that’s not just visually appealing but designed to drive results and grow your business.
+      </p>
+      <p className="text-lg text-gray-700 mb-6">
+        Ready to elevate your online presence? Let’s work together to create a website that stands out and converts.
+      </p>
 
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-            >
-              Start Your Project
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Link
+        to="/contact"
+        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+      >
+        Start Your Project
+        <ArrowRight className="ml-2 h-5 w-5" />
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       {/* Process Section */}
       <section className="py-20 bg-white">

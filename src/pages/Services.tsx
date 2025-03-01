@@ -49,9 +49,9 @@ const Services = () => {
             Affordable & Modern WordPress Websites for Your Business
           </h1>
           <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-            As a web designer, I create customized, high-performance WordPress
-            websites for businesses of all sizes, helping them establish a
-            strong and effective online presence.
+            As a web developer and designer, I craft custom, high-performance
+            WordPress websites that help businesses of all sizes build a strong,
+            effective online presence.
           </p>
         </div>
       </section>
