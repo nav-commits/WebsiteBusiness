@@ -5,7 +5,7 @@ const Services = () => {
   const packages = [
     {
       title: "Starter Website",
-      price: "$600 (One-Time Payment)",
+      price: "$600",
       features: [
         "Client pays for hosting & domain (I will set it up)",
         "5-page modern WordPress website (Home, About, Services, Contact, etc.)",
@@ -17,7 +17,7 @@ const Services = () => {
     },
     {
       title: "Business Website",
-      price: "$1,200 (One-Time Payment)",
+      price: "$1,200",
       features: [
         "Client pays for hosting & domain (I will set it up)",
         "Everything in Starter Website, PLUS:",
@@ -30,7 +30,7 @@ const Services = () => {
     },
     {
       title: "Website Maintenance",
-      price: "$75/month",
+      price: "$10/month",
       features: [
         "Regular WordPress updates & security patches",
         "Monthly performance & speed optimization",
