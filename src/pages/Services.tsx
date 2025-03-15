@@ -9,8 +9,8 @@ const Services = () => {
       features: [
         "Client pays for hosting & domain (I will set it up)",
         "5-page modern WordPress website (Home, About, Services, Contact, etc.)",
-        "Mobile-friendly & responsive design",
-        "Basic SEO optimization (meta tags, Google indexing)",
+        "Mobile-friendly and responsive design (standard feature)",
+        "Basic SEO setup (meta tags, Google indexing, basic on-page optimization)",
         "2 rounds of revisions",
         "Delivery: 1 week",
       ],
@@ -35,10 +35,14 @@ const Services = () => {
         "Regular WordPress updates & security patches",
         "Monthly performance & speed optimization",
         "Content updates (text & images)",
-        "Monthly report with website insights",
+        "Monthly website insights report (traffic, performance, security)",
+        "Uptime monitoring & alerts",
+        "Advanced SEO (keyword optimization, on-page SEO, backlink monitoring)",
+        "Advanced SEO reporting and adjustments",
       ],
     },
   ];
+  
 
   return (
     <div className="pt-16">
