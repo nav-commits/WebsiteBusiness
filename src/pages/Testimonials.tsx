@@ -19,6 +19,12 @@ const Testimonials = () => {
       role: "Owner, CMT Security Services",
       content: "Nav built a sleek, professional website that has significantly boosted my business. Clients can now easily find our services, and the site runs smoothly on all devices. Highly recommend his expertise!",
       rating: 5
+    },
+    {
+      name: "Prabhjot Rathore",
+      role: "PSR Law",
+      content: "Working with Nav has been phenomenal! He designed our website exactly how we wanted, and was always there to help whenever we had questions. Thank you for your amazing work, 5 stars!",
+      rating: 5
     }
   ];
 
