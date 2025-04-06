@@ -5,12 +5,12 @@ const Services = () => {
   const packages = [
     {
       title: "Starter Website",
-      price: "$600",
+      price: "$800",
       features: [
         "Client pays for hosting & domain (I will set it up)",
-        "5-page modern WordPress website (Home, About, Services, Contact, etc.)",
-        "Mobile-friendly and responsive design (standard feature)",
-        "Basic SEO setup (meta tags, Google indexing, basic on-page optimization)",
+        "1–5 page modern WordPress website (Home, About, Services, Contact, etc.)",
+        "Mobile-friendly and responsive design",
+        "Basic SEO setup (meta tags, Google indexing, on-page optimization)",
         "2 rounds of revisions",
         "Delivery: 1 week",
       ],
@@ -21,8 +21,8 @@ const Services = () => {
       features: [
         "Client pays for hosting & domain (I will set it up)",
         "Everything in Starter Website, PLUS:",
-        "Blog, Booking System, or E-commerce Setup",
-        "Advanced SEO & Speed Optimization",
+        "Blog, Booking System, or E-commerce Setup (includes cart, checkout, and payment integration)",
+        "Optional advanced features: Memberships, Online Courses, Multi-language, Directories & more",
         "Security & Performance Enhancements",
         "3 rounds of revisions",
         "Delivery: 2–4 weeks",
@@ -32,17 +32,12 @@ const Services = () => {
       title: "Website Maintenance",
       price: "$10/month",
       features: [
-        "Regular WordPress updates & security patches",
-        "Monthly performance & speed optimization",
-        "Content updates (text & images)",
-        "Monthly website insights report (traffic, performance, security)",
-        "Uptime monitoring & alerts",
-        "Advanced SEO (keyword optimization, on-page SEO, backlink monitoring)",
-        "Advanced SEO reporting and adjustments",
+        "Text & image content updates (as needed)",
+        "Basic SEO optimization (keywords, meta tags, on-page tweaks)",
+        "Monthly site backup & restore support if anything breaks",
       ],
     },
   ];
-  
 
   return (
     <div className="pt-16">
