@@ -10,7 +10,6 @@ const Services = () => {
         "Client pays for hosting & domain (I will set it up)",
         "1–5 page modern WordPress website (Home, About, Services, Contact, etc.)",
         "Mobile-friendly and responsive design",
-        "Basic SEO setup (meta tags, Google indexing, on-page optimization)",
         "2 rounds of revisions",
         "Delivery: 1 week",
       ],
@@ -33,11 +32,23 @@ const Services = () => {
       price: "$10/month",
       features: [
         "Text & image content updates (as needed)",
-        "Basic SEO optimization (keywords, meta tags, on-page tweaks)",
         "Monthly site backup & restore support if anything breaks",
       ],
     },
+    {
+      title: "SEO Package",
+      price: "$150",
+      features: [
+        "On-page SEO optimization (keywords, meta tags, URL structure)",
+        "Google Search Console & Analytics setup",
+        "Sitemap & robots.txt creation",
+        "SEO audit and recommendations",
+        "1 round of revisions",
+        "Delivery: 1–2 weeks",
+      ],
+    },
   ];
+  
 
   return (
     <div className="pt-16">
