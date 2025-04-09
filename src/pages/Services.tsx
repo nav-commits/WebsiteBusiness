@@ -48,7 +48,6 @@ const Services = () => {
       ],
     },
   ];
-  
 
   return (
     <div className="pt-16">
@@ -70,37 +69,75 @@ const Services = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full"
-              >
-                <div className="p-8 flex-grow">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {pkg.title}
-                  </h3>
-                  <p className="text-4xl font-bold text-indigo-600 mb-6">
-                    {pkg.price}
-                  </p>
-                  <ul className="space-y-4">
-                    {pkg.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <CheckCircle className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="p-8">
-                  <Link
-                    to="/contact"
-                    className="block w-full text-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+            {packages.map((pkg, index) => {
+              const badgeTextMap: Record<
+                | "Starter Website"
+                | "Business Website"
+                | "Website Maintenance"
+                | "SEO Package",
+                string
+              > = {
+                "Starter Website": "Starter",
+                "Business Website": "Most Popular",
+                "Website Maintenance": "Recommended",
+                "SEO Package": "Add-On",
+              };
+
+              const isRecommended =
+                pkg.title === "Business Website" ||
+                pkg.title === "Website Maintenance";
+
+              return (
+                <div
+                  key={index}
+                  className={`relative bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full transition-transform transform hover:scale-[1.02] ${
+                    isRecommended
+                      ? "border-4 border-indigo-600 bg-indigo-50"
+                      : ""
+                  }`}
+                >
+                  {/* Badge */}
+                  <div
+                    className={`absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full ${
+                      isRecommended
+                        ? "bg-indigo-600 text-white"
+                        : "bg-gray-200 text-gray-800"
+                    }`}
                   >
-                    Get Started
-                  </Link>
+                    {badgeTextMap[pkg.title as keyof typeof badgeTextMap]}
+                  </div>
+
+                  <div className="p-8 flex-grow">
+                    <h3
+                      className={`text-2xl font-bold mb-4 ${
+                        isRecommended ? "text-indigo-700" : "text-gray-900"
+                      }`}
+                    >
+                      {pkg.title}
+                    </h3>
+                    <p className="text-4xl font-bold text-indigo-600 mb-6">
+                      {pkg.price}
+                    </p>
+                    <ul className="space-y-4">
+                      {pkg.features.map((feature, i) => (
+                        <li key={i} className="flex items-start">
+                          <CheckCircle className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" />
+                          <span className="text-gray-600">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="p-8">
+                    <Link
+                      to="/contact"
+                      className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                    >
+                      Get Started
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
