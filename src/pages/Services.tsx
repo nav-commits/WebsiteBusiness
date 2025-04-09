@@ -126,10 +126,16 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
+                    {pkg.title === "Website Maintenance" && (
+                      <p className="text-md text-gray-500 font-bold mt-4 pl-6 text-indigo-700">
+                        Cancel anytime.
+                      </p>
+                    )}
                   </div>
                   <div className="p-8">
+                    {/* Stripe Payment Link */}
                     <Link
-                      to="/contact"
+                       to="/contact"
                       className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
                     >
                       Get Started
