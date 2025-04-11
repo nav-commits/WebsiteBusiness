@@ -25,6 +25,12 @@ const Testimonials = () => {
       role: "PSR Law",
       content: "Working with Nav has been phenomenal! He designed our website exactly how we wanted, and was always there to help whenever we had questions. Thank you for your amazing work, 5 stars!",
       rating: 5
+    },
+    {
+      name: "Sahib Walia",
+      role: "Owner, Container Storage Solutions",
+      content: "Nav completely transformed our website, taking it from outdated to professional. The new design is clean, mobile-friendly, and truly represents our brand. We’ve already seen an increase in leads and received positive feedback from clients. I’m beyond happy with the results and highly recommend Nav to any business looking to improve their online presence.",
+      rating: 5
     }
   ];
 
