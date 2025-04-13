@@ -1,5 +1,4 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const About = () => {
   const processSteps = [
@@ -27,36 +26,35 @@ const About = () => {
 
   return (
     <div className="pt-16">
-      
-     {/* Hero Section */}
-{/* Hero Section */}
-<section className="bg-gray-50 py-20">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-      About Me
-    </h1>
-    <div className="bg-white rounded-lg shadow-lg p-8">
-      <p className="text-lg text-gray-700 mb-6">
-        I’m a Web Developer & Designer with a passion for helping businesses create stunning, high-performance websites. I specialize in WordPress and other CMS platforms, focusing on clean, mobile-friendly, and SEO-optimized designs.
-      </p>
-      <p className="text-lg text-gray-700 mb-6">
-        What sets me apart? I listen to your goals, craft a custom solution, and deliver a website that’s not just visually appealing but designed to drive results and grow your business.
-      </p>
-      <p className="text-lg text-gray-700 mb-6">
-        Ready to elevate your online presence? Let’s work together to create a website that stands out and converts.
-      </p>
+      {/* Hero Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+            About Me
+          </h1>
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <p className="text-lg text-gray-700 mb-6">
+              I’m a Web Developer & Designer with a passion for helping businesses create stunning, high-performance websites. I specialize in WordPress and other CMS platforms, focusing on clean, mobile-friendly, and SEO-optimized designs.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              What sets me apart? I listen to your goals, craft a custom solution, and deliver a website that’s not just visually appealing but designed to drive results and grow your business.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              Ready to elevate your online presence? Let’s work together to create a website that stands out and converts.
+            </p>
 
-      <Link
-        to="/contact"
-        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-      >
-        Start Your Project
-        <ArrowRight className="ml-2 h-5 w-5" />
-      </Link>
-    </div>
-  </div>
-</section>
-
+            <a
+              href="https://calendly.com/navdeep-dhamrait94"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
+            >
+              Book a Free Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Process Section */}
       <section className="py-20 bg-white">

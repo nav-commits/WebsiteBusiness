@@ -68,13 +68,15 @@ const Home = () => {
               </li>
             </ul>
             <div className="mt-6 text-center">
-              <Link
-                to="/contact"
+              <a
+                href="https://calendly.com/navdeep-dhamrait94" // replace with your actual Calendly link
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
               >
                 Book a Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

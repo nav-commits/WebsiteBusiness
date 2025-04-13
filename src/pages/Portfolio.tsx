@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Portfolio = () => {
   const projects = [
@@ -94,10 +94,21 @@ const Portfolio = () => {
                   </ul>
                   <a
                     href={project.link}
-                    className="inline-flex items-center text-indigo-600 hover:text-indigo-700"
+                    className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"
                   >
                     Visit Website
-                    <ExternalLink className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+
+                  {/* Book a Free Consultation Button with extra space */}
+                  <a
+                    href="https://calendly.com/navdeep-dhamrait94"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ml-5"
+                  >
+                    Book a Free Consultation
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </div>
               </div>

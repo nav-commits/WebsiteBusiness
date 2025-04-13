@@ -159,162 +159,178 @@ const Contact = () => {
                 <p className="text-gray-600">Toronto, Ontario, Canada</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            {/* FAQ 1 */}
-            <div className="text-left max-w-3xl mx-auto">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFAQ(0)}
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                Schedule a Meeting
+              </h3>
+              {/* Calendly Button */}
+              <a
+                href="https://calendly.com/navdeep-dhamrait94"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex justify-center items-center px-6 py-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
               >
-                <h3 className="text-xl font-semibold text-gray-800">
-                  How long does it take to complete a website?
-                </h3>
-                {openFAQ === 0 ? (
-                  <ChevronUp className="h-5 w-5 text-indigo-600" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-indigo-600" />
-                )}
-              </div>
-              {openFAQ === 0 && (
-                <p className="text-gray-600 mt-2">
-                  Typically, the timeline for completing a website depends on
-                  the complexity of the project. The Starter Website can be
-                  delivered in about 1 week, while more advanced websites may
-                  take up to 4 weeks.
-                </p>
-              )}
-            </div>
-
-            {/* FAQ 2 */}
-            <div className="text-left max-w-3xl mx-auto">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFAQ(1)}
-              >
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Do you offer ongoing maintenance?
-                </h3>
-                {openFAQ === 1 ? (
-                  <ChevronUp className="h-5 w-5 text-indigo-600" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-indigo-600" />
-                )}
-              </div>
-              {openFAQ === 1 && (
-                <p className="text-gray-600 mt-2">
-                  Yes! We offer an annual maintenance package that includes
-                  updates, backups, and priority support.
-                </p>
-              )}
-            </div>
-
-            {/* FAQ 3 */}
-            <div className="text-left max-w-3xl mx-auto">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFAQ(2)}
-              >
-                <h3 className="text-xl font-semibold text-gray-800">
-                  What happens after I approve my website design?
-                </h3>
-                {openFAQ === 2 ? (
-                  <ChevronUp className="h-5 w-5 text-indigo-600" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-indigo-600" />
-                )}
-              </div>
-              {openFAQ === 2 && (
-                <p className="text-gray-600 mt-2">
-                  Once you approve the design, I will begin developing the site,
-                  and we will continue to make adjustments based on your
-                  feedback until you’re satisfied.
-                </p>
-              )}
-            </div>
-
-            {/* FAQ 4 */}
-            <div className="text-left max-w-3xl mx-auto">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFAQ(3)}
-              >
-                <h3 className="text-xl font-semibold text-gray-800">
-                  How much do you charge for a website?
-                </h3>
-                {openFAQ === 3 ? (
-                  <ChevronUp className="h-5 w-5 text-indigo-600" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-indigo-600" />
-                )}
-              </div>
-              {openFAQ === 3 && (
-                <p className="text-gray-600 mt-2">
-                  The cost of a website depends on the complexity and features
-                  required. We offer customized quotes based on the specifics of
-                  your project.
-                </p>
-              )}
-            </div>
-
-            {/* FAQ 5 */}
-            <div className="text-left max-w-3xl mx-auto">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFAQ(4)}
-              >
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Can you redesign my existing website?
-                </h3>
-                {openFAQ === 4 ? (
-                  <ChevronUp className="h-5 w-5 text-indigo-600" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-indigo-600" />
-                )}
-              </div>
-              {openFAQ === 4 && (
-                <p className="text-gray-600 mt-2">
-                  Absolutely! I can help you redesign your existing website to
-                  make it more modern, functional, and user-friendly.
-                </p>
-              )}
-            </div>
-
-            {/* FAQ 6 */}
-            <div className="text-left max-w-3xl mx-auto">
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFAQ(5)}
-              >
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Do you provide hosting services?
-                </h3>
-                {openFAQ === 5 ? (
-                  <ChevronUp className="h-5 w-5 text-indigo-600" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-indigo-600" />
-                )}
-              </div>
-              {openFAQ === 5 && (
-                <p className="text-gray-600 mt-2">
-                  I can help you set up hosting with trusted partners or provide
-                  recommendations based on your needs. I don’t offer hosting
-                  directly but will assist you through the process.
-                </p>
-              )}
+                Schedule a Meeting
+              </a>
             </div>
           </div>
         </div>
       </section>
+{/* FAQ Section */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 className="text-3xl font-bold text-gray-900 mb-8">
+      Frequently Asked Questions
+    </h2>
+    <div className="space-y-6">
+      {/* FAQ 1 */}
+      <div className="text-left max-w-3xl mx-auto">
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFAQ(0)}
+        >
+          <h3 className="text-xl font-semibold text-gray-800">
+            How long does it take to complete a website?
+          </h3>
+          {openFAQ === 0 ? (
+            <ChevronUp className="h-5 w-5 text-indigo-600" />
+          ) : (
+            <ChevronDown className="h-5 w-5 text-indigo-600" />
+          )}
+        </div>
+        {openFAQ === 0 && (
+          <p className="text-gray-600 mt-2">
+            Typically, the timeline for completing a website depends on
+            the complexity of the project. The Starter Website can be
+            delivered in about 1 week, while more advanced websites may
+            take up to 4 weeks.
+          </p>
+        )}
+      </div>
+
+      {/* FAQ 2 */}
+      <div className="text-left max-w-3xl mx-auto">
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFAQ(1)}
+        >
+          <h3 className="text-xl font-semibold text-gray-800">
+            Do you offer ongoing maintenance?
+          </h3>
+          {openFAQ === 1 ? (
+            <ChevronUp className="h-5 w-5 text-indigo-600" />
+          ) : (
+            <ChevronDown className="h-5 w-5 text-indigo-600" />
+          )}
+        </div>
+        {openFAQ === 1 && (
+          <p className="text-gray-600 mt-2">
+            Yes! I offer an annual maintenance package that includes
+            updates, backups, and priority support.
+          </p>
+        )}
+      </div>
+
+      {/* FAQ 3 */}
+      <div className="text-left max-w-3xl mx-auto">
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFAQ(2)}
+        >
+          <h3 className="text-xl font-semibold text-gray-800">
+            What is your process for designing a website?
+          </h3>
+          {openFAQ === 2 ? (
+            <ChevronUp className="h-5 w-5 text-indigo-600" />
+          ) : (
+            <ChevronDown className="h-5 w-5 text-indigo-600" />
+          )}
+        </div>
+        {openFAQ === 2 && (
+          <p className="text-gray-600 mt-2">
+            I follow a user-centered design process that includes
+            researching, wireframing, prototyping, testing, and refining
+            designs before moving to development.
+          </p>
+        )}
+      </div>
+
+      {/* FAQ 4 */}
+      <div className="text-left max-w-3xl mx-auto">
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFAQ(3)}
+        >
+          <h3 className="text-xl font-semibold text-gray-800">
+            Will my website be mobile-friendly?
+          </h3>
+          {openFAQ === 3 ? (
+            <ChevronUp className="h-5 w-5 text-indigo-600" />
+          ) : (
+            <ChevronDown className="h-5 w-5 text-indigo-600" />
+          )}
+        </div>
+        {openFAQ === 3 && (
+          <p className="text-gray-600 mt-2">
+            Absolutely! All websites I build are fully responsive and
+            optimized for mobile devices to ensure a seamless user
+            experience.
+          </p>
+        )}
+      </div>
+
+      {/* FAQ 5 */}
+      <div className="text-left max-w-3xl mx-auto">
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFAQ(4)}
+        >
+          <h3 className="text-xl font-semibold text-gray-800">
+            Do you provide SEO services?
+          </h3>
+          {openFAQ === 4 ? (
+            <ChevronUp className="h-5 w-5 text-indigo-600" />
+          ) : (
+            <ChevronDown className="h-5 w-5 text-indigo-600" />
+          )}
+        </div>
+        {openFAQ === 4 && (
+          <p className="text-gray-600 mt-2">
+            Yes, I offer basic SEO services as part of the website
+            development package, including keyword optimization, meta tags,
+            and proper structure. For more advanced SEO, I can discuss a
+            customized plan.
+          </p>
+        )}
+      </div>
+
+      {/* FAQ 6 */}
+      <div className="text-left max-w-3xl mx-auto">
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFAQ(5)}
+        >
+          <h3 className="text-xl font-semibold text-gray-800">
+            What happens if I need changes after the website is live?
+          </h3>
+          {openFAQ === 5 ? (
+            <ChevronUp className="h-5 w-5 text-indigo-600" />
+          ) : (
+            <ChevronDown className="h-5 w-5 text-indigo-600" />
+          )}
+        </div>
+        {openFAQ === 5 && (
+          <p className="text-gray-600 mt-2">
+            I offer post-launch support for making any necessary updates
+            or changes. If it’s a major change, I’ll discuss the scope and
+            provide a timeline and cost.
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
