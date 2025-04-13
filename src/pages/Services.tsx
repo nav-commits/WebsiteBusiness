@@ -136,13 +136,15 @@ const Services = () => {
                     </ul>
                   </div>
                   <div className="p-8">
-                    <Link
-                      to="/contact"
-                      className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    >
-                       Start Your Project Now
-                    </Link>
-                  </div>
+  <Link
+    to="/contact"
+    className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center"
+  >
+    Start Your Project Now
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </Link>
+</div>
+
                 </div>
               );
             })}

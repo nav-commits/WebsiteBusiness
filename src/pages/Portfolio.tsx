@@ -94,7 +94,7 @@ const Portfolio = () => {
                   </ul>
                   <a
                     href={project.link}
-                    className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"
+                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ml-5"
                   >
                     Visit Website
                     <ArrowRight className="ml-2 h-5 w-5" />
