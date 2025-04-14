@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const projects = [
@@ -99,23 +100,30 @@ const Portfolio = () => {
                     Visit Website
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-
-                  {/* Book a Free Consultation Button with extra space */}
-                  <a
-                    href="https://calendly.com/navdeep-dhamrait94"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ml-5"
-                  >
-                    Book a Free Consultation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+       <section className="py-20 bg-white">
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                  Ready to Start Your Project?
+                </h2>
+                <p className="text-xl text-gray-600 mb-8">
+                  Let's discuss your website needs and create a solution that works
+                  for your business.
+                </p>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  Contact Me Today
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </div>
+            </section>
     </div>
   );
 };

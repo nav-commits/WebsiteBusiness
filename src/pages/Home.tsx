@@ -9,16 +9,16 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              High-Performing Websites for Businesses of All Sizes
+              Websites That Drive Results for Businesses of All Sizes
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-indigo-100">
-              Modern. Fast. Mobile-Friendly. Get Your Business Online Today.
+              Modern. Fast. Mobile-Friendly. Designed to Drive Results.
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-150"
             >
-              Get Your Website Today
+              Let’s Build Your Website
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
@@ -30,19 +30,21 @@ const Home = () => {
         <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-left">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Welcome to Your Next Web Development Partner
+              Let's Build Your Next High-Performing Website Together
             </h2>
+
             <p className="text-lg text-gray-600 mb-6">
-              Hi, I'm Nav Dhamrait, a passionate Web Developer & Designer
-              dedicated to helping businesses build their online presence. I
-              create modern, high-performing websites that are easy to use and
-              designed to convert visitors into customers.
+              Hey, I'm Nav Dhamrait — a Web Developer & Designer based in
+              Toronto, Ontario. I specialize in creating modern, high-performing
+              websites that are easy to use, mobile-friendly, and optimized to
+              convert visitors into customers.
             </p>
             <p className="text-lg text-gray-600 mb-6">
-              I’ve worked with businesses in security, finance, and wellness,
-              delivering websites that stand out and drive results. Whether you
-              need a simple website or a fully customized solution, I’m here to
-              make the process smooth and hassle-free.
+              I’ve worked with clients across industries like security, finance,
+              wellness, and law — delivering websites that stand out and drive
+              results. Whether you're starting fresh or need a complete
+              redesign, I ensure the process is smooth, efficient, and
+              hassle-free.
             </p>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg shadow-md">
