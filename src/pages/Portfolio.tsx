@@ -42,6 +42,32 @@ const Portfolio = () => {
       ],
       link: "https://thehealinghive.net/",
     },
+    {
+      title: "PSR Law",
+      image: "realestate.png",
+      description:
+        "A dedicated real estate law firm offering expert legal guidance across Ontario. PSR Law is committed to transparency, integrity, and client-focused service—supporting first-time buyers and seasoned investors with professional legal care.",
+      features: [
+        "Real Estate Legal Services",
+        "Clear & Transparent Pricing",
+        "Expert Guidance & Support",
+        "Client-Focused Solutions",
+      ],
+      link: "https://psrlaw.ca/",
+    },
+    {
+      title: "Container Storage Solutions",
+      image: "/storage.png",
+      description:
+        "A leading storage terminal in the GTA, offering secure, 24/7 monitored container and trailer storage. With a client-first approach and strategic location in Brampton, they provide flexible, safe, and professional service for the freight and trucking industry.",
+      features: [
+        "24/7 Secure Storage",
+        "Flexible Storage Solutions",
+        "Client-First Approach",
+        "Strategic Location in GTA",
+      ],
+      link: "https://containerstorage.solutions",
+    },
   ];
 
   return (
