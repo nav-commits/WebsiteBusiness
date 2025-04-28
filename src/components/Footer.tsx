@@ -14,7 +14,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2" />
-                <span>navdeep.dhamrait94@gmail.com</span>
+                <span>info@navwebdesign.com</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2" />

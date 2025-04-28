@@ -142,40 +142,40 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between h-full">
-  <div>
-    <h2 className="text-2xl font-bold text-gray-900 mb-6">
-      Contact Information
-    </h2>
-    <div className="space-y-6">
-      <div className="flex items-start">
-        <Phone className="h-6 w-6 text-indigo-600 mr-4" />
-        <p className="text-gray-600">647-975-3467</p>
-      </div>
-      <div className="flex items-start">
-        <Mail className="h-6 w-6 text-indigo-600 mr-4" />
-        <p className="text-gray-600">navdeep.dhamrait94@gmail.com</p>
-      </div>
-      <div className="flex items-start">
-        <MapPin className="h-6 w-6 text-indigo-600 mr-4" />
-        <p className="text-gray-600">Toronto, Ontario, Canada</p>
-      </div>
-    </div>
-  </div>
-  <div className="mt-8">
-    <h3 className="text-lg font-semibold text-gray-800 mb-4">
-      Schedule a Meeting
-    </h3>
-    {/* Calendly Button */}
-    <a
-      href="https://calendly.com/navdeep-dhamrait94"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-full flex justify-center items-center px-6 py-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
-    >
-      Schedule a Meeting
-    </a>
-  </div>
-</div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Contact Information
+              </h2>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <Phone className="h-6 w-6 text-indigo-600 mr-4" />
+                  <p className="text-gray-600">647-975-3467</p>
+                </div>
+                <div className="flex items-start">
+                  <Mail className="h-6 w-6 text-indigo-600 mr-4" />
+                  <p className="text-gray-600">info@navwebdesign.com</p>
+                </div>
+                <div className="flex items-start">
+                  <MapPin className="h-6 w-6 text-indigo-600 mr-4" />
+                  <p className="text-gray-600">Toronto, Ontario, Canada</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                Schedule a Meeting
+              </h3>
+              {/* Calendly Button */}
+              <a
+                href="https://calendly.com/navdeep-dhamrait94"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex justify-center items-center px-6 py-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
+              >
+                Schedule a Meeting
+              </a>
+            </div>
+          </div>
         </div>
       </section>
       {/* FAQ Section */}
