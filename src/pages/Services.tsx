@@ -9,6 +9,8 @@ const Services = () => {
       price: "$800",
       features: [
         "Client provides hosting & domain — I handle the setup",
+        "If you don't have a domain, get 1 year of free domain registration with hosting. After that, you’ll need to pay for the domain.",
+        "If you already have a domain, I’ll use that for the setup.",
         "1–5 page modern WordPress website (Home, About, Services, Contact, etc.)",
         "Mobile-friendly and responsive design",
         "2 rounds of revisions",
@@ -21,6 +23,8 @@ const Services = () => {
       price: "$1,200",
       features: [
         "Client provides hosting & domain — I handle the setup",
+        "If you don't have a domain, get 1 year of free domain registration with hosting. After that, you’ll need to pay for the domain.",
+        "If you already have a domain, I’ll use that for the setup.",
         "Everything in Starter Website, PLUS:",
         "Blog, Booking System, or E-commerce Setup (includes cart, checkout, and payment integration)",
         "Optional advanced features: Memberships, Online Courses, Multi-language, Directories & more",
@@ -55,6 +59,29 @@ const Services = () => {
         "Delivery: 1–2 weeks",
       ],
     },
+    {
+      title: "Logo Design",
+      tagline: "Custom logo design to elevate your brand",
+      price: "$150",
+      features: [
+        "2 initial logo concepts + 2 rounds of revisions",
+        "High-quality files: PNG, JPEG, SVG, PDF",
+        "Custom design tailored to your business",
+        "Delivery: 1–3 days",
+      ],
+    },
+    {
+      title: "Business Email Setup",
+      tagline: "Professional email setup for your business",
+      price: "$100",
+      features: [
+        "Assistance setting up business email (Google Workspace, Zoho, etc.)",
+        "Client responsible for subscription costs",
+        "Domain & DNS configuration included",
+        "Step-by-step walk-through provided",
+        "Delivery: 1–2 days",
+      ],
+    },
   ];
 
   return (
@@ -82,13 +109,17 @@ const Services = () => {
                 | "Starter Website"
                 | "Business Website"
                 | "Ongoing Maintenance & Support"
-                | "SEO Package",
+                | "SEO Package"
+                | "Logo Design"
+                | "Business Email Setup",
                 string
               > = {
                 "Starter Website": "Starter",
                 "Business Website": "Most Popular",
                 "Ongoing Maintenance & Support": "Recommended",
                 "SEO Package": "Add-On",
+                "Logo Design": "Add-On",
+                "Business Email Setup": "Add-On",
               };
 
               const isRecommended =
