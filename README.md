@@ -30,6 +30,6 @@ A wellness and therapy website providing virtual therapy services across Canada,
 If you're interested in working together, feel free to reach out:
 
 - **Instagram:** [@nav.dhamrait](https://www.instagram.com/nav.dhamrait)
-- **Website:** https://navportfolio.co/
+- **Website:** https://navwebdesign.com
 
 Let's build something great together! 🚀
