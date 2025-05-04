@@ -35,17 +35,19 @@ const Services = () => {
     },
     {
       title: "Ongoing Maintenance & Support",
-      tagline: "Keep your website healthy and updated",
-      price: "$150/year",
+      tagline: "Essential care to keep your site secure, updated, and performing",
+      price: "$15/month (cancel anytime)",
       features: [
-        "Up to 10 content updates per year",
-        "Monthly plugin & theme updates",
-        "Performance & security scans",
-        "1 free backup/month + restore",
-        "Priority support",
-        "Coverage: 12 months",
+        "✔ Monthly plan — cancel anytime, no long-term commitment",
+        "Up to 10 content updates/year (text, images, etc.)",
+        "Monthly plugin, theme, and WordPress core updates",
+        "Speed, security & performance health checks",
+        "1 free backup/month with restore support included",
+        "Priority email support for quick help when needed",
+        "Great for business owners who want peace of mind",
       ],
-    },
+    }
+,    
     {
       title: "SEO Package",
       tagline: "Boost visibility & get discovered online",
