@@ -4,90 +4,102 @@ import { Link } from "react-router-dom";
 const Services = () => {
   const packages = [
     {
-      title: "Starter Website",
-      tagline: "Perfect for small businesses or personal brands",
+      title: "Starter",
+      tagline: "Great for small businesses or personal brands",
       price: "$800",
       features: [
-        "Client provides hosting & domain — I handle the setup",
-        "If you don't have a domain, get 1 year of free domain registration with hosting. After that, you’ll need to pay for the domain.",
-        "If you already have a domain, I’ll use that for the setup.",
-        "1–5 page modern WordPress website (Home, About, Services, Contact, etc.)",
-        "Mobile-friendly and responsive design",
+        "Up to 5 pages",
+        "Mobile responsive",
         "2 rounds of revisions",
+        "Contact form",
+        "SEO-ready",
+        "Setup hosting/domain",
         "Delivery: 1 week",
       ],
     },
     {
-      title: "Business Website",
-      tagline: "Ideal for growing businesses needing extra features",
+      title: "Business",
+      tagline: "For growing businesses with more needs",
       price: "$1,200",
       features: [
-        "Client provides hosting & domain — I handle the setup",
-        "If you don't have a domain, get 1 year of free domain registration with hosting. After that, you’ll need to pay for the domain.",
-        "If you already have a domain, I’ll use that for the setup.",
-        "Everything in Starter Website, PLUS:",
-        "Blog, Booking System, or E-commerce Setup (includes cart, checkout, and payment integration)",
-        "Optional advanced features: Memberships, Online Courses, Multi-language, Directories & more",
-        "Security & Performance Enhancements",
+        "Up to 10 pages",
+        "Mobile responsive",
         "3 rounds of revisions",
-        "Delivery: 2–4 weeks",
+        "Booking OR eCommerce",
+        "Basic SEO + speed boost",
+        "Hosting/domain + email setup",
+        "Delivery: 2–3 weeks",
       ],
     },
     {
-      title: "Ongoing Maintenance & Support",
-      tagline: "Essential care to keep your site secure, updated, and performing",
-      price: "$15/month (cancel anytime)",
+      title: "Pro",
+      tagline: "Best for scaling businesses and advanced features",
+      price: "$2,000+",
       features: [
-        "✔ Monthly plan — cancel anytime, no long-term commitment",
-        "Up to 10 content updates/year (text, images, etc.)",
-        "Monthly plugin, theme, and WordPress core updates",
-        "Speed, security & performance health checks",
-        "1 free backup/month with restore support included",
-        "Priority email support for quick help when needed",
-        "Great for business owners who want peace of mind",
+        "Unlimited pages",
+        "Mobile responsive",
+        "4 rounds of revisions",
+        "Booking + eCommerce + Courses",
+        "Advanced SEO + speed + security",
+        "Everything in Business, plus custom features",
+        "Delivery: 3–5 weeks",
       ],
-    }
-,    
+    },
     {
-      title: "SEO Package",
-      tagline: "Boost visibility & get discovered online",
-      price: "$150",
+      title: "Basic Maintenance",
+      price: "$15/mo",
+      features: ["Plugin updates", "1 backup/month", "Basic security checks"],
+    },
+    {
+      title: "Standard Maintenance",
+      price: "$35/mo",
       features: [
-        "On-page SEO optimization (keywords, meta tags, URL structure)",
-        "Google Search Console & Analytics setup",
-        "Sitemap & robots.txt creation",
-        "SEO audit and recommendations",
-        "1 round of revisions",
-        "Delivery: 1–2 weeks",
+        "Everything in Basic",
+        "5 content edits/year",
+        "Advanced security checks",
+      ],
+    },
+    {
+      title: "Premium Maintenance",
+      price: "$60/mo",
+      features: [
+        "Everything in Standard",
+        "Priority support",
+        "Performance checks",
+        "Monthly content updates",
+        "Security monitoring",
       ],
     },
     {
       title: "Logo Design",
-      tagline: "Custom logo design to elevate your brand",
       price: "$150",
-      features: [
-        "2 initial logo concepts + 2 rounds of revisions",
-        "High-quality files: PNG, JPEG, SVG, PDF",
-        "Custom design tailored to your business",
-        "Delivery: 1–3 days",
-      ],
+      description: "2 initial concepts + 2 revisions",
     },
     {
       title: "Business Email Setup",
-      tagline: "Professional email setup for your business",
       price: "$100",
-      features: [
-        "Assistance setting up business email (Google Workspace, Zoho, etc.)",
-        "Client responsible for subscription costs",
-        "Domain & DNS configuration included",
-        "Step-by-step walk-through provided",
-        "Delivery: 1–2 days",
-      ],
+      description: "Google Workspace, Zoho, etc.",
+    },
+    {
+      title: "SEO Package",
+      price: "$150",
+      description: "On-page SEO, Google tools setup",
+    },
+    {
+      title: "Memberships/Courses",
+      price: "$400",
+      description: "Sell content, gated features",
+    },
+    {
+      title: "Multi-language Setup",
+      price: "$300",
+      description: "Expand to new markets",
     },
   ];
 
   return (
     <div className="pt-16">
+      {/* Hero Section */}
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -105,53 +117,48 @@ const Services = () => {
       {/* Packages Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Titles/Headings */}
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900">
+              My Service Packages
+            </h2>
+            <p className="text-lg text-gray-600">
+              Choose the package that suits your business needs.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {packages.map((pkg, index) => {
-              const badgeTextMap: Record<
-                | "Starter Website"
-                | "Business Website"
-                | "Ongoing Maintenance & Support"
-                | "SEO Package"
-                | "Logo Design"
-                | "Business Email Setup",
-                string
-              > = {
-                "Starter Website": "Starter",
-                "Business Website": "Most Popular",
-                "Ongoing Maintenance & Support": "Recommended",
-                "SEO Package": "Add-On",
-                "Logo Design": "Add-On",
-                "Business Email Setup": "Add-On",
-              };
-
-              const isRecommended =
-                pkg.title === "Business Website" ||
-                pkg.title === "Ongoing Maintenance & Support";
+              const isMaintenance =
+                pkg.title.includes("Maintenance") ||
+                pkg.title === "Maintenance Add-ons";
 
               return (
                 <div
                   key={index}
                   className={`relative bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full transition-transform transform hover:scale-105 ${
-                    isRecommended
+                    isMaintenance
                       ? "border-4 border-indigo-600 bg-indigo-50"
                       : ""
                   }`}
                 >
                   {/* Badge */}
-                  <div
-                    className={`absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full ${
-                      isRecommended
-                        ? "bg-indigo-600 text-white"
-                        : "bg-gray-200 text-gray-800"
-                    }`}
-                  >
-                    {badgeTextMap[pkg.title as keyof typeof badgeTextMap]}
-                  </div>
+                  {pkg.tagline && (
+                    <div
+                      className={`absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full ${
+                        isMaintenance
+                          ? "bg-indigo-600 text-white"
+                          : "bg-gray-200 text-gray-800"
+                      }`}
+                    >
+                      {pkg.tagline}
+                    </div>
+                  )}
 
                   <div className="p-8 flex-grow mt-4">
                     <h3
                       className={`text-2xl font-bold mb-4 ${
-                        isRecommended ? "text-indigo-700" : "text-gray-900"
+                        isMaintenance ? "text-indigo-700" : "text-gray-900"
                       }`}
                     >
                       {pkg.title}
@@ -160,12 +167,15 @@ const Services = () => {
                       {pkg.price}
                     </p>
                     <ul className="space-y-4 mb-6">
-                      {pkg.features.map((feature, i) => (
+                      {pkg.features?.map((feature, i) => (
                         <li key={i} className="flex items-start">
                           <CheckCircle className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" />
                           <span className="text-gray-600">{feature}</span>
                         </li>
                       ))}
+                      {pkg.description && (
+                        <li className="text-gray-600">{pkg.description}</li>
+                      )}
                     </ul>
                   </div>
                   <div className="p-8">
