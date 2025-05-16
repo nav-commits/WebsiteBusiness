@@ -5,14 +5,15 @@ const Home = () => {
   return (
     <div className="pt-16">
 {/* Hero Section */}
+{/* Hero Section */}
 <section className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-32">
   <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
     <div className="text-center max-w-5xl mx-auto">
       <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-        WordPress Websites That Help Law Firms & Local Businesses Get More Leads
+        WordPress Websites That Help Local Service Businesses Get More Leads
       </h1>
       <p className="text-xl md:text-2xl mb-8 text-indigo-200 max-w-none">
-        Custom-designed, SEO-optimized, and mobile-friendly websites — crafted for Toronto’s service professionals.
+        Custom-designed, SEO-optimized, and mobile-friendly websites — crafted for Toronto’s small business professionals.
       </p>
       <Link
         to="/contact"
@@ -25,15 +26,17 @@ const Home = () => {
   </div>
 </section>
 
+
+{/* Introduction Section */}
 {/* Introduction Section */}
 <section className="py-20 bg-white">
   <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     <div className="text-left max-w-xl">
       <h2 className="text-4xl font-bold text-gray-900 mb-6">
-        Hi, I’m Nav Dhamrait — WordPress Web Designer for Law Firms & Local Businesses
+        Hi, I’m Nav Dhamrait — WordPress Web Designer for Local Service Businesses & Small Companies
       </h2>
       <p className="text-lg text-gray-700 mb-6">
-        I create professional, lead-generating WordPress websites tailored to help law firms and service businesses in Toronto stand out online.
+        I create professional, lead-generating WordPress websites tailored to help local service businesses in Toronto stand out online.
       </p>
       <p className="text-lg text-gray-700 mb-6">
         With a focus on SEO, mobile responsiveness, and user-friendly design, my websites convert visitors into clients — so your business grows steadily.
@@ -75,6 +78,7 @@ const Home = () => {
     </div>
   </div>
 </section>
+
 
       {/* Featured Work */}
 
