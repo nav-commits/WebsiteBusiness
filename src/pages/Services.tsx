@@ -5,114 +5,105 @@ const Services = () => {
   const packages = [
     {
       title: "Starter",
-      tagline: "Great for small businesses or personal brands",
+      tagline: "Perfect for small law firms or personal service brands",
       price: "$800",
       features: [
-        "Up to 5 pages",
-        "Mobile responsive",
+        "Up to 5 custom pages",
+        "Mobile responsive design",
         "2 rounds of revisions",
-        "Contact form",
-        "SEO-ready",
-        "Setup hosting/domain",
-        "Delivery: 1 week",
+        "Contact form integration",
+        "SEO-ready foundation",
+        "Hosting & domain setup",
+        "Delivery within 1 week",
       ],
     },
     {
       title: "Business",
-      tagline: "For growing businesses with more needs",
+      tagline: "Ideal for growing businesses with additional needs",
       price: "$1,200",
       features: [
-        "Up to 10 pages",
-        "Mobile responsive",
+        "Up to 10 custom pages",
+        "Mobile responsive design",
         "3 rounds of revisions",
-        "Booking OR eCommerce",
-        "Basic SEO + speed boost",
-        "Hosting/domain + email setup",
-        "Delivery: 2–3 weeks",
+        "Booking system OR eCommerce",
+        "Basic SEO and speed optimization",
+        "Hosting, domain & email setup",
+        "Delivery within 2–3 weeks",
       ],
     },
     {
       title: "Pro",
-      tagline: "Best for scaling businesses and advanced features",
+      tagline: "Advanced features for scaling law firms and service businesses",
       price: "$2,000+",
       features: [
-        "Unlimited pages",
-        "Mobile responsive",
+        "Unlimited custom pages",
+        "Mobile responsive design",
         "4 rounds of revisions",
-        "Booking + eCommerce + Courses",
-        "Advanced SEO + speed + security",
-        "Everything in Business, plus custom features",
-        "Delivery: 3–5 weeks",
+        "Booking + eCommerce + Courses integration",
+        "Advanced SEO, speed & security enhancements",
+        "Includes all Business package features plus custom solutions",
+        "Delivery within 3–5 weeks",
       ],
     },
     {
       title: "Basic Maintenance",
       price: "$15/mo",
-      features: ["Plugin updates", "1 backup/month", "Basic security checks"],
+      features: [
+        "Monthly plugin updates",
+        "1 backup per month",
+        "Basic security checks",
+      ],
     },
     {
       title: "Standard Maintenance",
       price: "$35/mo",
       features: [
-        "Everything in Basic",
-        "5 content edits/year",
-        "Advanced security checks",
+        "Includes Basic Maintenance",
+        "Up to 5 content edits per year",
+        "Advanced security monitoring",
       ],
     },
     {
       title: "Premium Maintenance",
       price: "$60/mo",
       features: [
-        "Everything in Standard",
-        "Priority support",
-        "Performance checks",
+        "Includes Standard Maintenance",
+        "Priority support response",
+        "Performance optimization checks",
         "Monthly content updates",
-        "Security monitoring",
+        "Comprehensive security monitoring",
       ],
     },
     {
       title: "Logo Design",
       price: "$150",
-      description: "2 initial concepts + 2 revisions",
+      description: "2 initial design concepts plus 2 revisions",
     },
     {
       title: "Business Email Setup",
       price: "$100",
-      description: "Google Workspace, Zoho, etc.",
+      description: "Setup with Google Workspace, Zoho, or similar",
     },
     {
       title: "SEO Package",
       price: "$150",
-      description: "On-page SEO, Google tools setup",
-    },
-    {
-      title: "Memberships/Courses",
-      price: "$400",
-      description: "Sell content, gated features",
-    },
-    {
-      title: "Multi-language Setup",
-      price: "$300",
-      description: "Expand to new markets",
+      description: "On-page SEO optimization and Google tools setup",
     },
   ];
-
+  
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      {/* Hero Section */}
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Affordable & Modern WordPress Websites for Your Business
-          </h1>
-          <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-            As a web developer and designer, I craft custom, high-performance
-            WordPress websites that help businesses of all sizes build a strong,
-            effective online presence.
-          </p>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 max-w-4xl mx-auto">
+      Affordable, Modern WordPress Websites Tailored for Law Firms & Local Businesses
+    </h1>
+    <p className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+      I specialize in designing and developing custom WordPress websites that are fast, SEO-optimized, and built to convert visitors into clients. Whether you’re a law firm or local service business, I’m here to help you establish a professional, effective online presence.
+    </p>
+  </div>
+</section>
 
       {/* Packages Section */}
       <section className="py-20 bg-gray-50">
@@ -145,7 +136,7 @@ const Services = () => {
                   {/* Badge */}
                   {pkg.tagline && (
                     <div
-                      className={`absolute top-4 right-4 text-xs font-bold px-3 py-1 rounded-full ${
+                      className={`absolute top-3 right-2 left-3 text-xs font-bold px-3 py-1 rounded-full ${
                         isMaintenance
                           ? "bg-indigo-600 text-white"
                           : "bg-gray-200 text-gray-800"

@@ -34,21 +34,22 @@ const About = () => {
           </h1>
           <div className="bg-white rounded-lg shadow-lg p-8">
             <p className="text-lg text-gray-700 mb-6">
-              I’m a passionate Web Developer & Designer, dedicated to helping
-              businesses build stunning, high-performance websites. Specializing
-              in WordPress and other CMS platforms, I focus on clean,
-              mobile-friendly, and SEO-optimized designs that not only look
-              great but also perform exceptionally well.
+              I’m a passionate Web Designer specializing in WordPress websites
+              for law firms and local service businesses. Based in Toronto, I
+              create custom, mobile-friendly, and SEO-optimized websites that
+              don’t just look stunning — they’re built to attract and convert
+              leads.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              What sets me apart? I take the time to understand your goals,
-              create a custom solution, and deliver a website that’s designed to
-              convert visitors into customers and grow your business.
+              What sets me apart? I take the time to understand your unique
+              business goals and challenges, crafting tailored solutions that
+              help grow your practice or local service through effective online
+              presence and lead generation.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              Ready to take your online presence to the next level? Let’s
-              collaborate and build a website that stands out and drives
-              results.
+              Ready to elevate your website and start getting more clients?
+              Let’s work together to build a website that truly stands out and
+              drives results.
             </p>
 
             <a
@@ -66,43 +67,42 @@ const About = () => {
 
       {/* Process Section */}
       <section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-      My Process
-    </h2>
-    <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-      I believe in keeping the process simple and transparent. From the
-      initial consultation to launch, I ensure that you're involved every
-      step of the way.
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {processSteps.map((step, index) => (
-        <div key={index} className="bg-gray-50 rounded-lg p-6">
-          <div className="flex items-center mb-4">
-            <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />
-            <h3 className="text-xl font-semibold text-gray-900">
-              {step.title}
-            </h3>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            My Process
+          </h2>
+          <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+            I believe in keeping the process simple and transparent. From the
+            initial consultation to launch, I ensure that you're involved every
+            step of the way.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="bg-gray-50 rounded-lg p-6">
+                <div className="flex items-center mb-4">
+                  <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {step.title}
+                  </h3>
+                </div>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
           </div>
-          <p className="text-gray-600">{step.description}</p>
+          {/* Button Section */}
+          <div className="mt-12 text-center">
+            <a
+              href="https://calendly.com/navdeep-dhamrait94"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
+            >
+              Book a Free Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </div>
         </div>
-      ))}
-    </div>
-    {/* Button Section */}
-    <div className="mt-12 text-center">
-      <a
-        href="https://calendly.com/navdeep-dhamrait94"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
-      >
-        Book a Free Consultation
-        <ArrowRight className="ml-2 h-5 w-5" />
-      </a>
-    </div>
-  </div>
-</section>
-
+      </section>
     </div>
   );
 };

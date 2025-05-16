@@ -4,85 +4,77 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Websites That Drive Results for Businesses of All Sizes
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-indigo-100">
-              Modern. Fast. Mobile-Friendly. Designed to Drive Results.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-150"
-            >
-              Let’s Build Your Website
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+{/* Hero Section */}
+<section className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-32">
+  <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+    <div className="text-center max-w-5xl mx-auto">
+      <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+        WordPress Websites That Help Law Firms & Local Businesses Get More Leads
+      </h1>
+      <p className="text-xl md:text-2xl mb-8 text-indigo-200 max-w-none">
+        Custom-designed, SEO-optimized, and mobile-friendly websites — crafted for Toronto’s service professionals.
+      </p>
+      <Link
+        to="/contact"
+        className="inline-flex items-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-150"
+      >
+        Let’s Build Your Website
+        <ArrowRight className="ml-2 h-5 w-5" />
+      </Link>
+    </div>
+  </div>
+</section>
 
-      {/* Introduction Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="text-left">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Let's Build Your Next High-Performing Website Together
-            </h2>
+{/* Introduction Section */}
+<section className="py-20 bg-white">
+  <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div className="text-left max-w-xl">
+      <h2 className="text-4xl font-bold text-gray-900 mb-6">
+        Hi, I’m Nav Dhamrait — WordPress Web Designer for Law Firms & Local Businesses
+      </h2>
+      <p className="text-lg text-gray-700 mb-6">
+        I create professional, lead-generating WordPress websites tailored to help law firms and service businesses in Toronto stand out online.
+      </p>
+      <p className="text-lg text-gray-700 mb-6">
+        With a focus on SEO, mobile responsiveness, and user-friendly design, my websites convert visitors into clients — so your business grows steadily.
+      </p>
+      <p className="text-lg text-gray-700">
+        Need a free website audit? DM me “Website” on Instagram or book a consultation below — let’s get started!
+      </p>
+    </div>
 
-            <p className="text-lg text-gray-600 mb-6">
-              Hey, I'm Nav Dhamrait — a Web Developer & Designer based in
-              Toronto, Ontario. I specialize in creating modern, high-performing
-              websites that are easy to use, mobile-friendly, and optimized to
-              convert visitors into customers.
-            </p>
-            <p className="text-lg text-gray-600 mb-6">
-              I’ve worked with clients across industries like security, finance,
-              wellness, and law — delivering websites that stand out and drive
-              results. Whether you're starting fresh or need a complete
-              redesign, I ensure the process is smooth, efficient, and
-              hassle-free.
-            </p>
-          </div>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Why Work With Me?
-            </h3>
-            <ul className="text-lg text-gray-600 space-y-4">
-              <li className="flex items-start">
-                <span className="mr-2">✔️</span> Custom WordPress websites that
-                look great & perform well
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">✔️</span> SEO-optimized & mobile-friendly
-                for better rankings
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">✔️</span> Affordable pricing with free
-                hosting setup
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">✔️</span> Reliable support & maintenance
-                to keep your site running smoothly
-              </li>
-            </ul>
-            <div className="mt-6 text-center">
-              <a
-                href="https://calendly.com/navdeep-dhamrait94" // replace with your actual Calendly link
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
-              >
-                Book a Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="bg-gray-100 p-8 rounded-lg shadow-md max-w-md mx-auto">
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+        Why Work With Me?
+      </h3>
+      <ul className="text-lg text-gray-700 space-y-4">
+        <li className="flex items-start">
+          <span className="mr-3 text-indigo-600">✔️</span> Custom WordPress websites tailored to your industry and goals
+        </li>
+        <li className="flex items-start">
+          <span className="mr-3 text-indigo-600">✔️</span> SEO-focused design to help you rank higher and attract clients
+        </li>
+        <li className="flex items-start">
+          <span className="mr-3 text-indigo-600">✔️</span> Mobile-friendly and fast-loading for the best user experience
+        </li>
+        <li className="flex items-start">
+          <span className="mr-3 text-indigo-600">✔️</span> Transparent pricing, free site audits, and ongoing support
+        </li>
+      </ul>
+      <div className="mt-6 text-center">
+        <a
+          href="https://calendly.com/navdeep-dhamrait94"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
+        >
+          Book a Free Consultation
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Featured Work */}
 
