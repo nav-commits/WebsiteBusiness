@@ -90,22 +90,26 @@ const Services = () => {
       description: "On-page SEO optimization and Google tools setup",
     },
   ];
-  
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
-    {/* Hero Section */}
-<section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 max-w-4xl mx-auto">
-      Affordable, Modern WordPress Websites Tailored for Local Service Businesses
-    </h1>
-    <p className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed">
-      I specialize in designing and developing custom WordPress websites that are fast, SEO-optimized, and built to convert visitors into clients. Whether you run a local service business or need a professional website, I’m here to help you establish an effective online presence.
-    </p>
-  </div>
-</section>
-
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 max-w-4xl mx-auto">
+            Affordable, Modern WordPress Websites Tailored for Local Service
+            Businesses
+          </h1>
+          <p className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+            I specialize in designing and developing custom WordPress websites
+            that are fast, SEO-optimized, and built to convert visitors into
+            clients. Whether you run a local service business or need a
+            professional website, I’m here to help you establish an effective
+            online presence.
+          </p>
+        </div>
+      </section>
 
       {/* Packages Section */}
       <section className="py-20 bg-gray-50">

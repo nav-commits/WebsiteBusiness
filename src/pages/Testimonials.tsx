@@ -31,8 +31,15 @@ const Testimonials = () => {
       role: "Owner, Container Storage Solutions",
       content: "Nav completely transformed our website, taking it from outdated to professional. The new design is clean, mobile-friendly, and truly represents our brand. We’ve already seen an increase in leads and received positive feedback from clients. I’m beyond happy with the results and highly recommend Nav to any business looking to improve their online presence.",
       rating: 5
+    },
+    {
+      name: "Vik Ghankas",
+      role: "Founder, Ghankas Law Group",
+      content: "I just wanted to give a huge shoutout to my main man, Nav Dhamrait, for designing and developing my new Family Law website. He was extremely diligent and proactive throughout the entire process. I can’t recommend him enough to all my friends and family who are looking to have a website built. Thanks, Nav Dhamrait!",
+      rating: 5
     }
   ];
+  
 
   return (
     <div className="pt-16">

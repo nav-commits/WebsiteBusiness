@@ -68,8 +68,22 @@ const Portfolio = () => {
       ],
       link: "https://containerstorage.solutions",
     },
+    // New Project for Vik Ghankas
+    {
+      title: "Ghankas Law Group",
+      image: "vik.jpg",
+      description:
+        "Family Law specialists based in the Tri-Cities, committed to providing direct, personal legal service. We believe if you hire a lawyer, you should be attended to by a lawyer.",
+      features: [
+        "Personalized Client Attention",
+        "Expert Family Law Services",
+        "Clear Communication & Transparency",
+        "Trusted Local Legal Representation",
+      ],
+      link: "https://ghankaslaw.com",
+    },
   ];
-
+  
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -132,24 +146,24 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-       <section className="py-20 bg-white">
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                  Ready to Start Your Project?
-                </h2>
-                <p className="text-xl text-gray-600 mb-8">
-                  Let's discuss your website needs and create a solution that works
-                  for your business.
-                </p>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                  Contact Me Today
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </div>
-            </section>
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Let's discuss your website needs and create a solution that works
+            for your business.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            Contact Me Today
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };
