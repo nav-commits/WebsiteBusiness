@@ -142,17 +142,16 @@ const Services = () => {
                   {/* Badge */}
                   {pkg.tagline && (
                     <div
-                      className={`absolute top-3 right-2 left-3 text-xs font-bold px-3 py-1 rounded-full ${
+                      className={`inline-block mt-5 mx-5 text-xs font-bold px-4 py-2 rounded-full ${
                         isMaintenance
-                          ? "bg-indigo-600 text-white"
-                          : "bg-gray-200 text-gray-800"
+                          ? "bg-indigo-600 text-white shadow-md ring-1 ring-indigo-800"
+                          : "bg-gradient-to-r from-gray-300 to-gray-100 text-gray-900 shadow-sm ring-gray-300"
                       }`}
                     >
                       {pkg.tagline}
                     </div>
                   )}
-
-                  <div className="p-8 flex-grow mt-4">
+                  <div className="p-8 flex-grow">
                     <h3
                       className={`text-2xl font-bold mb-4 ${
                         isMaintenance ? "text-indigo-700" : "text-gray-900"
@@ -190,7 +189,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

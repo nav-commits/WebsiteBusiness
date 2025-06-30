@@ -28,34 +28,41 @@ const About = () => {
     <div className="pt-16">
       {/* Hero Section */}
       <section className="bg-gray-50 py-20">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-      About Me
-    </h1>
-    <div className="bg-white rounded-lg shadow-lg p-8">
-      <p className="text-lg text-gray-700 mb-6">
-        I’m a passionate Web Designer specializing in WordPress websites for local service businesses. Based in Toronto, I create custom, mobile-friendly, and SEO-optimized websites that don’t just look stunning — they’re built to attract and convert leads.
-      </p>
-      <p className="text-lg text-gray-700 mb-6">
-        What sets me apart? I take the time to understand your unique business goals and challenges, crafting tailored solutions that help grow your business through effective online presence and lead generation.
-      </p>
-      <p className="text-lg text-gray-700 mb-6">
-        Ready to elevate your website and start getting more clients? Let’s work together to build a website that truly stands out and drives results.
-      </p>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+            About Me
+          </h1>
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <p className="text-lg text-gray-700 mb-6">
+              I’m a passionate Web Designer specializing in WordPress websites
+              for local service businesses. Based in Toronto, I create custom,
+              mobile-friendly, and SEO-optimized websites that don’t just look
+              stunning — they’re built to attract and convert leads.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              What sets me apart? I take the time to understand your unique
+              business goals and challenges, crafting tailored solutions that
+              help grow your business through effective online presence and lead
+              generation.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              Ready to elevate your website and start getting more clients?
+              Let’s work together to build a website that truly stands out and
+              drives results.
+            </p>
 
-      <a
-        href="https://calendly.com/navdeep-dhamrait94"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
-      >
-        Book a Free Consultation
-        <ArrowRight className="ml-2 h-5 w-5" />
-      </a>
-    </div>
-  </div>
-</section>
-
+            <a
+              href="https://calendly.com/navdeep-dhamrait94"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
+            >
+              Book a Free Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Process Section */}
       <section className="py-20 bg-white">
