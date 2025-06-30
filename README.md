@@ -1,5 +1,8 @@
 # Nav Dhamrait - Web Design Business
 
+![Screenshot 2025-06-30 at 3 26 32 PM](https://github.com/user-attachments/assets/bb1696bd-4c68-44f1-884e-8717d04943a7)
+![Screenshot 2025-06-30 at 3 26 52 PM](https://github.com/user-attachments/assets/7a1ac91f-7fc2-4a88-a59f-054b0036d3bf)
+
 Welcome to my portfolio and business website! I specialize in creating modern, high-performing WordPress websites for small businesses. This website was built using **React (Vite.js) and TypeScript**.
 
 ## About Me
