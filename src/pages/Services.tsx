@@ -6,7 +6,7 @@ const Services = () => {
     {
       title: "Starter",
       tagline: "Perfect for small local businesses or personal service brands",
-      price: "$800",
+      price: "$1000",
       features: [
         "Up to 5 custom pages",
         "Mobile responsive design",
@@ -20,7 +20,7 @@ const Services = () => {
     {
       title: "Business",
       tagline: "Ideal for growing local businesses with additional needs",
-      price: "$1,200",
+      price: "$1,500",
       features: [
         "Up to 10 custom pages",
         "Mobile responsive design",
