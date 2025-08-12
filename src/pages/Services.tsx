@@ -9,12 +9,13 @@ const Services = () => {
       tagline: "Perfect for small local businesses or personal brands",
       price: "$1,000",
       features: [
-        "Up to 5 custom pages",
-        "Mobile responsive design",
-        "2 rounds of revisions",
+        "Up to 5 custom pages (e.g., Home, About, Services, Contact, Blog)",
+        "Mobile responsive design for all devices",
+        "2 rounds of revisions (content or layout changes)",
         "Contact form integration",
-        "SEO-ready foundation",
+        "SEO-ready foundation (metadata, sitemap, Google Search Console setup)",
         "Delivery within 1 week",
+        "Hosting and domain are separate; I guide setup but client pays hosting",
       ],
     },
     {
@@ -24,10 +25,11 @@ const Services = () => {
       features: [
         "Up to 10 custom pages",
         "Mobile responsive design",
-        "3 rounds of revisions",
-        "Booking system OR eCommerce",
+        "3 rounds of revisions (content or layout changes)",
+        "Booking system OR eCommerce integration (your choice)",
         "Basic SEO and speed optimization",
         "Delivery within 2–3 weeks",
+        "Hosting and domain are separate; I guide setup but client pays hosting",
       ],
     },
     {
@@ -37,14 +39,16 @@ const Services = () => {
       features: [
         "Unlimited custom pages",
         "Mobile responsive design",
-        "4 rounds of revisions",
+        "4 rounds of revisions (content or layout changes)",
         "Booking + eCommerce + Courses integration",
         "Advanced SEO, speed & security enhancements",
         "Includes all Business package features plus custom solutions",
         "Delivery within 3–5 weeks",
+        "Hosting and domain are separate; I guide setup but client pays hosting",
       ],
     },
   ];
+
 
   // Care & Maintenance Plans (no hosting included)
   const carePlans = [
