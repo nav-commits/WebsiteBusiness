@@ -34,10 +34,12 @@ const About = () => {
           </h1>
           <div className="bg-white rounded-lg shadow-lg p-8">
             <p className="text-lg text-gray-700 mb-6">
-              I’m a passionate Web Designer specializing in WordPress websites
+              I’m a passionate Web Designer & Developer specializing in websites
               for local service businesses. Based in Toronto, I create custom,
-              mobile-friendly, and SEO-optimized websites that don’t just look
-              stunning — they’re built to attract and convert leads.
+              mobile-friendly, and SEO-optimized websites using the best tools
+              for your business — whether that’s WordPress, Wix, or a fully
+              custom build. My sites don’t just look stunning — they’re built to
+              attract and convert leads.
             </p>
             <p className="text-lg text-gray-700 mb-6">
               What sets me apart? I take the time to understand your unique

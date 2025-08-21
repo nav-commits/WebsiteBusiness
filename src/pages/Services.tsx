@@ -49,7 +49,6 @@ const Services = () => {
     },
   ];
 
-
   // Care & Maintenance Plans (no hosting included)
   const carePlans = [
     {
@@ -57,7 +56,7 @@ const Services = () => {
       tagline: "Updates and security in one plan",
       price: "$25/mo or $250/year",
       features: [
-        "Monthly plugin & WordPress updates",
+        "Monthly updates for platform, plugins, or integrations",
         "Weekly backups",
         "Basic security checks",
       ],
@@ -195,12 +194,12 @@ const Services = () => {
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6 max-w-4xl mx-auto">
-            Affordable, Modern WordPress Websites + Care Plans
+            Affordable, Modern Websites + Care Plans
           </h1>
           <p className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed">
-            I design fast, SEO-optimized WordPress websites built to convert —
-            and provide ongoing maintenance, security, and marketing plans to
-            keep your business growing.
+            I design fast, SEO-optimized websites built to convert — and provide
+            ongoing maintenance, security, and marketing plans to keep your
+            business growing.
           </p>
         </div>
       </section>

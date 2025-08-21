@@ -9,13 +9,13 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-              WordPress Websites That Help Local Service Businesses Get More
-              Leads
+              Websites That Help Local Service Businesses Get More Leads
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-indigo-200 max-w-none">
               Custom-designed, SEO-optimized, and mobile-friendly websites —
               crafted for Toronto’s small business professionals.
             </p>
+
             <Link
               to="/contact"
               className="inline-flex items-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-150"
@@ -31,23 +31,16 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-left max-w-xl">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Hi, I’m Nav Dhamrait — WordPress Web Designer for Local Service
-              Businesses & Small Companies
-            </h2>
-            <p className="text-lg text-gray-700 mb-6">
-              I create professional, lead-generating WordPress websites tailored
-              to help local service businesses in Toronto stand out online.
-            </p>
-            <p className="text-lg text-gray-700 mb-6">
-              With a focus on SEO, mobile responsiveness, and user-friendly
-              design, my websites convert visitors into clients — so your
-              business grows steadily.
-            </p>
-            <p className="text-lg text-gray-700">
-              Need a free website audit? DM me “Website” on Instagram or book a
-              consultation below — let’s get started!
-            </p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+  Hi, I’m Nav Dhamrait — Web Developer & Designer for Local Service
+  Businesses & Small Companies
+</h2>
+<p className="text-lg text-gray-700 mb-6">
+  I create professional, lead-generating websites tailored to help local
+  service businesses in Toronto stand out online. Whether it’s WordPress,
+  Wix, or a custom solution, I choose the best platform for your goals.
+</p>
+
           </div>
 
           <div className="bg-gray-100 p-8 rounded-lg shadow-md max-w-md mx-auto">
@@ -55,23 +48,24 @@ const Home = () => {
               Why Work With Me?
             </h3>
             <ul className="text-lg text-gray-700 space-y-4">
-              <li className="flex items-start">
-                <span className="mr-3 text-indigo-600">✔️</span> Custom
-                WordPress websites tailored to your industry and goals
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-indigo-600">✔️</span> SEO-focused
-                design to help you rank higher and attract clients
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-indigo-600">✔️</span> Mobile-friendly
-                and fast-loading for the best user experience
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-indigo-600">✔️</span> Transparent
-                pricing, free site audits, and ongoing support
-              </li>
-            </ul>
+  <li className="flex items-start">
+    <span className="mr-3 text-indigo-600">✔️</span> Custom websites
+    (WordPress, Wix, or custom) tailored to your industry and goals
+  </li>
+  <li className="flex items-start">
+    <span className="mr-3 text-indigo-600">✔️</span> SEO-focused design to
+    help you rank higher and attract clients
+  </li>
+  <li className="flex items-start">
+    <span className="mr-3 text-indigo-600">✔️</span> Mobile-friendly and
+    fast-loading for the best user experience
+  </li>
+  <li className="flex items-start">
+    <span className="mr-3 text-indigo-600">✔️</span> Transparent pricing,
+    free site audits, and ongoing support
+  </li>
+</ul>
+
             <div className="mt-6 text-center">
               <a
                 href="https://calendly.com/navdeep-dhamrait94"
@@ -327,7 +321,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="p-6">
-              <Link
+                <Link
                   to="/portfolio"
                   className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 w-full justify-center"
                 >
