@@ -68,7 +68,6 @@ const Portfolio = () => {
       ],
       link: "https://containerstorage.solutions",
     },
-    // New Project for Vik Ghankas
     {
       title: "Ghankas Law Group",
       image: "vik.jpg",
@@ -82,8 +81,21 @@ const Portfolio = () => {
       ],
       link: "https://ghankaslaw.com",
     },
+    {
+      title: "MARKAT Group Inc.",
+      image: "MarkatImage.png",
+      description:
+        "Founded in Toronto, MARKAT is a boutique advisory & consulting firm built for small and medium-sized businesses. We help ambitious teams scale smart, manage risk, and lead with confidence in a rapidly changing world.",
+      features: [
+        "Strategic Business Advisory",
+        "Risk Management & Compliance",
+        "Tailored Growth Strategies",
+        "Support for SMBs Ready to Scale",
+      ],
+      link: "https://www.markatgroup.net/",
+    },
   ];
-  
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -135,6 +147,8 @@ const Portfolio = () => {
                   </ul>
                   <a
                     href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ml-5"
                   >
                     Visit Website
@@ -146,6 +160,8 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
