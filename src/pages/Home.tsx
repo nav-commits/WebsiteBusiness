@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// Featured Projects
 const projects = [
   {
     img: "/security.png",
@@ -88,7 +89,17 @@ const Home = () => {
 
       {/* Introduction Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 gap-20 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left: Image */}
+          <div className="flex justify-center">
+            <img
+              src="/SMS_0310 Navdeep Dhamrait.jpg"
+              alt="Navdeep Dhamrait"
+              className="rounded-2xl shadow-xl w-120 h-auto object-cover"
+            />
+          </div>
+
+          {/* Right: Text */}
           <div className="text-left max-w-xl">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Hi, I’m Nav Dhamrait — Web Developer & Designer for Local Service
@@ -100,47 +111,47 @@ const Home = () => {
               WordPress, Wix, or a custom solution, I choose the best platform
               for your goals.
             </p>
-          </div>
 
-          <div className="bg-gray-100 p-8 rounded-lg shadow-md max-w-md mx-auto">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Why Work With Me?
-            </h3>
-            <ul className="text-lg text-gray-700 space-y-4">
-              <li className="flex items-start">
-                <span className="mr-3 text-indigo-600">✔️</span> Custom websites
-                (WordPress, Wix, or custom) tailored to your industry and goals
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-indigo-600">✔️</span> SEO-focused
-                design to help you rank higher and attract clients
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-indigo-600">✔️</span> Mobile-friendly
-                and fast-loading for the best user experience
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-indigo-600">✔️</span> Transparent
-                pricing, free site audits, and ongoing support
-              </li>
-            </ul>
+            <div className="bg-gray-100 p-8 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                Why Work With Me?
+              </h3>
+              <ul className="text-lg text-gray-700 space-y-4">
+                <li className="flex items-start">
+                  <span className="mr-3 text-indigo-600">✔️</span> Custom websites
+                  (WordPress, Wix, or custom) tailored to your industry and goals
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 text-indigo-600">✔️</span> SEO-focused
+                  design to help you rank higher and attract clients
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 text-indigo-600">✔️</span> Mobile-friendly
+                  and fast-loading for the best user experience
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-3 text-indigo-600">✔️</span> Transparent
+                  pricing, free site audits, and ongoing support
+                </li>
+              </ul>
 
-            <div className="mt-6 text-center">
-              <a
-                href="https://calendly.com/navdeep-dhamrait94"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
-              >
-                Book a Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              <div className="mt-6 text-center">
+                <a
+                  href="https://calendly.com/navdeep-dhamrait94"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
+                >
+                  Book a Free Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Work */}
+      {/* Featured Work Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
