@@ -127,7 +127,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex justify-center items-center px-6 py-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
+                className="w-full flex justify-center items-center px-6 py-3 text-white bg-[#5e17eb] hover:bg-indigo-700 rounded-md"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="ml-2 h-5 w-5" />
@@ -170,7 +170,7 @@ const Contact = () => {
                 href="https://calendly.com/navdeep-dhamrait94"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex justify-center items-center px-6 py-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md"
+                className="w-full flex justify-center items-center px-6 py-3 text-white bg-[#5e17eb] hover:bg-indigo-700 rounded-md"
               >
                 Schedule a Meeting
               </a>

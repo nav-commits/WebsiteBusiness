@@ -120,7 +120,7 @@ const Testimonials = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             Contact Me Today
             <ArrowRight className="ml-2 h-5 w-5" />
