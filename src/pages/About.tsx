@@ -57,7 +57,7 @@ const About = () => {
               href="https://calendly.com/navdeep-dhamrait94"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition duration-150"
             >
               Book a Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -96,7 +96,7 @@ const About = () => {
               href="https://calendly.com/navdeep-dhamrait94"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition duration-150"
             >
               Book a Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />

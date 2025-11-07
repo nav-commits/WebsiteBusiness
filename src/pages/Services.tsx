@@ -144,7 +144,7 @@ const Services = () => {
           <div
             className={`inline-block mt-5 mx-5 text-xs font-bold px-4 py-2 rounded-full ${
               isMaintenance
-                ? "bg-indigo-600 text-white shadow-md ring-1 ring-indigo-800"
+                ? "bg-[#5e17eb] text-white shadow-md ring-1 ring-indigo-800"
                 : "bg-gradient-to-r from-gray-300 to-gray-100 text-gray-900 shadow-sm ring-gray-300"
             }`}
           >
@@ -176,7 +176,7 @@ const Services = () => {
         <div className="p-8">
           <Link
             to="/contact"
-            className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center"
+            className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center"
           >
             {isMaintenance
               ? "Get Started with This Plan"
@@ -252,7 +252,7 @@ const Services = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             Contact Me Today
             <ArrowRight className="ml-2 h-5 w-5" />
