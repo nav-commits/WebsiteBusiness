@@ -11,10 +11,11 @@ const Services = () => {
       features: [
         "Up to 5 custom pages (e.g., Home, About, Services, Contact, Blog)",
         "Mobile responsive design for all devices",
-        "2 rounds of revisions (content or layout changes)",
+        "2 rounds of revisions for the entire site (content or layout changes)",
+        "Extra page changes after 2 revisions: $50 per page",
         "Contact form integration",
         "SEO-ready foundation (metadata, sitemap, Google Search Console setup)",
-        "Delivery within 1 week",
+        "Delivery within 1 week after content is provided",
         "Hosting and domain are separate; I guide setup but client pays hosting",
       ],
     },
@@ -25,10 +26,11 @@ const Services = () => {
       features: [
         "Up to 10 custom pages",
         "Mobile responsive design",
-        "3 rounds of revisions (content or layout changes)",
+        "2 rounds of revisions for the entire site (content or layout changes)",
+        "Extra page changes after 2 revisions: $50 per page",
         "Booking system OR eCommerce integration (your choice)",
         "Basic SEO and speed optimization",
-        "Delivery within 2–3 weeks",
+        "Delivery within 2–3 weeks after content is provided",
         "Hosting and domain are separate; I guide setup but client pays hosting",
       ],
     },
@@ -39,11 +41,12 @@ const Services = () => {
       features: [
         "Unlimited custom pages",
         "Mobile responsive design",
-        "4 rounds of revisions (content or layout changes)",
+        "2 rounds of revisions for the entire site (content or layout changes)",
+        "Extra page changes after 2 revisions: $50 per page",
         "Booking + eCommerce + Courses integration",
         "Advanced SEO, speed & security enhancements",
         "Includes all Business package features plus custom solutions",
-        "Delivery within 3–5 weeks",
+        "Delivery within 3–5 weeks after content is provided",
         "Hosting and domain are separate; I guide setup but client pays hosting",
       ],
     },
@@ -86,7 +89,6 @@ const Services = () => {
     },
   ];
 
-  // Simplified Additional Services with domain registration as optional service
   const additionalServices = [
     {
       title: "Domain Registration Setup (Optional)",
@@ -107,7 +109,8 @@ const Services = () => {
     {
       title: "Logo Design",
       price: "$150",
-      description: "2 initial design concepts plus 2 revisions",
+      description: 
+        "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 per revision. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
     },
     {
       title: "Ecommerce Support & Maintenance",
@@ -120,6 +123,7 @@ const Services = () => {
       ],
     },
   ];
+  
 
   // Card component
   const ServiceCard = ({
