@@ -53,77 +53,75 @@ const Services = () => {
   ];
 
   // Care & Maintenance Plans (no hosting included)
-  const carePlans = [
-    {
-      title: "Essential Maintenance",
-      tagline: "Updates and security in one plan",
-      price: "$25/mo or $250/year",
-      features: [
-        "Monthly updates for platform, plugins, or integrations",
-        "Weekly backups",
-        "Basic security checks",
-      ],
-    },
-    {
-      title: "Business Growth Plan",
-      tagline: "Care and content updates",
-      price: "$60/mo or $600/year",
-      features: [
-        "All Essential features",
-        "Up to 5 small content edits per year",
-        "Advanced security monitoring",
-        "Monthly website performance checks",
-      ],
-    },
-    {
-      title: "Full Growth + Marketing",
-      tagline: "Care and marketing in one package",
-      price: "$175/mo",
-      features: [
-        "All Business Growth features",
-        "Monthly blog posts or promo updates",
-        "Local SEO tweaks & Google My Business updates",
-        "Conversion optimization",
-        "Monthly analytics & reports",
-      ],
-    },
-  ];
+ // Care & Maintenance Plans (yearly, Toronto-friendly, includes content updates)
+const carePlans = [
+  {
+    title: "Essential Maintenance",
+    tagline: "Yearly updates & security",
+    price: "$150 / year",
+    features: [
+      "Annual platform, plugin, and integration updates",
+      "Weekly backups",
+      "Basic security monitoring",
+      "Up to 2 small content updates per year (text, images, minor layout tweaks)",
+    ],
+  },
+  {
+    title: "Business Growth Plan",
+    tagline: "Care + light content support",
+    price: "$400 / year",
+    features: [
+      "All Essential Maintenance features",
+      "Up to 5 small content updates per year (text, images, minor layout tweaks)",
+      "Advanced security monitoring",
+      "Quarterly website performance checks",
+    ],
+  },
+  {
+    title: "Full Growth + Marketing",
+    tagline: "Care + marketing support",
+    price: "$1,000 / year",
+    features: [
+      "All Business Growth features",
+      "Up to 12 content updates per year (text, images, minor layout tweaks, promotional changes)",
+      "Monthly blog posts or promo updates",
+      "Local SEO & Google My Business maintenance",
+      "Conversion optimization",
+      "Monthly analytics reports",
+    ],
+  },
+];
 
-  const additionalServices = [
-    {
-      title: "Domain Registration Setup (Optional)",
-      price: "$20–$30 (one-time fee) plus domain cost",
-      description:
-        "I can register and set up your domain for you if you prefer — domain cost not included. Clients may also buy their own domain and provide access.",
-    },
-    {
-      title: "SEO Package",
-      price: "$150",
-      description: "On-page SEO optimization and Google tools setup",
-    },
-    {
-      title: "Business Email Setup",
-      price: "$100",
-      description: "Setup with Google Workspace, Zoho, or similar",
-    },
-    {
-      title: "Logo Design",
-      price: "$150",
-      description: 
-        "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 per revision. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
-    },
-    {
-      title: "Ecommerce Support & Maintenance",
-      price: "$100/month",
-      description: "Ongoing ecommerce site maintenance & product updates",
-      features: [
-        "Product additions and updates",
-        "Payment gateway checks",
-        "Promo code and discount setup",
-      ],
-    },
-  ];
-  
+
+const additionalServices = [
+  {
+    title: "SEO Package",
+    price: "$150",
+    description: "Complete on-page SEO to help your site rank well on Google",
+    features: [
+      "Optimize page titles, meta descriptions, and headings",
+      "Set up Google Search Console and Analytics",
+      "Submit XML sitemap to Google",
+      "Optimize images for SEO (alt text, file names, compression)",
+      "Internal linking and URL structure review",
+      "Basic keyword optimization for up to 5 main pages",
+      "Ensure mobile-friendly and fast-loading pages",
+    ],
+  },
+  {
+    title: "Business Email Setup",
+    price: "$100",
+    description: "Setup with Google Workspace, Zoho, or similar",
+  },
+  {
+    title: "Logo Design",
+    price: "$150",
+    description: 
+      "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 per revision. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
+  },
+];
+
+
 
   // Card component
   const ServiceCard = ({
