@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 import { useAnalytics } from "./useAnalystics";
 
 function App() {
-  useAnalytics(); // Track SPA pageviews
+  useAnalytics();
 
   return (
     <div className="min-h-screen bg-white">

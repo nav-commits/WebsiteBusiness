@@ -1,4 +1,3 @@
-// --- PRICE-ADJUSTED VERSION ---
 import { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,7 +9,7 @@ const Services = () => {
     {
       title: "Starter Website",
       tagline: "Perfect for small local businesses or personal brands",
-      price: "$700",
+      price: "From $700",
       features: [
         "Up to 5 custom pages (e.g., Home, About, Services, Contact, Blog)",
         "Mobile responsive design for all devices",
@@ -25,7 +24,7 @@ const Services = () => {
     {
       title: "Business Website",
       tagline: "Ideal for growing local businesses with extra features",
-      price: "$1,200",
+      price: "From $1,200",
       features: [
         "Up to 10 custom pages",
         "Mobile responsive design",
@@ -115,7 +114,7 @@ const Services = () => {
     },
     {
       title: "Logo Design",
-      price: "$200", 
+      price: "$200",
       description:
         "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 per revision. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
     },
@@ -130,16 +129,18 @@ const Services = () => {
 
     return (
       <div
-        className={`relative bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full transition-transform transform hover:scale-105 ${
-          isMaintenance ? "border-4 border-indigo-600 bg-indigo-50" : ""
+        className={`relative rounded-lg overflow-hidden flex flex-col h-full transition-transform transform hover:scale-105 ${
+          isMaintenance
+            ? "border-4 border-[#5e17eb] bg-white"
+            : "bg-white border border-gray-200 shadow-lg"
         }`}
       >
         {"tagline" in pkg && pkg.tagline && (
           <div
             className={`inline-block mt-5 mx-5 text-xs font-bold px-4 py-2 rounded-full ${
               isMaintenance
-                ? "bg-[#5e17eb] text-white shadow-md ring-1 ring-indigo-800"
-                : "bg-gradient-to-r from-gray-300 to-gray-100 text-gray-900 shadow-sm ring-gray-300"
+                ? "bg-[#5e17eb] text-white ring-1 ring-[#5e17eb]"
+                : "bg-gray-100 text-gray-900 shadow-sm ring-gray-300"
             }`}
           >
             {pkg.tagline}
@@ -148,12 +149,12 @@ const Services = () => {
         <div className="p-8 flex-grow">
           <h3
             className={`text-2xl font-bold mb-4 ${
-              isMaintenance ? "text-indigo-700" : "text-gray-900"
+              isMaintenance ? "text-[#5e17eb]" : "text-gray-900"
             }`}
           >
             {pkg.title}
           </h3>
-          <p className="text-4xl font-bold text-indigo-600 mb-6">{pkg.price}</p>
+          <p className="text-4xl font-bold text-[#5e17eb] mb-6">{pkg.price}</p>
           <ul className="space-y-4 mb-6">
             {"features" in pkg &&
               pkg.features?.map((feature, i) => (
@@ -170,11 +171,9 @@ const Services = () => {
         <div className="p-8">
           <Link
             to="/contact"
-            className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center"
+            className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-[#4b12c9] focus:outline-none focus:ring-2 focus:ring-[#5e17eb] flex items-center justify-center"
           >
-            {isMaintenance
-              ? "Get Started with This Plan"
-              : "Start Your Project Now"}
+            {isMaintenance ? "Start My Plan" : "Build My Website"}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>
@@ -205,7 +204,7 @@ const Services = () => {
             onClick={() => setShowOtherServices(false)}
             className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${
               !showOtherServices
-                ? "bg-indigo-600 text-white shadow"
+                ? "bg-[#5e17eb] text-white"
                 : "text-gray-700 hover:bg-gray-300"
             }`}
           >
@@ -215,7 +214,7 @@ const Services = () => {
             onClick={() => setShowOtherServices(true)}
             className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${
               showOtherServices
-                ? "bg-indigo-600 text-white shadow"
+                ? "bg-[#5e17eb] text-white"
                 : "text-gray-700 hover:bg-gray-300"
             }`}
           >
@@ -245,7 +244,7 @@ const Services = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-[#5e17eb] hover:bg-[#4b12c9] focus:outline-none focus:ring-2 focus:ring-[#5e17eb]"
           >
             Contact Me Today
             <ArrowRight className="ml-2 h-5 w-5" />
