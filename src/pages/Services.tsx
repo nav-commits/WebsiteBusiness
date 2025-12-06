@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
-  // Website Packages (no hosting included)
+  const [showOtherServices, setShowOtherServices] = useState(false);
+
   const websitePackages = [
     {
       title: "Starter Website",
@@ -52,78 +54,74 @@ const Services = () => {
     },
   ];
 
-  // Care & Maintenance Plans (no hosting included)
- // Care & Maintenance Plans (yearly, Toronto-friendly, includes content updates)
-const carePlans = [
-  {
-    title: "Essential Maintenance",
-    tagline: "Yearly updates & security",
-    price: "$150 / year",
-    features: [
-      "Annual platform, plugin, and integration updates",
-      "Weekly backups",
-      "Basic security monitoring",
-      "Up to 2 small content updates per year (text, images, minor layout tweaks)",
-    ],
-  },
-  {
-    title: "Business Growth Plan",
-    tagline: "Care + light content support",
-    price: "$400 / year",
-    features: [
-      "All Essential Maintenance features",
-      "Up to 5 small content updates per year (text, images, minor layout tweaks)",
-      "Advanced security monitoring",
-      "Quarterly website performance checks",
-    ],
-  },
-  {
-    title: "Full Growth + Marketing",
-    tagline: "Care + marketing support",
-    price: "$1,000 / year",
-    features: [
-      "All Business Growth features",
-      "Up to 12 content updates per year (text, images, minor layout tweaks, promotional changes)",
-      "Monthly blog posts or promo updates",
-      "Local SEO & Google My Business maintenance",
-      "Conversion optimization",
-      "Monthly analytics reports",
-    ],
-  },
-];
+  const carePlans = [
+    {
+      title: "Essential Maintenance",
+      tagline: "Yearly updates & security",
+      price: "$150 / year",
+      features: [
+        "Annual platform, plugin, and integration updates",
+        "Weekly backups",
+        "Basic security monitoring",
+        "Up to 2 small content updates per year (text, images, minor layout tweaks)",
+      ],
+    },
+    {
+      title: "Business Growth Plan",
+      tagline: "Care + light content support",
+      price: "$400 / year",
+      features: [
+        "All Essential Maintenance features",
+        "Up to 5 small content updates per year (text, images, minor layout tweaks)",
+        "Advanced security monitoring",
+        "Quarterly website performance checks",
+      ],
+    },
+    {
+      title: "Full Growth + Marketing",
+      tagline: "Care + marketing support",
+      price: "$1,000 / year",
+      features: [
+        "All Business Growth features",
+        "Up to 12 content updates per year (text, images, minor layout tweaks, promotional changes)",
+        "Monthly blog posts or promo updates",
+        "Local SEO & Google My Business maintenance",
+        "Conversion optimization",
+        "Monthly analytics reports",
+      ],
+    },
+  ];
 
+  const additionalServices = [
+    {
+      title: "SEO Package",
+      price: "$150",
+      description: "Complete on-page SEO to help your site rank well on Google",
+      features: [
+        "Optimize page titles, meta descriptions, and headings",
+        "Set up Google Search Console and Analytics",
+        "Submit XML sitemap to Google",
+        "Optimize images for SEO (alt text, file names, compression)",
+        "Internal linking and URL structure review",
+        "Basic keyword optimization for up to 5 main pages",
+        "Ensure mobile-friendly and fast-loading pages",
+      ],
+    },
+    {
+      title: "Business Email Setup",
+      price: "$100",
+      description: "Setup with Google Workspace, Zoho, or similar",
+    },
+    {
+      title: "Logo Design",
+      price: "$150",
+      description:
+        "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 per revision. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
+    },
+  ];
 
-const additionalServices = [
-  {
-    title: "SEO Package",
-    price: "$150",
-    description: "Complete on-page SEO to help your site rank well on Google",
-    features: [
-      "Optimize page titles, meta descriptions, and headings",
-      "Set up Google Search Console and Analytics",
-      "Submit XML sitemap to Google",
-      "Optimize images for SEO (alt text, file names, compression)",
-      "Internal linking and URL structure review",
-      "Basic keyword optimization for up to 5 main pages",
-      "Ensure mobile-friendly and fast-loading pages",
-    ],
-  },
-  {
-    title: "Business Email Setup",
-    price: "$100",
-    description: "Setup with Google Workspace, Zoho, or similar",
-  },
-  {
-    title: "Logo Design",
-    price: "$150",
-    description: 
-      "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 per revision. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
-  },
-];
+  const otherServices = [...carePlans, ...additionalServices];
 
-
-
-  // Card component
   const ServiceCard = ({
     pkg,
   }: {
@@ -206,46 +204,45 @@ const additionalServices = [
         </div>
       </section>
 
-      {/* Website Packages */}
-      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Website Packages
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {websitePackages.map((pkg, i) => (
-            <ServiceCard key={i} pkg={pkg} />
-          ))}
+      {/* Toggle Buttons */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 mt-8 text-center">
+        <div className="inline-flex rounded-full bg-gray-200 p-1 shadow-sm">
+          <button
+            onClick={() => setShowOtherServices(false)}
+            className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${
+              !showOtherServices
+                ? "bg-indigo-600 text-white shadow"
+                : "text-gray-700 hover:bg-gray-300"
+            }`}
+          >
+            Website Packages
+          </button>
+          <button
+            onClick={() => setShowOtherServices(true)}
+            className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${
+              showOtherServices
+                ? "bg-indigo-600 text-white shadow"
+                : "text-gray-700 hover:bg-gray-300"
+            }`}
+          >
+            Other Services
+          </button>
         </div>
       </section>
 
-      {/* Care Plans */}
-      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Care & Maintenance Plans
-        </h2>
+      {/* Services Grid */}
+      <section className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {carePlans.map((pkg, i) => (
-            <ServiceCard key={i} pkg={pkg} />
-          ))}
-        </div>
-      </section>
-
-      {/* Additional Services */}
-      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Popular Add-Ons
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {additionalServices.map((pkg, i) => (
-            <ServiceCard key={i} pkg={pkg} />
-          ))}
+          {showOtherServices
+            ? otherServices.map((pkg, i) => <ServiceCard key={i} pkg={pkg} />)
+            : websitePackages.map((pkg, i) => <ServiceCard key={i} pkg={pkg} />)}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Ready to Start Your Project or Care Plan?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
