@@ -1,3 +1,4 @@
+// --- PRICE-ADJUSTED VERSION ---
 import { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -9,7 +10,7 @@ const Services = () => {
     {
       title: "Starter Website",
       tagline: "Perfect for small local businesses or personal brands",
-      price: "$1,000",
+      price: "$700",
       features: [
         "Up to 5 custom pages (e.g., Home, About, Services, Contact, Blog)",
         "Mobile responsive design for all devices",
@@ -24,7 +25,7 @@ const Services = () => {
     {
       title: "Business Website",
       tagline: "Ideal for growing local businesses with extra features",
-      price: "$1,500",
+      price: "$1,200",
       features: [
         "Up to 10 custom pages",
         "Mobile responsive design",
@@ -39,7 +40,7 @@ const Services = () => {
     {
       title: "Pro Website",
       tagline: "Advanced features for scaling service businesses",
-      price: "From $2,000",
+      price: "From $1,800",
       features: [
         "Unlimited custom pages",
         "Mobile responsive design",
@@ -114,7 +115,7 @@ const Services = () => {
     },
     {
       title: "Logo Design",
-      price: "$150",
+      price: "$200", 
       description:
         "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 per revision. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
     },
@@ -122,14 +123,7 @@ const Services = () => {
 
   const otherServices = [...carePlans, ...additionalServices];
 
-  const ServiceCard = ({
-    pkg,
-  }: {
-    pkg:
-      | typeof websitePackages[0]
-      | typeof carePlans[0]
-      | typeof additionalServices[0];
-  }) => {
+  const ServiceCard = ({ pkg }) => {
     const isMaintenance = ["Care", "Plan", "Maintenance"].some((word) =>
       pkg.title.includes(word)
     );
@@ -204,7 +198,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Toggle Buttons */}
+      {/* Toggle */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 mt-8 text-center">
         <div className="inline-flex rounded-full bg-gray-200 p-1 shadow-sm">
           <button
