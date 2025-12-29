@@ -22,14 +22,17 @@ A wellness and therapy website providing virtual therapy services across Canada,
 
 ## Technologies Used
 
-- **React (Vite.js)**
-- **TypeScript**
-- **Tailwind CSS** (for styling)
-- **Framer Motion** (for animations)
-- **React Router** (for navigation)
+- **React 18 (with Vite.js)** – For building the UI and component structure.
+- **TypeScript** – Type safety for React components and easier maintainability.
+- **React Router DOM 7** – Client-side routing for multi-page navigation.
+- **Tailwind CSS 3.x** – Utility-first CSS framework for responsive, modern styling.
+- **PostCSS + Autoprefixer** – Processing CSS and adding browser prefixes.
+- **Framer Motion 12.x** – Page transitions, hover effects, and smooth animations.
+- **Lucide React** – Modern SVG icon library integrated into React components.
+- **React Hook Form** – Lightweight and performant form handling with validation.
+- **EmailJS** – Sending emails directly from the frontend without a backend (used for contact forms).
 
 ## Contact
-
 If you're interested in working together, feel free to reach out:
 
 - **Instagram:** [@nav.dhamrait](https://www.instagram.com/nav.dhamrait)
