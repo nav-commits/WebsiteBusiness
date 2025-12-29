@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Portfolio = () => {
   const projects = [
@@ -96,73 +97,99 @@ const Portfolio = () => {
     },
   ];
 
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+      <motion.section
+        className="bg-gray-50 py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+        >
+          <motion.h1
+            className="text-4xl font-bold text-gray-900 mb-8"
+            variants={fadeInUp}
+          >
             My Work
-          </h1>
-          <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto"
+            variants={fadeInUp}
+          >
             Check out a few of the websites I've crafted for businesses. Each
             project is designed to not only look great but to drive real results
             and meet business goals.
-          </p>
-        </div>
-      </section>
+          </motion.p>
+        </motion.div>
+      </motion.section>
 
       {/* Projects Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className={`flex flex-col ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } gap-12 items-center`}
-              >
-                <div className="w-full lg:w-1/2">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="rounded-lg shadow-lg w-full"
-                  />
-                </div>
-                <div className="w-full lg:w-1/2">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    {project.title}
-                  </h2>
-                  <p className="text-lg text-gray-600 mb-6">
-                    {project.description}
-                  </p>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                    Key Features:
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-600 mb-6 space-y-2">
-                    {project.features.map((feature, i) => (
-                      <li key={i}>{feature}</li>
-                    ))}
-                  </ul>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition duration-150 ml-5"
-                  >
-                    Visit Website
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              } gap-12 items-center`}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <div className="w-full lg:w-1/2">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="rounded-lg shadow-lg w-full"
+                />
               </div>
-            ))}
-          </div>
+              <div className="w-full lg:w-1/2">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  {project.title}
+                </h2>
+                <p className="text-lg text-gray-600 mb-6">{project.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  Key Features:
+                </h3>
+                <ul className="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                  {project.features.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition duration-150"
+                >
+                  Visit Website
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <motion.section
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Ready to Start Your Project?
@@ -179,7 +206,7 @@ const Portfolio = () => {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
