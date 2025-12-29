@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const [showOtherServices, setShowOtherServices] = useState(false);
@@ -122,18 +123,28 @@ const Services = () => {
 
   const otherServices = [...carePlans, ...additionalServices];
 
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   const ServiceCard = ({ pkg }) => {
     const isMaintenance = ["Care", "Plan", "Maintenance"].some((word) =>
       pkg.title.includes(word)
     );
 
     return (
-      <div
+      <motion.div
         className={`relative rounded-lg overflow-hidden flex flex-col h-full transition-transform transform hover:scale-105 ${
           isMaintenance
             ? "border-4 border-[#5e17eb] bg-white"
             : "bg-white border border-gray-200 shadow-lg"
         }`}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
       >
         {"tagline" in pkg && pkg.tagline && (
           <div
@@ -177,28 +188,47 @@ const Services = () => {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>
-      </div>
+      </motion.div>
     );
   };
 
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 max-w-4xl mx-auto">
+      <motion.section
+        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+        >
+          <motion.h1
+            className="text-4xl md:text-5xl font-extrabold mb-6 max-w-4xl mx-auto"
+            variants={fadeInUp}
+          >
             Affordable, Modern Websites + Care Plans
-          </h1>
-          <p className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+          </motion.h1>
+          <motion.p
+            className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed"
+            variants={fadeInUp}
+          >
             I design fast, SEO-optimized websites built to convert — and provide
             ongoing maintenance, security, and marketing plans to keep your
             business growing.
-          </p>
-        </div>
-      </section>
+          </motion.p>
+        </motion.div>
+      </motion.section>
 
       {/* Toggle */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 mt-8 text-center">
+      <motion.section
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 mt-8 text-center"
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={{ once: true }}
+      >
         <div className="inline-flex rounded-full bg-gray-200 p-1 shadow-sm">
           <button
             onClick={() => setShowOtherServices(false)}
@@ -221,19 +251,29 @@ const Services = () => {
             Other Services
           </button>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Grid */}
-      <section className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section
+        className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={{ once: true }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {showOtherServices
             ? otherServices.map((pkg, i) => <ServiceCard key={i} pkg={pkg} />)
             : websitePackages.map((pkg, i) => <ServiceCard key={i} pkg={pkg} />)}
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial={fadeInUp.hidden}
+        whileInView={fadeInUp.visible}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Ready to Start Your Project or Care Plan?
@@ -250,7 +290,7 @@ const Services = () => {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

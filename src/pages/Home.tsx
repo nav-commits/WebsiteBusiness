@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // Featured Projects
 const projects = [
@@ -61,46 +62,84 @@ const projects = [
   },
 ];
 
+// Animation Variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
 const Home = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-32">
+      <motion.section
+        className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-32"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
-          <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+          <motion.div
+            className="text-center max-w-5xl mx-auto"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: { transition: { staggerChildren: 0.2 } },
+            }}
+          >
+            <motion.h1
+              className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"
+              variants={fadeInUp}
+            >
               Websites That Help Local Service Businesses Get More Leads
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-indigo-200 max-w-none">
+            </motion.h1>
+            <motion.p
+              className="text-xl md:text-2xl mb-8 text-indigo-200 max-w-none"
+              variants={fadeInUp}
+            >
               Custom-designed, SEO-optimized, and mobile-friendly websites —
               crafted for Toronto’s small business professionals.
-            </p>
+            </motion.p>
 
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-150"
-            >
-              Let’s Build Your Website
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
+            <motion.div variants={fadeInUp}>
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-150"
+              >
+                Let’s Build Your Website
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Introduction Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 gap-20 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left: Image */}
-          <div className="flex justify-center">
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <img
               src="/SMS_0310 Navdeep Dhamrait.jpg"
               alt="Navdeep Dhamrait"
               className="rounded-2xl shadow-xl w-120 h-auto object-cover"
             />
-          </div>
+          </motion.div>
 
           {/* Right: Text */}
-          <div className="text-left max-w-xl">
+          <motion.div
+            className="text-left max-w-xl"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Hi, I’m Nav Dhamrait — Web Developer & Designer for Local Service
               Businesses & Small Companies
@@ -112,14 +151,19 @@ const Home = () => {
               for your goals.
             </p>
 
-            <div className="bg-gray-100 p-8 rounded-lg shadow-md">
+            <motion.div
+              className="bg-gray-100 p-8 rounded-lg shadow-md"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 Why Work With Me?
               </h3>
               <ul className="text-lg text-gray-700 space-y-4">
                 <li className="flex items-start">
-                  <span className="mr-3 text-indigo-600">✔️</span> Custom websites
-                  (WordPress, Wix, or custom) tailored to your industry and goals
+                  <span className="mr-3 text-indigo-600">✔️</span> Custom
+                  websites (WordPress, Wix, or custom) tailored to your
+                  industry and goals
                 </li>
                 <li className="flex items-start">
                   <span className="mr-3 text-indigo-600">✔️</span> SEO-focused
@@ -146,8 +190,8 @@ const Home = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -159,9 +203,14 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
-              <div
+              <motion.div
                 key={idx}
                 className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col"
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
                 <img
                   src={project.img}
@@ -169,9 +218,7 @@ const Home = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {project.title}
-                  </h3>
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-gray-600">{project.description}</p>
                 </div>
                 <div className="p-6">
@@ -183,7 +230,7 @@ const Home = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

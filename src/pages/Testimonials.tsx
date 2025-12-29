@@ -1,5 +1,6 @@
 import { ArrowRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Testimonials = () => {
   const testimonials = [
@@ -53,33 +54,50 @@ const Testimonials = () => {
     },
   ];
 
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+      <motion.section
+        className="bg-gray-50 py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+      >
+        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h1 className="text-4xl font-bold text-gray-900 mb-8" variants={fadeInUp}>
             What My Clients Are Saying
-          </h1>
-          <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto" variants={fadeInUp}>
             Don't just take my word for it. Here's what some of my clients have to say about their experience working with me.
-          </p>
-        </div>
-      </section>
+          </motion.p>
+        </motion.div>
+      </motion.section>
 
       {/* Testimonials Grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+              <motion.div
+                key={index}
+                className="bg-white rounded-lg shadow-lg p-8 border border-gray-100"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+              >
                 {/* Logo */}
                 {testimonial.logo && (
                   <div
                     className={`mb-4 ${
-                      testimonial.name === 'Vik Ghankas'
-                        ? 'bg-blue-900 p-2 rounded-md inline-block'
-                        : ''
+                      testimonial.name === 'Vik Ghankas' ? 'bg-blue-900 p-2 rounded-md inline-block' : ''
                     }`}
                   >
                     <img
@@ -105,14 +123,20 @@ const Testimonials = () => {
 
                 {/* Testimonial */}
                 <p className="text-gray-600 italic">"{testimonial.content}"</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-white">
+      <motion.section
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Ready to Start Your Project?</h2>
           <p className="text-xl text-gray-600 mb-8">
@@ -126,7 +150,7 @@ const Testimonials = () => {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
