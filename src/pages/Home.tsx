@@ -107,7 +107,7 @@ const Home = () => {
             {" "}
             <Link
               to="/contact"
-              className="inline-flex items-center px-8 py-4 font-semibold rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition"
+              className="inline-flex items-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
             >
               {" "}
               Let’s Build Your Website <ArrowRight className="ml-2 h-5 w-5" />{" "}
@@ -241,14 +241,14 @@ const Home = () => {
                     className="h-52 w-full object-cover"
                   />{" "}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />{" "}
-                  <span className="absolute top-4 left-4 bg-white/90 text-indigo-600 text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="absolute top-4 left-4 bg-white/90 text-[#5e17eb] text-xs font-semibold px-3 py-1 rounded-full">
                     {" "}
                     Client Project{" "}
                   </span>{" "}
                 </div>{" "}
                 <div className="p-6 flex flex-col flex-grow">
                   {" "}
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-600 transition">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#5e17eb] transition">
                     {" "}
                     {project.title}{" "}
                   </h3>{" "}
@@ -258,7 +258,7 @@ const Home = () => {
                   </p>{" "}
                   <Link
                     to={project.link}
-                    className="mt-6 inline-flex items-center font-semibold text-indigo-600 hover:text-indigo-700"
+                    className="mt-6 inline-flex items-center font-semibold text-[#5e17eb] hover:text-indigo-700"
                   >
                     {" "}
                     View Case Study{" "}
@@ -288,7 +288,7 @@ const Home = () => {
             {" "}
             <Link
               to="/contact"
-              className="px-8 py-4 rounded-lg font-semibold text-indigo-600 bg-white hover:bg-indigo-50 transition"
+              className="px-8 py-4 rounded-lg font-semibold text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
             >
               {" "}
               Get a Free Quote{" "}

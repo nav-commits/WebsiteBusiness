@@ -49,8 +49,8 @@ const Navbar = () => {
                 to={item.href}
                 className={`${
                   isActive(item.href)
-                    ? "text-indigo-600"
-                    : "text-gray-700 hover:text-indigo-600"
+                    ? "text-[#5e17eb]"
+                    : "text-gray-700 hover:text-[#5e17eb]"
                 } px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 {item.name}
@@ -62,7 +62,7 @@ const Navbar = () => {
               href="https://www.instagram.com/navdhamraitweb/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-indigo-600 ml-4"
+              className="text-gray-700 hover:text-[#5e17eb] ml-4"
             >
               <Instagram className="h-6 w-6" />
             </a>
@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-indigo-600 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#5e17eb] focus:outline-none"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -94,8 +94,8 @@ const Navbar = () => {
                 to={item.href}
                 className={`${
                   isActive(item.href)
-                    ? "bg-indigo-50 text-indigo-600"
-                    : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                    ? "bg-indigo-50 text-[#5e17eb]"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-[#5e17eb]"
                 } block px-4 py-2 text-base font-medium`}
                 onClick={() => setIsOpen(false)}
               >
@@ -108,7 +108,7 @@ const Navbar = () => {
               href="https://www.instagram.com/navdhamraitweb/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex pl-5 pt-4 text-gray-700 hover:text-indigo-600"
+              className="flex pl-5 pt-4 text-gray-700 hover:text-[#5e17eb]"
             >
               <Instagram className="h-6 w-6" />
             </a>

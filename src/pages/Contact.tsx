@@ -80,9 +80,9 @@ const Contact = () => {
 
               {/* Contact Info */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 my-4 text-gray-700">
-                <div className="flex items-center gap-2"><Phone className="h-5 w-5 text-indigo-600" /> 647-975-3467</div>
-                <div className="flex items-center gap-2"><Mail className="h-5 w-5 text-indigo-600" /> info@navwebdesign.com</div>
-                <div className="flex items-center gap-2"><MapPin className="h-5 w-5 text-indigo-600" /> Toronto, Ontario, Canada</div>
+                <div className="flex items-center gap-2"><Phone className="h-5 w-5 text-[#5e17eb]" /> 647-975-3467</div>
+                <div className="flex items-center gap-2"><Mail className="h-5 w-5 text-[#5e17eb]" /> info@navwebdesign.com</div>
+                <div className="flex items-center gap-2"><MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto, Ontario, Canada</div>
               </div>
 
               {/* Buttons */}
@@ -126,7 +126,7 @@ const Contact = () => {
               <motion.div key={index} className="border-b border-gray-200 pb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
                 <div className="flex justify-between items-center cursor-pointer" onClick={() => setOpenFAQ(openFAQ === index ? null : index)}>
                   <h3 className="text-xl font-semibold text-gray-800">{faq.question}</h3>
-                  {openFAQ === index ? <ChevronUp className="h-5 w-5 text-indigo-600" /> : <ChevronDown className="h-5 w-5 text-indigo-600" />}
+                  {openFAQ === index ? <ChevronUp className="h-5 w-5 text-[#5e17eb]" /> : <ChevronDown className="h-5 w-5 text-[#5e17eb]" />}
                 </div>
                 {openFAQ === index && <p className="text-gray-600 mt-2">{faq.answer}</p>}
               </motion.div>

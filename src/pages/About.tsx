@@ -97,7 +97,7 @@ const About = () => {
             </motion.p>
 
             <motion.p className="text-base text-gray-700 leading-relaxed mb-6" variants={fadeInUp}>
-              My websites don’t just look good — they’re built to <span className="font-semibold text-indigo-600">attract visitors and convert them into real leads</span>.
+              My websites don’t just look good — they’re built to <span className="font-semibold text-[#5e17eb]">attract visitors and convert them into real leads</span>.
             </motion.p>
 
             <div className="flex items-center gap-4 my-6">
@@ -143,7 +143,7 @@ const About = () => {
                   variants={fadeInUp}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-indigo-600">
+                  <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-[#5e17eb]">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
@@ -169,7 +169,7 @@ const About = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
             >
               Get a Free Quote
               <ArrowRight className="ml-2 h-5 w-5" />
