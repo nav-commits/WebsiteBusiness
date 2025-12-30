@@ -62,18 +62,15 @@ const Testimonials = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
+  // Carousel settings: 1 card per slide for all screen sizes
   const settings = {
     dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-    ],
   };
 
   return (
@@ -88,7 +85,7 @@ const Testimonials = () => {
       >
         <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p className="text-indigo-600 font-semibold mb-4" variants={fadeInUp}>
-            Over 50 businesses helped in Toronto & GTA
+            Helping local businesses grow online in Toronto & GTA
           </motion.p>
           <motion.h1 className="text-4xl font-bold text-gray-900 mb-6" variants={fadeInUp}>
             What My Clients Are Saying
@@ -101,7 +98,7 @@ const Testimonials = () => {
 
       {/* Testimonials Carousel */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="p-4">
