@@ -12,14 +12,14 @@ const Services = () => {
       tagline: "Perfect for small local businesses or personal brands",
       price: "From $700",
       features: [
-        "Up to 5 custom pages (e.g., Home, About, Services, Contact, Blog)",
-        "Mobile responsive design for all devices",
-        "2 rounds of revisions for the entire site (content or layout changes)",
+        "Up to 5 custom pages (Home, About, Services, Contact, Blog)",
+        "Mobile-first, fully responsive design",
+        "2 rounds of revisions for content or layout changes",
         "Extra page changes after 2 revisions: $50 per page",
         "Contact form integration",
         "SEO-ready foundation (metadata, sitemap, Google Search Console setup)",
-        "Delivery within 1 week after content is provided",
-        "Hosting and domain are separate; I guide setup but client pays hosting",
+        "Delivered within 1 week after content is provided",
+        "Hosting and domain setup guidance (client pays separately)",
       ],
     },
     {
@@ -28,29 +28,29 @@ const Services = () => {
       price: "From $1,200",
       features: [
         "Up to 10 custom pages",
-        "Mobile responsive design",
-        "2 rounds of revisions for the entire site (content or layout changes)",
+        "Mobile-first, fully responsive design",
+        "2 rounds of revisions for content or layout changes",
         "Extra page changes after 2 revisions: $50 per page",
-        "Booking system OR eCommerce integration (your choice)",
+        "Booking system OR eCommerce integration",
         "Basic SEO and speed optimization",
-        "Delivery within 2–3 weeks after content is provided",
-        "Hosting and domain are separate; I guide setup but client pays hosting",
+        "Delivered within 2–3 weeks after content is provided",
+        "Hosting and domain setup guidance (client pays separately)",
       ],
     },
     {
       title: "Pro Website",
-      tagline: "Advanced features for scaling service businesses",
+      tagline: "Advanced solutions for scaling businesses",
       price: "From $1,800",
       features: [
-        "Unlimited custom pages",
-        "Mobile responsive design",
-        "2 rounds of revisions for the entire site (content or layout changes)",
+        "Custom number of pages to fit your business needs",
+        "Mobile-first, fully responsive design",
+        "2 rounds of revisions for content or layout changes",
         "Extra page changes after 2 revisions: $50 per page",
         "Booking + eCommerce + Courses integration",
-        "Advanced SEO, speed & security enhancements",
+        "Advanced SEO, speed, and security enhancements",
         "Includes all Business package features plus custom solutions",
-        "Delivery within 3–5 weeks after content is provided",
-        "Hosting and domain are separate; I guide setup but client pays hosting",
+        "Delivered within 3–5 weeks after content is provided",
+        "Hosting and domain setup guidance (client pays separately)",
       ],
     },
   ];
@@ -58,10 +58,10 @@ const Services = () => {
   const carePlans = [
     {
       title: "Essential Maintenance",
-      tagline: "Yearly updates & security",
+      tagline: "Annual updates & security",
       price: "$150 / year",
       features: [
-        "Annual platform, plugin, and integration updates",
+        "Platform, plugin, and integration updates once per year",
         "Weekly backups",
         "Basic security monitoring",
         "Up to 2 small content updates per year (text, images, minor layout tweaks)",
@@ -73,20 +73,20 @@ const Services = () => {
       price: "$400 / year",
       features: [
         "All Essential Maintenance features",
-        "Up to 5 small content updates per year (text, images, minor layout tweaks)",
+        "Up to 5 small content updates per year",
         "Advanced security monitoring",
         "Quarterly website performance checks",
       ],
     },
     {
       title: "Full Growth + Marketing",
-      tagline: "Care + marketing support",
+      tagline: "Comprehensive care + marketing support",
       price: "$1,000 / year",
       features: [
         "All Business Growth features",
         "Up to 12 content updates per year (text, images, minor layout tweaks, promotional changes)",
-        "Monthly blog posts or promo updates",
-        "Local SEO & Google My Business maintenance",
+        "Monthly blog posts or promotional updates",
+        "Local SEO & Google Business maintenance",
         "Conversion optimization",
         "Monthly analytics reports",
       ],
@@ -95,8 +95,8 @@ const Services = () => {
 
   const additionalServices = [
     {
-      title: "SEO Package",
-      price: "$150",
+      title: "SEO Setup",
+      price: "$300",
       description: "Complete on-page SEO to help your site rank well on Google",
       features: [
         "Optimize page titles, meta descriptions, and headings",
@@ -111,19 +111,18 @@ const Services = () => {
     {
       title: "Business Email Setup",
       price: "$100",
-      description: "Setup with Google Workspace, Zoho, or similar",
+      description: "Professional email setup with Google Workspace, Zoho, or similar",
     },
     {
       title: "Logo Design",
       price: "$200",
       description:
-        "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 per revision. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
+        "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 each. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
     },
   ];
 
   const otherServices = [...carePlans, ...additionalServices];
 
-  // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -206,9 +205,9 @@ const Services = () => {
             className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            I design fast, SEO-optimized websites built to convert — and provide
-            ongoing maintenance, security, and marketing plans to keep your
-            business growing.
+            I build fast, SEO-optimized websites designed to convert — and offer
+            maintenance, security, and marketing support to keep your business
+            growing.
           </motion.p>
         </motion.div>
       </motion.section>
@@ -258,7 +257,7 @@ const Services = () => {
         </div>
       </motion.section>
 
-      {/* ================= FINAL CTA (MATCHES HOME/ABOUT) ================= */}
+      {/* Final CTA */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
