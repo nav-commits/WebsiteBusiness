@@ -84,7 +84,7 @@ const Testimonials = () => {
         variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
       >
         <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.p className="text-indigo-600 font-semibold mb-4" variants={fadeInUp}>
+          <motion.p className="text-[#5e17eb] font-semibold mb-4" variants={fadeInUp}>
             Helping local businesses grow online in Toronto & GTA
           </motion.p>
           <motion.h1 className="text-4xl font-bold text-gray-900 mb-6" variants={fadeInUp}>
@@ -156,7 +156,7 @@ const Testimonials = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
             >
               Get a Free Quote
               <ArrowRight className="ml-2 h-5 w-5" />

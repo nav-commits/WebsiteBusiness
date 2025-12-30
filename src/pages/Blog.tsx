@@ -19,7 +19,7 @@ Tips:
 - Highlight your local presence for SEO
 - Keep the design clean and professional
     `,
-    icon: <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />,
+    icon: <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />,
     author: "Nav Dhamrait",
     date: "Dec 30, 2025",
     category: "Web Design",
@@ -38,7 +38,7 @@ Consider:
 - Long-term updates & maintenance
 - SEO & performance requirements
     `,
-    icon: <Image className="h-6 w-6 text-indigo-600 mr-2" />,
+    icon: <Image className="h-6 w-6 text-[#5e17eb] mr-2" />,
     author: "Nav Dhamrait",
     date: "Dec 28, 2025",
     category: "Platforms",
@@ -58,7 +58,7 @@ Extra tips:
 - Include testimonials or portfolio
 - Highlight local presence for SEO
     `,
-    icon: <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />,
+    icon: <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />,
     author: "Nav Dhamrait",
     date: "Dec 25, 2025",
     category: "Web Design",
@@ -79,7 +79,7 @@ Tips:
 - Complex features (eCommerce, booking) add time
 - Clear communication keeps timeline on track
     `,
-    icon: <Image className="h-6 w-6 text-indigo-600 mr-2" />,
+    icon: <Image className="h-6 w-6 text-[#5e17eb] mr-2" />,
     author: "Nav Dhamrait",
     date: "Dec 20, 2025",
     category: "Development",
@@ -100,7 +100,7 @@ Outcome:
 - More traffic & leads
 - Establish authority in your local market
     `,
-    icon: <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />,
+    icon: <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />,
     author: "Nav Dhamrait",
     date: "Dec 18, 2025",
     category: "SEO",
@@ -198,7 +198,7 @@ const Blog = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
             >
               Get a Free Quote
             </a>

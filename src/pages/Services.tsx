@@ -272,7 +272,7 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
             >
               Get a Free Quote
               <ArrowRight className="ml-2 h-5 w-5" />
