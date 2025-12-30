@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Image, CheckCircle } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 const blogPosts = [
   {
@@ -19,6 +20,9 @@ Tips:
 - Keep the design clean and professional
     `,
     icon: <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />,
+    author: "Nav Dhamrait",
+    date: "Dec 30, 2025",
+    category: "Web Design",
   },
   {
     title: "WordPress vs Wix vs Custom Code: Which Is Best for Your Business?",
@@ -35,6 +39,9 @@ Consider:
 - SEO & performance requirements
     `,
     icon: <Image className="h-6 w-6 text-indigo-600 mr-2" />,
+    author: "Nav Dhamrait",
+    date: "Dec 28, 2025",
+    category: "Platforms",
   },
   {
     title: "5 Things Every Local Service Website Must Have",
@@ -52,6 +59,9 @@ Extra tips:
 - Highlight local presence for SEO
     `,
     icon: <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />,
+    author: "Nav Dhamrait",
+    date: "Dec 25, 2025",
+    category: "Web Design",
   },
   {
     title: "How Long Does It Take to Build a Website in 2026?",
@@ -70,6 +80,9 @@ Tips:
 - Clear communication keeps timeline on track
     `,
     icon: <Image className="h-6 w-6 text-indigo-600 mr-2" />,
+    author: "Nav Dhamrait",
+    date: "Dec 20, 2025",
+    category: "Development",
   },
   {
     title: "SEO Basics for Small Business Owners",
@@ -88,6 +101,9 @@ Outcome:
 - Establish authority in your local market
     `,
     icon: <CheckCircle className="h-6 w-6 text-indigo-600 mr-2" />,
+    author: "Nav Dhamrait",
+    date: "Dec 18, 2025",
+    category: "SEO",
   },
 ];
 
@@ -140,14 +156,29 @@ const Blog = () => {
               variants={fadeInUp}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="flex items-center mb-4">
+              <div className="flex items-center mb-2">
                 {post.icon}
                 <h3 className="text-2xl font-semibold text-gray-900">
                   {post.title}
                 </h3>
               </div>
-              <div className="text-gray-600 whitespace-pre-line leading-relaxed">
-                {post.content}
+
+              {/* Author, Date, Category */}
+              <div className="flex items-center text-gray-500 text-sm mb-4 space-x-2">
+                <span>By {post.author}</span>
+                <span>•</span>
+                <span>{post.date}</span>
+                {post.category && (
+                  <>
+                    <span>•</span>
+                    <span>{post.category}</span>
+                  </>
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="text-gray-600 leading-relaxed">
+                <ReactMarkdown>{post.content}</ReactMarkdown>
               </div>
             </motion.div>
           ))}
