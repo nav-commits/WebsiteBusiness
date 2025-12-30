@@ -1,13 +1,18 @@
 # Nav Dhamrait - Web Design Business
 
-![Screenshot 2025-06-30 at 3 26 32 PM](https://github.com/user-attachments/assets/bb1696bd-4c68-44f1-884e-8717d04943a7)
-![Screenshot 2025-06-30 at 3 26 52 PM](https://github.com/user-attachments/assets/7a1ac91f-7fc2-4a88-a59f-054b0036d3bf)
+Welcome to my portfolio and business website! I specialize in creating modern, high-performing websites for small businesses. This website showcases my work, skills, and the technologies I use to deliver quality results.
 
-Welcome to my portfolio and business website! I specialize in creating modern, high-performing WordPress websites for small businesses. This website was built using **React (Vite.js) and TypeScript**.
+---
 
 ## About Me
 
-Hi, I'm **Nav Dhamrait**, a passionate web designer dedicated to helping small businesses establish a strong online presence. My focus is on delivering websites that are visually appealing, mobile-friendly, and optimized for performance.
+Hi, I'm **Nav Dhamrait**, a passionate web designer dedicated to helping small businesses establish a strong online presence. I focus on delivering websites that are:
+
+- Visually appealing  
+- Mobile-friendly  
+- Optimized for performance  
+
+---
 
 ## Featured Projects
 
@@ -20,22 +25,31 @@ An accounting services website offering bookkeeping and financial statement prep
 ### The Healing Hive
 A wellness and therapy website providing virtual therapy services across Canada, focusing on anxiety, self-worth, life transitions, and trauma support.
 
+---
+
 ## Technologies Used
 
-- **React 18 (with Vite.js)** – For building the UI and component structure.
-- **TypeScript** – Type safety for React components and easier maintainability.
-- **React Router DOM 7** – Client-side routing for multi-page navigation.
-- **Tailwind CSS 3.x** – Utility-first CSS framework for responsive, modern styling.
-- **PostCSS + Autoprefixer** – Processing CSS and adding browser prefixes.
-- **Framer Motion 12.x** – Page transitions, hover effects, and smooth animations.
-- **Lucide React** – Modern SVG icon library integrated into React components.
-- **React Hook Form** – Lightweight and performant form handling with validation.
-- **EmailJS** – Sending emails directly from the frontend without a backend (used for contact forms).
+### Frontend
+- **React 18 (Vite.js)** – For building UI and component structure  
+- **TypeScript** – Type safety and maintainability  
+- **React Router DOM 7** – Client-side routing  
+- **Tailwind CSS 3.x** – Utility-first CSS framework for responsive design  
+- **PostCSS + Autoprefixer** – CSS processing and browser prefixing  
+- **Framer Motion 12.x** – Page transitions and animations  
+- **Lucide React** – Modern SVG icons  
+- **React Hook Form** – Form handling with validation  
+- **EmailJS** – Sending emails directly from frontend (contact forms)  
+
+### Deployment
+- **Netlify** – Continuous deployment and hosting  
+
+---
 
 ## Contact
-If you're interested in working together, feel free to reach out:
 
-- **Instagram:** [@nav.dhamrait](https://www.instagram.com/nav.dhamrait)
-- **Website:** https://navwebdesign.com
+If you're interested in working together, feel free to reach out:  
+
+- **Instagram:** [@navdhamraitweb](https://www.instagram.com/navdhamraitweb/)  
+- **Website:** [https://navwebdesign.com](https://navwebdesign.com)  
 
 Let's build something great together! 🚀
