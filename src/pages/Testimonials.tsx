@@ -1,6 +1,9 @@
 import { ArrowRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 import { motion } from 'framer-motion';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
   const testimonials = [
@@ -54,10 +57,23 @@ const Testimonials = () => {
     },
   ];
 
-  // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
+    ],
   };
 
   return (
@@ -71,7 +87,10 @@ const Testimonials = () => {
         variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
       >
         <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 className="text-4xl font-bold text-gray-900 mb-8" variants={fadeInUp}>
+          <motion.p className="text-indigo-600 font-semibold mb-4" variants={fadeInUp}>
+            Over 50 businesses helped in Toronto & GTA
+          </motion.p>
+          <motion.h1 className="text-4xl font-bold text-gray-900 mb-6" variants={fadeInUp}>
             What My Clients Are Saying
           </motion.h1>
           <motion.p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto" variants={fadeInUp}>
@@ -80,77 +99,83 @@ const Testimonials = () => {
         </motion.div>
       </motion.section>
 
-      {/* Testimonials Grid */}
+      {/* Testimonials Carousel */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="bg-white rounded-lg shadow-lg p-8 border border-gray-100"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-              >
-                {/* Logo */}
-                {testimonial.logo && (
-                  <div
-                    className={`mb-4 ${
-                      testimonial.name === 'Vik Ghankas' ? 'bg-blue-900 p-2 rounded-md inline-block' : ''
-                    }`}
-                  >
-                    <img
-                      src={testimonial.logo}
-                      alt={`${testimonial.name} logo`}
-                      className="h-14 w-14 object-contain"
-                    />
+              <div key={index} className="p-4">
+                <motion.div
+                  className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300 flex flex-col h-full min-h-[360px]"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                >
+                  {/* Logo */}
+                  {testimonial.logo && (
+                    <div className="mb-4 flex justify-center">
+                      <img
+                        src={testimonial.logo}
+                        alt={`${testimonial.name} logo`}
+                        className="h-14 w-14 object-contain"
+                      />
+                    </div>
+                  )}
+
+                  {/* Name + Role */}
+                  <div className="mb-4 text-center">
+                    <h3 className="text-lg font-semibold text-gray-900">{testimonial.name}</h3>
+                    <p className="text-gray-600">{testimonial.role}</p>
                   </div>
-                )}
 
-                {/* Name + Role */}
-                <div className="mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">{testimonial.name}</h3>
-                  <p className="text-gray-600">{testimonial.role}</p>
-                </div>
+                  {/* Rating */}
+                  <div className="flex justify-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
 
-                {/* Rating */}
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-
-                {/* Testimonial */}
-                <p className="text-gray-600 italic">"{testimonial.content}"</p>
-              </motion.div>
+                  {/* Testimonial */}
+                  <p className="text-gray-600 italic text-center flex-grow mt-2">"{testimonial.content}"</p>
+                </motion.div>
+              </div>
             ))}
-          </div>
+          </Slider>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <motion.section
-        className="py-20 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Ready to Start Your Project?</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Let's discuss your website needs and create a solution that works for your business.
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-extrabold mb-6">
+            Ready to Turn Your Website Into a Lead Machine?
+          </h2>
+
+          <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
+            If my work and process make sense for your business, let’s talk about your project and see if we’re a good fit.
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Contact Me Today
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition"
+            >
+              Get a Free Quote
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+
+            <a
+              href="https://calendly.com/navdeep-dhamrait94"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg border border-white/40 hover:bg-white/10 transition"
+            >
+              Book a Free Call
+            </a>
+          </div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 };

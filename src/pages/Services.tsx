@@ -179,15 +179,6 @@ const Services = () => {
             )}
           </ul>
         </div>
-        <div className="p-8">
-          <Link
-            to="/contact"
-            className="block w-full text-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-[#4b12c9] focus:outline-none focus:ring-2 focus:ring-[#5e17eb] flex items-center justify-center"
-          >
-            {isMaintenance ? "Start My Plan" : "Build My Website"}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
-        </div>
       </motion.div>
     );
   };
@@ -267,30 +258,38 @@ const Services = () => {
         </div>
       </motion.section>
 
-      {/* CTA */}
-      <motion.section
-        className="py-16 bg-white"
-        initial={fadeInUp.hidden}
-        whileInView={fadeInUp.visible}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Ready to Start Your Project or Care Plan?
+      {/* ================= FINAL CTA (MATCHES HOME/ABOUT) ================= */}
+      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-extrabold mb-6">
+            Ready to Turn Your Website Into a Lead Machine?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Let’s discuss your website and growth needs and create a solution
-            that works for your business.
+
+          <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
+            If my approach and services align with what you’re looking for, let’s
+            talk about your project and see if we’re a good fit.
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-[#5e17eb] hover:bg-[#4b12c9] focus:outline-none focus:ring-2 focus:ring-[#5e17eb]"
-          >
-            Contact Me Today
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition"
+            >
+              Get a Free Quote
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+
+            <a
+              href="https://calendly.com/navdeep-dhamrait94"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg border border-white/40 hover:bg-white/10 transition"
+            >
+              Book a Free Call
+            </a>
+          </div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 };
