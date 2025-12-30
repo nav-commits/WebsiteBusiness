@@ -9,7 +9,7 @@ const projects = [
     alt: "CMT Security Services",
     title: "CMT Security Services",
     description:
-      "Committed to protecting your business and community with innovative security solutions. We specialize in Event Security, Residential Security, Commercial Security, Close Security, and Retail Loss Prevention.",
+      "Committed to protecting your business and community with innovative security solutions. Specializing in event, residential, and commercial security.",
     link: "/portfolio",
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     alt: "Ajay Kalha Tax Services",
     title: "Ajay Kalha Tax Services",
     description:
-      "We provide comprehensive accounting services tailored to your business needs. From bookkeeping to preparing accurate financial statements, our team ensures your finances are in order, giving you insight and clarity for informed decisions.",
+      "Comprehensive accounting services including bookkeeping and financial reporting to help businesses make informed decisions.",
     link: "/portfolio",
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     alt: "The Healing Hive",
     title: "The Healing Hive",
     description:
-      "Providing compassionate therapy services for anxiety, self-worth, life transitions, and trauma through virtual sessions across Canada.",
+      "Compassionate virtual therapy services across Canada focused on anxiety, trauma, and life transitions.",
     link: "/portfolio",
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     alt: "PSR Law",
     title: "PSR Law",
     description:
-      "A dedicated real estate law firm offering expert legal guidance across Ontario. PSR Law is committed to transparency, integrity, and client-focused service—supporting first-time buyers and seasoned investors with professional legal care.",
+      "Ontario-based real estate law firm delivering transparent, client-first legal services.",
     link: "/portfolio",
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     alt: "Container Storage Solutions",
     title: "Container Storage Solutions",
     description:
-      "A leading storage terminal in the GTA, offering secure, 24/7 monitored container and trailer storage. With a client-first approach and strategic location in Brampton, they provide flexible, safe, and professional service for the freight and trucking industry.",
+      "Secure 24/7 monitored container and trailer storage in the GTA for freight and trucking companies.",
     link: "/portfolio",
   },
   {
@@ -49,7 +49,7 @@ const projects = [
     alt: "Vik Ghankas Law Group",
     title: "Vik Ghankas Law Group",
     description:
-      "Based in the Tri-Cities and serving the Lower Mainland, our Family Law firm specializes in providing personal, lawyer-to-client communication—because if you hire a lawyer, you should be attended to by a lawyer.",
+      "Family law firm serving the Lower Mainland with direct lawyer-to-client communication.",
     link: "/portfolio",
   },
   {
@@ -57,12 +57,12 @@ const projects = [
     alt: "MARKAT Group Inc.",
     title: "MARKAT Group Inc.",
     description:
-      "Founded in Toronto, MARKAT is a boutique advisory & consulting firm built for small and medium-sized businesses. We help ambitious teams scale smart, manage risk, and lead with confidence in a rapidly changing world.",
+      "Toronto-based advisory firm helping SMBs scale, manage risk, and lead with confidence.",
     link: "/portfolio",
   },
 ];
 
-// Animation Variants
+// Animation
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -71,167 +71,182 @@ const fadeInUp = {
 const Home = () => {
   return (
     <div className="pt-16">
-      {/* Hero Section */}
+      {/* ================= HERO ================= */}
       <motion.section
         className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-32"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
-          <motion.div
-            className="text-center max-w-5xl mx-auto"
+        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 text-center">
+          <motion.h1
+            className="text-4xl md:text-6xl font-extrabold mb-6"
+            variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            variants={{
-              visible: { transition: { staggerChildren: 0.2 } },
-            }}
           >
-            <motion.h1
-              className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"
-              variants={fadeInUp}
-            >
-              Websites That Help Local Service Businesses Get More Leads
-            </motion.h1>
-            <motion.p
-              className="text-xl md:text-2xl mb-8 text-indigo-200 max-w-none"
-              variants={fadeInUp}
-            >
-              Custom-designed, SEO-optimized, and mobile-friendly websites —
-              crafted for Toronto’s small business professionals.
-            </motion.p>
+            Websites That Help Local Businesses Get More Leads
+          </motion.h1>
 
-            <motion.div variants={fadeInUp}>
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-150"
-              >
-                Let’s Build Your Website
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </motion.div>
+          <motion.p
+            className="text-xl md:text-2xl mb-8 text-indigo-200"
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+          >
+            Custom-designed, SEO-optimized websites built for Toronto’s service
+            professionals.
+          </motion.p>
+
+          <motion.div variants={fadeInUp} initial="hidden" animate="visible">
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-8 py-4 font-semibold rounded-lg text-indigo-600 bg-white hover:bg-indigo-50 transition"
+            >
+              Let’s Build Your Website
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Introduction Section */}
+      {/* ================= INTRO ================= */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 gap-20 sm:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left: Image */}
-          <motion.div
-            className="flex justify-center"
-            initial={{ opacity: 0, x: -50 }}
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <motion.img
+            src="/SMS_0310 Navdeep Dhamrait.jpg"
+            alt="Navdeep Dhamrait"
+            className="rounded-2xl shadow-xl"
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <img
-              src="/SMS_0310 Navdeep Dhamrait.jpg"
-              alt="Navdeep Dhamrait"
-              className="rounded-2xl shadow-xl w-120 h-auto object-cover"
-            />
-          </motion.div>
+            transition={{ duration: 0.7 }}
+          />
 
-          {/* Right: Text */}
           <motion.div
-            className="text-left max-w-xl"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Hi, I’m Nav Dhamrait — Web Developer & Designer for Local Service
-              Businesses & Small Companies
+            <h2 className="text-4xl font-bold mb-6">
+              Hi, I’m Nav — Web Developer for Local Service Businesses
             </h2>
+
             <p className="text-lg text-gray-700 mb-6">
-              I create professional, lead-generating websites tailored to help
-              local service businesses in Toronto stand out online. Whether it’s
-              WordPress, Wix, or a custom solution, I choose the best platform
-              for your goals.
+              I build professional, lead-focused websites using WordPress, Wix,
+              or custom code — always choosing the best solution for your goals.
             </p>
 
-            <motion.div
-              className="bg-gray-100 p-8 rounded-lg shadow-md"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+            <div className="bg-gray-100 p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-semibold mb-4">
                 Why Work With Me?
               </h3>
-              <ul className="text-lg text-gray-700 space-y-4">
-                <li className="flex items-start">
-                  <span className="mr-3 text-indigo-600">✔️</span> Custom
-                  websites (WordPress, Wix, or custom) tailored to your
-                  industry and goals
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-indigo-600">✔️</span> SEO-focused
-                  design to help you rank higher and attract clients
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-indigo-600">✔️</span> Mobile-friendly
-                  and fast-loading for the best user experience
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-indigo-600">✔️</span> Transparent
-                  pricing, free site audits, and ongoing support
-                </li>
+
+              <ul className="space-y-4 text-gray-700">
+                <li>✔️ Custom solutions — no cookie-cutter sites</li>
+                <li>✔️ SEO-focused design for higher rankings</li>
+                <li>✔️ Mobile-first & fast loading</li>
+                <li>✔️ Transparent pricing & honest advice</li>
               </ul>
 
-              <div className="mt-6 text-center">
+              <div className="mt-6">
                 <a
                   href="https://calendly.com/navdeep-dhamrait94"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition duration-150"
+                  className="inline-flex items-center px-6 py-3 rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition"
                 >
                   Book a Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Featured Work Section */}
+      {/* ================= FEATURED WORK ================= */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">
             Featured Projects
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white rounded-lg overflow-hidden shadow-lg flex flex-col"
-                whileHover={{ scale: 1.02 }}
+                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all flex flex-col"
+                whileHover={{ y: -6 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
               >
-                <img
-                  src={project.img}
-                  alt={project.alt}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600">{project.description}</p>
+                <div className="relative">
+                  <img
+                    src={project.img}
+                    alt={project.alt}
+                    className="h-52 w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <span className="absolute top-4 left-4 bg-white/90 text-indigo-600 text-xs font-semibold px-3 py-1 rounded-full">
+                    Client Project
+                  </span>
                 </div>
-                <div className="p-6">
+
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-indigo-600 transition">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-gray-600 text-sm flex-grow">
+                    {project.description}
+                  </p>
+
                   <Link
                     to={project.link}
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition duration-150 w-full justify-center"
+                    className="mt-6 inline-flex items-center font-semibold text-indigo-600 hover:text-indigo-700"
                   >
-                    View Project
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    View Case Study
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition" />
                   </Link>
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-extrabold mb-6">
+            Ready to Turn Your Website Into a Lead Machine?
+          </h2>
+
+          <p className="text-lg text-indigo-100 mb-10">
+            Let’s build a website that actually brings in business — not just
+            looks good.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              to="/contact"
+              className="px-8 py-4 rounded-lg font-semibold text-indigo-600 bg-white hover:bg-indigo-50 transition"
+            >
+              Get a Free Quote
+            </Link>
+
+            <a
+              href="https://calendly.com/navdeep-dhamrait94"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-lg font-semibold border border-white/40 hover:bg-white/10 transition"
+            >
+              Book a Free Call
+            </a>
           </div>
         </div>
       </section>
