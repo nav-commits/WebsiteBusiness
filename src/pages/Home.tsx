@@ -1,14 +1,18 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-/* ================= TECH LOGOS ================= */ const techLogos = [
+
+/* ================= TECH LOGOS ================= */
+const techLogos = [
   { src: "/logos/wordpress.svg", alt: "WordPress" },
   { src: "/logos/wix.svg", alt: "Wix" },
   { src: "/logos/react.svg", alt: "React" },
   { src: "/logos/tailwindcss.svg", alt: "Tailwind CSS" },
   { src: "/logos/googleanalytics.svg", alt: "Google" },
 ];
-/* ================= PROJECTS ================= */ const projects = [
+
+/* ================= PROJECTS ================= */
+const projects = [
   {
     img: "/security.png",
     alt: "CMT Security Services",
@@ -65,81 +69,87 @@ import { motion } from "framer-motion";
       "Toronto-based advisory firm helping SMBs scale, manage risk, and lead with confidence.",
     link: "/portfolio",
   },
+  {
+    img: "/gta-lec.png",
+    alt: "GTA LEC",
+    title: "GTA LEC",
+    description:
+      "Professional electrical contracting and consulting services across the GTA. Specializing in residential, commercial, and industrial electrical solutions.",
+     link: "/portfolio",
+  },
+  {
+    img: "/vaanalytics.png",
+    alt: "VA Analytics Consulting",
+    title: "VA Analytics Consulting",
+    description:
+      "Helps businesses leverage data to make smarter decisions through analysis, visualization, and actionable reporting.",
+      link: "/portfolio",
+  },
 ];
-/* ================= ANIMATION ================= */ const fadeInUp = {
+
+/* ================= ANIMATION ================= */
+const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
+
 const Home = () => {
   return (
     <div className="pt-16">
-      {" "}
-      {/* ================= HERO ================= */}{" "}
+      {/* ================= HERO ================= */}
       <motion.section
         className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-32"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {" "}
         <div className="max-w-7xl mx-auto px-8 text-center">
-          {" "}
           <motion.h1
             className="text-4xl md:text-6xl font-extrabold mb-6"
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
           >
-            {" "}
-            Websites That Help Local Businesses Get More Leads{" "}
-          </motion.h1>{" "}
+            Websites That Help Local Businesses Get More Leads
+          </motion.h1>
           <motion.p
             className="text-xl md:text-2xl mb-8 text-indigo-200"
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
           >
-            {" "}
-            Custom-designed, SEO-optimized websites built for Toronto’s service
-            professionals.{" "}
-          </motion.p>{" "}
+            Custom-designed, SEO-optimized websites built for Toronto’s service professionals.
+          </motion.p>
           <motion.div variants={fadeInUp} initial="hidden" animate="visible">
-            {" "}
             <Link
               to="/contact"
               className="inline-flex items-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
             >
-              {" "}
-              Let’s Build Your Website <ArrowRight className="ml-2 h-5 w-5" />{" "}
-            </Link>{" "}
-          </motion.div>{" "}
-        </div>{" "}
-      </motion.section>{" "}
-      {/* ================= TECH LOGOS ================= */}{" "}
+              Let’s Build Your Website <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* ================= TECH LOGOS ================= */}
       <section className="py-16 bg-white overflow-hidden border-b">
-        {" "}
         <div className="max-w-6xl mx-auto px-6 text-center mb-8">
-          {" "}
           <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
-            {" "}
-            Tools I Work With{" "}
-          </p>{" "}
+            Tools I Work With
+          </p>
           <p className="text-lg text-gray-700">
-            {" "}
-            I use the right tools for the job — not one-size-fits-all.{" "}
-          </p>{" "}
-        </div>{" "}
+            I use the right tools for the job — not one-size-fits-all.
+          </p>
+        </div>
         <div className="relative w-full overflow-hidden">
-          {" "}
-          {/* Fade edges */}{" "}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />{" "}
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />{" "}
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
           <motion.div
             className="flex gap-16 items-center w-max"
             animate={{ x: ["0%", "-50%"] }}
             transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
           >
-            {" "}
             {[...techLogos, ...techLogos].map((logo, idx) => (
               <img
                 key={idx}
@@ -147,15 +157,14 @@ const Home = () => {
                 alt={logo.alt}
                 className="h-10 md:h-12 opacity-70 hover:opacity-100 transition"
               />
-            ))}{" "}
-          </motion.div>{" "}
-        </div>{" "}
-      </section>{" "}
-      {/* ================= INTRO ================= */}{" "}
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ================= INTRO ================= */}
       <section className="py-20 bg-white">
-        {" "}
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {" "}
           <motion.img
             src="/SMS_0310 Navdeep Dhamrait.jpg"
             alt="Navdeep Dhamrait"
@@ -164,64 +173,49 @@ const Home = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-          />{" "}
+          />
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            {" "}
             <h2 className="text-4xl font-bold mb-6">
-              {" "}
-              Hi, I’m Nav — Web Developer for Local Service Businesses{" "}
-            </h2>{" "}
+              Hi, I’m Nav — Web Developer for Local Service Businesses
+            </h2>
             <p className="text-lg text-gray-700 mb-6">
-              {" "}
               I build professional, lead-focused websites using WordPress, Wix,
-              or custom code — always choosing the best solution for your goals.{" "}
-            </p>{" "}
+              or custom code — always choosing the best solution for your goals.
+            </p>
             <div className="bg-gray-100 p-8 rounded-xl shadow-md">
-              {" "}
-              <h3 className="text-2xl font-semibold mb-4">
-                {" "}
-                Why Work With Me?{" "}
-              </h3>{" "}
+              <h3 className="text-2xl font-semibold mb-4">Why Work With Me?</h3>
               <ul className="space-y-4 text-gray-700">
-                {" "}
-                <li>✔️ Custom solutions — no cookie-cutter sites</li>{" "}
-                <li>✔️ SEO-focused design for higher rankings</li>{" "}
-                <li>✔️ Mobile-first & fast loading</li>{" "}
-                <li>✔️ Transparent pricing & honest advice</li>{" "}
-              </ul>{" "}
+                <li>✔️ Custom solutions — no cookie-cutter sites</li>
+                <li>✔️ SEO-focused design for higher rankings</li>
+                <li>✔️ Mobile-first & fast loading</li>
+                <li>✔️ Transparent pricing & honest advice</li>
+              </ul>
               <div className="mt-6">
-                {" "}
                 <a
                   href="https://calendly.com/navdeep-dhamrait94"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition"
                 >
-                  {" "}
-                  Book a Free Consultation{" "}
-                  <ArrowRight className="ml-2 h-5 w-5" />{" "}
-                </a>{" "}
-              </div>{" "}
-            </div>{" "}
-          </motion.div>{" "}
-        </div>{" "}
-      </section>{" "}
-      {/* ================= FEATURED WORK ================= */}{" "}
+                  Book a Free Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ================= FEATURED WORK ================= */}
       <section className="py-20 bg-gray-50">
-        {" "}
         <div className="max-w-7xl mx-auto px-6">
-          {" "}
-          <h2 className="text-3xl font-bold text-center mb-12">
-            {" "}
-            Featured Projects{" "}
-          </h2>{" "}
+          <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {" "}
             {projects.map((project, idx) => (
               <motion.div
                 key={idx}
@@ -232,80 +226,65 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
               >
-                {" "}
                 <div className="relative">
-                  {" "}
                   <img
                     src={project.img}
                     alt={project.alt}
                     className="h-52 w-full object-cover"
-                  />{" "}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />{" "}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <span className="absolute top-4 left-4 bg-white/90 text-[#5e17eb] text-xs font-semibold px-3 py-1 rounded-full">
-                    {" "}
-                    Client Project{" "}
-                  </span>{" "}
-                </div>{" "}
+                    Client Project
+                  </span>
+                </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  {" "}
                   <h3 className="text-xl font-bold mb-2 group-hover:text-[#5e17eb] transition">
-                    {" "}
-                    {project.title}{" "}
-                  </h3>{" "}
-                  <p className="text-gray-600 text-sm flex-grow">
-                    {" "}
-                    {project.description}{" "}
-                  </p>{" "}
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm flex-grow">{project.description}</p>
                   <Link
                     to={project.link}
                     className="mt-6 inline-flex items-center font-semibold text-[#5e17eb] hover:text-indigo-700"
                   >
-                    {" "}
-                    View Case Study{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition" />{" "}
-                  </Link>{" "}
-                </div>{" "}
+                    View Case Study
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition" />
+                  </Link>
+                </div>
               </motion.div>
-            ))}{" "}
-          </div>{" "}
-        </div>{" "}
-      </section>{" "}
-      {/* ================= CTA ================= */}{" "}
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-        {" "}
         <div className="max-w-5xl mx-auto px-6 text-center">
-          {" "}
           <h2 className="text-4xl font-extrabold mb-6">
-            {" "}
-            Ready to Turn Your Website Into a Lead Machine?{" "}
-          </h2>{" "}
+            Ready to Turn Your Website Into a Lead Machine?
+          </h2>
           <p className="text-lg text-indigo-100 mb-10">
-            {" "}
-            Let’s build a website that actually brings in business — not just
-            looks good.{" "}
-          </p>{" "}
+            Let’s build a website that actually brings in business — not just looks good.
+          </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            {" "}
             <Link
               to="/contact"
               className="px-8 py-4 rounded-lg font-semibold text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
             >
-              {" "}
-              Get a Free Quote{" "}
-            </Link>{" "}
+              Get a Free Quote
+            </Link>
             <a
               href="https://calendly.com/navdeep-dhamrait94"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-lg font-semibold border border-white/40 hover:bg-white/10 transition"
             >
-              {" "}
-              Book a Free Call{" "}
-            </a>{" "}
-          </div>{" "}
-        </div>{" "}
-      </section>{" "}
+              Book a Free Call
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
+
 export default Home;

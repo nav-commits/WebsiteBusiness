@@ -95,6 +95,32 @@ const Portfolio = () => {
       ],
       link: "https://www.markatgroup.net/",
     },
+    {
+      title: "GTA LEC",
+      image: "gta-lec.png",
+      description:
+        "Providing professional electrical contracting and consulting services across the Greater Toronto Area. GTA LEC specializes in residential, commercial, and industrial electrical solutions with a focus on safety and reliability.",
+      features: [
+        "Residential, Commercial & Industrial Services",
+        "Safety & Compliance Focused",
+        "Efficient Project Delivery",
+        "Client-Centric Solutions",
+      ],
+      link: "https://gta-lec.ca/",
+    },
+    {
+      title: "VA Analytics Consulting",
+      image: "vaanalytics.png",
+      description:
+        "VA Analytics Consulting helps businesses leverage data to make smarter decisions. From data analysis to visualization and reporting, they provide actionable insights that drive growth and efficiency.",
+      features: [
+        "Data-Driven Business Solutions",
+        "Custom Reporting & Dashboards",
+        "Insightful Analysis for Growth",
+        "Actionable Recommendations",
+      ],
+      link: "https://vaanalyticsconsulting.com/",
+    },
   ];
 
   const fadeInUp = {
@@ -181,7 +207,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Bottom CTA (matches About/Services) */}
+      {/* Bottom CTA */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
