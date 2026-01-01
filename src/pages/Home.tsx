@@ -70,7 +70,7 @@ const projects = [
     link: "/portfolio",
   },
   {
-    img: "/gta-lec.png",
+    img: "/gtc.png",
     alt: "GTA LEC",
     title: "GTA LEC",
     description:
@@ -78,7 +78,7 @@ const projects = [
      link: "/portfolio",
   },
   {
-    img: "/vaanalytics.png",
+    img: "/analystics.png",
     alt: "VA Analytics Consulting",
     title: "VA Analytics Consulting",
     description:

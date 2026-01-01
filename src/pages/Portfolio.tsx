@@ -97,7 +97,7 @@ const Portfolio = () => {
     },
     {
       title: "GTA LEC",
-      image: "gta-lec.png",
+      image: "gtc.png",
       description:
         "Providing professional electrical contracting and consulting services across the Greater Toronto Area. GTA LEC specializes in residential, commercial, and industrial electrical solutions with a focus on safety and reliability.",
       features: [
@@ -110,7 +110,7 @@ const Portfolio = () => {
     },
     {
       title: "VA Analytics Consulting",
-      image: "vaanalytics.png",
+      image: "analystics.png",
       description:
         "VA Analytics Consulting helps businesses leverage data to make smarter decisions. From data analysis to visualization and reporting, they provide actionable insights that drive growth and efficiency.",
       features: [
