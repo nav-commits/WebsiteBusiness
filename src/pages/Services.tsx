@@ -125,19 +125,35 @@ const Services = () => {
     {
       title: "Business Email Setup",
       price: "$100",
-      description: "Professional email setup with Google Workspace, Zoho, or similar",
+      features: [
+        "Professional email setup with Google Workspace, Zoho, or similar",
+        "Create custom domain-based email addresses (yourname@yourbusiness.com)",
+        "Configure inboxes on multiple devices",
+        "Set up basic security and spam protection",
+        "Optional email migration from old accounts",
+      ],
     },
     {
       title: "Logo Design",
       price: "$200",
-      description:
-        "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 each. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
+      features: [
+        "2 initial design concepts for your logo",
+        "2 full revisions for the chosen concept (extra revisions $50 each)",
+        "Delivery in vector (AI, SVG), PNG, and JPEG formats",
+        "Optimized for website, social media, and print",
+        "Brand colors and typography included",
+      ],
     },
     {
       title: "Website Redesign / Fix",
       price: "Starting at $600",
-      description:
-        "Upgrade or fix existing websites, improve speed, mobile-friendliness, and overall design.",
+      features: [
+        "Refresh your existing website with modern design",
+        "Improve page speed and Core Web Vitals",
+        "Make your site fully mobile-friendly",
+        "Fix broken links, forms, and layout issues",
+        "Optional SEO and content optimization upgrades",
+      ],
     },
   ];
 
