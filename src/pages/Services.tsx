@@ -6,16 +6,30 @@ import { motion } from "framer-motion";
 const Services = () => {
   const [showOtherServices, setShowOtherServices] = useState(false);
 
+  // Website Packages - Landing Page first
   const websitePackages = [
+    {
+      title: "Landing Page",
+      tagline: "Single-page conversion-focused design",
+      price: "Starting at $400",
+      features: [
+        "Custom long-form landing page designed to convert visitors",
+        "Mobile-first, fully responsive",
+        "Call-to-action sections and forms included",
+        "Optional booking or lead capture integration",
+        "SEO-friendly and fast-loading",
+        "2 rounds of revisions (additional revisions $50)",
+        "Delivered within 3–5 days after content is provided",
+      ],
+    },
     {
       title: "Starter Website",
       tagline: "Perfect for small local businesses or personal brands",
-      price: "From $700",
+      price: "Starting at $700",
       features: [
         "Up to 5 custom pages (Home, About, Services, Contact, Blog)",
         "Mobile-first, fully responsive design",
-        "2 rounds of revisions for content or layout changes",
-        "Extra page changes after 2 revisions: $50 per page",
+        "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
         "Contact form integration",
         "SEO-ready foundation (metadata, sitemap, Google Search Console setup)",
         "Delivered within 1 week after content is provided",
@@ -24,13 +38,12 @@ const Services = () => {
     },
     {
       title: "Business Website",
-      tagline: "Ideal for growing local businesses with extra features",
-      price: "From $1,200",
+      tagline: "Ideal for growing local businesses",
+      price: "Starting at $1,200",
       features: [
         "Up to 10 custom pages",
         "Mobile-first, fully responsive design",
-        "2 rounds of revisions for content or layout changes",
-        "Extra page changes after 2 revisions: $50 per page",
+        "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
         "Booking system OR eCommerce integration",
         "Basic SEO and speed optimization",
         "Delivered within 2–3 weeks after content is provided",
@@ -40,12 +53,11 @@ const Services = () => {
     {
       title: "Pro Website",
       tagline: "Advanced solutions for scaling businesses",
-      price: "From $1,800",
+      price: "Starting at $1,800",
       features: [
         "Custom number of pages to fit your business needs",
         "Mobile-first, fully responsive design",
-        "2 rounds of revisions for content or layout changes",
-        "Extra page changes after 2 revisions: $50 per page",
+        "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
         "Booking + eCommerce + Courses integration",
         "Advanced SEO, speed, and security enhancements",
         "Includes all Business package features plus custom solutions",
@@ -55,6 +67,7 @@ const Services = () => {
     },
   ];
 
+  // Care Plans
   const carePlans = [
     {
       title: "Essential Maintenance",
@@ -93,6 +106,7 @@ const Services = () => {
     },
   ];
 
+  // Additional Services
   const additionalServices = [
     {
       title: "SEO Setup",
@@ -118,6 +132,12 @@ const Services = () => {
       price: "$200",
       description:
         "Includes 2 initial design concepts and 2 full revisions for your chosen logo. Extra revisions or major changes are $50 each. Delivery includes vector (AI, SVG), PNG, and JPEG files.",
+    },
+    {
+      title: "Website Redesign / Fix",
+      price: "Starting at $600",
+      description:
+        "Upgrade or fix existing websites, improve speed, mobile-friendliness, and overall design.",
     },
   ];
 
