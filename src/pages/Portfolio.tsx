@@ -121,6 +121,23 @@ const Portfolio = () => {
       ],
       link: "https://vaanalyticsconsulting.com/",
     },
+    // Two logo variants for VA Analytics Consulting
+    {
+      title: "Van Brand Logo (Black Variant)",
+      image: "/logos/Van-black.png",
+      description:
+        "One of the two logo variants created for VA Analytics Consulting.",
+      features: ["Logo Design", "Brand Identity", "Client: VA Analytics Consulting"],
+      link: "https://vaanalyticsconsulting.com/",
+    },
+    {
+      title: "Van Brand Logo (White Variant)",
+      image: "/logos/van-org.png",
+      description:
+        "Second logo variant created for VA Analytics Consulting as an alternate option for different backgrounds.",
+      features: ["Logo Design", "Brand Identity", "Client: VA Analytics Consulting"],
+      link: "https://vaanalyticsconsulting.com/",
+    },
   ];
 
   const fadeInUp = {
@@ -151,7 +168,7 @@ const Portfolio = () => {
             className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            Check out a few of the websites I've crafted for businesses. Each
+            Check out a few of the websites and logos I've crafted for businesses. Each
             project is designed to not only look great but to drive real results
             and meet business goals.
           </motion.p>

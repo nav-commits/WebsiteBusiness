@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -20,6 +21,7 @@ const projects = [
     description:
       "Committed to protecting your business and community with innovative security solutions. Specializing in event, residential, and commercial security.",
     link: "/portfolio",
+    type: "website",
   },
   {
     img: "/accounting.png",
@@ -28,6 +30,7 @@ const projects = [
     description:
       "Comprehensive accounting services including bookkeeping and financial reporting to help businesses make informed decisions.",
     link: "/portfolio",
+    type: "website",
   },
   {
     img: "/Psychotherapy.png",
@@ -36,6 +39,7 @@ const projects = [
     description:
       "Compassionate virtual therapy services across Canada focused on anxiety, trauma, and life transitions.",
     link: "/portfolio",
+    type: "website",
   },
   {
     img: "/realestate.png",
@@ -44,6 +48,7 @@ const projects = [
     description:
       "Ontario-based real estate law firm delivering transparent, client-first legal services.",
     link: "/portfolio",
+    type: "website",
   },
   {
     img: "/storage.png",
@@ -52,6 +57,7 @@ const projects = [
     description:
       "Secure 24/7 monitored container and trailer storage in the GTA for freight and trucking companies.",
     link: "/portfolio",
+    type: "website",
   },
   {
     img: "/vik.jpg",
@@ -60,6 +66,7 @@ const projects = [
     description:
       "Family law firm serving the Lower Mainland with direct lawyer-to-client communication.",
     link: "/portfolio",
+    type: "website",
   },
   {
     img: "/MarkatImage.png",
@@ -68,6 +75,7 @@ const projects = [
     description:
       "Toronto-based advisory firm helping SMBs scale, manage risk, and lead with confidence.",
     link: "/portfolio",
+    type: "website",
   },
   {
     img: "/gtc.png",
@@ -75,7 +83,8 @@ const projects = [
     title: "GTA LEC",
     description:
       "Professional electrical contracting and consulting services across the GTA. Specializing in residential, commercial, and industrial electrical solutions.",
-     link: "/portfolio",
+    link: "/portfolio",
+    type: "website",
   },
   {
     img: "/analystics.png",
@@ -83,8 +92,26 @@ const projects = [
     title: "VA Analytics Consulting",
     description:
       "Helps businesses leverage data to make smarter decisions through analysis, visualization, and actionable reporting.",
-      link: "/portfolio",
+    link: "/portfolio",
+    type: "website",
   },
+  {
+    img: "/logos/Van-black.png",
+    alt: "Van Logo - Black Variant",
+    title: "Van Brand Logo (Black Variant)",
+    description: "One of the two logo variants created for VA Analytics Consulting.",
+    link: "/portfolio",
+    type: "logo",
+  },
+  {
+    img: "/logos/van-org.png",
+    alt: "Van Logo - White Variant",
+    title: "Van Brand Logo (White Variant)",
+    description: "Second logo variant created for VA Analytics Consulting as an alternate option for different backgrounds.",
+    link: "/portfolio",
+    type: "logo",
+  },
+  
 ];
 
 /* ================= ANIMATION ================= */
@@ -94,6 +121,8 @@ const fadeInUp = {
 };
 
 const Home = () => {
+  const [activeTab, setActiveTab] = useState<"all" | "website" | "logo">("all");
+
   return (
     <div className="pt-16">
       {/* ================= HERO ================= */}
@@ -214,44 +243,65 @@ const Home = () => {
       {/* ================= FEATURED WORK ================= */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, idx) => (
-              <motion.div
-                key={idx}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all flex flex-col"
-                whileHover={{ y: -6 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
+          <h2 className="text-3xl font-bold text-center mb-8">Featured Projects</h2>
+
+          {/* Tabs */}
+          <div className="flex justify-center mb-12 gap-4">
+            {["all", "website", "logo"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab as "all" | "website" | "logo")}
+                className={`px-6 py-2 rounded-full font-semibold transition ${
+                  activeTab === tab
+                    ? "bg-[#5e17eb] text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                }`}
               >
-                <div className="relative">
-                  <img
-                    src={project.img}
-                    alt={project.alt}
-                    className="h-52 w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <span className="absolute top-4 left-4 bg-white/90 text-[#5e17eb] text-xs font-semibold px-3 py-1 rounded-full">
-                    Client Project
-                  </span>
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#5e17eb] transition">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm flex-grow">{project.description}</p>
-                  <Link
-                    to={project.link}
-                    className="mt-6 inline-flex items-center font-semibold text-[#5e17eb] hover:text-indigo-700"
-                  >
-                    View Case Study
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition" />
-                  </Link>
-                </div>
-              </motion.div>
+                {tab === "all" ? "All" : tab === "website" ? "Websites" : "Logos"}
+              </button>
             ))}
+          </div>
+
+          {/* Project Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects
+              .filter((project) => activeTab === "all" || project.type === activeTab)
+              .map((project, idx) => (
+                <motion.div
+                  key={idx}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all flex flex-col"
+                  whileHover={{ y: -6 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                >
+                  <div className="relative">
+                    <img
+                      src={project.img}
+                      alt={project.alt}
+                      className="h-52 w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <span className="absolute top-4 left-4 bg-white/90 text-[#5e17eb] text-xs font-semibold px-3 py-1 rounded-full">
+                      {project.type === "logo" ? "Logo" : "Client Project"}
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-[#5e17eb] transition">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm flex-grow">{project.description}</p>
+                    <Link
+                      to={project.link}
+                      className="mt-6 inline-flex items-center font-semibold text-[#5e17eb] hover:text-indigo-700"
+                    >
+                      View Case Study
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition" />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
           </div>
         </div>
       </section>
