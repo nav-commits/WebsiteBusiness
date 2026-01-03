@@ -2,9 +2,10 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { techLogos,  portfolioProjects } from "../data/data";
+import { techLogos, portfolioProjects } from "../data/data";
+import { Button } from "../components/Button";
 
-/* ================= ANIMATION ================= */
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -31,21 +32,21 @@ const Home = () => {
           >
             Websites That Help Local Businesses Get More Leads
           </motion.h1>
+
           <motion.p
             className="text-xl md:text-2xl mb-8 text-indigo-200"
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
           >
-            Custom-designed, SEO-optimized websites built for Toronto’s service professionals.
+            Custom-designed, SEO-optimized websites built for Toronto’s service
+            professionals.
           </motion.p>
+
           <motion.div variants={fadeInUp} initial="hidden" animate="visible">
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
-            >
-              Let’s Build Your Website <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
+              Let’s Build Your Website
+            </Button>
           </motion.div>
         </div>
       </motion.section>
@@ -60,10 +61,11 @@ const Home = () => {
             I use the right tools for the job — not one-size-fits-all.
           </p>
         </div>
+
         <div className="relative w-full overflow-hidden">
-          {/* Fade edges */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
+
           <motion.div
             className="flex gap-16 items-center w-max"
             animate={{ x: ["0%", "-50%"] }}
@@ -102,10 +104,12 @@ const Home = () => {
             <h2 className="text-4xl font-bold mb-6">
               Hi, I’m Nav — Web Developer for Local Service Businesses
             </h2>
+
             <p className="text-lg text-gray-700 mb-6">
               I build professional, lead-focused websites using WordPress, Wix,
               or custom code — always choosing the best solution for your goals.
             </p>
+
             <div className="bg-gray-100 p-8 rounded-xl shadow-md">
               <h3 className="text-2xl font-semibold mb-4">Why Work With Me?</h3>
               <ul className="space-y-4 text-gray-700">
@@ -115,25 +119,25 @@ const Home = () => {
                 <li>✔️ Transparent pricing & honest advice</li>
               </ul>
               <div className="mt-6">
-                <a
+                <Button
                   href="https://calendly.com/navdeep-dhamrait94"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition"
+                  variant="secondary"
+                  className="px-6 py-3 rounded-md"
+                  arrow
                 >
                   Book a Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Button>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
-
       {/* ================= FEATURED WORK ================= */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">
+            Featured Projects
+          </h2>
 
           {/* Tabs */}
           <div className="flex justify-center mb-12 gap-4">
@@ -147,15 +151,20 @@ const Home = () => {
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
-                {tab === "all" ? "All" : tab === "website" ? "Websites" : "Logos"}
+                {tab === "all"
+                  ? "All"
+                  : tab === "website"
+                  ? "Websites"
+                  : "Logos"}
               </button>
             ))}
           </div>
-
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            { portfolioProjects
-              .filter((project) => activeTab === "all" || project.type === activeTab)
+            {portfolioProjects
+              .filter(
+                (project) => activeTab === "all" || project.type === activeTab
+              )
               .map((project, idx) => (
                 <motion.div
                   key={idx}
@@ -177,11 +186,15 @@ const Home = () => {
                       {project.type === "logo" ? "Logo" : "Client Project"}
                     </span>
                   </div>
+
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-2 group-hover:text-[#5e17eb] transition">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 text-sm flex-grow">{project.description}</p>
+                    <p className="text-gray-600 text-sm flex-grow">
+                      {project.description}
+                    </p>
+
                     <Link
                       to={project.link}
                       className="mt-6 inline-flex items-center font-semibold text-[#5e17eb] hover:text-indigo-700"
@@ -195,7 +208,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* ================= CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
@@ -203,23 +215,22 @@ const Home = () => {
             Ready to Turn Your Website Into a Lead Machine?
           </h2>
           <p className="text-lg text-indigo-100 mb-10">
-            Let’s build a website that actually brings in business — not just looks good.
+            Let’s build a website that actually brings in business — not just
+            looks good.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              to="/contact"
-              className="px-8 py-4 rounded-lg font-semibold text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
-            >
+            <Button to="/contact" className="px-8 py-4 rounded-lg">
               Get a Free Quote
-            </Link>
-            <a
+            </Button>
+
+            <Button
               href="https://calendly.com/navdeep-dhamrait94"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-lg font-semibold border border-white/40 hover:bg-white/10 transition"
+              variant="outline"
+              className="px-8 py-4 rounded-lg"
             >
               Book a Free Call
-            </a>
+            </Button>
           </div>
         </div>
       </section>

@@ -1,10 +1,10 @@
-import { ArrowRight, Star } from "lucide-react";
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { testimonials } from "../data/data";
+import { Button } from "../components/Button";
+import { Star } from "lucide-react";
 
 const Testimonials = () => {
   const fadeInUp = {
@@ -121,22 +121,18 @@ const Testimonials = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
-            >
+            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
               Get a Free Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </Button>
 
-            <a
+            <Button
               href="https://calendly.com/navdeep-dhamrait94"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg border border-white/40 hover:bg-white/10 transition"
+              variant="outline"
+              className="px-8 py-4 rounded-lg"
+              arrow
             >
               Book a Free Call
-            </a>
+            </Button>
           </div>
         </div>
       </section>

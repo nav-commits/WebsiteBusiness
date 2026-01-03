@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Image, CheckCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-
+import { Button } from "../components/Button";
 const blogPosts = [
   {
     title: "Top 5 Website Features That Attract Local Clients",
@@ -196,20 +196,17 @@ const Blog = () => {
             and growth strategy.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
-            >
+            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
               Get a Free Quote
-            </a>
-            <a
+            </Button>
+            <Button
               href="https://calendly.com/navdeep-dhamrait94"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg border border-white/40 hover:bg-white/10 transition"
+              variant="outline"
+              className="px-8 py-4 rounded-lg"
+              arrow
             >
               Book a Free Call
-            </a>
+            </Button>
           </div>
         </div>
       </section>
