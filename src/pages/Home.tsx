@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { techLogos, portfolioProjects } from "../data/data";
 import { Button } from "../components/Button";
-
+import { Tabs } from "../components/Tabs";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -12,7 +12,7 @@ const fadeInUp = {
 };
 
 const Home = () => {
-  const [activeTab, setActiveTab] = useState<"all" | "website" | "logo">("all");
+  const [activeTab, setActiveTab] = useState<string>("all");
 
   return (
     <div className="pt-16">
@@ -141,23 +141,15 @@ const Home = () => {
 
           {/* Tabs */}
           <div className="flex justify-center mb-12 gap-4">
-            {["all", "website", "logo"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab as "all" | "website" | "logo")}
-                className={`px-6 py-2 rounded-full font-semibold transition ${
-                  activeTab === tab
-                    ? "bg-[#5e17eb] text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {tab === "all"
-                  ? "All"
-                  : tab === "website"
-                  ? "Websites"
-                  : "Logos"}
-              </button>
-            ))}
+            <Tabs
+              options={[
+                { label: "All", value: "all" },
+                { label: "Websites", value: "website" },
+                { label: "Logos", value: "logo" },
+              ]}
+              selected={activeTab}
+              onChange={(value) => setActiveTab(value)}
+            />
           </div>
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { websitePackages, carePlans, additionalServices } from "../data/data";
 import { Button } from "../components/Button";
-
+import { Tabs } from "../components/Tabs";
 const Services = () => {
   const [showOtherServices, setShowOtherServices] = useState(false);
 
@@ -105,28 +105,14 @@ const Services = () => {
         whileInView={fadeInUp.visible}
         viewport={{ once: true }}
       >
-        <div className="inline-flex rounded-full bg-gray-200 p-1 shadow-sm">
-          <button
-            onClick={() => setShowOtherServices(false)}
-            className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${
-              !showOtherServices
-                ? "bg-[#5e17eb] text-white"
-                : "text-gray-700 hover:bg-gray-300"
-            }`}
-          >
-            Website Packages
-          </button>
-          <button
-            onClick={() => setShowOtherServices(true)}
-            className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${
-              showOtherServices
-                ? "bg-[#5e17eb] text-white"
-                : "text-gray-700 hover:bg-gray-300"
-            }`}
-          >
-            Other Services
-          </button>
-        </div>
+        <Tabs
+          options={[
+            { label: "Website Packages", value: "packages" },
+            { label: "Other Services", value: "others" },
+          ]}
+          selected={showOtherServices ? "others" : "packages"}
+          onChange={(val) => setShowOtherServices(val === "others")}
+        />
       </motion.section>
 
       {/* Services Grid */}
