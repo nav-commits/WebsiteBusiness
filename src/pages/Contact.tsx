@@ -1,11 +1,23 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
-import { Send, Phone, Mail, MapPin, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Send,
+  Phone,
+  Mail,
+  MapPin,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { motion } from "framer-motion";
-
+import { faqs } from "../data/data";
 const Contact = () => {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm();
   const [responseMessage, setResponseMessage] = useState("");
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
@@ -24,7 +36,10 @@ const Contact = () => {
     }
   };
 
-  const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
   return (
     <div className="pt-16">
@@ -38,7 +53,8 @@ const Contact = () => {
       >
         <h1 className="text-5xl font-extrabold mb-6">Let's Get Started!</h1>
         <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-          Ready for a new website? Contact me today or schedule a meeting to discuss your project.
+          Ready for a new website? Contact me today or schedule a meeting to
+          discuss your project.
         </p>
       </motion.section>
 
@@ -52,7 +68,9 @@ const Contact = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Send a Message</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Send a Message
+            </h2>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <input
@@ -60,7 +78,11 @@ const Contact = () => {
                 {...register("name", { required: "Name is required" })}
                 className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
               />
-              {errors.name && <p className="text-red-500 text-sm">{String(errors.name.message)}</p>}
+              {errors.name && (
+                <p className="text-red-500 text-sm">
+                  {String(errors.name.message)}
+                </p>
+              )}
 
               <input
                 placeholder="Your Email"
@@ -68,21 +90,36 @@ const Contact = () => {
                 {...register("email", { required: "Email is required" })}
                 className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
               />
-              {errors.email && <p className="text-red-500 text-sm">{String(errors.email.message)}</p>}
-
+              {errors.email && (
+                <p className="text-red-500 text-sm">
+                  {String(errors.email.message)}
+                </p>
+              )}
               <textarea
                 placeholder="Your Message"
                 rows={6}
                 {...register("message", { required: "Message is required" })}
                 className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
               />
-              {errors.message && <p className="text-red-500 text-sm">{String(errors.message.message)}</p>}
+              {errors.message && (
+                <p className="text-red-500 text-sm">
+                  {String(errors.message.message)}
+                </p>
+              )}
 
               {/* Contact Info */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 my-4 text-gray-700">
-                <div className="flex items-center gap-2"><Phone className="h-5 w-5 text-[#5e17eb]" /> 647-975-3467</div>
-                <div className="flex items-center gap-2"><Mail className="h-5 w-5 text-[#5e17eb]" /> info@navwebdesign.com</div>
-                <div className="flex items-center gap-2"><MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto, Ontario, Canada</div>
+                <div className="flex items-center gap-2">
+                  <Phone className="h-5 w-5 text-[#5e17eb]" /> 647-975-3467
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-5 w-5 text-[#5e17eb]" />{" "}
+                  info@navwebdesign.com
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto,
+                  Ontario, Canada
+                </div>
               </div>
 
               {/* Buttons */}
@@ -92,21 +129,26 @@ const Contact = () => {
                   disabled={isSubmitting}
                   className="flex-1 flex justify-center items-center px-6 py-3 text-white bg-[#5e17eb] hover:bg-indigo-700 rounded-lg font-semibold transition"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"} <Send className="ml-2 h-5 w-5" />
+                  {isSubmitting ? "Sending..." : "Send Message"}{" "}
+                  <Send className="ml-2 h-5 w-5" />
                 </button>
 
                 <a
                   href="https://calendly.com/navdeep-dhamrait94"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex justify-center items-center px-6 py-3 text-white bg-indigo-500 hover:bg-indigo-600 rounded-lg font-semibold transition"
+                  className="flex-1 flex justify-center items-center px-6 py-3 text-white bg-[#5e17eb] hover:bg-indigo-700 rounded-lg font-semibold transition"
                 >
                   Schedule a Meeting
                 </a>
               </div>
             </form>
 
-            {responseMessage && <p className="mt-4 text-center text-gray-700">{responseMessage}</p>}
+            {responseMessage && (
+              <p className="mt-4 text-center text-gray-700">
+                {responseMessage}
+              </p>
+            )}
           </motion.div>
         </div>
       </section>
@@ -114,21 +156,35 @@ const Contact = () => {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-4 text-left max-w-3xl mx-auto">
-            {[
-              { question: "How long does it take to complete a website?", answer: "Timeline varies by complexity. Starter websites: ~1 week, advanced sites: 3–4 weeks." },
-              { question: "Do you offer ongoing maintenance?", answer: "Yes, annual maintenance includes updates, backups, and priority support." },
-              { question: "Will my website be mobile-friendly?", answer: "Absolutely! All websites are fully responsive for seamless mobile experience." },
-              { question: "Do you provide SEO services?", answer: "Yes, basic SEO is included; advanced SEO can be customized per project." },
-              { question: "Post-launch changes?", answer: "I provide support for updates. Major changes discussed separately." }
-            ].map((faq, index) => (
-              <motion.div key={index} className="border-b border-gray-200 pb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                <div className="flex justify-between items-center cursor-pointer" onClick={() => setOpenFAQ(openFAQ === index ? null : index)}>
-                  <h3 className="text-xl font-semibold text-gray-800">{faq.question}</h3>
-                  {openFAQ === index ? <ChevronUp className="h-5 w-5 text-[#5e17eb]" /> : <ChevronDown className="h-5 w-5 text-[#5e17eb]" />}
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                className="border-b border-gray-200 pb-4"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+              >
+                <div
+                  className="flex justify-between items-center cursor-pointer"
+                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                >
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {faq.question}
+                  </h3>
+                  {openFAQ === index ? (
+                    <ChevronUp className="h-5 w-5 text-[#5e17eb]" />
+                  ) : (
+                    <ChevronDown className="h-5 w-5 text-[#5e17eb]" />
+                  )}
                 </div>
-                {openFAQ === index && <p className="text-gray-600 mt-2">{faq.answer}</p>}
+                {openFAQ === index && (
+                  <p className="text-gray-600 mt-2">{faq.answer}</p>
+                )}
               </motion.div>
             ))}
           </div>

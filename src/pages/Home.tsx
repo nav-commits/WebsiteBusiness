@@ -2,117 +2,7 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-/* ================= TECH LOGOS ================= */
-const techLogos = [
-  { src: "/logos/wordpress.svg", alt: "WordPress" },
-  { src: "/logos/wix.svg", alt: "Wix" },
-  { src: "/logos/react.svg", alt: "React" },
-  { src: "/logos/tailwindcss.svg", alt: "Tailwind CSS" },
-  { src: "/logos/googleanalytics.svg", alt: "Google" },
-];
-
-/* ================= PROJECTS ================= */
-const projects = [
-  {
-    img: "/security.png",
-    alt: "CMT Security Services",
-    title: "CMT Security Services",
-    description:
-      "Committed to protecting your business and community with innovative security solutions. Specializing in event, residential, and commercial security.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/accounting.png",
-    alt: "Ajay Kalha Tax Services",
-    title: "Ajay Kalha Tax Services",
-    description:
-      "Comprehensive accounting services including bookkeeping and financial reporting to help businesses make informed decisions.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Psychotherapy.png",
-    alt: "The Healing Hive",
-    title: "The Healing Hive",
-    description:
-      "Compassionate virtual therapy services across Canada focused on anxiety, trauma, and life transitions.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/realestate.png",
-    alt: "PSR Law",
-    title: "PSR Law",
-    description:
-      "Ontario-based real estate law firm delivering transparent, client-first legal services.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/storage.png",
-    alt: "Container Storage Solutions",
-    title: "Container Storage Solutions",
-    description:
-      "Secure 24/7 monitored container and trailer storage in the GTA for freight and trucking companies.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/vik.jpg",
-    alt: "Vik Ghankas Law Group",
-    title: "Vik Ghankas Law Group",
-    description:
-      "Family law firm serving the Lower Mainland with direct lawyer-to-client communication.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/MarkatImage.png",
-    alt: "MARKAT Group Inc.",
-    title: "MARKAT Group Inc.",
-    description:
-      "Toronto-based advisory firm helping SMBs scale, manage risk, and lead with confidence.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/gtc.png",
-    alt: "GTA LEC",
-    title: "GTA LEC",
-    description:
-      "Professional electrical contracting and consulting services across the GTA. Specializing in residential, commercial, and industrial electrical solutions.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/analystics.png",
-    alt: "VA Analytics Consulting",
-    title: "VA Analytics Consulting",
-    description:
-      "Helps businesses leverage data to make smarter decisions through analysis, visualization, and actionable reporting.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/logos/Van-black.png",
-    alt: "Van Logo - Black Variant",
-    title: "Van Brand Logo (Black Variant)",
-    description: "One of the two logo variants created for VA Analytics Consulting.",
-    link: "/portfolio",
-    type: "logo",
-  },
-  {
-    img: "/logos/van-org.png",
-    alt: "Van Logo - White Variant",
-    title: "Van Brand Logo (White Variant)",
-    description: "Second logo variant created for VA Analytics Consulting as an alternate option for different backgrounds.",
-    link: "/portfolio",
-    type: "logo",
-  },
-  
-];
+import { techLogos,  portfolioProjects } from "../data/data";
 
 /* ================= ANIMATION ================= */
 const fadeInUp = {
@@ -195,7 +85,7 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <motion.img
-            src="/SMS_0310 Navdeep Dhamrait.jpg"
+            src="Images/SMS_0310 Navdeep Dhamrait.jpg"
             alt="Navdeep Dhamrait"
             className="rounded-2xl shadow-xl"
             initial={{ opacity: 0, x: -40 }}
@@ -264,7 +154,7 @@ const Home = () => {
 
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects
+            { portfolioProjects
               .filter((project) => activeTab === "all" || project.type === activeTab)
               .map((project, idx) => (
                 <motion.div

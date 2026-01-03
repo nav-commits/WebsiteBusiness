@@ -26,7 +26,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center flex-shrink-0 mt-4 mb-2">
             {" "}
             <img 
-             src="/logos/nav-logo.png"
+             src="/Images/nav-logo.png"
              alt="Nav Dhamrait"
              className="
                h-[180px] 

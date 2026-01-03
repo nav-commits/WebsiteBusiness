@@ -2,160 +2,10 @@ import { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { websitePackages, carePlans, additionalServices } from "../data/data";
 
 const Services = () => {
   const [showOtherServices, setShowOtherServices] = useState(false);
-
-  // Website Packages - Landing Page first
-  const websitePackages = [
-    {
-      title: "Landing Page",
-      tagline: "Single-page conversion-focused design",
-      price: "Starting at $400",
-      features: [
-        "Custom long-form landing page designed to convert visitors",
-        "Mobile-first, fully responsive",
-        "Call-to-action sections and forms included",
-        "Optional booking or lead capture integration",
-        "SEO-friendly and fast-loading",
-        "2 rounds of revisions (additional revisions $50)",
-        "Delivered within 3–5 days after content is provided",
-      ],
-    },
-    {
-      title: "Starter Website",
-      tagline: "Perfect for small local businesses or personal brands",
-      price: "Starting at $700",
-      features: [
-        "Up to 5 custom pages (Home, About, Services, Contact, Blog)",
-        "Mobile-first, fully responsive design",
-        "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
-        "Contact form integration",
-        "SEO-ready foundation (metadata, sitemap, Google Search Console setup)",
-        "Delivered within 1 week after content is provided",
-        "Hosting and domain setup guidance (client pays separately)",
-      ],
-    },
-    {
-      title: "Business Website",
-      tagline: "Ideal for growing local businesses",
-      price: "Starting at $1,200",
-      features: [
-        "Up to 10 custom pages",
-        "Mobile-first, fully responsive design",
-        "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
-        "Booking system OR eCommerce integration",
-        "Basic SEO and speed optimization",
-        "Delivered within 2–3 weeks after content is provided",
-        "Hosting and domain setup guidance (client pays separately)",
-      ],
-    },
-    {
-      title: "Pro Website",
-      tagline: "Advanced solutions for scaling businesses",
-      price: "Starting at $1,800",
-      features: [
-        "Custom number of pages to fit your business needs",
-        "Mobile-first, fully responsive design",
-        "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
-        "Booking + eCommerce + Courses integration",
-        "Advanced SEO, speed, and security enhancements",
-        "Includes all Business package features plus custom solutions",
-        "Delivered within 3–5 weeks after content is provided",
-        "Hosting and domain setup guidance (client pays separately)",
-      ],
-    },
-  ];
-
-  // Care Plans
-  const carePlans = [
-    {
-      title: "Essential Maintenance",
-      tagline: "Annual updates & security",
-      price: "$150 / year",
-      features: [
-        "Platform, plugin, and integration updates once per year",
-        "Weekly backups",
-        "Basic security monitoring",
-        "Up to 2 small content updates per year (text, images, minor layout tweaks)",
-      ],
-    },
-    {
-      title: "Business Growth Plan",
-      tagline: "Care + light content support",
-      price: "$400 / year",
-      features: [
-        "All Essential Maintenance features",
-        "Up to 5 small content updates per year",
-        "Advanced security monitoring",
-        "Quarterly website performance checks",
-      ],
-    },
-    {
-      title: "Full Growth + Marketing",
-      tagline: "Comprehensive care + marketing support",
-      price: "$1,000 / year",
-      features: [
-        "All Business Growth features",
-        "Up to 12 content updates per year (text, images, minor layout tweaks, promotional changes)",
-        "Monthly blog posts or promotional updates",
-        "Local SEO & Google Business maintenance",
-        "Conversion optimization",
-        "Monthly analytics reports",
-      ],
-    },
-  ];
-
-  // Additional Services
-  const additionalServices = [
-    {
-      title: "SEO Setup",
-      price: "$300",
-      description: "Complete on-page SEO to help your site rank well on Google",
-      features: [
-        "Optimize page titles, meta descriptions, and headings",
-        "Set up Google Search Console and Analytics",
-        "Submit XML sitemap to Google",
-        "Optimize images for SEO (alt text, file names, compression)",
-        "Internal linking and URL structure review",
-        "Basic keyword optimization for up to 5 main pages",
-        "Ensure mobile-friendly and fast-loading pages",
-      ],
-    },
-    {
-      title: "Business Email Setup",
-      price: "$100",
-      features: [
-        "Professional email setup with Google Workspace, Zoho, or similar",
-        "Create custom domain-based email addresses (yourname@yourbusiness.com)",
-        "Configure inboxes on multiple devices",
-        "Set up basic security and spam protection",
-        "Optional email migration from old accounts",
-      ],
-    },
-    {
-      title: "Logo Design",
-      price: "$200",
-      features: [
-        "2 initial design concepts for your logo",
-        "2 full revisions for the chosen concept (extra revisions $50 each)",
-        "Delivery in vector (AI, SVG), PNG, and JPEG formats",
-        "Optimized for website, social media, and print",
-        "Brand colors and typography included",
-      ],
-    },
-    {
-      title: "Website Redesign / Fix",
-      price: "Starting at $600",
-      features: [
-        "Refresh your existing website with modern design",
-        "Improve page speed and Core Web Vitals",
-        "Make your site fully mobile-friendly",
-        "Fix broken links, forms, and layout issues",
-        "Optional SEO and content optimization upgrades",
-      ],
-    },
-  ];
 
   const otherServices = [...carePlans, ...additionalServices];
 
@@ -289,7 +139,9 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {showOtherServices
             ? otherServices.map((pkg, i) => <ServiceCard key={i} pkg={pkg} />)
-            : websitePackages.map((pkg, i) => <ServiceCard key={i} pkg={pkg} />)}
+            : websitePackages.map((pkg, i) => (
+                <ServiceCard key={i} pkg={pkg} />
+              ))}
         </div>
       </motion.section>
 
@@ -301,8 +153,8 @@ const Services = () => {
           </h2>
 
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            If my approach and services align with what you’re looking for, let’s
-            talk about your project and see if we’re a good fit.
+            If my approach and services align with what you’re looking for,
+            let’s talk about your project and see if we’re a good fit.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
