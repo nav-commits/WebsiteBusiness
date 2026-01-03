@@ -192,8 +192,8 @@ const Blog = () => {
             Want More Insights on Web Design & Marketing?
           </h2>
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            Browse our blog or book a consultation to discuss your website
-            needs and growth strategy.
+            Browse our blog or book a consultation to discuss your website needs
+            and growth strategy.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a

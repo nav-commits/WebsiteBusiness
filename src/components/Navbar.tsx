@@ -23,24 +23,20 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* LOGO */}
-          <Link to="/" className="flex items-center flex-shrink-0">
+          <Link to="/" className="flex items-center flex-shrink-0 mt-4 mb-2">
             {" "}
-            <img
-            
-             src="/logos/nav-logo.png"
+            <img 
+             src="/Images/nav-logo.png"
              alt="Nav Dhamrait"
              className="
-               h-[120px] 
+               h-[180px] 
                md:h-[80px] 
-               lg:h-[200px] 
+               lg:h-[225px] 
                w-auto 
                object-contain
              "
            />
-           
-           
           </Link>
-
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center space-x-4">
             {navigation.map((item) => (

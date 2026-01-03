@@ -12,7 +12,6 @@ import Blog from "./pages/Blog";
 
 function App() {
   useAnalytics();
-
   return (
     <div className="min-h-screen bg-white">
       <Navbar />

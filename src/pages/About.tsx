@@ -1,68 +1,7 @@
-import { ArrowRight, CheckCircle, Calendar, FileText, Clipboard, Code, Rocket, Shield, Mail, PenTool } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const processSteps = [
-  {
-    title: "1. Initial Consultation",
-    description:
-      "Meet with the client (Zoom, phone, or in person) to discuss business goals, website needs, style preferences, timeline, and budget.",
-    icon: Calendar,
-  },
-  {
-    title: "2. Proposal, Contract & Deposit",
-    description:
-      "Prepare a clear proposal including scope, deliverables, timeline, revision policy, and pricing. Send service agreement and deposit invoice.",
-    icon: FileText,
-  },
-  {
-    title: "3. Content & Access Collection",
-    description:
-      "Gather business information, branding, page content, and hosting/domain access. Provide a shared folder for uploads.",
-    icon: Clipboard,
-  },
-  {
-    title: "4. Hosting & Domain Setup",
-    description:
-      "Assist with selecting hosting, connect or transfer domain, install WordPress (if applicable), and confirm all admin logins.",
-    icon: Code,
-  },
-  {
-    title: "5. Design Phase",
-    description:
-      "Provide 3–4 design templates. Client selects one, then customize colors, fonts, layout, header/footer. Includes 2 design revision rounds.",
-    icon: PenTool,
-  },
-  {
-    title: "6. Development Phase",
-    description:
-      "Build out all pages and features: booking, eCommerce, forms, blogs, galleries. Test responsiveness, performance, and UX.",
-    icon: Code,
-  },
-  {
-    title: "7. Client Review & Final Revisions",
-    description:
-      "Share preview link, apply 2–3 rounds of final revisions, minor content/layout adjustments, client approval before launch.",
-    icon: CheckCircle,
-  },
-  {
-    title: "8. Final Payment & Launch",
-    description:
-      "Send final invoice, launch website, connect domain, set up SSL, verify integrations, optionally submit to Google Search Console.",
-    icon: Rocket,
-  },
-  {
-    title: "9. Handoff Package",
-    description:
-      "Provide admin logins, tutorials, written instructions, and free support period (7–30 days depending on policy).",
-    icon: Mail,
-  },
-  {
-    title: "10. Optional Ongoing Maintenance",
-    description:
-      "Offer monthly or annual plans including security updates, backups, content edits, blog posting, SEO improvements, and feature updates.",
-    icon: Shield,
-  },
-];
+import { processSteps } from "../data/data.ts";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -92,26 +31,61 @@ const About = () => {
             className="bg-white rounded-xl shadow-lg p-8"
             variants={fadeInUp}
           >
-            <motion.p className="text-lg text-gray-800 leading-relaxed mb-4" variants={fadeInUp}>
-              I’m a passionate <span className="font-semibold text-gray-900">Web Designer & Developer</span> specializing in websites for <span className="font-semibold text-gray-900">local service businesses</span>. Based in Toronto, I build custom, mobile-friendly, and SEO-optimized websites using the right tools — WordPress, Wix, or fully custom solutions.
+            <motion.p
+              className="text-lg text-gray-800 leading-relaxed mb-4"
+              variants={fadeInUp}
+            >
+              I’m a passionate{" "}
+              <span className="font-semibold text-gray-900">
+                Web Designer & Developer
+              </span>{" "}
+              specializing in websites for{" "}
+              <span className="font-semibold text-gray-900">
+                local service businesses
+              </span>
+              . Based in Toronto, I build custom, mobile-friendly, and
+              SEO-optimized websites using the right tools — WordPress, Wix, or
+              fully custom solutions.
             </motion.p>
 
-            <motion.p className="text-base text-gray-700 leading-relaxed mb-6" variants={fadeInUp}>
-              My websites don’t just look good — they’re built to <span className="font-semibold text-[#5e17eb]">attract visitors and convert them into real leads</span>.
+            <motion.p
+              className="text-base text-gray-700 leading-relaxed mb-6"
+              variants={fadeInUp}
+            >
+              My websites don’t just look good — they’re built to{" "}
+              <span className="font-semibold text-[#5e17eb]">
+                attract visitors and convert them into real leads
+              </span>
+              .
             </motion.p>
 
             <div className="flex items-center gap-4 my-6">
               <div className="h-px flex-1 bg-gray-200" />
-              <span className="text-sm uppercase tracking-wider text-gray-400">Approach</span>
+              <span className="text-sm uppercase tracking-wider text-gray-400">
+                Approach
+              </span>
               <div className="h-px flex-1 bg-gray-200" />
             </div>
 
-            <motion.p className="text-base text-gray-700 leading-relaxed mb-2" variants={fadeInUp}>
-              <span className="font-semibold text-gray-900">What sets me apart?</span> I take the time to understand your business goals, challenges, and target audience, creating tailored solutions for long-term growth and a strong online presence.
+            <motion.p
+              className="text-base text-gray-700 leading-relaxed mb-2"
+              variants={fadeInUp}
+            >
+              <span className="font-semibold text-gray-900">
+                What sets me apart?
+              </span>{" "}
+              I take the time to understand your business goals, challenges, and
+              target audience, creating tailored solutions for long-term growth
+              and a strong online presence.
             </motion.p>
 
-            <motion.p className="text-base text-gray-600 leading-relaxed" variants={fadeInUp}>
-              If you’re looking for a website that feels professional, performs well, and actually helps grow your business, you’re in the right place.
+            <motion.p
+              className="text-base text-gray-600 leading-relaxed"
+              variants={fadeInUp}
+            >
+              If you’re looking for a website that feels professional, performs
+              well, and actually helps grow your business, you’re in the right
+              place.
             </motion.p>
           </motion.div>
         </div>
@@ -125,12 +99,19 @@ const About = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 className="text-3xl font-bold text-center text-gray-900 mb-6" variants={fadeInUp}>
+          <motion.h2
+            className="text-3xl font-bold text-center text-gray-900 mb-6"
+            variants={fadeInUp}
+          >
             My Workflow
           </motion.h2>
 
-          <motion.p className="text-xl text-gray-600 text-center mb-14 max-w-3xl mx-auto" variants={fadeInUp}>
-            I keep things simple and transparent. From the first conversation to launch, you’ll always know what’s happening and what comes next.
+          <motion.p
+            className="text-xl text-gray-600 text-center mb-14 max-w-3xl mx-auto"
+            variants={fadeInUp}
+          >
+            I keep things simple and transparent. From the first conversation to
+            launch, you’ll always know what’s happening and what comes next.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -146,7 +127,9 @@ const About = () => {
                   <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-[#5e17eb]">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {step.title}
+                  </h3>
                   <p className="text-gray-600 text-sm">{step.description}</p>
                 </motion.div>
               );
@@ -163,7 +146,8 @@ const About = () => {
           </h2>
 
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            If my approach and workflow align with what you’re looking for, let’s talk about your project and see if we’re a good fit.
+            If my approach and workflow align with what you’re looking for,
+            let’s talk about your project and see if we’re a good fit.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
