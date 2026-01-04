@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { techLogos, portfolioProjects } from "../data/data";
 import { Button } from "../components/Button";
 import { Tabs } from "../components/Tabs";
-
+import { Card } from "../components/Card";
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -110,9 +110,9 @@ const Home = () => {
               or custom code — always choosing the best solution for your goals.
             </p>
 
-            <div className="bg-gray-100 p-8 rounded-xl shadow-md">
+            <Card bgColor="bg-gray-100" className="p-6">
               <h3 className="text-2xl font-semibold mb-4">Why Work With Me?</h3>
-              <ul className="space-y-4 text-gray-700">
+              <ul className="space-y-2 text-gray-700">
                 <li>✔️ Custom solutions — no cookie-cutter sites</li>
                 <li>✔️ SEO-focused design for higher rankings</li>
                 <li>✔️ Mobile-first & fast loading</li>
@@ -128,7 +128,7 @@ const Home = () => {
                   Book a Free Consultation
                 </Button>
               </div>
-            </div>
+            </Card>
           </motion.div>
         </div>
       </section>
@@ -160,41 +160,44 @@ const Home = () => {
               .map((project, idx) => (
                 <motion.div
                   key={idx}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all flex flex-col"
                   whileHover={{ y: -6 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  className="flex"
                 >
-                  <div className="relative">
-                    <img
-                      src={project.img}
-                      alt={project.alt}
-                      className="h-52 w-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <span className="absolute top-4 left-4 bg-white/90 text-[#5e17eb] text-xs font-semibold px-3 py-1 rounded-full">
-                      {project.type === "logo" ? "Logo" : "Client Project"}
-                    </span>
-                  </div>
+                  <Card className="group overflow-hidden flex flex-col h-full">
+                    {/* Image Section */}
+                    <div className="relative">
+                      <img
+                        src={project.img}
+                        alt={project.alt}
+                        className="h-52 w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <span className="absolute top-4 left-4 bg-white/90 text-[#5e17eb] text-xs font-semibold px-3 py-1 rounded-full">
+                        {project.type === "logo" ? "Logo" : "Client Project"}
+                      </span>
+                    </div>
+                    {/* Content Section */}
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-[#5e17eb] transition">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm flex-grow">
+                        {project.description}
+                      </p>
 
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-[#5e17eb] transition">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm flex-grow">
-                      {project.description}
-                    </p>
-
-                    <Link
-                      to={project.link}
-                      className="mt-6 inline-flex items-center font-semibold text-[#5e17eb] hover:text-indigo-700"
-                    >
-                      View Case Study
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition" />
-                    </Link>
-                  </div>
+                      <Link
+                        to={project.link}
+                        className="mt-6 inline-flex items-center font-semibold text-[#5e17eb] hover:text-indigo-700"
+                      >
+                        View Case Study
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition" />
+                      </Link>
+                    </div>
+                  </Card>
                 </motion.div>
               ))}
           </div>

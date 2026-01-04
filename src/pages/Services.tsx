@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { websitePackages, carePlans, additionalServices } from "../data/data";
 import { Button } from "../components/Button";
 import { Tabs } from "../components/Tabs";
+import { Card } from "../components/Card";
 const Services = () => {
   const [showOtherServices, setShowOtherServices] = useState(false);
 
@@ -12,60 +13,6 @@ const Services = () => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const ServiceCard = ({ pkg }) => {
-    const isMaintenance = ["Care", "Plan", "Maintenance"].some((word) =>
-      pkg.title.includes(word)
-    );
-
-    return (
-      <motion.div
-        className={`relative rounded-lg overflow-hidden flex flex-col h-full transition-transform transform hover:scale-105 ${
-          isMaintenance
-            ? "border-4 border-[#5e17eb] bg-white"
-            : "bg-white border border-gray-200 shadow-lg"
-        }`}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-      >
-        {"tagline" in pkg && pkg.tagline && (
-          <div
-            className={`inline-block mt-5 mx-5 text-xs font-bold px-4 py-2 rounded-full ${
-              isMaintenance
-                ? "bg-[#5e17eb] text-white ring-1 ring-[#5e17eb]"
-                : "bg-gray-100 text-gray-900 shadow-sm ring-gray-300"
-            }`}
-          >
-            {pkg.tagline}
-          </div>
-        )}
-        <div className="p-8 flex-grow">
-          <h3
-            className={`text-2xl font-bold mb-4 ${
-              isMaintenance ? "text-[#5e17eb]" : "text-gray-900"
-            }`}
-          >
-            {pkg.title}
-          </h3>
-          <p className="text-4xl font-bold text-[#5e17eb] mb-6">{pkg.price}</p>
-          <ul className="space-y-4 mb-6">
-            {"features" in pkg &&
-              pkg.features?.map((feature, i) => (
-                <li key={i} className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" />
-                  <span className="text-gray-600">{feature}</span>
-                </li>
-              ))}
-            {"description" in pkg && pkg.description && (
-              <li className="text-gray-600">{pkg.description}</li>
-            )}
-          </ul>
-        </div>
-      </motion.div>
-    );
   };
 
   return (
@@ -115,7 +62,6 @@ const Services = () => {
         />
       </motion.section>
 
-      {/* Services Grid */}
       <motion.section
         className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         initial={fadeInUp.hidden}
@@ -123,11 +69,78 @@ const Services = () => {
         viewport={{ once: true }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {showOtherServices
-            ? otherServices.map((pkg, i) => <ServiceCard key={i} pkg={pkg} />)
-            : websitePackages.map((pkg, i) => (
-                <ServiceCard key={i} pkg={pkg} />
-              ))}
+          {(showOtherServices ? otherServices : websitePackages).map(
+            (pkg, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="h-full"
+              >
+                <Card
+                  className={`p-8 flex flex-col h-full transition-transform transform hover:scale-105 ${
+                    ["Care", "Plan", "Maintenance"].some((word) =>
+                      pkg.title.includes(word)
+                    )
+                      ? "border-4 border-[#5e17eb] bg-white"
+                      : "border border-gray-200 bg-white shadow-lg"
+                  }`}
+                >
+                  {/* Tagline */}
+                  {"tagline" in pkg && pkg.tagline && (
+                    <div
+                      className={`inline-block mb-4 text-xs font-bold px-4 py-2 rounded-full ${
+                        ["Care", "Plan", "Maintenance"].some((word) =>
+                          pkg.title.includes(word)
+                        )
+                          ? "bg-[#5e17eb] text-white ring-1 ring-[#5e17eb]"
+                          : "bg-gray-100 text-gray-900 shadow-sm ring-gray-300"
+                      }`}
+                    >
+                      {pkg.tagline}
+                    </div>
+                  )}
+
+                  {/* Title */}
+                  <h3
+                    className={`text-2xl font-bold mb-4 ${
+                      ["Care", "Plan", "Maintenance"].some((word) =>
+                        pkg.title.includes(word)
+                      )
+                        ? "text-[#5e17eb]"
+                        : "text-gray-900"
+                    }`}
+                  >
+                    {pkg.title}
+                  </h3>
+
+                  {/* Price */}
+                  {"price" in pkg && (
+                    <p className="text-4xl font-bold text-[#5e17eb] mb-6">
+                      {pkg.price}
+                    </p>
+                  )}
+
+                  {/* Features / Description */}
+                  <ul className="space-y-4 mb-6 flex-grow">
+                    {"features" in pkg &&
+                      pkg.features?.map((feature, i) => (
+                        <li key={i} className="flex items-start">
+                          <CheckCircle className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" />
+                          <span className="text-gray-600">{feature}</span>
+                        </li>
+                      ))}
+                    {"description" in pkg && pkg.description && (
+                      <li className="text-gray-600">{pkg.description}</li>
+                    )}
+                  </ul>
+                </Card>
+              </motion.div>
+            )
+          )}
         </div>
       </motion.section>
 

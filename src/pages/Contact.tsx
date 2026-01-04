@@ -12,6 +12,8 @@ import {
 import { motion } from "framer-motion";
 import { faqs } from "../data/data";
 import { Button } from "../components/Button";
+import { Card } from "../components/Card";
+
 const Contact = () => {
   const {
     register,
@@ -63,90 +65,93 @@ const Contact = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="bg-white rounded-xl shadow-lg p-10 hover:shadow-xl transition"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Send a Message
-            </h2>
+            <Card className="p-10 hover:shadow-xl transition">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Send a Message
+              </h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <input
-                placeholder="Your Name"
-                {...register("name", { required: "Name is required" })}
-                className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm">
-                  {String(errors.name.message)}
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <input
+                  placeholder="Your Name"
+                  {...register("name", { required: "Name is required" })}
+                  className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
+                />
+                {errors.name && (
+                  <p className="text-red-500 text-sm">
+                    {String(errors.name.message)}
+                  </p>
+                )}
+
+                <input
+                  placeholder="Your Email"
+                  type="email"
+                  {...register("email", { required: "Email is required" })}
+                  className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm">
+                    {String(errors.email.message)}
+                  </p>
+                )}
+                <textarea
+                  placeholder="Your Message"
+                  rows={6}
+                  {...register("message", { required: "Message is required" })}
+                  className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
+                />
+                {errors.message && (
+                  <p className="text-red-500 text-sm">
+                    {String(errors.message.message)}
+                  </p>
+                )}
+
+                {/* Contact Info */}
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 my-4 text-gray-700">
+                  <div className="flex items-center gap-2">
+                    <Phone className="h-5 w-5 text-[#5e17eb]" /> 647-975-3467
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail className="h-5 w-5 text-[#5e17eb]" />{" "}
+                    info@navwebdesign.com
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto,
+                    Ontario, Canada
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                  <Button
+                    type="submit"
+                    className="flex-1 flex justify-center items-center px-6 py-3"
+                    variant="secondary"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                    <Send className="ml-2 h-5 w-5" />
+                  </Button>
+
+                  <Button
+                    href="https://calendly.com/navdeep-dhamrait94"
+                    variant="secondary"
+                    className="flex-1 flex justify-center items-center px-6 py-3"
+                  >
+                    Schedule a Meeting
+                  </Button>
+                </div>
+              </form>
+
+              {responseMessage && (
+                <p className="mt-4 text-center text-gray-700">
+                  {responseMessage}
                 </p>
               )}
-
-              <input
-                placeholder="Your Email"
-                type="email"
-                {...register("email", { required: "Email is required" })}
-                className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm">
-                  {String(errors.email.message)}
-                </p>
-              )}
-              <textarea
-                placeholder="Your Message"
-                rows={6}
-                {...register("message", { required: "Message is required" })}
-                className="w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm">
-                  {String(errors.message.message)}
-                </p>
-              )}
-
-              {/* Contact Info */}
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 my-4 text-gray-700">
-                <div className="flex items-center gap-2">
-                  <Phone className="h-5 w-5 text-[#5e17eb]" /> 647-975-3467
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="h-5 w-5 text-[#5e17eb]" />{" "}
-                  info@navwebdesign.com
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto,
-                  Ontario, Canada
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <Button
-                  type="submit"
-                  className="flex-1 flex justify-center items-center px-6 py-3"
-                  variant="secondary"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                  <Send className="ml-2 h-5 w-5" />
-                </Button>
-
-                <Button
-                  href="https://calendly.com/navdeep-dhamrait94"
-                  variant="secondary"
-                  className="flex-1 flex justify-center items-center px-6 py-3"
-                >
-                  Schedule a Meeting
-                </Button>
-              </div>
-            </form>
-            {responseMessage && (
-              <p className="mt-4 text-center text-gray-700">
-                {responseMessage}
-              </p>
-            )}
+            </Card>
           </motion.div>
         </div>
       </section>

@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
+import { Card } from "../components/Card";
 import { Image, CheckCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Button } from "../components/Button";
+
 const blogPosts = [
   {
     title: "Top 5 Website Features That Attract Local Clients",
@@ -152,34 +154,36 @@ const Blog = () => {
           {blogPosts.map((post, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 rounded-xl p-8 shadow hover:shadow-lg transition flex flex-col"
               variants={fadeInUp}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="flex items-center mb-2">
-                {post.icon}
-                <h3 className="text-2xl font-semibold text-gray-900">
-                  {post.title}
-                </h3>
-              </div>
+              <Card className="p-8 flex flex-col">
+                {/* Title + Icon */}
+                <div className="flex items-center mb-2">
+                  {post.icon}
+                  <h3 className="text-2xl font-semibold text-gray-900">
+                    {post.title}
+                  </h3>
+                </div>
 
-              {/* Author, Date, Category */}
-              <div className="flex items-center text-gray-500 text-sm mb-4 space-x-2">
-                <span>By {post.author}</span>
-                <span>•</span>
-                <span>{post.date}</span>
-                {post.category && (
-                  <>
-                    <span>•</span>
-                    <span>{post.category}</span>
-                  </>
-                )}
-              </div>
+                {/* Author, Date, Category */}
+                <div className="flex items-center text-gray-500 text-sm mb-4 space-x-2">
+                  <span>By {post.author}</span>
+                  <span>•</span>
+                  <span>{post.date}</span>
+                  {post.category && (
+                    <>
+                      <span>•</span>
+                      <span>{post.category}</span>
+                    </>
+                  )}
+                </div>
 
-              {/* Content */}
-              <div className="text-gray-600 leading-relaxed">
-                <ReactMarkdown>{post.content}</ReactMarkdown>
-              </div>
+                {/* Content */}
+                <div className="text-gray-600 leading-relaxed">
+                  <ReactMarkdown>{post.content}</ReactMarkdown>
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>

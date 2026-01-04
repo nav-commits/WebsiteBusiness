@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import {Button} from "../components/Button";
+import { Button } from "../components/Button";
 import { processSteps } from "../data/data";
+import { Card } from "../components/Card";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -26,66 +27,65 @@ const About = () => {
             About Me
           </motion.h1>
 
-          <motion.div
-            className="bg-white rounded-xl shadow-lg p-8"
-            variants={fadeInUp}
-          >
-            <motion.p
-              className="text-lg text-gray-800 leading-relaxed mb-4"
-              variants={fadeInUp}
-            >
-              I’m a passionate{" "}
-              <span className="font-semibold text-gray-900">
-                Web Designer & Developer
-              </span>{" "}
-              specializing in websites for{" "}
-              <span className="font-semibold text-gray-900">
-                local service businesses
-              </span>
-              . Based in Toronto, I build custom, mobile-friendly, and
-              SEO-optimized websites using the right tools — WordPress, Wix, or
-              fully custom solutions.
-            </motion.p>
+          <motion.div variants={fadeInUp}>
+            <Card className="p-8 bg-white shadow-lg">
+              <motion.p
+                className="text-lg text-gray-800 leading-relaxed mb-4"
+                variants={fadeInUp}
+              >
+                I’m a passionate{" "}
+                <span className="font-semibold text-gray-900">
+                  Web Designer & Developer
+                </span>{" "}
+                specializing in websites for{" "}
+                <span className="font-semibold text-gray-900">
+                  local service businesses
+                </span>
+                . Based in Toronto, I build custom, mobile-friendly, and
+                SEO-optimized websites using the right tools — WordPress, Wix,
+                or fully custom solutions.
+              </motion.p>
 
-            <motion.p
-              className="text-base text-gray-700 leading-relaxed mb-6"
-              variants={fadeInUp}
-            >
-              My websites don’t just look good — they’re built to{" "}
-              <span className="font-semibold text-[#5e17eb]">
-                attract visitors and convert them into real leads
-              </span>
-              .
-            </motion.p>
+              <motion.p
+                className="text-base text-gray-700 leading-relaxed mb-6"
+                variants={fadeInUp}
+              >
+                My websites don’t just look good — they’re built to{" "}
+                <span className="font-semibold text-[#5e17eb]">
+                  attract visitors and convert them into real leads
+                </span>
+                .
+              </motion.p>
 
-            <div className="flex items-center gap-4 my-6">
-              <div className="h-px flex-1 bg-gray-200" />
-              <span className="text-sm uppercase tracking-wider text-gray-400">
-                Approach
-              </span>
-              <div className="h-px flex-1 bg-gray-200" />
-            </div>
+              <div className="flex items-center gap-4 my-6">
+                <div className="h-px flex-1 bg-gray-200" />
+                <span className="text-sm uppercase tracking-wider text-gray-400">
+                  Approach
+                </span>
+                <div className="h-px flex-1 bg-gray-200" />
+              </div>
 
-            <motion.p
-              className="text-base text-gray-700 leading-relaxed mb-2"
-              variants={fadeInUp}
-            >
-              <span className="font-semibold text-gray-900">
-                What sets me apart?
-              </span>{" "}
-              I take the time to understand your business goals, challenges, and
-              target audience, creating tailored solutions for long-term growth
-              and a strong online presence.
-            </motion.p>
+              <motion.p
+                className="text-base text-gray-700 leading-relaxed mb-2"
+                variants={fadeInUp}
+              >
+                <span className="font-semibold text-gray-900">
+                  What sets me apart?
+                </span>{" "}
+                I take the time to understand your business goals, challenges,
+                and target audience, creating tailored solutions for long-term
+                growth and a strong online presence.
+              </motion.p>
 
-            <motion.p
-              className="text-base text-gray-600 leading-relaxed"
-              variants={fadeInUp}
-            >
-              If you’re looking for a website that feels professional, performs
-              well, and actually helps grow your business, you’re in the right
-              place.
-            </motion.p>
+              <motion.p
+                className="text-base text-gray-600 leading-relaxed"
+                variants={fadeInUp}
+              >
+                If you’re looking for a website that feels professional,
+                performs well, and actually helps grow your business, you’re in
+                the right place.
+              </motion.p>
+            </Card>
           </motion.div>
         </div>
       </motion.section>
@@ -116,20 +116,25 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {processSteps.map((step, index) => {
               const Icon = step.icon;
+
               return (
                 <motion.div
                   key={index}
-                  className="bg-gray-50 rounded-xl p-6 shadow hover:shadow-lg transition flex flex-col items-start"
                   variants={fadeInUp}
                   transition={{ delay: index * 0.1 }}
+                  className="h-full"
                 >
-                  <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-[#5e17eb]">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
+                  <Card className="p-6 hover:shadow-lg transition flex flex-col items-start h-full bg-gray-50">
+                    <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-[#5e17eb]">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm flex-grow">
+                      {step.description}
+                    </p>
+                  </Card>
                 </motion.div>
               );
             })}
@@ -150,11 +155,7 @@ const About = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button
-              to="/contact"
-              className="px-8 py-4 rounded-lg"
-              arrow
-            >
+            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
               Get a Free Quote
             </Button>
 

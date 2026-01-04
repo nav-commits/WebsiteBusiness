@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { testimonials } from "../data/data";
 import { Button } from "../components/Button";
 import { Star } from "lucide-react";
+import { Card } from "../components/Card";
 
 const Testimonials = () => {
   const fadeInUp = {
@@ -12,7 +13,6 @@ const Testimonials = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  // Carousel settings: 1 card per slide for all screen sizes
   const settings = {
     dots: true,
     infinite: true,
@@ -63,44 +63,48 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="p-4">
                 <motion.div
-                  className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300 flex flex-col h-full min-h-[360px]"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
                 >
-                  {/* Logo */}
-                  {testimonial.logo && (
-                    <div className="mb-4 flex justify-center">
-                      <img
-                        src={testimonial.logo}
-                        alt={`${testimonial.name} logo`}
-                        className="h-14 w-14 object-contain"
-                      />
+                  <Card
+                    className="flex flex-col p-8 border border-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 h-full min-h-[360px]"
+                  >
+                    {/* Logo */}
+                    {testimonial.logo && (
+                      <div className="mb-4 flex justify-center">
+                        <img
+                          src={testimonial.logo}
+                          alt={`${testimonial.name} logo`}
+                          className="h-14 w-14 object-contain"
+                        />
+                      </div>
+                    )}
+
+                    {/* Name + Role */}
+                    <div className="mb-4 text-center">
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-gray-600">{testimonial.role}</p>
                     </div>
-                  )}
-                  {/* Name + Role */}
-                  <div className="mb-4 text-center">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-gray-600">{testimonial.role}</p>
-                  </div>
 
-                  {/* Rating */}
-                  <div className="flex justify-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-5 w-5 text-yellow-400 fill-current"
-                      />
-                    ))}
-                  </div>
+                    {/* Rating */}
+                    <div className="flex justify-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-5 w-5 text-yellow-400 fill-current"
+                        />
+                      ))}
+                    </div>
 
-                  {/* Testimonial */}
-                  <p className="text-gray-600 italic text-center flex-grow mt-2">
-                    "{testimonial.content}"
-                  </p>
+                    {/* Testimonial */}
+                    <p className="text-gray-600 italic text-center flex-grow mt-2">
+                      "{testimonial.content}"
+                    </p>
+                  </Card>
                 </motion.div>
               </div>
             ))}
