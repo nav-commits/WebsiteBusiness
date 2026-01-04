@@ -1,7 +1,7 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { projects } from "../data/data";
+import { Button } from "../components/Button";
+import { Card } from "../components/Card";
 const Portfolio = () => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -39,50 +39,51 @@ const Portfolio = () => {
 
       {/* Projects Grid */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-16">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className={`flex flex-col lg:flex-row ${
-                index % 2 === 0 ? "" : "lg:flex-row-reverse"
-              } gap-12 items-center bg-gray-50 rounded-2xl shadow-lg p-8 hover:shadow-2xl transition`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <div className="w-full lg:w-1/2">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="rounded-xl shadow-md w-full object-cover"
-                />
-              </div>
-              <div className="w-full lg:w-1/2">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  {project.title}
-                </h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  {project.description}
-                </p>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Key Features:
-                </h3>
-                <ul className="list-disc list-inside text-gray-600 mb-6 space-y-2">
-                  {project.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#5e17eb] hover:bg-indigo-700 transition duration-150"
-                >
-                  Visit Website
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </div>
+              <Card className={`flex flex-col lg:flex-row items-center gap-12 bg-gray-50 p-8 shadow-lg hover:shadow-2xl transition`}>
+                {/* Project Image */}
+                <div className="w-full lg:w-1/2">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="rounded-xl shadow-md w-full object-cover"
+                  />
+                </div>
+
+                {/* Project Content */}
+                <div className="w-full lg:w-1/2 flex flex-col">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    {project.title}
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-6">
+                    {project.description}
+                  </p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    Key Features:
+                  </h3>
+                  <ul className="list-disc list-inside text-gray-600 mb-6 space-y-2 flex-grow">
+                    {project.features.map((feature, i) => (
+                      <li key={i}>{feature}</li>
+                    ))}
+                  </ul>
+                  <Button
+                    href={project.link}
+                    variant="secondary"
+                    arrow
+                    className="px-6 py-3 mt-auto self-start"
+                  >
+                    Visit Website
+                  </Button>
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -101,22 +102,17 @@ const Portfolio = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg text-[#5e17eb] bg-white hover:bg-indigo-50 transition"
-            >
+            <Button to="/contact" arrow className="px-8 py-4">
               Get a Free Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </Button>
 
-            <a
+            <Button
               href="https://calendly.com/navdeep-dhamrait94"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-lg border border-white/40 hover:bg-white/10 transition"
+              variant="outline"
+              className="px-8 py-4"
             >
               Book a Free Call
-            </a>
+            </Button>
           </div>
         </div>
       </section>
