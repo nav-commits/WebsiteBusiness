@@ -52,36 +52,41 @@ const Home = () => {
       </motion.section>
 
       {/* ================= TECH LOGOS ================= */}
-      <section className="py-16 bg-white overflow-hidden border-b">
-        <div className="max-w-6xl mx-auto px-6 text-center mb-8">
-          <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
-            Tools I Work With
-          </p>
-          <p className="text-lg text-gray-700">
-            I use the right tools for the job — not one-size-fits-all.
-          </p>
-        </div>
+ {/* ================= TECH LOGOS ================= */}
+<section className="py-16 bg-white overflow-hidden border-b">
+  <div className="max-w-6xl mx-auto px-6 text-center mb-8">
+    <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
+      Tools I Work With
+    </p>
+    <p className="text-lg text-gray-700">
+      I use the right tools for the job — not one-size-fits-all.
+    </p>
+  </div>
 
-        <div className="relative w-full overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
+  <div className="relative w-full overflow-hidden flex justify-center">
+    {/* Left & Right Gradient Overlays */}
+    <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
+    <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
 
-          <motion.div
-            className="flex gap-16 items-center w-max"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-          >
-            {[...techLogos, ...techLogos].map((logo, idx) => (
-              <img
-                key={idx}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-10 md:h-12 opacity-70 hover:opacity-100 transition"
-              />
-            ))}
-          </motion.div>
-        </div>
-      </section>
+    {/* Scrolling Logos */}
+    <motion.div
+      className="flex gap-16 items-center"
+      animate={{ x: ["0%", "-100%"] }}
+      transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+    >
+      {techLogos.map((logo, idx) => (
+        <img
+          key={idx}
+          src={logo.src}
+          alt={logo.alt}
+          className="h-10 md:h-12 opacity-70 hover:opacity-100 transition"
+        />
+      ))}
+    </motion.div>
+  </div>
+</section>
+
+
 
       {/* ================= INTRO ================= */}
       <section className="py-20 bg-white">

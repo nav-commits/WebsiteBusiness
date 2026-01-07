@@ -65,9 +65,15 @@ const Portfolio = () => {
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">
                       {project.title}
                     </h2>
-                    <p className="text-gray-600 mb-4 flex-grow">
-                      {project.description}
-                    </p>
+                    <p className="text-gray-600 mb-2">{project.description}</p>
+
+                    {/* Conditionally render technology if it exists */}
+                    {project.technology && (
+                      <p className="text-sm text-gray-500 mb-4">
+                        <strong>Technology:</strong> {project.technology}
+                      </p>
+                    )}
+
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       Key Features:
                     </h3>
@@ -76,6 +82,7 @@ const Portfolio = () => {
                         <li key={i}>{feature}</li>
                       ))}
                     </ul>
+
                     <Button
                       href={project.link}
                       variant="secondary"

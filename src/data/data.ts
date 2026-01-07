@@ -92,6 +92,10 @@ export const techLogos: TechLogo[] = [
   { src: "/Svgs/react.svg", alt: "React" },
   { src: "/Svgs/tailwindcss.svg", alt: "Tailwind CSS" },
   { src: "/Svgs/googleanalytics.svg", alt: "Google" },
+  { src: "/Svgs/Webflow.svg", alt: "Webflow" },
+  { src: "/Svgs/html.svg", alt: "Html" },
+  { src: "/Svgs/css3.svg", alt: "css" },
+  { src: "/Svgs/seo.svg", alt: "seo" },
 ];
 
 // ---------- PORTFOLIO PROJECTS ----------
@@ -212,6 +216,7 @@ export interface Project {
   image: string;
   description: string;
   features: string[];
+  technology?: string; 
   link: string;
 }
 
@@ -219,92 +224,92 @@ export const projects: Project[] = [
   {
     title: "CMT Security Services",
     image: "/Images/security-camera.png",
-    description:
-      "Committed to protecting your business and community with innovative security solutions. We specialize in Event Security, Residential Security, Commercial Security, Close Security, and Retail Loss Prevention.",
+    description: "Committed to protecting your business and community...",
     features: [
       "Comprehensive Security Solutions",
       "Trusted & Professional Team",
       "Client-Focused Approach",
       "24/7 Protection & Reliability",
     ],
+    technology: "WordPress",
     link: "https://cmtsecured.ca/",
   },
   {
     title: "Ajay Kalha Tax Services",
     image: "/Images/accounting.png",
-    description:
-      "We provide comprehensive accounting services tailored to your business needs. From bookkeeping to preparing accurate financial statements, our team ensures your finances are in order, giving you insight and clarity for informed decisions.",
+    description: "We provide comprehensive accounting services...",
     features: [
       "User-Friendly Navigation",
       "Informative Blog Section",
       "Client Testimonials",
       "Quick Contact & Consultation",
     ],
+    technology: "WordPress",
     link: "https://aktax.org/",
   },
   {
     title: "The Healing Hive",
     image: "Images/Psychotherapy.png",
-    description:
-      "Providing compassionate therapy services for anxiety, self-worth, life transitions, and trauma through virtual sessions across Canada.",
+    description: "Providing compassionate therapy services...",
     features: [
       "Booking System",
       "Comprehensive Services Overview",
       "Meet the Therapist Section",
       "Secure & Confidential Contact",
     ],
+    technology: "WordPress",
     link: "https://thehealinghive.net/",
   },
   {
     title: "PSR Law",
     image: "/Images/realestate.png",
-    description:
-      "A dedicated real estate law firm offering expert legal guidance across Ontario. PSR Law is committed to transparency, integrity, and client-focused service—supporting first-time buyers and seasoned investors with professional legal care.",
+    description: "A dedicated real estate law firm offering expert legal guidance...",
     features: [
       "Real Estate Legal Services",
       "Clear & Transparent Pricing",
       "Expert Guidance & Support",
       "Client-Focused Solutions",
     ],
+    technology: "WordPress",
     link: "https://psrlaw.ca/",
   },
   {
     title: "Container Storage Solutions",
     image: "/Images/storage.png",
-    description:
-      "A leading storage terminal in the GTA, offering secure, 24/7 monitored container and trailer storage. With a client-first approach and strategic location in Brampton, they provide flexible, safe, and professional service for the freight and trucking industry.",
+    description: "A leading storage terminal in the GTA...",
     features: [
       "24/7 Secure Storage",
       "Flexible Storage Solutions",
       "Client-First Approach",
       "Strategic Location in GTA",
     ],
+    technology: "WordPress",
     link: "https://containerstorage.solutions",
   },
   {
     title: "Ghankas Law Group",
     image: "/Images/vik.jpg",
-    description:
-      "Family Law specialists based in the Tri-Cities, committed to providing direct, personal legal service. We believe if you hire a lawyer, you should be attended to by a lawyer.",
+    description: "Family Law specialists based in the Tri-Cities...",
     features: [
       "Personalized Client Attention",
       "Expert Family Law Services",
       "Clear Communication & Transparency",
       "Trusted Local Legal Representation",
     ],
+    technology: "WordPress",
     link: "https://ghankaslaw.com",
   },
   {
     title: "MARKAT Group Inc.",
     image: "/Images/MarkatImage.png",
-    description:
-      "Founded in Toronto, MARKAT is a boutique advisory & consulting firm built for small and medium-sized businesses. We help ambitious teams scale smart, manage risk, and lead with confidence in a rapidly changing world.",
+    description: "Founded in Toronto, MARKAT is a boutique advisory & consulting firm...",
     features: [
       "Strategic Business Advisory",
       "Risk Management & Compliance",
       "Tailored Growth Strategies",
       "Support for SMBs Ready to Scale",
     ],
+    technology: "Wix",
     link: "https://www.markatgroup.net/",
   },
   {
@@ -318,6 +323,7 @@ export const projects: Project[] = [
       "Efficient Project Delivery",
       "Client-Centric Solutions",
     ],
+    technology: "Wordpress",
     link: "https://gta-lec.ca/",
   },
   {
