@@ -208,6 +208,15 @@ export const portfolioProjects: PortfolioProject[] = [
     link: "/portfolio",
     type: "logo",
   },
+  {
+    img: "/Images/genpathwayx.png",
+    alt: "GenPathwayX",
+    title: "GenPathwayX",
+    description:
+      "Precision-driven genomics and preventive health company transforming advanced genetic science into actionable, real-world insight.",
+    link: "/portfolio",
+    type: "website",
+  },
 ];
 
 // ---------- PROJECTS ----------
@@ -364,6 +373,21 @@ export const projects: Project[] = [
     ],
     link: "https://vaanalyticsconsulting.com/",
   },
+  {
+    title: "GenPathwayX",
+    image: "/Images/genpathwayx.png",
+    description:
+      "GenPathwayX is a precision-driven genomics and preventive health company dedicated to transforming advanced genetic science into actionable, real-world insight. They empower clinics and healthcare providers with deeper clarity into human biology before disease manifests.",
+    features: [
+      "Clinically aligned DNA testing",
+      "Data-driven actionable insights",
+      "Integration with clinical and wellness workflows",
+      "Scalable platform for clinics & partners",
+    ],
+    technology: "Wix",
+    link: "https://www.genpathwayx.com/",
+  },
+  
 ];
 
 // ---------- WEBSITE PACKAGES ----------
