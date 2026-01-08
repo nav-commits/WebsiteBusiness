@@ -5,19 +5,19 @@ import { websitePackages, carePlans, additionalServices } from "../data/data";
 import { Button } from "../components/Button";
 import { Tabs } from "../components/Tabs";
 import { Card } from "../components/Card";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
 const Services = () => {
   const [showOtherServices, setShowOtherServices] = useState(false);
-
   const otherServices = [...carePlans, ...additionalServices];
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
 
   return (
     <div className="pt-16">
-      {/* Hero */}
+      {/* ================= HERO ================= */}
       <motion.section
         className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20"
         initial="hidden"
@@ -38,14 +38,14 @@ const Services = () => {
             className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            I build fast, SEO-optimized websites designed to convert — and offer
-            maintenance, security, and marketing support to keep your business
-            growing.
+            I build fast, SEO-optimized websites designed to convert visitors
+            into clients — plus ongoing maintenance, security, and marketing
+            support to keep your business growing.
           </motion.p>
         </motion.div>
       </motion.section>
 
-      {/* Toggle */}
+      {/* ================= TABS ================= */}
       <motion.section
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 mt-8 text-center"
         initial={fadeInUp.hidden}
@@ -62,6 +62,7 @@ const Services = () => {
         />
       </motion.section>
 
+      {/* ================= PACKAGES / SERVICES ================= */}
       <motion.section
         className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         initial={fadeInUp.hidden}
@@ -144,20 +145,20 @@ const Services = () => {
         </div>
       </motion.section>
 
-      {/* Final CTA */}
+      {/* ================= FINAL CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
-            Ready to Turn Your Website Into a Lead Machine?
+            Ready to Turn Your Website Into a Lead-Generating Machine?
           </h2>
 
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            If my approach and services align with what you’re looking for,
-            let’s talk about your project and see if we’re a good fit.
+            If my packages and services match what you’re looking for, let’s
+            discuss your project and see how we can grow your business.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button to="/contact" className="px-8 py-4 rounded-lg">
+            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
               Get a Free Quote
             </Button>
 

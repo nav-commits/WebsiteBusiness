@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { testimonials } from "../data/data";
@@ -7,12 +8,12 @@ import { Button } from "../components/Button";
 import { Star } from "lucide-react";
 import { Card } from "../components/Card";
 
-const Testimonials = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
+const Testimonials = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -21,11 +22,30 @@ const Testimonials = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
+    arrows: false,
   };
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
+      {/* ================= SEO META ================= */}
+      <Helmet>
+        <title>Testimonials | Nav Dhamrait — Toronto Web Developer</title>
+        <meta
+          name="description"
+          content="Read what clients say about working with Nav Dhamrait, a Toronto-based web developer building websites and logos that generate leads."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://yourdomain.com/testimonials" />
+        <meta property="og:title" content="Testimonials — Nav Dhamrait" />
+        <meta
+          property="og:description"
+          content="See client testimonials about custom websites and logos built for Toronto businesses."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/testimonials" />
+      </Helmet>
+
+      {/* ================= HERO ================= */}
       <motion.section
         className="bg-gray-50 py-20"
         initial="hidden"
@@ -41,13 +61,13 @@ const Testimonials = () => {
             Helping local businesses grow online in Toronto & GTA
           </motion.p>
           <motion.h1
-            className="text-4xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={fadeInUp}
           >
             What My Clients Are Saying
           </motion.h1>
           <motion.p
-            className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
             Don't just take my word for it. Here's what some of my clients have
@@ -56,7 +76,7 @@ const Testimonials = () => {
         </motion.div>
       </motion.section>
 
-      {/* Testimonials Carousel */}
+      {/* ================= TESTIMONIALS CAROUSEL ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Slider {...settings}>
@@ -67,10 +87,9 @@ const Testimonials = () => {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUp}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <Card
-                    className="flex flex-col p-8 border border-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 h-full min-h-[360px]"
-                  >
+                  <Card className="flex flex-col p-8 border border-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 h-full min-h-[360px]">
                     {/* Logo */}
                     {testimonial.logo && (
                       <div className="mb-4 flex justify-center">
@@ -95,7 +114,7 @@ const Testimonials = () => {
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star
                           key={i}
-                          className="h-5 w-5 text-yellow-400 fill-current"
+                          className="h-5 w-5 text-yellow-400"
                         />
                       ))}
                     </div>
@@ -112,7 +131,7 @@ const Testimonials = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* ================= FINAL CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">

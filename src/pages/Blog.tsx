@@ -3,7 +3,9 @@ import { Card } from "../components/Card";
 import { Image, CheckCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Button } from "../components/Button";
+import { Helmet } from "react-helmet-async";
 
+// Sample blog posts data
 const blogPosts = [
   {
     title: "Top 5 Website Features That Attract Local Clients",
@@ -109,6 +111,7 @@ Outcome:
   },
 ];
 
+// Motion animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -117,7 +120,25 @@ const fadeInUp = {
 const Blog = () => {
   return (
     <div className="pt-16">
-      {/* ================= BLOG HERO ================= */}
+      {/* ================= SEO META ================= */}
+      <Helmet>
+        <title>Blog | Nav Dhamrait — Toronto Web Developer</title>
+        <meta
+          name="description"
+          content="Read insights and tips on web design, SEO, and marketing for local service businesses by Nav Dhamrait, Toronto web developer."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://yourdomain.com/blog" />
+        <meta property="og:title" content="Blog — Nav Dhamrait" />
+        <meta
+          property="og:description"
+          content="Helpful blog posts on web design, SEO, and marketing for small business websites in Toronto."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/blog" />
+      </Helmet>
+
+      {/* ================= HERO ================= */}
       <motion.section
         className="bg-gray-50 py-20"
         initial="hidden"
@@ -127,7 +148,7 @@ const Blog = () => {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
-            className="text-4xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={fadeInUp}
           >
             Blog
@@ -137,8 +158,8 @@ const Blog = () => {
             variants={fadeInUp}
           >
             Stay up-to-date with tips, insights, and guides to help local
-            service businesses grow online. Our blog helps you understand web
-            design, SEO, and marketing strategies that actually work.
+            service businesses grow online. Learn web design, SEO, and
+            marketing strategies that actually work.
           </motion.p>
         </div>
       </motion.section>
@@ -180,7 +201,7 @@ const Blog = () => {
                 </div>
 
                 {/* Content */}
-                <div className="text-gray-600 leading-relaxed">
+                <div className="text-gray-600 leading-relaxed prose prose-indigo">
                   <ReactMarkdown>{post.content}</ReactMarkdown>
                 </div>
               </Card>

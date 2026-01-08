@@ -22,29 +22,27 @@ const Home = () => {
       {/* ================= SEO META ================= */}
       <Helmet>
         <title>
-          Nav Dhamrait — Web Developer & Designer in Toronto | WordPress, Wix &
-          Custom Websites
+          Nav Dhamrait — Toronto Web Developer & Designer | Lead-Focused Websites
         </title>
 
         <meta
           name="description"
-          content="Nav Dhamrait is a Toronto-based web developer and designer building SEO-optimized WordPress, Wix, and custom websites for local service businesses looking to get more leads."
+          content="Toronto web developer and designer creating fast, mobile-friendly, SEO-optimized websites that help service businesses attract clients and grow their revenue."
         />
-
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://yourdomain.com/" />
+        <link rel="canonical" href="https://navwebdesign.com/" />
 
         {/* Open Graph */}
         <meta
           property="og:title"
-          content="Nav Dhamrait — Web Developer & Designer in Toronto"
+          content="Nav Dhamrait — Toronto Web Developer & Designer"
         />
         <meta
           property="og:description"
-          content="SEO-optimized WordPress, Wix, and custom websites for Toronto service businesses."
+          content="Lead-focused, SEO-optimized websites for Toronto service businesses to attract clients and grow revenue."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/" />
+        <meta property="og:url" content="https://navwebdesign.com/" />
       </Helmet>
 
       <div className="pt-16">
@@ -62,7 +60,7 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              Websites That Help Local Businesses Get More Leads
+              Websites That Grow Your Business and Get More Local Leads
             </motion.h1>
 
             <motion.p
@@ -71,13 +69,12 @@ const Home = () => {
               initial="hidden"
               animate="visible"
             >
-              Custom-designed, SEO-optimized websites built for Toronto’s
-              service professionals.
+              Fast, mobile-friendly, SEO-ready websites for Toronto service businesses — designed to convert visitors into clients.
             </motion.p>
 
             <motion.div variants={fadeInUp} initial="hidden" animate="visible">
               <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
-                Let’s Build Your Website
+                Book Your Free Consultation
               </Button>
             </motion.div>
           </div>
@@ -87,10 +84,10 @@ const Home = () => {
         <section className="py-16 bg-white overflow-hidden border-b">
           <div className="max-w-6xl mx-auto px-6 text-center mb-8">
             <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
-              Tools I Work With
+              Tools & Solutions I Use
             </p>
             <p className="text-lg text-gray-700">
-              I use the right tools for the job — not one-size-fits-all.
+              WordPress, Wix, Webflow, and custom solutions — I pick the right tool to grow your business.
             </p>
           </div>
 
@@ -142,9 +139,7 @@ const Home = () => {
               </h2>
 
               <p className="text-lg text-gray-700 mb-6">
-                I build professional, lead-focused websites using WordPress,
-                Wix, or custom code — always choosing the best solution for your
-                goals.
+                I build professional websites that attract clients, generate leads, and grow your business — using WordPress, Wix, or custom solutions tailored to your needs.
               </p>
 
               <Card bgColor="bg-gray-100" className="p-6">
@@ -153,10 +148,10 @@ const Home = () => {
                 </h3>
 
                 <ul className="space-y-2 text-gray-700">
-                  <li>✔️ Custom solutions — no cookie-cutter sites</li>
-                  <li>✔️ SEO-focused design for higher rankings</li>
-                  <li>✔️ Mobile-first & fast loading</li>
-                  <li>✔️ Transparent pricing & honest advice</li>
+                  <li>✔️ Custom solutions — built to grow your business</li>
+                  <li>✔️ SEO-focused design — rank higher on Google</li>
+                  <li>✔️ Mobile-first & fast-loading — keep visitors engaged</li>
+                  <li>✔️ Transparent pricing & honest advice — no surprises</li>
                 </ul>
 
                 <div className="mt-6">
@@ -249,12 +244,11 @@ const Home = () => {
         <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
           <div className="max-w-5xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-extrabold mb-6">
-              Ready to Turn Your Website Into a Lead Machine?
+              Ready to Turn Your Website Into a Business-Generating Machine?
             </h2>
 
             <p className="text-lg text-indigo-100 mb-10">
-              Let’s build a website that actually brings in business — not just
-              looks good.
+              Get a website that not only looks great but attracts clients, grows your leads, and increases revenue.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
