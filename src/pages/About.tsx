@@ -33,26 +33,18 @@ const About = () => {
                 className="text-lg text-gray-800 leading-relaxed mb-4"
                 variants={fadeInUp}
               >
-                I’m a passionate{" "}
-                <span className="font-semibold text-gray-900">
-                  Web Designer & Developer
-                </span>{" "}
-                specializing in websites for{" "}
-                <span className="font-semibold text-gray-900">
-                  local service businesses
-                </span>
-                . Based in Toronto, I build custom, mobile-friendly, and
-                SEO-optimized websites using the right tools — WordPress, Wix,
-                or fully custom solutions.
+                I’m <span className="font-semibold text-gray-900">Nav Dhamrait</span>, a Toronto-based{" "}
+                <span className="font-semibold text-gray-900">Web Designer & Developer</span> 
+                helping local service businesses attract clients and grow revenue. I build fast, mobile-friendly, and SEO-optimized websites using WordPress, Wix, or custom solutions tailored to your goals.
               </motion.p>
 
               <motion.p
                 className="text-base text-gray-700 leading-relaxed mb-6"
                 variants={fadeInUp}
               >
-                My websites don’t just look good — they’re built to{" "}
+                My websites don’t just look great — they’re built to{" "}
                 <span className="font-semibold text-[#5e17eb]">
-                  attract visitors and convert them into real leads
+                  generate leads, increase conversions, and grow your business
                 </span>
                 .
               </motion.p>
@@ -72,25 +64,21 @@ const About = () => {
                 <span className="font-semibold text-gray-900">
                   What sets me apart?
                 </span>{" "}
-                I take the time to understand your business goals, challenges,
-                and target audience, creating tailored solutions for long-term
-                growth and a strong online presence.
+                I take the time to understand your business, target audience, and goals to create a website that truly converts visitors into customers and helps your business grow.
               </motion.p>
 
               <motion.p
                 className="text-base text-gray-600 leading-relaxed"
                 variants={fadeInUp}
               >
-                If you’re looking for a website that feels professional,
-                performs well, and actually helps grow your business, you’re in
-                the right place.
+                If you want a professional, high-performing website that brings in clients and delivers results, you’re in the right place.
               </motion.p>
             </Card>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* ================= PROCESS ================= */}
+      {/* ================= WORKFLOW ================= */}
       <motion.section
         className="py-20 bg-white"
         initial="hidden"
@@ -109,14 +97,12 @@ const About = () => {
             className="text-xl text-gray-600 text-center mb-14 max-w-3xl mx-auto"
             variants={fadeInUp}
           >
-            I keep things simple and transparent. From the first conversation to
-            launch, you’ll always know what’s happening and what comes next.
+            I make building your website simple and transparent. From the first conversation to launch, you’ll always know what’s happening and how your website will help grow your business.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {processSteps.map((step, index) => {
               const Icon = step.icon;
-
               return (
                 <motion.div
                   key={index}
@@ -146,12 +132,11 @@ const About = () => {
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
-            Ready to Turn Your Website Into a Lead Machine?
+            Ready to Turn Your Website Into a Lead-Generating Machine?
           </h2>
 
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            If my approach and workflow align with what you’re looking for,
-            let’s talk about your project and see if we’re a good fit.
+            If my approach and workflow align with what you’re looking for, let’s discuss your project and see how I can help grow your business.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">

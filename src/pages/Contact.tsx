@@ -98,6 +98,7 @@ const Contact = () => {
                     {String(errors.email.message)}
                   </p>
                 )}
+
                 <textarea
                   placeholder="Your Message"
                   rows={6}
