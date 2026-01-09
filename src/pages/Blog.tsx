@@ -4,53 +4,8 @@ import { Button } from "../components/Button";
 import { Helmet } from "react-helmet-async";
 import { CheckCircle } from "lucide-react";
 
-// Hard-coded blog posts
-const blogPosts = [
-  {
-    id: 1,
-    title: "How a Professional Website Helps Local Businesses Get More Clients",
-    author: "Nav Dhamrait",
-    date: "2026-01-08",
-    category: "Web Design",
-    content: `
-  A professional website is no longer optional for local businesses — it’s one of the most powerful tools you have to attract and convert new clients.
-  
-  1. First Impressions Build Instant Trust
-  When someone searches for your service, your website is often the first interaction they have with your business. A clean, modern design immediately signals professionalism and credibility. If your site looks outdated or confusing, visitors may leave within seconds and choose a competitor instead.
-  
-  2. Your Website Works 24/7
-  Unlike social media or ads that require constant attention, your website works for you around the clock. It answers common questions, showcases your services, and guides visitors toward contacting you — even while you sleep.
-  
-  3. Clear Messaging Converts Visitors Into Leads
-  A well-structured website clearly explains:
-  - What you do
-  - Who you help
-  - Why you’re different
-  - How to get started
-  
-  This clarity removes confusion and makes it easy for potential clients to take action, whether that’s calling you, filling out a form, or booking a consultation.
-  
-  4. Better SEO Means More Local Visibility
-  A professionally built website is optimized for search engines. This helps your business show up when local customers search for services like yours on Google. More visibility means more qualified traffic and more opportunities to win new clients.
-  
-  5. It Supports All Your Marketing Efforts
-  Your website becomes the foundation for everything else — Google Ads, Instagram, Facebook, referrals, and email marketing. Instead of sending people to random links or social profiles, you send them to one place designed to convert.
-  
-  ### Final Thoughts
-  A professional website isn’t just about looking good — it’s about building trust, increasing visibility, and turning visitors into paying clients. For local businesses, it’s one of the smartest investments you can make for long-term growth.
-  `,
-  }
- , 
-  {
-    id: 2,
-    title: "What Every Small Business Website Needs in 2026",
-    author: "Nav Dhamrait",
-    date: "2026-01-08",
-    category: "Web Design",
-    content:
-      "Building a small business website today involves planning, design, and development.\n\nFocus on clear CTAs, mobile responsiveness, and SEO basics.\n\nUse modern tools like React, Tailwind, or WordPress depending on your goals.",
-  },
-];
+// ✅ Dynamic blog data
+import blogPosts from "../data/blogs.json";
 
 // Animation
 const fadeInUp = {
@@ -84,10 +39,7 @@ const Blog = () => {
           >
             Blog
           </motion.h1>
-          <motion.p
-            className="text-lg text-gray-700"
-            variants={fadeInUp}
-          >
+          <motion.p className="text-lg text-gray-700" variants={fadeInUp}>
             Practical tips on web design, SEO, and growing your local business
             online.
           </motion.p>
@@ -106,21 +58,25 @@ const Blog = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="p-8">
-                <div className="flex items-center mb-3">
+              <Card className="p-8 space-y-4">
+                <div className="flex items-center mb-2">
                   <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />
                   <h3 className="text-2xl font-semibold text-gray-900">
                     {post.title}
                   </h3>
                 </div>
-
-                <div className="text-sm text-gray-500 mb-4">
+                <div className="text-sm text-gray-500">
                   By {post.author} • {post.date} • {post.category}
                 </div>
-
-                <p className="text-gray-600 whitespace-pre-line">
-                  {post.content}
-                </p>
+                <p className="text-gray-600">{post.excerpt}</p>
+                <Button
+                  href={`/blog/${post.id}`}
+                  variant="secondary"
+                  arrow
+                  className="px-6 py-3 mt-auto self-start"
+                >
+                  Book a Free Call
+                </Button>
               </Card>
             </motion.div>
           ))}
