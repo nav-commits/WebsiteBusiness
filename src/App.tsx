@@ -9,6 +9,7 @@ import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
 import { useAnalytics } from "./useAnalystics";
 import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 
 function App() {
   useAnalytics();
@@ -23,6 +24,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetail />} /> 
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
