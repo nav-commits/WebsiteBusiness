@@ -1,123 +1,82 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "../components/Card";
-import { Image, CheckCircle } from "lucide-react";
-import ReactMarkdown from "react-markdown";
 import { Button } from "../components/Button";
 import { Helmet } from "react-helmet-async";
+import { CheckCircle } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
-// Sample blog posts data
-const blogPosts = [
-  {
-    title: "Top 5 Website Features That Attract Local Clients",
-    content: `
-Discover the essential features that make your website stand out and generate leads for local businesses:
+// Strapi API URL
+const STRAPI_URL = "http://localhost:1337";
 
-- Clear call-to-action buttons
-- Mobile-friendly responsive design
-- Contact and booking forms
-- Services and pricing pages
-- Testimonials and portfolio
+// Type for a blog post
+export type StrapiPost = {
+  id: number;
+  title: string;
+  content: RichTextBlock[];
+  author: string;
+  category?: string;
+  publishedDate: string;
+};
 
-Tips:
-- Make it easy for visitors to contact you
-- Highlight your local presence for SEO
-- Keep the design clean and professional
-    `,
-    icon: <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />,
-    author: "Nav Dhamrait",
-    date: "Dec 30, 2025",
-    category: "Web Design",
-  },
-  {
-    title: "WordPress vs Wix vs Custom Code: Which Is Best for Your Business?",
-    content: `
-Compare popular website platforms and custom solutions to find the right fit for your business goals.
+// Type for a rich text block
+export type RichTextBlock = {
+  type: string;
+  children: { text: string }[];
+};
 
-- WordPress: Flexible, plugins, widely used
-- Wix: Easy drag & drop, fast setup
-- Custom Code: Fully custom, more expensive, high control
+// Fetch posts from Strapi
+async function getPosts(): Promise<StrapiPost[]> {
+  const res = await fetch(`${STRAPI_URL}/api/posts?populate=*`);
+  if (!res.ok) throw new Error("Failed to fetch posts");
 
-Consider:
-- Budget & timeline
-- Long-term updates & maintenance
-- SEO & performance requirements
-    `,
-    icon: <Image className="h-6 w-6 text-[#5e17eb] mr-2" />,
-    author: "Nav Dhamrait",
-    date: "Dec 28, 2025",
-    category: "Platforms",
-  },
-  {
-    title: "5 Things Every Local Service Website Must Have",
-    content: `
-Essential elements every local business website needs to attract leads and convert visitors:
+  const data = await res.json();
+  return Array.isArray(data.data) ? data.data : [];
+}
 
-1. Mobile-friendly responsive design
-2. Clear call-to-action buttons
-3. Contact/booking forms
-4. Services page with clear info
-5. SEO basics (titles, descriptions, alt tags)
+// Convert Rich Text blocks to plain text
+function renderContent(blocks: RichTextBlock[]): string {
+  if (!blocks) return "";
+  return blocks
+    .map((block) => {
+      if (block.type === "paragraph") {
+        return block.children.map((child: { text: string }) => child.text).join("");
+      }
+      return "";
+    })
+    .join("\n\n");
+}
 
-Extra tips:
-- Include testimonials or portfolio
-- Highlight local presence for SEO
-    `,
-    icon: <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />,
-    author: "Nav Dhamrait",
-    date: "Dec 25, 2025",
-    category: "Web Design",
-  },
-  {
-    title: "How Long Does It Take to Build a Website in 2026?",
-    content: `
-Timeline for small business websites:
-
-- Consultation & planning: 1–2 days
-- Design phase: 3–5 days
-- Development phase: 1–2 weeks
-- Testing & revisions: 2–3 days
-- Launch: 1 day
-
-Tips:
-- Faster if client provides content & assets promptly
-- Complex features (eCommerce, booking) add time
-- Clear communication keeps timeline on track
-    `,
-    icon: <Image className="h-6 w-6 text-[#5e17eb] mr-2" />,
-    author: "Nav Dhamrait",
-    date: "Dec 20, 2025",
-    category: "Development",
-  },
-  {
-    title: "SEO Basics for Small Business Owners",
-    content: `
-A simple guide to on-page SEO, Google setup, and content strategies:
-
-- Optimize page titles & meta descriptions
-- Add alt text to images
-- Submit sitemap to Google Search Console
-- Create quality content regularly
-- Use local SEO for Google My Business
-
-Outcome:
-- Better Google rankings
-- More traffic & leads
-- Establish authority in your local market
-    `,
-    icon: <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />,
-    author: "Nav Dhamrait",
-    date: "Dec 18, 2025",
-    category: "SEO",
-  },
-];
-
-// Motion animation variants
+// Framer Motion animation
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const Blog = () => {
+  const [posts, setPosts] = useState<StrapiPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    getPosts()
+      .then((data) => {
+        console.log(data)
+        setPosts(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setError("Failed to load posts.");
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p className="text-center py-20">Loading posts...</p>;
+  if (error) return <p className="text-center py-20 text-red-600">{error}</p>;
+  if (!Array.isArray(posts) || posts.length === 0)
+    return <p className="text-center py-20">No posts found.</p>;
+
   return (
     <div className="pt-16">
       {/* ================= SEO META ================= */}
@@ -172,16 +131,16 @@ const Blog = () => {
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          {blogPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <motion.div
-              key={index}
+              key={post.id}
               variants={fadeInUp}
               transition={{ delay: index * 0.1 }}
             >
               <Card className="p-8 flex flex-col">
                 {/* Title + Icon */}
                 <div className="flex items-center mb-2">
-                  {post.icon}
+                  <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />
                   <h3 className="text-2xl font-semibold text-gray-900">
                     {post.title}
                   </h3>
@@ -191,7 +150,7 @@ const Blog = () => {
                 <div className="flex items-center text-gray-500 text-sm mb-4 space-x-2">
                   <span>By {post.author}</span>
                   <span>•</span>
-                  <span>{post.date}</span>
+                  <span>{post.publishedDate}</span>
                   {post.category && (
                     <>
                       <span>•</span>
@@ -202,7 +161,7 @@ const Blog = () => {
 
                 {/* Content */}
                 <div className="text-gray-600 leading-relaxed prose prose-indigo">
-                  <ReactMarkdown>{post.content}</ReactMarkdown>
+                  <ReactMarkdown>{renderContent(post.content)}</ReactMarkdown>
                 </div>
               </Card>
             </motion.div>
