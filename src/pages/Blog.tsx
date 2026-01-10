@@ -75,7 +75,7 @@ const Blog = () => {
                   arrow
                   className="px-6 py-3 mt-auto self-start"
                 >
-                  Book a Free Call
+                  Read More
                 </Button>
               </Card>
             </motion.div>
