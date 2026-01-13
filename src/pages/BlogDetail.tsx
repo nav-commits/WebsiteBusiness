@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Card } from "../components/Card";
 import { Button } from "../components/Button";
 import { motion } from "framer-motion";
+import ReactMarkdown from "react-markdown";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -31,6 +32,7 @@ const BlogDetail = () => {
         <title>{post.title} | Nav Dhamrait</title>
         <meta name="description" content={post.excerpt} />
       </Helmet>
+
       {/* ================= TOP HERO SECTION ================= */}
       <motion.section
         className="bg-gray-50 py-20"
@@ -54,8 +56,8 @@ const BlogDetail = () => {
       {/* ================= BLOG CONTENT ================= */}
       <div className="max-w-4xl mx-auto py-16 px-6">
         <Card className="p-10 space-y-6">
-          <article className="prose max-w-none whitespace-pre-line">
-            {post.content}
+          <article className="prose max-w-none">
+            <ReactMarkdown>{post.content}</ReactMarkdown>
           </article>
 
           {/* Back button left-aligned */}
