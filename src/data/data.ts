@@ -10,49 +10,63 @@ import {
 } from "lucide-react";
 import type { ComponentType } from "react";
 
+// ---------- WORKFLOW ----------
 export interface ProcessStep {
   title: string;
   description: string;
   icon: ComponentType;
+  note?: string;
 }
 
 export const processSteps: ProcessStep[] = [
   {
     title: "Consultation",
-    description: "Discuss goals, website needs, style, timeline, and budget.",
+    description:
+      "We discuss your business goals, website needs, style preferences, timeline, and budget.",
     icon: Calendar,
+    note: "Free consultation via Zoom, phone, or in person.",
   },
   {
     title: "Proposal & Contract",
-    description: "Clear scope, deliverables, timeline, pricing. Deposit invoiced.",
+    description:
+      "You receive a clear proposal outlining scope, deliverables, timeline, pricing, and revision policy. Deposit is invoiced to begin.",
     icon: FileText,
+    note: "This step protects both you and me from scope creep.",
   },
   {
     title: "Content Collection",
-    description: "Gather branding, text, images, and hosting/domain info.",
+    description:
+      "You provide branding, text, images, and hosting/domain access through a shared folder.",
     icon: Clipboard,
+    note: "I can assist with copywriting or stock images if needed.",
   },
   {
     title: "Design Phase",
-    description: "Choose from 3–4 templates, customize colors, fonts, layout. 2 revisions included.",
+    description:
+      "Choose from 3–4 design directions. Colors, fonts, layout, and structure are customized. Includes 2 structured revision rounds.",
     icon: PenTool,
   },
   {
     title: "Development Phase",
-    description: "Build pages, forms, booking/eCommerce; test responsiveness and speed.",
+    description:
+      "I build all pages and features such as forms, booking, or eCommerce, and test responsiveness, performance, and usability.",
     icon: Code,
   },
   {
     title: "Review & Launch",
-    description: "Apply final revisions, provide admin access, connect domain + SSL, optional Google submission.",
+    description:
+      "Final revisions are applied, admin access is provided, domain and SSL are connected, and the site is launched. Optional Google submission included.",
     icon: CheckCircle,
   },
   {
     title: "Ongoing Support",
-    description: "Optional care plans for updates, maintenance, SEO, and content.",
+    description:
+      "Optional care plans available for maintenance, updates, security, SEO, and content support.",
     icon: Shield,
+    note: "Not required, but recommended for long-term performance.",
   },
 ];
+
 // ---------- TECH LOGOS ----------
 export interface TechLogo {
   src: string;
@@ -369,6 +383,7 @@ export interface WebsitePackage {
   tagline: string;
   price: string;
   features: string[];
+  note?: string;
 }
 
 export const websitePackages: WebsitePackage[] = [
@@ -378,13 +393,15 @@ export const websitePackages: WebsitePackage[] = [
     price: "Starting at $500",
     features: [
       "Custom landing page designed to convert visitors into clients",
+      "Designed for ads, Google traffic, or Instagram lead generation",
       "Mobile-first, fully responsive",
       "Call-to-action sections & lead capture forms",
       "Optional booking or lead capture integration",
       "SEO-friendly and fast-loading",
-      "2 rounds of revisions (additional revisions $50 each)",
-      "Delivered 3–5 days after content is provided",
+      "2 structured revision rounds (design + content; additional revisions $50 each)",
+      "Delivered in 3–5 business days after content is provided",
     ],
+    note: "Hosting and domain not included. I can help recommend or set them up if needed.",
   },
   {
     title: "Starter Website",
@@ -395,10 +412,11 @@ export const websitePackages: WebsitePackage[] = [
       "Mobile-first, fully responsive",
       "SEO-ready foundation (metadata, sitemap, Google Search Console setup)",
       "Contact form integration",
-      "2 rounds of layout/content revisions (extra $50 per page)",
-      "Delivered within 1 week after content is provided",
-      "Includes Foundation Care Plan (1-year maintenance, updates & backups)",
+      "2 structured revision rounds (design + content; additional revisions $50 each)",
+      "Delivered in 7–10 business days after content is provided",
+      "Includes Foundation Care Plan (1 year: updates & backups)",
     ],
+    note: "Hosting and domain not included. I can help recommend or set them up if needed.",
   },
   {
     title: "Growth Website",
@@ -407,26 +425,28 @@ export const websitePackages: WebsitePackage[] = [
     features: [
       "Up to 10 custom pages",
       "Mobile-first, fully responsive design",
-      "Booking system or eCommerce integration",
-      "Basic SEO + speed optimization",
-      "2 rounds of revisions (additional revisions $50 per page)",
-      "Delivered 2–3 weeks after content is provided",
+      "Booking system OR eCommerce integration",
+      "Basic SEO and speed optimization",
+      "2 structured revision rounds (design + content; additional revisions $50 each)",
+      "Delivered in 2–3 weeks after content is provided",
       "Includes Growth Care Plan (5 updates/year, advanced security, quarterly performance checks)",
     ],
+    note: "Hosting and domain not included. I can help recommend or set them up if needed.",
   },
   {
     title: "Scale Website",
-    tagline: "Custom solutions for businesses growing fast",
+    tagline: "Custom solutions for fast-growing businesses",
     price: "Starting at $2,200",
     features: [
       "Unlimited pages tailored to your business needs",
       "Mobile-first, fully responsive",
       "Booking + eCommerce + Courses integration",
       "Advanced SEO, speed, and security optimization",
-      "2 rounds of revisions (additional revisions $50 per page)",
-      "Delivered 3–5 weeks after content is provided",
-      "Includes Scale Care Plan (monthly updates, blog posts, local SEO, analytics, conversion optimization)",
+      "2 structured revision rounds (design + content; additional revisions $50 each)",
+      "Delivered in 3–5 weeks after content is provided",
+      "Includes Scale Care Plan (monthly updates, SEO, analytics, conversion optimization)",
     ],
+    note: "Hosting and domain not included. I can help recommend or set them up if needed.",
   },
 ];
 
@@ -436,6 +456,7 @@ export interface CarePlan {
   tagline: string;
   price: string;
   features: string[];
+  support?: string;
 }
 
 export const carePlans: CarePlan[] = [
@@ -449,6 +470,7 @@ export const carePlans: CarePlan[] = [
       "Basic security monitoring",
       "Up to 2 small content updates per year (text, images, minor layout tweaks)",
     ],
+    support: "Email support (72-hour response time)",
   },
   {
     title: "Growth Care Plan",
@@ -460,6 +482,7 @@ export const carePlans: CarePlan[] = [
       "Advanced security monitoring",
       "Quarterly website performance checks",
     ],
+    support: "Priority email support (48-hour response time)",
   },
   {
     title: "Scale Care Plan",
@@ -467,12 +490,13 @@ export const carePlans: CarePlan[] = [
     price: "$1,000 / year",
     features: [
       "All Growth Care Plan features",
-      "Up to 12 content updates per year (text, images, minor layout tweaks, promotional updates)",
+      "Up to 12 content updates per year",
       "Monthly blog posts or promotional updates",
       "Local SEO & Google Business profile maintenance",
       "Conversion optimization support",
       "Monthly analytics & performance reports",
     ],
+    support: "Priority support (24–48 hour response time)",
   },
 ];
 
@@ -482,6 +506,7 @@ export interface AdditionalService {
   price: string;
   description?: string;
   features: string[];
+  note?: string;
 }
 
 export const additionalServices: AdditionalService[] = [
@@ -498,13 +523,14 @@ export const additionalServices: AdditionalService[] = [
       "Basic keyword optimization for up to 5 main pages",
       "Ensure mobile-friendly and fast-loading pages",
     ],
+    note: "Best paired with Growth or Scale Website packages.",
   },
   {
     title: "Business Email Setup",
     price: "$100",
     features: [
       "Professional email setup with Google Workspace, Zoho, or similar",
-      "Create custom domain-based email addresses (yourname@yourbusiness.com)",
+      "Create custom domain-based email addresses",
       "Configure inboxes on multiple devices",
       "Set up basic security and spam protection",
       "Optional email migration from old accounts",
@@ -514,10 +540,10 @@ export const additionalServices: AdditionalService[] = [
     title: "Logo Design",
     price: "$200",
     features: [
-      "2 initial design concepts for your logo",
-      "2 full revisions for the chosen concept (extra revisions $50 each)",
-      "Delivery in vector (AI, SVG), PNG, and JPEG formats",
-      "Optimized for website, social media, and print",
+      "2 initial logo concepts",
+      "2 full revisions (extra revisions $50 each)",
+      "Delivery in AI, SVG, PNG, and JPEG formats",
+      "Optimized for web, social media, and print",
       "Brand colors and typography included",
     ],
   },
@@ -525,13 +551,16 @@ export const additionalServices: AdditionalService[] = [
     title: "Website Redesign / Fix",
     price: "Starting at $600",
     features: [
-      "Refresh your existing website with modern design",
+      "Modern design refresh",
       "Improve page speed and Core Web Vitals",
-      "Make your site fully mobile-friendly",
+      "Fully mobile-friendly optimization",
       "Fix broken links, forms, and layout issues",
-      "Optional SEO and content optimization upgrades",
+      "Optional SEO and content upgrades",
+      "2 structured revision rounds (design + content, additional revisions $50 each)",
     ],
+    note: "Hosting and domain not included. I can help set them up if needed.",
   },
+  
 ];
 
 
@@ -605,26 +634,31 @@ export const faqs: FAQItem[] = [
   {
     question: "How long does it take to complete a website?",
     answer:
-      "Timeline varies by complexity. Starter websites: ~1 week, advanced sites: 3–4 weeks.",
+      "Timeline depends on the package and complexity. Starter websites typically take around 1 week, while advanced or larger websites may take 3–5 weeks from content submission to launch.",
   },
   {
     question: "Do you offer ongoing maintenance?",
     answer:
-      "Yes, annual maintenance includes updates, backups, and priority support.",
+      "Yes! Optional care plans provide regular updates, security monitoring, backups, and priority support to keep your website running smoothly year-round.",
   },
   {
     question: "Will my website be mobile-friendly?",
     answer:
-      "Absolutely! All websites are fully responsive for seamless mobile experience.",
+      "Absolutely! Every website I build is fully responsive and optimized for mobile devices, tablets, and desktops to ensure a seamless user experience.",
   },
   {
     question: "Do you provide SEO services?",
     answer:
-      "Yes, basic SEO is included; advanced SEO can be customized per project.",
+      "Yes. All websites include basic SEO setup, and I offer advanced SEO services tailored to your business goals for better search engine visibility.",
   },
   {
-    question: "Post-launch changes?",
+    question: "Can I make changes after my website launches?",
     answer:
-      "I provide support for updates. Major changes discussed separately.",
+      "Yes! I provide post-launch support for minor updates and content changes. Major redesigns or new features are discussed separately based on scope.",
+  },
+  {
+    question: "Do you handle hosting or domain purchases?",
+    answer:
+      "I help clients choose and set up hosting plans and domains, but the client pays directly for these services. I do not charge for purchasing hosting or domains myself — I guide you to the best options and connect everything properly.",
   },
 ];

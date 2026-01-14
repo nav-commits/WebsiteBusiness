@@ -126,7 +126,7 @@ const Services = () => {
                   )}
 
                   {/* Features / Description */}
-                  <ul className="space-y-4 mb-6 flex-grow">
+                  <ul className="space-y-4 mb-4 flex-grow">
                     {"features" in pkg &&
                       pkg.features?.map((feature, i) => (
                         <li key={i} className="flex items-start">
@@ -138,6 +138,13 @@ const Services = () => {
                       <li className="text-gray-600">{pkg.description}</li>
                     )}
                   </ul>
+
+                  {/* Note */}
+                  {"note" in pkg && pkg.note && (
+                    <p className="mt-4 text-sm text-gray-500 italic">
+                      {pkg.note}
+                    </p>
+                  )}
                 </Card>
               </motion.div>
             )
