@@ -5,8 +5,7 @@ import {
   Code,
   PenTool,
   CheckCircle,
-  Rocket,
-  Mail,
+ 
   Shield,
 } from "lucide-react";
 import type { ComponentType } from "react";
@@ -19,67 +18,41 @@ export interface ProcessStep {
 
 export const processSteps: ProcessStep[] = [
   {
-    title: "1. Initial Consultation",
-    description:
-      "Meet with the client (Zoom, phone, or in person) to discuss business goals, website needs, style preferences, timeline, and budget.",
+    title: "Consultation",
+    description: "Discuss goals, website needs, style, timeline, and budget.",
     icon: Calendar,
   },
   {
-    title: "2. Proposal, Contract & Deposit",
-    description:
-      "Prepare a clear proposal including scope, deliverables, timeline, revision policy, and pricing. Send service agreement and deposit invoice.",
+    title: "Proposal & Contract",
+    description: "Clear scope, deliverables, timeline, pricing. Deposit invoiced.",
     icon: FileText,
   },
   {
-    title: "3. Content & Access Collection",
-    description:
-      "Gather business information, branding, page content, and hosting/domain access. Provide a shared folder for uploads.",
+    title: "Content Collection",
+    description: "Gather branding, text, images, and hosting/domain info.",
     icon: Clipboard,
   },
   {
-    title: "4. Hosting & Domain Setup",
-    description:
-      "Assist with selecting hosting, connect or transfer domain, install WordPress (if applicable), and confirm all admin logins.",
-    icon: Code,
-  },
-  {
-    title: "5. Design Phase",
-    description:
-      "Provide 3–4 design templates. Client selects one, then customize colors, fonts, layout, header/footer. Includes 2 design revision rounds.",
+    title: "Design Phase",
+    description: "Choose from 3–4 templates, customize colors, fonts, layout. 2 revisions included.",
     icon: PenTool,
   },
   {
-    title: "6. Development Phase",
-    description:
-      "Build out all pages and features: booking, eCommerce, forms, blogs, galleries. Test responsiveness, performance, and UX.",
+    title: "Development Phase",
+    description: "Build pages, forms, booking/eCommerce; test responsiveness and speed.",
     icon: Code,
   },
   {
-    title: "7. Client Review & Final Revisions",
-    description:
-      "Share preview link, apply 2–3 rounds of final revisions, minor content/layout adjustments, client approval before launch.",
+    title: "Review & Launch",
+    description: "Apply final revisions, provide admin access, connect domain + SSL, optional Google submission.",
     icon: CheckCircle,
   },
   {
-    title: "8. Final Payment & Launch",
-    description:
-      "Send final invoice, launch website, connect domain, set up SSL, verify integrations, optionally submit to Google Search Console.",
-    icon: Rocket,
-  },
-  {
-    title: "9. Handoff Package",
-    description:
-      "Provide admin logins, tutorials, written instructions, and free support period (7–30 days depending on policy).",
-    icon: Mail,
-  },
-  {
-    title: "10. Optional Ongoing Maintenance",
-    description:
-      "Offer monthly or annual plans including security updates, backups, content edits, blog posting, SEO improvements, and feature updates.",
+    title: "Ongoing Support",
+    description: "Optional care plans for updates, maintenance, SEO, and content.",
     icon: Shield,
   },
 ];
-
 // ---------- TECH LOGOS ----------
 export interface TechLogo {
   src: string;
@@ -401,59 +374,58 @@ export interface WebsitePackage {
 export const websitePackages: WebsitePackage[] = [
   {
     title: "Landing Page",
-    tagline: "Single-page conversion-focused design",
-    price: "Starting at $400",
+    tagline: "High-converting single-page design",
+    price: "Starting at $500",
     features: [
-      "Custom long-form landing page designed to convert visitors",
+      "Custom landing page designed to convert visitors into clients",
       "Mobile-first, fully responsive",
-      "Call-to-action sections and forms included",
+      "Call-to-action sections & lead capture forms",
       "Optional booking or lead capture integration",
       "SEO-friendly and fast-loading",
-      "2 rounds of revisions (additional revisions $50)",
-      "Delivered within 3–5 days after content is provided",
+      "2 rounds of revisions (additional revisions $50 each)",
+      "Delivered 3–5 days after content is provided",
     ],
   },
   {
     title: "Starter Website",
     tagline: "Perfect for small local businesses or personal brands",
-    price: "Starting at $700",
+    price: "Starting at $900",
     features: [
       "Up to 5 custom pages (Home, About, Services, Contact, Blog)",
-      "Mobile-first, fully responsive design",
-      "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
-      "Contact form integration",
+      "Mobile-first, fully responsive",
       "SEO-ready foundation (metadata, sitemap, Google Search Console setup)",
+      "Contact form integration",
+      "2 rounds of layout/content revisions (extra $50 per page)",
       "Delivered within 1 week after content is provided",
-      "Hosting and domain setup guidance (client pays separately)",
+      "Includes Foundation Care Plan (1-year maintenance, updates & backups)",
     ],
   },
   {
-    title: "Business Website",
-    tagline: "Ideal for growing local businesses",
-    price: "Starting at $1,200",
+    title: "Growth Website",
+    tagline: "Advanced solution for scaling businesses",
+    price: "Starting at $1,500",
     features: [
       "Up to 10 custom pages",
       "Mobile-first, fully responsive design",
-      "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
-      "Booking system OR eCommerce integration",
-      "Basic SEO and speed optimization",
-      "Delivered within 2–3 weeks after content is provided",
-      "Hosting and domain setup guidance (client pays separately)",
+      "Booking system or eCommerce integration",
+      "Basic SEO + speed optimization",
+      "2 rounds of revisions (additional revisions $50 per page)",
+      "Delivered 2–3 weeks after content is provided",
+      "Includes Growth Care Plan (5 updates/year, advanced security, quarterly performance checks)",
     ],
   },
   {
-    title: "Pro Website",
-    tagline: "Advanced solutions for scaling businesses",
-    price: "Starting at $1,800",
+    title: "Scale Website",
+    tagline: "Custom solutions for businesses growing fast",
+    price: "Starting at $2,200",
     features: [
-      "Custom number of pages to fit your business needs",
-      "Mobile-first, fully responsive design",
-      "2 rounds of revisions for layout or content changes (additional revisions $50 per page)",
+      "Unlimited pages tailored to your business needs",
+      "Mobile-first, fully responsive",
       "Booking + eCommerce + Courses integration",
-      "Advanced SEO, speed, and security enhancements",
-      "Includes all Business package features plus custom solutions",
-      "Delivered within 3–5 weeks after content is provided",
-      "Hosting and domain setup guidance (client pays separately)",
+      "Advanced SEO, speed, and security optimization",
+      "2 rounds of revisions (additional revisions $50 per page)",
+      "Delivered 3–5 weeks after content is provided",
+      "Includes Scale Care Plan (monthly updates, blog posts, local SEO, analytics, conversion optimization)",
     ],
   },
 ];
@@ -468,38 +440,38 @@ export interface CarePlan {
 
 export const carePlans: CarePlan[] = [
   {
-    title: "Essential Maintenance",
-    tagline: "Annual updates & security",
+    title: "Foundation Care Plan",
+    tagline: "Essential updates & security",
     price: "$150 / year",
     features: [
-      "Platform, plugin, and integration updates once per year",
-      "Weekly backups",
+      "Annual platform, plugin, and integration updates",
+      "Weekly backups for security",
       "Basic security monitoring",
       "Up to 2 small content updates per year (text, images, minor layout tweaks)",
     ],
   },
   {
-    title: "Business Growth Plan",
+    title: "Growth Care Plan",
     tagline: "Care + light content support",
     price: "$400 / year",
     features: [
-      "All Essential Maintenance features",
+      "All Foundation Care Plan features",
       "Up to 5 small content updates per year",
       "Advanced security monitoring",
       "Quarterly website performance checks",
     ],
   },
   {
-    title: "Full Growth + Marketing",
-    tagline: "Comprehensive care + marketing support",
+    title: "Scale Care Plan",
+    tagline: "Full marketing & website support",
     price: "$1,000 / year",
     features: [
-      "All Business Growth features",
-      "Up to 12 content updates per year (text, images, minor layout tweaks, promotional changes)",
+      "All Growth Care Plan features",
+      "Up to 12 content updates per year (text, images, minor layout tweaks, promotional updates)",
       "Monthly blog posts or promotional updates",
-      "Local SEO & Google Business maintenance",
-      "Conversion optimization",
-      "Monthly analytics reports",
+      "Local SEO & Google Business profile maintenance",
+      "Conversion optimization support",
+      "Monthly analytics & performance reports",
     ],
   },
 ];
@@ -508,7 +480,7 @@ export const carePlans: CarePlan[] = [
 export interface AdditionalService {
   title: string;
   price: string;
-  description?: string; // optional because some services may not have description
+  description?: string;
   features: string[];
 }
 
@@ -516,7 +488,7 @@ export const additionalServices: AdditionalService[] = [
   {
     title: "SEO Setup",
     price: "$300",
-    description: "Complete on-page SEO to help your site rank well on Google",
+    description: "Complete on-page SEO to help your site rank and convert",
     features: [
       "Optimize page titles, meta descriptions, and headings",
       "Set up Google Search Console and Analytics",
@@ -561,6 +533,7 @@ export const additionalServices: AdditionalService[] = [
     ],
   },
 ];
+
 
 // ---------- TESTIMONIALS ----------
 export interface Testimonial {
