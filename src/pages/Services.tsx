@@ -32,15 +32,13 @@ const Services = () => {
             className="text-4xl md:text-5xl font-extrabold mb-6 max-w-4xl mx-auto"
             variants={fadeInUp}
           >
-            Affordable, Modern Websites + Care Plans
+            Conversion-Focused Websites + Care Plans
           </motion.h1>
           <motion.p
             className="text-xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            I build fast, SEO-optimized websites designed to convert visitors
-            into clients — plus ongoing maintenance, security, and marketing
-            support to keep your business growing.
+            I build fast, SEO-optimized websites designed to turn visitors into clients — with ongoing maintenance, security, and growth support.
           </motion.p>
         </motion.div>
       </motion.section>
