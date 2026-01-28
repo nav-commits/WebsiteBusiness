@@ -96,7 +96,7 @@ const Testimonials = () => {
                         <img
                           src={testimonial.logo}
                           alt={`${testimonial.name} logo`}
-                          className="h-14 w-14 object-contain"
+                          className="h-16 w-15 object-contain"
                         />
                       </div>
                     )}
