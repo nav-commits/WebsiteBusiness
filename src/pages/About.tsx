@@ -34,7 +34,7 @@ const About = () => {
                 variants={fadeInUp}
               >
                 I’m <span className="font-semibold text-gray-900">Nav Dhamrait</span>, a Toronto-based{" "}
-                <span className="font-semibold text-gray-900">Web Designer & Developer</span> 
+                <span className="font-semibold text-gray-900">Web Designer & Developer </span> 
                 helping local service businesses attract clients and grow revenue. I build fast, mobile-friendly, and SEO-optimized websites using WordPress, Wix, or custom solutions tailored to your goals.
               </motion.p>
 
