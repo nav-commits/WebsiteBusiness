@@ -11,6 +11,9 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "outline";
   arrow?: boolean;
   className?: string;
+  onClick?: React.MouseEventHandler<
+    HTMLButtonElement | HTMLAnchorElement
+  >;
 };
 
 export const Button = ({
@@ -22,8 +25,10 @@ export const Button = ({
   variant = "primary",
   arrow = false,
   className,
+  onClick,
 }: ButtonProps) => {
-  const base = "inline-flex items-center font-semibold transition rounded-lg justify-center";
+  const base =
+    "inline-flex items-center font-semibold transition rounded-lg justify-center";
 
   const variants = {
     primary: "bg-white text-[#5e17eb] hover:bg-indigo-50",
@@ -45,21 +50,36 @@ export const Button = ({
     className
   );
 
+  // 🔗 React Router Link
   if (to)
     return (
-      <Link to={to} className={classes}>
+      <Link to={to} className={classes} onClick={onClick}>
         {content}
       </Link>
     );
+
+  // 🌐 External link
   if (href)
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes}
+        onClick={onClick}
+      >
         {content}
       </a>
     );
 
+  // 🔘 Regular button
   return (
-    <button type={type} disabled={disabled} className={classes}>
+    <button
+      type={type}
+      disabled={disabled}
+      className={classes}
+      onClick={onClick}
+    >
       {content}
     </button>
   );

@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { faqs } from "../data/data";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
+import { useAnalytics } from "../useAnalystics"; 
 
 const Contact = () => {
   const {
@@ -21,6 +22,9 @@ const Contact = () => {
     formState: { errors, isSubmitting },
     reset,
   } = useForm();
+
+  const { trackEvent } = useAnalytics(); 
+
   const [responseMessage, setResponseMessage] = useState("");
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
@@ -32,6 +36,13 @@ const Contact = () => {
         data,
         import.meta.env.VITE_PUBLIC_KEY
       );
+
+      // 🔥 TRACK LEAD (MOST IMPORTANT)
+      trackEvent("generate_lead", {
+        form_name: "contact_form",
+        page: "contact",
+      });
+
       setResponseMessage("Your message has been sent successfully!");
       reset();
     } catch (error) {
@@ -132,6 +143,11 @@ const Contact = () => {
                     className="flex-1 flex justify-center items-center px-6 py-3"
                     variant="secondary"
                     disabled={isSubmitting}
+                    onClick={() =>
+                      trackEvent("click_submit", {
+                        button: "send_message",
+                      })
+                    }
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="ml-2 h-5 w-5" />
@@ -141,6 +157,11 @@ const Contact = () => {
                     href="https://calendly.com/navdeep-dhamrait94"
                     variant="secondary"
                     className="flex-1 flex justify-center items-center px-6 py-3"
+                    onClick={() =>
+                      trackEvent("book_call_click", {
+                        location: "contact_page",
+                      })
+                    }
                   >
                     Schedule a Meeting
                   </Button>
