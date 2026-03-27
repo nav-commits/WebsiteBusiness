@@ -112,7 +112,7 @@ const About = () => {
                 >
                   <Card className="p-6 hover:shadow-lg transition flex flex-col items-start h-full bg-gray-50">
                     <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-[#5e17eb]">
-                      <Icon className="w-6 h-6" />
+                      <Icon />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {step.title}
