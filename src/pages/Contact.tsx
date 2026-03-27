@@ -11,9 +11,8 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { faqs } from "../data/data";
-import { Button } from "../components/Button";
 import { Card } from "../components/Card";
-import { useAnalytics } from "../useAnalystics"; 
+import { useAnalytics } from "../useAnalystics";
 
 const Contact = () => {
   const {
@@ -23,11 +22,12 @@ const Contact = () => {
     reset,
   } = useForm();
 
-  const { trackEvent } = useAnalytics(); 
+  const { trackEvent } = useAnalytics();
 
   const [responseMessage, setResponseMessage] = useState("");
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
+  // Form submit handler
   const onSubmit = async (data: Record<string, unknown>) => {
     try {
       await emailjs.send(
@@ -37,10 +37,12 @@ const Contact = () => {
         import.meta.env.VITE_PUBLIC_KEY
       );
 
-      // 🔥 TRACK LEAD (MOST IMPORTANT)
+      // ✅ Track form submission as a lead
       trackEvent("generate_lead", {
         form_name: "contact_form",
-        page: "contact",
+        page: "/contact",
+        name: data.name,
+        email: data.email,
       });
 
       setResponseMessage("Your message has been sent successfully!");
@@ -53,6 +55,18 @@ const Contact = () => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  // Schedule Meeting click handler
+  const handleScheduleMeeting = () => {
+    // ✅ Track click event
+    trackEvent("book_call_click", {
+      page: "/contact",
+      location: "contact_page",
+    });
+
+    // Open Calendly link in new tab
+    window.open("https://calendly.com/navdeep-dhamrait94", "_blank");
   };
 
   return (
@@ -128,50 +142,35 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-[#5e17eb]" /> 647-975-3467
                   </div>
                   <div className="flex items-center gap-2">
-                    <Mail className="h-5 w-5 text-[#5e17eb]" />{" "}
-                    info@navwebdesign.com
+                    <Mail className="h-5 w-5 text-[#5e17eb]" /> info@navwebdesign.com
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto,
-                    Ontario, Canada
+                    <MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto, Ontario, Canada
                   </div>
                 </div>
 
+                {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                  <Button
+                  <button
                     type="submit"
-                    className="flex-1 flex justify-center items-center px-6 py-3"
-                    variant="secondary"
                     disabled={isSubmitting}
-                    onClick={() =>
-                      trackEvent("click_submit", {
-                        button: "send_message",
-                      })
-                    }
+                    className="flex-1 flex justify-center items-center px-6 py-3 bg-[#5e17eb] text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="ml-2 h-5 w-5" />
-                  </Button>
+                  </button>
 
-                  <Button
-                    href="https://calendly.com/navdeep-dhamrait94"
-                    variant="secondary"
-                    className="flex-1 flex justify-center items-center px-6 py-3"
-                    onClick={() =>
-                      trackEvent("book_call_click", {
-                        location: "contact_page",
-                      })
-                    }
+                  <div
+                    onClick={handleScheduleMeeting}
+                    className="flex-1 flex justify-center items-center px-6 py-3 bg-[#5e17eb] text-white rounded-lg cursor-pointer hover:bg-indigo-700"
                   >
                     Schedule a Meeting
-                  </Button>
+                  </div>
                 </div>
               </form>
 
               {responseMessage && (
-                <p className="mt-4 text-center text-gray-700">
-                  {responseMessage}
-                </p>
+                <p className="mt-4 text-center text-gray-700">{responseMessage}</p>
               )}
             </Card>
           </motion.div>
@@ -181,9 +180,7 @@ const Contact = () => {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Frequently Asked Questions
-          </h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
           <div className="space-y-4 text-left max-w-3xl mx-auto">
             {faqs.map((faq, index) => (
               <motion.div
@@ -198,18 +195,14 @@ const Contact = () => {
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                 >
-                  <h3 className="text-xl font-semibold text-gray-800">
-                    {faq.question}
-                  </h3>
+                  <h3 className="text-xl font-semibold text-gray-800">{faq.question}</h3>
                   {openFAQ === index ? (
                     <ChevronUp className="h-5 w-5 text-[#5e17eb]" />
                   ) : (
                     <ChevronDown className="h-5 w-5 text-[#5e17eb]" />
                   )}
                 </div>
-                {openFAQ === index && (
-                  <p className="text-gray-600 mt-2">{faq.answer}</p>
-                )}
+                {openFAQ === index && <p className="text-gray-600 mt-2">{faq.answer}</p>}
               </motion.div>
             ))}
           </div>
