@@ -32,29 +32,29 @@ const Portfolio = () => {
 
       {/* ================= HERO ================= */}
       <motion.section
-        className="bg-gray-50 py-20"
+        className="bg-gray-50 py-24 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         <motion.div
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          className="max-w-5xl mx-auto px-6"
           variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
         >
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
             variants={fadeInUp}
           >
-            My Work
+            My Portfolio
           </motion.h1>
+
           <motion.p
-            className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            Check out a few of the websites and logos I've crafted for local
-            businesses. Each project is designed to not only look great but
-            deliver real results — more leads, better conversions, and a strong
-            online presence.
+            Explore a selection of websites and logos I’ve designed for Toronto
+            service businesses. Each project is tailored to generate leads,
+            improve conversions, and strengthen online presence.
           </motion.p>
         </motion.div>
       </motion.section>
@@ -62,7 +62,7 @@ const Portfolio = () => {
       {/* ================= PROJECTS GRID ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -72,13 +72,13 @@ const Portfolio = () => {
                 variants={fadeInUp}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="flex flex-col bg-gray-50 p-6 shadow-lg hover:shadow-2xl transition h-full">
+                <Card className="flex flex-col h-full p-6 shadow-lg bg-gray-50 hover:shadow-2xl transition-transform transform hover:scale-105">
                   {/* Project Image */}
-                  <div className="w-full h-48 sm:h-56 md:h-64 lg:h-48 xl:h-56">
+                  <div className="w-full h-48 sm:h-56 md:h-64 lg:h-52 xl:h-60">
                     <img
                       src={project.image}
-                      alt={project.title + " project screenshot"}
-                      className="rounded-xl shadow-md w-full h-full object-cover"
+                      alt={`${project.title} project screenshot`}
+                      className="w-full h-full object-cover rounded-xl shadow-md"
                     />
                   </div>
 
@@ -90,25 +90,22 @@ const Portfolio = () => {
                     <p className="text-gray-600 mb-2">{project.description}</p>
 
                     {project.technology && (
-                      <p className="text-sm text-gray-500 mb-4">
-                        <strong>Technology:</strong> {project.technology}
+                      <p className="text-sm text-gray-500 mb-2">
+                        <strong>Tech:</strong> {project.technology}
                       </p>
                     )}
-
-                    {project.result && (
-                      <p className="text-sm text-green-600 mb-2 font-semibold">
-                        <strong>Result:</strong> {project.result}
-                      </p>
+                    {project.features && (
+                      <>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                          Key Features:
+                        </h3>
+                        <ul className="list-disc list-inside text-gray-600 mb-4 space-y-1 flex-grow">
+                          {project.features.map((feature, i) => (
+                            <li key={i}>{feature}</li>
+                          ))}
+                        </ul>
+                      </>
                     )}
-
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      Key Features:
-                    </h3>
-                    <ul className="list-disc list-inside text-gray-600 mb-4 space-y-1 flex-grow">
-                      {project.features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
-                    </ul>
 
                     <Button
                       href={project.link}
@@ -130,10 +127,11 @@ const Portfolio = () => {
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
-            Ready to Turn Your Website Into a Lead-Generating Machine?
+            Ready to Build a Website That Generates Leads?
           </h2>
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            If my work and process make sense for your business, let’s talk about your project and see if we’re a good fit.
+            If you like what you see, let’s discuss your project and create a
+            custom website or brand design to grow your business.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button to="/contact" arrow className="px-8 py-4">

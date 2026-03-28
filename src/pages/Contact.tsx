@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { faqs } from "../data/data";
 import { Card } from "../components/Card";
 import { useAnalytics } from "../useAnalystics";
+import { Button } from "../components/Button";
 
 const Contact = () => {
   const {
@@ -36,8 +37,6 @@ const Contact = () => {
         data,
         import.meta.env.VITE_PUBLIC_KEY
       );
-
-      // ✅ Track form submission as a lead
       trackEvent("generate_lead", {
         form_name: "contact_form",
         page: "/contact",
@@ -99,7 +98,6 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Send a Message
               </h2>
-
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <input
                   placeholder="Your Name"
@@ -142,35 +140,42 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-[#5e17eb]" /> 647-975-3467
                   </div>
                   <div className="flex items-center gap-2">
-                    <Mail className="h-5 w-5 text-[#5e17eb]" /> info@navwebdesign.com
+                    <Mail className="h-5 w-5 text-[#5e17eb]" />{" "}
+                    info@navwebdesign.com
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto, Ontario, Canada
+                    <MapPin className="h-5 w-5 text-[#5e17eb]" /> Toronto,
+                    Ontario, Canada
                   </div>
                 </div>
 
                 {/* Buttons */}
+                {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                  <button
+                  <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 flex justify-center items-center px-6 py-3 bg-[#5e17eb] text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                    variant="secondary"
+                    className="flex-1 px-6 py-3"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="ml-2 h-5 w-5" />
-                  </button>
+                  </Button>
 
-                  <div
+                  <Button
                     onClick={handleScheduleMeeting}
-                    className="flex-1 flex justify-center items-center px-6 py-3 bg-[#5e17eb] text-white rounded-lg cursor-pointer hover:bg-indigo-700"
+                    variant="secondary"
+                    className="flex-1 px-6 py-3 cursor-pointer"
                   >
                     Schedule a Meeting
-                  </div>
+                  </Button>
                 </div>
               </form>
 
               {responseMessage && (
-                <p className="mt-4 text-center text-gray-700">{responseMessage}</p>
+                <p className="mt-4 text-center text-gray-700">
+                  {responseMessage}
+                </p>
               )}
             </Card>
           </motion.div>
@@ -180,7 +185,9 @@ const Contact = () => {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-4 text-left max-w-3xl mx-auto">
             {faqs.map((faq, index) => (
               <motion.div
@@ -195,14 +202,18 @@ const Contact = () => {
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                 >
-                  <h3 className="text-xl font-semibold text-gray-800">{faq.question}</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {faq.question}
+                  </h3>
                   {openFAQ === index ? (
                     <ChevronUp className="h-5 w-5 text-[#5e17eb]" />
                   ) : (
                     <ChevronDown className="h-5 w-5 text-[#5e17eb]" />
                   )}
                 </div>
-                {openFAQ === index && <p className="text-gray-600 mt-2">{faq.answer}</p>}
+                {openFAQ === index && (
+                  <p className="text-gray-600 mt-2">{faq.answer}</p>
+                )}
               </motion.div>
             ))}
           </div>
