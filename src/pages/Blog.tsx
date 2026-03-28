@@ -27,10 +27,11 @@ const Blog = () => {
 
       {/* ================= HERO ================= */}
       <motion.section
-        className="bg-gray-50 py-20"
+        className="bg-gray-50 py-24"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1
@@ -39,16 +40,19 @@ const Blog = () => {
           >
             Blog
           </motion.h1>
-          <motion.p className="text-lg text-gray-700" variants={fadeInUp}>
+          <motion.p
+            className="text-lg text-gray-700 max-w-2xl mx-auto"
+            variants={fadeInUp}
+          >
             Practical tips on web design, SEO, and growing your local business
-            online.
+            online. Insights you can implement to improve your website, generate leads, and grow revenue.
           </motion.p>
         </div>
       </motion.section>
 
       {/* ================= POSTS ================= */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 space-y-10">
+        <div className="max-w-7xl mx-auto px-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
             <motion.div
               key={post.id}
@@ -58,22 +62,22 @@ const Blog = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="p-8 space-y-4">
+              <Card className="flex flex-col p-6 h-full hover:shadow-lg transition">
                 <div className="flex items-center mb-2">
                   <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />
-                  <h3 className="text-2xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-gray-900">
                     {post.title}
                   </h3>
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-gray-500 mb-4">
                   By {post.author} • {post.date} • {post.category}
                 </div>
-                <p className="text-gray-600">{post.excerpt}</p>
+                <p className="text-gray-600 flex-grow">{post.excerpt}</p>
                 <Button
                   href={`/blog/${post.id}`}
                   variant="secondary"
                   arrow
-                  className="px-6 py-3 mt-auto self-start"
+                  className="px-6 py-3 mt-6 self-start"
                 >
                   Read More
                 </Button>
@@ -89,17 +93,17 @@ const Blog = () => {
           <h2 className="text-4xl font-extrabold mb-6">
             Need a Website That Converts?
           </h2>
-          <p className="text-lg text-indigo-100 mb-10">
-            Let’s build a professional website that helps your business grow.
+          <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
+            Let’s build a professional website that helps your business grow and attract more clients.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button to="/contact" className="px-8 py-4" arrow>
+            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
               Get a Free Quote
             </Button>
             <Button
               href="https://calendly.com/navdeep-dhamrait94"
               variant="outline"
-              className="px-8 py-4"
+              className="px-8 py-4 rounded-lg"
               arrow
             >
               Book a Free Call

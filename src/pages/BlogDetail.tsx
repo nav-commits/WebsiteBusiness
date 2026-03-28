@@ -17,8 +17,10 @@ const BlogDetail = () => {
 
   if (!post) {
     return (
-      <div className="max-w-4xl mx-auto py-16 px-6 text-center">
-        <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
+      <div className="max-w-4xl mx-auto py-20 px-6 text-center">
+        <h1 className="text-3xl font-bold mb-6 text-gray-900">
+          Post Not Found
+        </h1>
         <Button to="/blog" variant="secondary" className="px-8 py-4" arrow>
           Back to Blog
         </Button>
@@ -28,51 +30,58 @@ const BlogDetail = () => {
 
   return (
     <div className="pt-16">
+      {/* ================= SEO ================= */}
       <Helmet>
         <title>{post.title} | Nav Dhamrait</title>
         <meta name="description" content={post.excerpt} />
       </Helmet>
 
-      {/* ================= TOP HERO SECTION ================= */}
+      {/* ================= HERO ================= */}
       <motion.section
         className="bg-gray-50 py-20"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
             variants={fadeInUp}
           >
             {post.title}
           </motion.h1>
-          <motion.div className="text-sm text-gray-500" variants={fadeInUp}>
+          <motion.div
+            className="text-sm text-gray-500 mb-2"
+            variants={fadeInUp}
+          >
             By {post.author} • {post.date} • {post.category}
           </motion.div>
         </div>
       </motion.section>
 
       {/* ================= BLOG CONTENT ================= */}
-      <div className="max-w-4xl mx-auto py-16 px-6">
-        <Card className="p-10 space-y-6">
-          <article className="prose max-w-none">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
-          </article>
+      <section className="max-w-4xl mx-auto py-16 px-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+        >
+          <Card className="p-10 space-y-8">
+            <article className="prose max-w-none text-gray-700">
+              <ReactMarkdown>{post.content}</ReactMarkdown>
+            </article>
 
-          {/* Back button left-aligned */}
-          <div className="flex justify-start">
-            <Button
-              to="/blog"
-              variant="secondary"
-              className="px-8 py-4"
-              arrow
-            >
-              Back to Blog
-            </Button>
-          </div>
-        </Card>
-      </div>
+            {/* Back button left-aligned */}
+            <div className="flex justify-start mt-4">
+              <Button to="/blog" variant="secondary" className="px-8 py-4" arrow>
+                Back to Blog
+              </Button>
+            </div>
+          </Card>
+        </motion.div>
+      </section>
     </div>
   );
 };

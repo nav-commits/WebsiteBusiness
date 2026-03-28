@@ -19,107 +19,141 @@ const About = () => {
         viewport={{ once: true }}
         variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
       >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h1
-            className="text-4xl font-bold text-gray-900 mb-10 text-center"
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          
+          {/* IMAGE */}
+          <motion.img
+            src="/Images/SMS_0310 Navdeep Dhamrait.jpg"
+            alt="Nav Dhamrait"
+            className="rounded-xl shadow-lg w-full object-cover"
             variants={fadeInUp}
-          >
-            About Me
-          </motion.h1>
+          />
 
-          <motion.div variants={fadeInUp}>
-            <Card className="p-8 bg-white shadow-lg">
-              <motion.p
-                className="text-lg text-gray-800 leading-relaxed mb-4"
-                variants={fadeInUp}
-              >
-                I’m <span className="font-semibold text-gray-900">Nav Dhamrait</span>, a Toronto-based{" "}
-                <span className="font-semibold text-gray-900">Web Designer & Developer </span> 
-                helping local service businesses attract clients and grow revenue. I build fast, mobile-friendly, and SEO-optimized websites using WordPress, Wix, or custom solutions tailored to your goals.
-              </motion.p>
+          {/* TEXT */}
+          <div>
+            <motion.h1
+              className="text-4xl font-bold text-gray-900 mb-6"
+              variants={fadeInUp}
+            >
+              I Build Websites That Actually Bring You Clients
+            </motion.h1>
 
-              <motion.p
-                className="text-base text-gray-700 leading-relaxed mb-6"
-                variants={fadeInUp}
-              >
-                My websites don’t just look great — they’re built to{" "}
-                <span className="font-semibold text-[#5e17eb]">
-                  generate leads, increase conversions, and grow your business
-                </span>
-                .
-              </motion.p>
+            <motion.p
+              className="text-lg text-gray-700 mb-4"
+              variants={fadeInUp}
+            >
+              I’m <span className="font-semibold">Nav Dhamrait</span>, a Toronto-based web designer & developer focused on helping service businesses turn their websites into lead-generating tools — not just something that looks good.
+            </motion.p>
 
-              <div className="flex items-center gap-4 my-6">
-                <div className="h-px flex-1 bg-gray-200" />
-                <span className="text-sm uppercase tracking-wider text-gray-400">
-                  Approach
-                </span>
-                <div className="h-px flex-1 bg-gray-200" />
-              </div>
+            <motion.p
+              className="text-gray-600 mb-6"
+              variants={fadeInUp}
+            >
+              Most websites fail because they’re built for design, not results. I focus on conversion, speed, and structure so your site actually brings in calls, bookings, and real business growth.
+            </motion.p>
 
-              <motion.p
-                className="text-base text-gray-700 leading-relaxed mb-2"
-                variants={fadeInUp}
-              >
-                <span className="font-semibold text-gray-900">
-                  What sets me apart?
-                </span>{" "}
-                I take the time to understand your business, target audience, and goals to create a website that truly converts visitors into customers and helps your business grow.
-              </motion.p>
+            <motion.ul
+              className="space-y-2 text-gray-700 mb-6"
+              variants={fadeInUp}
+            >
+              <li>✔️ Built to convert visitors into clients</li>
+              <li>✔️ Fast, mobile-first performance</li>
+              <li>✔️ SEO-ready structure</li>
+              <li>✔️ Clear, no-BS pricing & process</li>
+            </motion.ul>
 
-              <motion.p
-                className="text-base text-gray-600 leading-relaxed"
-                variants={fadeInUp}
-              >
-                If you want a professional, high-performing website that brings in clients and delivers results, you’re in the right place.
-              </motion.p>
-            </Card>
-          </motion.div>
+            <Button
+              href="https://calendly.com/navdeep-dhamrait94"
+              className="px-6 py-3"
+               variant="secondary"
+            >
+              Book a Free Call
+            </Button>
+          </div>
         </div>
       </motion.section>
 
+      {/* ================= DIFFERENCE / APPROACH ================= */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Why My Approach Works
+          </h2>
+
+          <p className="text-gray-600 mb-10">
+            I don’t just build websites — I build systems that help your business grow. Every decision is based on what will get you more leads, not just what looks nice.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            <Card className="p-6">
+              <h3 className="font-semibold mb-2">Strategy First</h3>
+              <p className="text-sm text-gray-600">
+                We focus on your business goals, audience, and offer before touching design.
+              </p>
+            </Card>
+
+            <Card className="p-6">
+              <h3 className="font-semibold mb-2">Built for Conversions</h3>
+              <p className="text-sm text-gray-600">
+                Every section is designed to guide visitors toward taking action.
+              </p>
+            </Card>
+
+            <Card className="p-6">
+              <h3 className="font-semibold mb-2">Simple & Transparent</h3>
+              <p className="text-sm text-gray-600">
+                Clear process, clear pricing, no confusion at any stage.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* ================= WORKFLOW ================= */}
       <motion.section
-        className="py-20 bg-white"
+        className="py-20 bg-gray-50"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.h2
             className="text-3xl font-bold text-center text-gray-900 mb-6"
             variants={fadeInUp}
           >
-            My Workflow
+            My Process
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-600 text-center mb-14 max-w-3xl mx-auto"
+            className="text-gray-600 text-center mb-14 max-w-3xl mx-auto"
             variants={fadeInUp}
           >
-            I make building your website simple and transparent. From the first conversation to launch, you’ll always know what’s happening and how your website will help grow your business.
+            A simple, proven process that keeps everything clear and moves your project forward without delays.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {processSteps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  transition={{ delay: index * 0.1 }}
-                  className="h-full"
-                >
-                  <Card className="p-6 hover:shadow-lg transition flex flex-col items-start h-full bg-gray-50">
+                <motion.div key={index} variants={fadeInUp}>
+                  <Card className="p-6 h-full bg-white hover:shadow-lg transition">
                     <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-[#5e17eb]">
                       <Icon />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+
+                    <h3 className="text-lg font-semibold mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 text-sm flex-grow">
+
+                    <p className="text-sm text-gray-600 mb-2">
                       {step.description}
                     </p>
+
+                    {step.note && (
+                      <p className="text-xs text-gray-400">
+                        {step.note}
+                      </p>
+                    )}
                   </Card>
                 </motion.div>
               );
@@ -129,29 +163,22 @@ const About = () => {
       </motion.section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-extrabold mb-6">
-            Ready to Turn Your Website Into a Lead-Generating Machine?
+      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-6">
+            Let’s Build Something That Actually Grows Your Business
           </h2>
 
-          <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            If my approach and workflow align with what you’re looking for, let’s discuss your project and see how I can help grow your business.
+          <p className="text-indigo-200 mb-8">
+            If you’re serious about getting more leads and turning your website into a real asset, let’s talk.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
-              Get a Free Quote
-            </Button>
-
-            <Button
-              href="https://calendly.com/navdeep-dhamrait94"
-              variant="outline"
-              className="px-8 py-4 rounded-lg"
-            >
-              Book a Free Call
-            </Button>
-          </div>
+          <Button
+            href="https://calendly.com/navdeep-dhamrait94"
+            className="px-8 py-4"
+          >
+            Book a Free Call
+          </Button>
         </div>
       </section>
     </div>

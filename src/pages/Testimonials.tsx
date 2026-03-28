@@ -35,25 +35,28 @@ const Testimonials = () => {
           content="Read what clients say about working with Nav Dhamrait, a Toronto-based web developer building websites and logos that generate leads."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://yourdomain.com/testimonials" />
+        <link rel="canonical" href="https://navwebdesign.com/testimonials" />
         <meta property="og:title" content="Testimonials — Nav Dhamrait" />
         <meta
           property="og:description"
           content="See client testimonials about custom websites and logos built for Toronto businesses."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/testimonials" />
+        <meta
+          property="og:url"
+          content="https://navwebdesign.com/testimonials"
+        />
       </Helmet>
 
       {/* ================= HERO ================= */}
       <motion.section
-        className="bg-gray-50 py-20"
+        className="bg-gray-50 py-24 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
       >
-        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div className="max-w-4xl mx-auto px-6">
           <motion.p
             className="text-[#5e17eb] font-semibold mb-4"
             variants={fadeInUp}
@@ -67,11 +70,11 @@ const Testimonials = () => {
             What My Clients Are Saying
           </motion.h1>
           <motion.p
-            className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-600 mb-12 leading-relaxed"
             variants={fadeInUp}
           >
-            Don't just take my word for it. Here's what some of my clients have
-            to say about their experience working with me.
+            Don’t just take my word for it — here’s what some of my clients
+            have to say about their experience working with me.
           </motion.p>
         </motion.div>
       </motion.section>
@@ -96,7 +99,7 @@ const Testimonials = () => {
                         <img
                           src={testimonial.logo}
                           alt={`${testimonial.name} logo`}
-                          className="h-16 w-15 object-contain"
+                          className="h-16 w-auto object-contain"
                         />
                       </div>
                     )}
@@ -112,15 +115,12 @@ const Testimonials = () => {
                     {/* Rating */}
                     <div className="flex justify-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-5 w-5 text-yellow-400"
-                        />
+                        <Star key={i} className="h-5 w-5 text-yellow-400" />
                       ))}
                     </div>
 
                     {/* Testimonial */}
-                    <p className="text-gray-600 italic text-center flex-grow mt-2">
+                    <p className="text-gray-600 italic text-center mt-2 flex-grow">
                       "{testimonial.content}"
                     </p>
                   </Card>
@@ -137,17 +137,14 @@ const Testimonials = () => {
           <h2 className="text-4xl font-extrabold mb-6">
             Ready to Turn Your Website Into a Lead Machine?
           </h2>
-
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
             If my work and process make sense for your business, let’s talk
             about your project and see if we’re a good fit.
           </p>
-
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
               Get a Free Quote
             </Button>
-
             <Button
               href="https://calendly.com/navdeep-dhamrait94"
               variant="outline"

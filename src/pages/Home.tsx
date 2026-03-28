@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import { techLogos, portfolioProjects } from "../data/data";
+import { portfolioProjects } from "../data/data";
 import { Button } from "../components/Button";
 import { Tabs } from "../components/Tabs";
 import { Card } from "../components/Card";
@@ -15,168 +15,119 @@ const fadeInUp = {
 };
 
 const Home = () => {
-  const [activeTab, setActiveTab] = useState<string>("all");
+  const [activeTab, setActiveTab] = useState("all");
 
   return (
     <>
-      {/* ================= SEO META ================= */}
       <Helmet>
         <title>
-          Nav Dhamrait — Toronto Web Developer & Designer | Lead-Focused Websites
+          Nav Dhamrait — Toronto Web Developer | Websites That Bring Clients
         </title>
-
         <meta
           name="description"
-          content="Toronto web developer and designer creating fast, mobile-friendly, SEO-optimized websites that help service businesses attract clients and grow their revenue."
+          content="Websites built to generate leads, calls, and revenue for Toronto service businesses."
         />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://navwebdesign.com/" />
-
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content="Nav Dhamrait — Toronto Web Developer & Designer"
-        />
-        <meta
-          property="og:description"
-          content="Lead-focused, SEO-optimized websites for Toronto service businesses to attract clients and grow revenue."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://navwebdesign.com/" />
       </Helmet>
 
       <div className="pt-16">
-        {/* ================= HERO ================= */}
+        {/* HERO */}
         <motion.section
-          className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 md:py-32"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
         >
-          <div className="max-w-7xl mx-auto px-8 text-center">
+          <div className="max-w-5xl mx-auto px-6">
             <motion.h1
               className="text-4xl md:text-6xl font-extrabold mb-6"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
             >
-              Websites That Grow Your Business and Get More Local Leads
+              Websites That Actually Bring You Clients — Not Just Look Good
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl mb-8 text-indigo-200"
+              className="text-xl md:text-2xl text-indigo-200 mb-8"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
             >
-              Fast, mobile-friendly, SEO-ready websites for Toronto service businesses — designed to convert visitors into clients.
+              Built for Toronto service businesses that want more calls,
+              bookings, and real growth.
             </motion.p>
 
-            <motion.div variants={fadeInUp} initial="hidden" animate="visible">
-              <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
-                Book Your Free Consultation
-              </Button>
-            </motion.div>
+            <Button
+              href="https://calendly.com/navdeep-dhamrait94"
+              className="px-8 py-4"
+            >
+              Book a Free Call
+            </Button>
+
+            <p className="mt-6 text-sm text-indigo-200">
+              Trusted by 9+ businesses • Fast turnaround • 100% custom builds
+            </p>
           </div>
         </motion.section>
 
-        {/* ================= TECH LOGOS ================= */}
-        <section className="py-16 bg-white overflow-hidden border-b">
-          <div className="max-w-6xl mx-auto px-6 text-center mb-8">
-            <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
-              Tools & Solutions I Use
-            </p>
-            <p className="text-lg text-gray-700">
-              WordPress, Wix, Webflow, and custom solutions — I pick the right tool to grow your business.
-            </p>
-          </div>
+        {/* RESULTS */}
+        <section className="py-20 bg-white text-center">
+          <h2 className="text-3xl font-bold mb-10">
+            Real Results for Local Businesses
+          </h2>
 
-          <div className="relative w-full overflow-hidden flex justify-center">
-            {/* Gradients */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
-
-            {/* Logos */}
-            <motion.div
-              className="flex gap-16 items-center"
-              aria-hidden="true"
-              animate={{ x: ["0%", "-100%"] }}
-              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-            >
-              {techLogos.map((logo, idx) => (
-                <img
-                  key={idx}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-10 md:h-12 opacity-70 hover:opacity-100 transition"
-                />
-              ))}
-            </motion.div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div>
+              <p className="text-4xl font-bold text-indigo-600">+35%</p>
+              <p className="text-gray-600">More inbound leads</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-indigo-600">2x</p>
+              <p className="text-gray-600">Higher conversions</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-indigo-600">90 Days</p>
+              <p className="text-gray-600">Avg. Google ranking time</p>
+            </div>
           </div>
         </section>
 
-        {/* ================= INTRO ================= */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <motion.img
+        {/* INTRO */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <img
               src="Images/SMS_0310 Navdeep Dhamrait.jpg"
-              alt="Nav Dhamrait Toronto Web Developer"
-              className="rounded-2xl shadow-xl"
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              alt="Nav"
+              className="rounded-xl shadow"
             />
 
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="text-4xl font-bold mb-6">
-                Hi, I’m Nav — Toronto Web Developer for Local Service Businesses
+            <div>
+              <h2 className="text-3xl font-bold mb-4">
+                Hi, I’m Nav — I Build Websites That Generate Leads
               </h2>
 
-              <p className="text-lg text-gray-700 mb-6">
-                I build professional websites that attract clients, generate leads, and grow your business — using WordPress, Wix, or custom solutions tailored to your needs.
+              <p className="text-gray-700 mb-4">
+                Most websites just sit there. I build websites designed to bring
+                in leads, book calls, and actually grow your business.
               </p>
 
-              <Card bgColor="bg-gray-100" className="p-6">
-                <h3 className="text-2xl font-semibold mb-4">
-                  Why Work With Me?
-                </h3>
-
-                <ul className="space-y-2 text-gray-700">
-                  <li>✔️ Custom solutions — built to grow your business</li>
-                  <li>✔️ SEO-focused design — rank higher on Google</li>
-                  <li>✔️ Mobile-first & fast-loading — keep visitors engaged</li>
-                  <li>✔️ Transparent pricing & honest advice — no surprises</li>
-                </ul>
-
-                <div className="mt-6">
-                  <Button
-                    href="https://calendly.com/navdeep-dhamrait94"
-                    variant="secondary"
-                    className="px-6 py-3 rounded-md"
-                    arrow
-                  >
-                    Book a Free Consultation
-                  </Button>
-                </div>
-              </Card>
-            </motion.div>
+              <ul className="space-y-2 text-gray-700">
+                <li>✔️ Built for conversions</li>
+                <li>✔️ Fast, mobile-first design</li>
+                <li>✔️ SEO-ready structure</li>
+                <li>✔️ Clear, honest pricing</li>
+              </ul>
+            </div>
           </div>
         </section>
 
-        {/* ================= FEATURED WORK ================= */}
-        <section className="py-20 bg-gray-50">
+        {/* PORTFOLIO */}
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Featured Projects
+              Featured Work
             </h2>
 
-            <div className="flex justify-center mb-12 gap-4">
+            <div className="flex justify-center mb-10">
               <Tabs
                 options={[
                   { label: "All", value: "all" },
@@ -184,87 +135,59 @@ const Home = () => {
                   { label: "Logos", value: "logo" },
                 ]}
                 selected={activeTab}
-                onChange={(value) => setActiveTab(value)}
+                onChange={setActiveTab}
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {portfolioProjects
                 .filter(
-                  (project) => activeTab === "all" || project.type === activeTab
+                  (p) => activeTab === "all" || p.type === activeTab
                 )
-                .map((project, idx) => (
-                  <motion.div
-                    key={idx}
-                    whileHover={{ y: -6 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.1 }}
-                    className="flex"
-                  >
-                    <Card className="group overflow-hidden flex flex-col h-full">
-                      <div className="relative">
-                        <img
-                          src={project.img}
-                          alt={project.alt}
-                          className="h-52 w-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                        <span className="absolute top-4 left-4 bg-white/90 text-[#5e17eb] text-xs font-semibold px-3 py-1 rounded-full">
-                          {project.type === "logo" ? "Logo" : "Client Project"}
-                        </span>
-                      </div>
+                .map((project, i) => (
+                  <Card key={i} className="p-4">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="h-48 w-full object-cover rounded"
+                    />
 
-                      <div className="p-6 flex flex-col flex-grow">
-                        <h3 className="text-xl font-bold mb-2">
-                          {project.title}
-                        </h3>
+                    <h3 className="text-xl font-bold mt-4">
+                      {project.title}
+                    </h3>
 
-                        <p className="text-gray-600 text-sm flex-grow">
-                          {project.description}
-                        </p>
-
-                        <Link
-                          to={project.link}
-                          className="mt-6 inline-flex items-center font-semibold text-[#5e17eb] hover:text-indigo-700"
-                        >
-                          View Case Study
-                          <ArrowRight className="ml-2 h-4 w-4 transition" />
-                        </Link>
-                      </div>
-                    </Card>
-                  </motion.div>
+                    <p className="text-gray-600 text-sm">
+                      {project.description}
+                    </p>
+                    <Link
+                      to={project.link}
+                      className="inline-flex items-center mt-4 text-indigo-600 font-semibold"
+                    >
+                      View Case Study
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Link>
+                  </Card>
                 ))}
             </div>
           </div>
         </section>
 
-        {/* ================= CTA ================= */}
-        <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-          <div className="max-w-5xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-extrabold mb-6">
-              Ready to Turn Your Website Into a Business-Generating Machine?
-            </h2>
+        {/* CTA */}
+        <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Let’s Build a Website That Brings You Clients
+          </h2>
 
-            <p className="text-lg text-indigo-100 mb-10">
-              Get a website that not only looks great but attracts clients, grows your leads, and increases revenue.
-            </p>
+          <p className="mb-8 text-indigo-200">
+            If you want more leads, bookings, and growth — let’s talk.
+          </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button to="/contact" className="px-8 py-4 rounded-lg">
-                Get a Free Quote
-              </Button>
-
-              <Button
-                href="https://calendly.com/navdeep-dhamrait94"
-                variant="outline"
-                className="px-8 py-4 rounded-lg"
-              >
-                Book a Free Call
-              </Button>
-            </div>
-          </div>
+          <Button
+            href="https://calendly.com/navdeep-dhamrait94"
+            className="px-8 py-4"
+          >
+            Book a Free Call
+          </Button>
         </section>
       </div>
     </>
