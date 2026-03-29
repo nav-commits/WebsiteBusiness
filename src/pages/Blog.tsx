@@ -1,22 +1,34 @@
-import { motion } from "framer-motion";
-import { Card } from "../components/Card";
-import { Button } from "../components/Button";
-import { Helmet } from "react-helmet-async";
-import { CheckCircle } from "lucide-react";
-
-// ✅ Dynamic blog data
-import blogPosts from "../data/blogs.json";
-
-// Animation
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { Card } from '../components/Card'
+import { Button } from '../components/Button'
+import { Helmet } from 'react-helmet-async'
+import { CheckCircle } from 'lucide-react'
+import { client } from '../SanityClient/sanityClient' 
+import { BlogPost } from '../types/BlogPost/blogPost'
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
+}
 const Blog = () => {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "blogPost"] | order(publishedAt desc){
+        _id,
+        title,
+        author,
+        publishedAt,
+        category,
+        excerpt,
+        "slug": slug.current
+      }`)
+      .then((data) => setPosts(data))
+      .catch((err) => console.error('Sanity fetch error:', err))
+  }, [])
+
   return (
     <div className="pt-16">
-      {/* ================= SEO ================= */}
       <Helmet>
         <title>Blog | Nav Dhamrait — Toronto Web Developer</title>
         <meta
@@ -24,8 +36,6 @@ const Blog = () => {
           content="Web design, SEO, and marketing insights for local businesses by Nav Dhamrait."
         />
       </Helmet>
-
-      {/* ================= HERO ================= */}
       <motion.section
         className="bg-gray-50 py-24"
         initial="hidden"
@@ -49,13 +59,12 @@ const Blog = () => {
           </motion.p>
         </div>
       </motion.section>
-
-      {/* ================= POSTS ================= */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((post, index) => (
+          {posts.length === 0 && <p>Loading posts...</p>}
+          {posts.map((post, index) => (
             <motion.div
-              key={post.id}
+              key={post._id}
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
@@ -70,11 +79,11 @@ const Blog = () => {
                   </h3>
                 </div>
                 <div className="text-sm text-gray-500 mb-4">
-                  By {post.author} • {post.date} • {post.category}
+                  By {post.author} • {new Date(post.publishedAt).toLocaleDateString()} • {post.category}
                 </div>
                 <p className="text-gray-600 flex-grow">{post.excerpt}</p>
                 <Button
-                  href={`/blog/${post.id}`}
+                 href={`/blog/${post.slug}`} 
                   variant="secondary"
                   arrow
                   className="px-6 py-3 mt-6 self-start"
@@ -86,8 +95,6 @@ const Blog = () => {
           ))}
         </div>
       </section>
-
-      {/* ================= CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
@@ -112,7 +119,7 @@ const Blog = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog
