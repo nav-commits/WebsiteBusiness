@@ -1,15 +1,34 @@
+// /pages/Portfolio.tsx
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { projects } from "../data/data";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
-
+import { client } from "../SanityClient/sanityClient";
+import imageUrlBuilder from "@sanity/image-url";
+import { PortfolioProject } from "../types/PortfolioProject/PortfolioProject";
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
-
+const urlFor = (source: string) => imageUrlBuilder(client).image(source);
 const Portfolio = () => {
+  const [projects, setProjects] = useState<PortfolioProject[]>([]);
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "portfolioProject"] | order(_createdAt desc){
+        _id,
+        img,
+        alt,
+        title,
+        description,
+        link,
+        type
+      }`)
+      .then((data) => setProjects(data))
+      .catch((err) => console.error("Sanity fetch error:", err));
+  }, []);
+
   return (
     <div className="pt-16">
       {/* ================= SEO META ================= */}
@@ -65,7 +84,7 @@ const Portfolio = () => {
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <motion.div
-                key={index}
+                key={project._id}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -76,8 +95,8 @@ const Portfolio = () => {
                   {/* Project Image */}
                   <div className="w-full h-48 sm:h-56 md:h-64 lg:h-52 xl:h-60">
                     <img
-                      src={project.image}
-                      alt={`${project.title} project screenshot`}
+                      src={urlFor(project.img).width(600).url()}
+                      alt={project.alt}
                       className="w-full h-full object-cover rounded-xl shadow-md"
                     />
                   </div>
@@ -88,24 +107,6 @@ const Portfolio = () => {
                       {project.title}
                     </h2>
                     <p className="text-gray-600 mb-2">{project.description}</p>
-
-                    {project.technology && (
-                      <p className="text-sm text-gray-500 mb-2">
-                        <strong>Tech:</strong> {project.technology}
-                      </p>
-                    )}
-                    {project.features && (
-                      <>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                          Key Features:
-                        </h3>
-                        <ul className="list-disc list-inside text-gray-600 mb-4 space-y-1 flex-grow">
-                          {project.features.map((feature, i) => (
-                            <li key={i}>{feature}</li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
 
                     <Button
                       href={project.link}
@@ -122,8 +123,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-
-      {/* ================= FINAL CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">

@@ -67,23 +67,6 @@ export const processSteps: ProcessStep[] = [
   },
 ];
 
-// ---------- TECH LOGOS ----------
-export interface TechLogo {
-  src: string;
-  alt: string;
-}
-
-export const techLogos: TechLogo[] = [
-  { src: "/Svgs/wordpress.svg", alt: "WordPress" },
-  { src: "/Svgs/wix.svg", alt: "Wix" },
-  { src: "/Svgs/react.svg", alt: "React" },
-  { src: "/Svgs/tailwindcss.svg", alt: "Tailwind CSS" },
-  { src: "/Svgs/googleanalytics.svg", alt: "Google" },
-  { src: "/Svgs/Webflow.svg", alt: "Webflow" },
-  { src: "/Svgs/html.svg", alt: "Html" },
-  { src: "/Svgs/css3.svg", alt: "css" },
-  { src: "/Svgs/seo.svg", alt: "seo" },
-];
 
 // ---------- PORTFOLIO PROJECTS ----------
 export interface PortfolioProject {
