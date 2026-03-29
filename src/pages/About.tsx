@@ -6,34 +6,34 @@ import { Card } from "../components/Card";
 import { client } from "../SanityClient/sanityClient";
 import * as LucideIcons from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
+import { ProcessStep } from "../types/ProcessStep/processStep";
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const getIcon = (iconName: string): ComponentType<SVGProps<SVGSVGElement>> => {
-  const icons = LucideIcons as unknown as Record<string, ComponentType<SVGProps<SVGSVGElement>>>;
-  return icons[iconName] || icons.Circle;
+  const icons = LucideIcons as unknown as Record<
+    string,
+    ComponentType<SVGProps<SVGSVGElement>>
+  >;
+  const normalizedName = iconName.charAt(0).toUpperCase() + iconName.slice(1);
+  return icons[normalizedName] || icons.Circle;
 };
-
-interface ProcessStep {
-  _id: string;
-  title: string;
-  description: string;
-  icon: string;
-  note?: string;
-  order: number;
-}
 
 const About = () => {
   const [processSteps, setProcessSteps] = useState<ProcessStep[]>([]);
 
   useEffect(() => {
     client
-      .fetch(`*[_type == "processStep"] | order(order asc){
+      .fetch(
+        `*[_type == "processStep"] | order(order asc){
         _id, title, description, icon, note, order
-      }`)
-      .then((data) => setProcessSteps(data))
+      }`
+      )
+      .then((data) => {
+        setProcessSteps(data);
+      })
       .catch((err) => console.error("Sanity fetch error:", err));
   }, []);
 
@@ -69,14 +69,16 @@ const About = () => {
               className="text-lg text-gray-700 mb-4"
               variants={fadeInUp}
             >
-              I’m <span className="font-semibold">Nav Dhamrait</span>, a Toronto-based web designer & developer focused on helping service businesses turn their websites into lead-generating tools — not just something that looks good.
+              I’m <span className="font-semibold">Nav Dhamrait</span>, a
+              Toronto-based web designer & developer focused on helping service
+              businesses turn their websites into lead-generating tools — not
+              just something that looks good.
             </motion.p>
 
-            <motion.p
-              className="text-gray-600 mb-6"
-              variants={fadeInUp}
-            >
-              Most websites fail because they’re built for design, not results. I focus on conversion, speed, and structure so your site actually brings in calls, bookings, and real business growth.
+            <motion.p className="text-gray-600 mb-6" variants={fadeInUp}>
+              Most websites fail because they’re built for design, not results.
+              I focus on conversion, speed, and structure so your site actually
+              brings in calls, bookings, and real business growth.
             </motion.p>
 
             <motion.ul
@@ -103,26 +105,28 @@ const About = () => {
       {/* ================= DIFFERENCE / APPROACH ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Why My Approach Works
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Why My Approach Works</h2>
 
           <p className="text-gray-600 mb-10">
-            I don’t just build websites — I build systems that help your business grow. Every decision is based on what will get you more leads, not just what looks nice.
+            I don’t just build websites — I build systems that help your
+            business grow. Every decision is based on what will get you more
+            leads, not just what looks nice.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 text-left">
             <Card className="p-6">
               <h3 className="font-semibold mb-2">Strategy First</h3>
               <p className="text-sm text-gray-600">
-                We focus on your business goals, audience, and offer before touching design.
+                We focus on your business goals, audience, and offer before
+                touching design.
               </p>
             </Card>
 
             <Card className="p-6">
               <h3 className="font-semibold mb-2">Built for Conversions</h3>
               <p className="text-sm text-gray-600">
-                Every section is designed to guide visitors toward taking action.
+                Every section is designed to guide visitors toward taking
+                action.
               </p>
             </Card>
 
@@ -135,8 +139,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* ================= WORKFLOW / PROCESS ================= */}
       <motion.section
         className="py-20 bg-gray-50"
         initial="hidden"
@@ -155,7 +157,8 @@ const About = () => {
             className="text-gray-600 text-center mb-14 max-w-3xl mx-auto"
             variants={fadeInUp}
           >
-            A simple, proven process that keeps everything clear and moves your project forward without delays.
+            A simple, proven process that keeps everything clear and moves your
+            project forward without delays.
           </motion.p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -168,18 +171,14 @@ const About = () => {
                       <IconComponent className="w-6 h-6" />
                     </div>
 
-                    <h3 className="text-lg font-semibold mb-2">
-                      {step.title}
-                    </h3>
+                    <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
 
                     <p className="text-sm text-gray-600 mb-2">
                       {step.description}
                     </p>
 
                     {step.note && (
-                      <p className="text-xs text-gray-400">
-                        {step.note}
-                      </p>
+                      <p className="text-xs text-gray-400">{step.note}</p>
                     )}
                   </Card>
                 </motion.div>
@@ -188,8 +187,6 @@ const About = () => {
           </div>
         </div>
       </motion.section>
-
-      {/* ================= FINAL CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-bold mb-6">
@@ -197,7 +194,8 @@ const About = () => {
           </h2>
 
           <p className="text-indigo-200 mb-8">
-            If you’re serious about getting more leads and turning your website into a real asset, let’s talk.
+            If you’re serious about getting more leads and turning your website
+            into a real asset, let’s talk.
           </p>
 
           <Button

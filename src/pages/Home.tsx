@@ -1,13 +1,6 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-
-import { portfolioProjects } from "../data/data";
 import { Button } from "../components/Button";
-import { Tabs } from "../components/Tabs";
-import { Card } from "../components/Card";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -15,8 +8,6 @@ const fadeInUp = {
 };
 
 const Home = () => {
-  const [activeTab, setActiveTab] = useState("all");
-
   return (
     <>
       <Helmet>
@@ -120,59 +111,90 @@ const Home = () => {
           </div>
         </section>
 
-        {/* PORTFOLIO */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-8">
-              Featured Work
-            </h2>
+        <section className="py-20 bg-gray-100">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    {/* Left Side: Text */}
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        Trusted By Businesses Across Toronto
+      </h2>
 
-            <div className="flex justify-center mb-10">
-              <Tabs
-                options={[
-                  { label: "All", value: "all" },
-                  { label: "Websites", value: "website" },
-                  { label: "Logos", value: "logo" },
-                ]}
-                selected={activeTab}
-                onChange={setActiveTab}
+      <p className="mb-6 text-gray-700">
+        I partner with service-based businesses to deliver websites that generate leads, drive growth, and improve conversions.
+      </p>
+
+      <blockquote className="italic text-gray-600 mb-6 border-l-4 border-indigo-600 pl-4">
+        "Nav’s websites helped us increase our leads by over 40% in just 3 months. Highly recommend!" — Jane D., Business Owner
+      </blockquote>
+
+      <p className="text-gray-600 text-sm md:text-base">
+        100% custom builds • Satisfaction guaranteed • Privacy protected
+      </p>
+    </div>
+
+    {/* Right Side: Logos */}
+    <div className="flex flex-wrap items-center gap-x-8 gap-y-6 justify-start">
+      <div className="flex items-center justify-center h-14 w-auto">
+        <img src="Images/Markat.png" alt="Markat" className="h-full w-auto object-contain" />
+      </div>
+      <div className="flex items-center justify-center h-14 w-auto">
+        <img src="Images/psrlaw.png" alt="PSR Law" className="h-full w-auto object-contain" />
+      </div>
+      <div className="flex items-center justify-center h-14 w-auto">
+        <img src="Images/container.png" alt="Container" className="h-full w-auto object-contain" />
+      </div>
+      <div className="flex items-center justify-center h-14 w-auto">
+        <img src="Images/ajay.png" alt="Ajay" className="h-full w-auto object-contain" />
+      </div>
+      {/* Add more logos here */}
+    </div>
+  </div>
+</section>
+
+        {/* FEATURED PROJECTS TEASER - IMAGE LEFT, CONTENT RIGHT */}
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-6 md:flex md:items-center md:gap-12">
+            {/* Image */}
+            <motion.div
+              className="md:w-1/2 mb-8 md:mb-0"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
+            >
+              <img
+                src="Images/laptop.png" // Replace with relevant image
+                alt="Featured Projects"
+                className="rounded-xl shadow-lg w-full"
               />
-            </div>
+            </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {portfolioProjects
-                .filter(
-                  (p) => activeTab === "all" || p.type === activeTab
-                )
-                .map((project, i) => (
-                  <Card key={i} className="p-4">
-                    <img
-                      src={project.img}
-                      alt={project.title}
-                      className="h-48 w-full object-cover rounded"
-                    />
+            {/* Content */}
+            <motion.div
+              className="md:w-1/2 text-center md:text-left"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
+            >
+              <h2 className="text-3xl font-bold mb-4">
+                See How I Help Businesses Grow
+              </h2>
+              <p className="mb-4 text-gray-700">
+                I work with service-based businesses in Toronto to create websites that don’t just look good—they generate real results.
+              </p>
+              <p className="mb-6 text-gray-700">
+                From increasing leads and booking more calls to improving online visibility, my projects are designed to drive growth and revenue for your business.
+              </p>
 
-                    <h3 className="text-xl font-bold mt-4">
-                      {project.title}
-                    </h3>
-
-                    <p className="text-gray-600 text-sm">
-                      {project.description}
-                    </p>
-                    <Link
-                      to={project.link}
-                      className="inline-flex items-center mt-4 text-indigo-600 font-semibold"
-                    >
-                      View Case Study
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
-                  </Card>
-                ))}
-            </div>
+              <Button
+                href="/portfolio"
+                className="px-8 py-4"
+                variant="secondary"
+              >
+                View Projects
+              </Button>
+            </motion.div>
           </div>
         </section>
 
-        {/* CTA */}
+        {/* FINAL CTA */}
         <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
           <h2 className="text-4xl font-bold mb-6">
             Let’s Build a Website That Brings You Clients
