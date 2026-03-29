@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { testimonials } from "../data/data";
 import { Button } from "../components/Button";
 import { Star } from "lucide-react";
 import { Card } from "../components/Card";
+import { useEffect, useState } from "react";
+import { client } from "../SanityClient/sanityClient";
+import imageUrlBuilder from "@sanity/image-url";
+import { Testimonial } from "../types/Testimonal/testimonal";
+
+const builder = imageUrlBuilder(client);
+const urlFor = (source: string) => builder.image(source);
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -14,6 +20,21 @@ const fadeInUp = {
 };
 
 const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "testimonial"] | order(_createdAt desc){
+        _id,
+        name,
+        role,
+        content,
+        rating,
+        logo
+      }`)
+      .then((data) => setTestimonials(data))
+      .catch((err) => console.error("Sanity fetch error:", err));
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -23,32 +44,18 @@ const Testimonials = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     arrows: false,
+    pauseOnHover: true,
   };
 
   return (
-    <div className="pt-16">
-      {/* ================= SEO META ================= */}
+    <div className="pt-16 min-h-screen flex flex-col">
       <Helmet>
         <title>Testimonials | Nav Dhamrait — Toronto Web Developer</title>
         <meta
           name="description"
-          content="Read what clients say about working with Nav Dhamrait, a Toronto-based web developer building websites and logos that generate leads."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://navwebdesign.com/testimonials" />
-        <meta property="og:title" content="Testimonials — Nav Dhamrait" />
-        <meta
-          property="og:description"
-          content="See client testimonials about custom websites and logos built for Toronto businesses."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://navwebdesign.com/testimonials"
+          content="See what clients say about working with Nav Dhamrait."
         />
       </Helmet>
-
-      {/* ================= HERO ================= */}
       <motion.section
         className="bg-gray-50 py-24 text-center"
         initial="hidden"
@@ -61,85 +68,93 @@ const Testimonials = () => {
             className="text-[#5e17eb] font-semibold mb-4"
             variants={fadeInUp}
           >
-            Helping local businesses grow online in Toronto & GTA
+            Helping businesses grow online
           </motion.p>
+
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={fadeInUp}
           >
             What My Clients Are Saying
           </motion.h1>
+
           <motion.p
-            className="text-xl text-gray-600 mb-12 leading-relaxed"
+            className="text-xl text-gray-600 mb-12"
             variants={fadeInUp}
           >
-            Don’t just take my word for it — here’s what some of my clients
-            have to say about their experience working with me.
+            Real results from real businesses I’ve worked with.
           </motion.p>
         </motion.div>
       </motion.section>
 
-      {/* ================= TESTIMONIALS CAROUSEL ================= */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Slider {...settings}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="p-4">
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card className="flex flex-col p-8 border border-gray-100 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 h-full min-h-[360px]">
-                    {/* Logo */}
-                    {testimonial.logo && (
-                      <div className="mb-4 flex justify-center">
-                        <img
-                          src={testimonial.logo}
-                          alt={`${testimonial.name} logo`}
-                          className="h-16 w-auto object-contain"
-                        />
+      {/* ================= TESTIMONIALS ================= */}
+      <section className="py-20 bg-white flex-grow">
+        <div className="max-w-3xl mx-auto px-4">
+          {/* Loading */}
+          {testimonials.length === 0 && (
+            <p className="text-center text-gray-500">
+              Loading testimonials...
+            </p>
+          )}
+
+          {/* Slider */}
+          {testimonials.length > 0 && (
+            <Slider {...settings}>
+              {testimonials.map((t, index) => (
+                <div key={t._id} className="p-4">
+                  <motion.div
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Card className="flex flex-col p-8 rounded-2xl shadow-lg min-h-[360px]">
+
+                      {t.logo && (
+                        <div className="mb-4 flex justify-center">
+                          <img
+                            src={urlFor(t.logo).width(120).url()}
+                            alt={t.name}
+                            className="h-16 object-contain"
+                          />
+                        </div>
+                      )}
+
+                      {/* Name + Role */}
+                      <div className="text-center mb-4">
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {t.name}
+                        </h3>
+                        <p className="text-gray-600">{t.role}</p>
                       </div>
-                    )}
 
-                    {/* Name + Role */}
-                    <div className="mb-4 text-center">
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        {testimonial.name}
-                      </h3>
-                      <p className="text-gray-600">{testimonial.role}</p>
-                    </div>
+                      {/* Rating */}
+                      <div className="flex justify-center mb-4">
+                        {[...Array(Math.min(t.rating || 5, 5))].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 text-yellow-400" />
+                        ))}
+                      </div>
 
-                    {/* Rating */}
-                    <div className="flex justify-center mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-400" />
-                      ))}
-                    </div>
-
-                    {/* Testimonial */}
-                    <p className="text-gray-600 italic text-center mt-2 flex-grow">
-                      "{testimonial.content}"
-                    </p>
-                  </Card>
-                </motion.div>
-              </div>
-            ))}
-          </Slider>
+                      {/* Content */}
+                      <p className="text-gray-600 italic text-center flex-grow">
+                        "{t.content}"
+                      </p>
+                    </Card>
+                  </motion.div>
+                </div>
+              ))}
+            </Slider>
+          )}
         </div>
       </section>
-
-      {/* ================= FINAL CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
-            Ready to Turn Your Website Into a Lead Machine?
+            Ready to Grow Your Business?
           </h2>
-          <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            If my work and process make sense for your business, let’s talk
-            about your project and see if we’re a good fit.
+
+          <p className="text-lg text-indigo-100 mb-10">
+            Let’s build a website that actually brings you clients.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>

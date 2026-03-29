@@ -1,14 +1,42 @@
+// /pages/About.tsx
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "../components/Button";
-import { processSteps } from "../data/data";
 import { Card } from "../components/Card";
-
+import { client } from "../SanityClient/sanityClient";
+import * as LucideIcons from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
+const getIcon = (iconName: string): ComponentType<SVGProps<SVGSVGElement>> => {
+  const icons = LucideIcons as unknown as Record<string, ComponentType<SVGProps<SVGSVGElement>>>;
+  return icons[iconName] || icons.Circle;
+};
+
+interface ProcessStep {
+  _id: string;
+  title: string;
+  description: string;
+  icon: string;
+  note?: string;
+  order: number;
+}
+
 const About = () => {
+  const [processSteps, setProcessSteps] = useState<ProcessStep[]>([]);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "processStep"] | order(order asc){
+        _id, title, description, icon, note, order
+      }`)
+      .then((data) => setProcessSteps(data))
+      .catch((err) => console.error("Sanity fetch error:", err));
+  }, []);
+
   return (
     <div className="pt-16">
       {/* ================= ABOUT HERO ================= */}
@@ -20,7 +48,6 @@ const About = () => {
         variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
       >
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          
           {/* IMAGE */}
           <motion.img
             src="/Images/SMS_0310 Navdeep Dhamrait.jpg"
@@ -65,7 +92,7 @@ const About = () => {
             <Button
               href="https://calendly.com/navdeep-dhamrait94"
               className="px-6 py-3"
-               variant="secondary"
+              variant="secondary"
             >
               Book a Free Call
             </Button>
@@ -109,7 +136,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* ================= WORKFLOW ================= */}
+      {/* ================= WORKFLOW / PROCESS ================= */}
       <motion.section
         className="py-20 bg-gray-50"
         initial="hidden"
@@ -132,13 +159,13 @@ const About = () => {
           </motion.p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {processSteps.map((step, index) => {
-              const Icon = step.icon;
+            {processSteps.map((step) => {
+              const IconComponent = getIcon(step.icon);
               return (
-                <motion.div key={index} variants={fadeInUp}>
+                <motion.div key={step._id} variants={fadeInUp}>
                   <Card className="p-6 h-full bg-white hover:shadow-lg transition">
                     <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-[#5e17eb]">
-                      <Icon />
+                      <IconComponent className="w-6 h-6" />
                     </div>
 
                     <h3 className="text-lg font-semibold mb-2">
