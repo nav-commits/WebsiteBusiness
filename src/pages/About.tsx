@@ -23,7 +23,6 @@ const getIcon = (iconName: string): ComponentType<SVGProps<SVGSVGElement>> => {
 
 const About = () => {
   const [processSteps, setProcessSteps] = useState<ProcessStep[]>([]);
-
   useEffect(() => {
     client
       .fetch(
@@ -170,9 +169,7 @@ const About = () => {
                     <div className="flex items-center justify-center mb-4 w-10 h-10 rounded-full bg-indigo-100 text-[#5e17eb]">
                       <IconComponent className="w-6 h-6" />
                     </div>
-
                     <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-
                     <p className="text-sm text-gray-600 mb-2">
                       {step.description}
                     </p>

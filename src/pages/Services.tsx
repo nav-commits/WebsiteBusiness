@@ -1,10 +1,22 @@
-import { useState } from "react";
+// src/pages/Services.tsx
+import { useState, useEffect } from "react";
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { websitePackages, carePlans, additionalServices } from "../data/data";
+import { client } from "../SanityClient/sanityClient";
 import { Button } from "../components/Button";
 import { Tabs } from "../components/Tabs";
 import { Card } from "../components/Card";
+
+export interface WebsitePackage {
+  _id: string;
+  type: "websitePackage" | "carePlan" | "additionalService";
+  title: string;
+  tagline?: string;
+  price?: string;
+  features: string[];
+  description?: string;
+  support?: string;
+}
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -12,8 +24,27 @@ const fadeInUp = {
 };
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState("packages");
-  const otherServices = [...carePlans, ...additionalServices];
+  const [activeTab, setActiveTab] = useState<"packages" | "others">("packages");
+  const [websitePackages, setWebsitePackages] = useState<WebsitePackage[]>([]);
+  const [otherServices, setOtherServices] = useState<WebsitePackage[]>([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      const all: WebsitePackage[] = await client.fetch(`*[_type == "websitePackage"]{
+        _id,
+        title,
+        type,
+        tagline,
+        price,
+        features,
+        description,
+        support
+      }`);
+      setWebsitePackages(all.filter(item => item.type === "websitePackage"));
+      setOtherServices(all.filter(item => item.type !== "websitePackage"));
+    };
+    fetchServices();
+  }, []);
 
   return (
     <div className="pt-16">
@@ -64,7 +95,7 @@ const Services = () => {
             { label: "Other Services", value: "others" },
           ]}
           selected={activeTab}
-          onChange={setActiveTab}
+          onChange={(value) => setActiveTab(value as "packages" | "others")}
         />
       </motion.section>
 
@@ -82,10 +113,9 @@ const Services = () => {
                 ["Care", "Plan", "Maintenance"].some((word) =>
                   pkg.title.includes(word)
                 );
-
               return (
                 <motion.div
-                  key={i}
+                  key={pkg._id}
                   variants={fadeInUp}
                   initial="hidden"
                   whileInView="visible"
@@ -100,8 +130,7 @@ const Services = () => {
                         : "border border-gray-200 bg-white shadow-sm"
                     }`}
                   >
-                    {/* Tagline */}
-                    {"tagline" in pkg && pkg.tagline && (
+                    {pkg.tagline && (
                       <div
                         className={`inline-block mb-4 text-xs font-bold px-4 py-2 rounded-full ${
                           isPremium
@@ -113,7 +142,6 @@ const Services = () => {
                       </div>
                     )}
 
-                    {/* Title */}
                     <h3
                       className={`text-2xl font-bold mb-4 ${
                         isPremium ? "text-[#5e17eb]" : "text-gray-900"
@@ -122,32 +150,28 @@ const Services = () => {
                       {pkg.title}
                     </h3>
 
-                    {/* Price */}
-                    {"price" in pkg && (
+                    {pkg.price && (
                       <p className="text-4xl font-bold text-[#5e17eb] mb-6">
                         {pkg.price}
                       </p>
                     )}
 
-                    {/* Features */}
                     <ul className="space-y-4 mb-4 flex-grow">
-                      {"features" in pkg &&
-                        pkg.features?.map((feature, i) => (
-                          <li key={i} className="flex items-start">
-                            <CheckCircle className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" />
-                            <span className="text-gray-600">{feature}</span>
-                          </li>
-                        ))}
+                      {pkg.features?.map((feature, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <CheckCircle className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" />
+                          <span className="text-gray-600">{feature}</span>
+                        </li>
+                      ))}
 
-                      {"description" in pkg && pkg.description && (
+                      {pkg.description && (
                         <li className="text-gray-600">{pkg.description}</li>
                       )}
                     </ul>
 
-                    {/* Note */}
-                    {"note" in pkg && pkg.note && (
+                    {pkg.support && (
                       <p className="mt-4 text-sm text-gray-500 italic">
-                        {pkg.note}
+                        {pkg.support}
                       </p>
                     )}
                   </Card>
