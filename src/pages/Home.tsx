@@ -1,6 +1,14 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Button } from "../components/Button";
+import {
+  FaCheckCircle,
+  FaTimesCircle,
+  FaBolt,
+  FaMobileAlt,
+  FaSearch,
+  FaComments,
+} from "react-icons/fa";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -14,218 +22,303 @@ const Home = () => {
         <title>
           Nav Dhamrait — Toronto Web Developer | Websites That Bring Clients
         </title>
-        <meta
-          name="description"
-          content="Websites built to generate leads, calls, and revenue for Toronto service businesses."
-        />
       </Helmet>
 
       <div className="pt-16">
         {/* HERO */}
-        <motion.section
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          <div className="max-w-5xl mx-auto px-6">
-            <motion.h1
-              className="text-4xl md:text-6xl font-extrabold mb-6"
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-            >
-              Websites That Actually Bring You Clients — Not Just Look Good
-            </motion.h1>
+        <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-32">
+          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+            <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Toronto Web Designer for Service Businesses Who Want More Leads
+              </h1>
 
-            <motion.p
-              className="text-xl md:text-2xl text-indigo-200 mb-8"
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-            >
-              Built for Toronto service businesses that want more calls,
-              bookings, and real growth.
-            </motion.p>
+              <p className="text-lg md:text-xl text-indigo-200 mb-8">
+                I design fast, SEO-ready websites that help Toronto service
+                businesses turn visitors into real inquiries.
+              </p>
 
-            <Button
-              href="https://calendly.com/navdeep-dhamrait94"
-              className="px-8 py-4"
-            >
-              Book a Free Call
-            </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button to="/contact" className="px-8 py-4">
+                  Get a Free Website Audit
+                </Button>
+                <Button
+                  to="/portfolio"
+                  variant="secondary"
+                  className="px-8 py-4"
+                >
+                  View My Work
+                </Button>
+              </div>
+            </motion.div>
 
-            <p className="mt-6 text-sm text-indigo-200">
-              Trusted by 9+ businesses • Fast turnaround • 100% custom builds
-            </p>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
+              <img
+                src="Images/torontotower.png"
+                alt="Website Preview"
+                className="rounded-xl shadow-xl w-full h-[420px] md:h-[460px] lg:h-[500px] object-cover"
+              />
+            </motion.div>
           </div>
-        </motion.section>
+        </section>
 
-        {/* RESULTS */}
-        <section className="py-20 bg-white text-center">
-          <h2 className="text-3xl font-bold mb-10">
-            Real Results for Local Businesses
-          </h2>
+        {/* 🔥 TRUST / VALUE SECTION */}
+        <section className="bg-white py-16 border-b">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">
+              Built Specifically for Toronto Service Businesses
+            </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div>
-              <p className="text-4xl font-bold text-indigo-600">+35%</p>
-              <p className="text-gray-600">More inbound leads</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-indigo-600">2x</p>
-              <p className="text-gray-600">Higher conversions</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-indigo-600">90 Days</p>
-              <p className="text-gray-600">Avg. Google ranking time</p>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="bg-gray-50 p-6 rounded-xl shadow-sm flex flex-col items-start">
+                <FaBolt className="text-indigo-600 text-2xl mb-3" />
+                <h4 className="font-semibold mb-1">Toronto-Based</h4>
+                <p className="text-sm text-gray-600">
+                  Local market understanding that converts better.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl shadow-sm flex flex-col items-start">
+                <FaCheckCircle className="text-indigo-600 text-2xl mb-3" />
+                <h4 className="font-semibold mb-1">Conversion-Focused</h4>
+                <p className="text-sm text-gray-600">
+                  Designed to turn visitors into real leads.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl shadow-sm flex flex-col items-start">
+                <FaMobileAlt className="text-indigo-600 text-2xl mb-3" />
+                <h4 className="font-semibold mb-1">Mobile-First</h4>
+                <p className="text-sm text-gray-600">
+                  Optimized for speed and performance on all devices.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl shadow-sm flex flex-col items-start">
+                <FaComments className="text-indigo-600 text-2xl mb-3" />
+                <h4 className="font-semibold mb-1">Direct Communication</h4>
+                <p className="text-sm text-gray-600">
+                  No middlemen. Fast and clear updates.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* INTRO */}
-        <section className="py-20 bg-gray-50">
+        {/* PROBLEM SECTION */}
+        <motion.section
+          className="py-24 bg-gray-50"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <img
-              src="Images/SMS_0310 Navdeep Dhamrait.jpg"
-              alt="Nav"
-              className="rounded-xl shadow"
-            />
-
-            <div>
-              <h2 className="text-3xl font-bold mb-4">
-                Hi, I’m Nav — I Build Websites That Generate Leads
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, x: -50 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+              }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Most Toronto Business Websites Don’t Generate Leads
               </h2>
 
-              <p className="text-gray-700 mb-4">
-                Most websites just sit there. I build websites designed to bring
-                in leads, book calls, and actually grow your business.
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Your website might look good — but if it’s slow, unclear, or not
+                built to convert, you’re losing potential clients every day.
+                <br />
+                <br />
+                In a competitive market like Toronto, people decide fast. I
+                design websites that guide visitors clearly and turn traffic
+                into real inquiries.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, x: 50 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+              }}
+            >
+              <img
+                src="Images/laptop-coffee.png"
+                alt="Website Problems"
+                className="rounded-xl shadow"
+              />
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* SERVICES — SMALLER & CENTERED */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-10 text-center">
+              How I Help Toronto Service Businesses Grow
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="flex items-start gap-4">
+                <FaCheckCircle className="text-indigo-600 text-3xl mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">
+                    Conversion-Focused Design
+                  </h4>
+                  <p className="text-gray-700 text-sm">
+                    Built to turn visitors into real inquiries.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <FaSearch className="text-indigo-600 text-3xl mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">
+                    SEO-Ready Structure
+                  </h4>
+                  <p className="text-gray-700 text-sm">
+                    Helps your site rank and get found.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <FaMobileAlt className="text-indigo-600 text-3xl mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">
+                    Mobile-First Performance
+                  </h4>
+                  <p className="text-gray-700 text-sm">
+                    Optimized for every device.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <FaComments className="text-indigo-600 text-3xl mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">Clear Messaging</h4>
+                  <p className="text-gray-700 text-sm">
+                    Guides users to take action.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <Button to="/services" variant="secondary" className="px-8 py-4 text-base">
+                View Services
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* WHY ME — EXPANDED & ALIGNED */}
+        <section className="py-28 bg-gray-100">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+              Why Work With a Freelance Web Designer Instead of an Agency?
+            </h2>
+            <p className="text-gray-700 text-lg mb-12 text-center">
+              Agencies often have layers of middlemen, slow turnaround times, and high costs.
+              Working directly with a freelance designer means you get personalized attention,
+              faster results, and a website designed specifically to grow your business.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-10">
+              <div className="bg-white p-8 rounded-xl shadow-lg border">
+                <h3 className="font-semibold mb-6 text-black text-xl">Working With Me</h3>
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex gap-3 items-center">
+                    <FaCheckCircle className="text-green-500 text-xl mt-1" /> Direct communication
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaCheckCircle className="text-green-500 text-xl mt-1" /> Faster turnaround
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaCheckCircle className="text-green-500 text-xl mt-1" /> Honest pricing
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaCheckCircle className="text-green-500 text-xl mt-1" /> Built for results
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaCheckCircle className="text-green-500 text-xl mt-1" /> Personalized strategy
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaCheckCircle className="text-green-500 text-xl mt-1" /> Flexible revisions
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-8 rounded-xl shadow-lg border">
+                <h3 className="font-semibold mb-6 text-black text-xl">Typical Agencies</h3>
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex gap-3 items-center">
+                    <FaTimesCircle className="text-red-500 text-xl mt-1" /> High costs
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaTimesCircle className="text-red-500 text-xl mt-1" /> Slow revisions
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaTimesCircle className="text-red-500 text-xl mt-1" /> Junior handoffs
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaTimesCircle className="text-red-500 text-xl mt-1" /> Cookie-cutter designs
+                  </li>
+                  <li className="flex gap-3 items-center">
+                    <FaTimesCircle className="text-red-500 text-xl mt-1" /> Less focus on your specific business
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FINAL CTA */}
+        <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">
+                Let’s Turn Your Website Into a Lead Generator
+              </h2>
+
+              <p className="text-indigo-200 mb-8">
+                If your website isn’t bringing in inquiries, I’ll show you
+                exactly why — and how to fix it.
               </p>
 
-              <ul className="space-y-2 text-gray-700">
-                <li>✔️ Built for conversions</li>
-                <li>✔️ Fast, mobile-first design</li>
-                <li>✔️ SEO-ready structure</li>
-                <li>✔️ Clear, honest pricing</li>
+              <Button to="/contact" className="px-8 py-4">
+                Get a Free Website Audit
+              </Button>
+            </div>
+
+            <div className="bg-white/10 p-6 rounded-xl backdrop-blur">
+              <p className="text-sm text-indigo-100 mb-2">
+                Quick Wins You’ll Get:
+              </p>
+              <ul className="space-y-2 text-sm">
+                <li>✔️ Conversion issues identified</li>
+                <li>✔️ SEO improvements</li>
+                <li>✔️ Design fixes</li>
               </ul>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Side: Text */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Trusted By Businesses Across Toronto
-              </h2>
-
-              <p className="mb-6 text-gray-700">
-                I partner with service-based businesses to deliver websites that
-                generate leads, drive growth, and improve conversions.
-              </p>
-
-              <blockquote className="italic text-gray-600 mb-6 border-l-4 border-indigo-600 pl-4">
-                "Nav’s websites helped us increase our leads by over 40% in just
-                3 months. Highly recommend!" — Jane D., Business Owner
-              </blockquote>
-
-              <p className="text-gray-600 text-sm md:text-base">
-                100% custom builds • Satisfaction guaranteed • Privacy protected
-              </p>
-            </div>
-
-            {/* Right Side: Logos */}
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-6 justify-start">
-              <div className="flex items-center justify-center h-14 w-auto">
-                <img
-                  src="Images/Markat.png"
-                  alt="Markat"
-                  className="h-full w-auto object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center h-14 w-auto">
-                <img
-                  src="Images/psrlaw.png"
-                  alt="PSR Law"
-                  className="h-full w-auto object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center h-14 w-auto">
-                <img
-                  src="Images/container.png"
-                  alt="Container"
-                  className="h-full w-auto object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center h-14 w-auto">
-                <img
-                  src="Images/ajay.png"
-                  alt="Ajay"
-                  className="h-full w-auto object-contain"
-                />
-              </div>
-              {/* Add more logos here */}
-            </div>
-          </div>
-        </section>
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-6 md:flex md:items-center md:gap-12">
-            {/* Image */}
-            <motion.div
-              className="md:w-1/2 mb-8 md:mb-0"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
-            >
-              <img
-                src="Images/laptop.png" 
-                alt="Featured Projects"
-                className="rounded-xl shadow-lg w-full"
-              />
-            </motion.div>
-            <motion.div
-              className="md:w-1/2 text-center md:text-left"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
-            >
-              <h2 className="text-3xl font-bold mb-4">
-                See How I Help Businesses Grow
-              </h2>
-              <p className="mb-4 text-gray-700">
-                I work with service-based businesses in Toronto to create
-                websites that don’t just look good—they generate real results.
-              </p>
-              <p className="mb-6 text-gray-700">
-                From increasing leads and booking more calls to improving online
-                visibility, my projects are designed to drive growth and revenue
-                for your business.
-              </p>
-
-              <Button
-                href="/portfolio"
-                className="px-8 py-4"
-                variant="secondary"
-              >
-                View Projects
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-        <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Let’s Build a Website That Brings You Clients
-          </h2>
-
-          <p className="mb-8 text-indigo-200">
-            If you want more leads, bookings, and growth — let’s talk.
-          </p>
-
-          <Button
-            href="https://calendly.com/navdeep-dhamrait94"
-            className="px-8 py-4"
-          >
-            Book a Free Call
-          </Button>
-        </section>
+        {/* STICKY CTA — ALWAYS VISIBLE */}
+        <motion.a
+          href="/contact"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="fixed bottom-6 right-6 z-50 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-full shadow-lg flex items-center gap-3 cursor-pointer"
+        >
+          <FaBolt className="text-yellow-300 text-xl" />
+          <span className="font-semibold text-sm">Get a Free Website Audit</span>
+        </motion.a>
       </div>
     </>
   );
