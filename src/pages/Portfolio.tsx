@@ -7,13 +7,17 @@ import { Card } from "../components/Card";
 import { client } from "../SanityClient/sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortfolioProject } from "../types/PortfolioProject/PortfolioProject";
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
+
 const urlFor = (source: string) => imageUrlBuilder(client).image(source);
+
 const Portfolio = () => {
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
+
   useEffect(() => {
     client
       .fetch(`*[_type == "portfolioProject"] | order(_createdAt desc){
@@ -31,22 +35,16 @@ const Portfolio = () => {
 
   return (
     <div className="pt-16">
-      {/* ================= SEO META ================= */}
+      {/* ================= SEO ================= */}
       <Helmet>
-        <title>Nav Dhamrait — Portfolio | Toronto Web Developer</title>
+        <title>
+          Toronto Web Design Portfolio | Websites That Generate Leads
+        </title>
         <meta
           name="description"
-          content="Explore the portfolio of Nav Dhamrait, Toronto-based web developer. Custom websites and logos designed to help local businesses generate more leads."
+          content="View web design projects by a Toronto web designer. High-converting websites built for service businesses to generate leads, calls, and clients."
         />
-        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://navwebdesign.com/portfolio" />
-        <meta property="og:title" content="Nav Dhamrait — Portfolio" />
-        <meta
-          property="og:description"
-          content="Custom websites and logos for Toronto service businesses focused on real results and lead generation."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://navwebdesign.com/portfolio" />
       </Helmet>
 
       {/* ================= HERO ================= */}
@@ -64,21 +62,26 @@ const Portfolio = () => {
             className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
             variants={fadeInUp}
           >
-            My Portfolio
+            Toronto Web Design Portfolio
           </motion.h1>
 
           <motion.p
             className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            Explore a selection of websites and logos I’ve designed for Toronto
-            service businesses. Each project is tailored to generate leads,
-            improve conversions, and strengthen online presence.
+            Real websites built for Toronto service businesses — designed to
+            generate leads, increase conversions, and help businesses grow
+            online.
           </motion.p>
+
+          <p className="text-sm text-gray-500">
+            Serving Toronto & the GTA — contractors, small businesses, and
+            service companies.
+          </p>
         </motion.div>
       </motion.section>
 
-      {/* ================= PROJECTS GRID ================= */}
+      {/* ================= PROJECTS ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -92,21 +95,28 @@ const Portfolio = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="flex flex-col h-full p-6 shadow-lg bg-gray-50 hover:shadow-2xl transition-transform transform hover:scale-105">
-                  {/* Project Image */}
+                  {/* Image */}
                   <div className="w-full h-48 sm:h-56 md:h-64 lg:h-52 xl:h-60">
                     <img
                       src={urlFor(project.img).width(600).url()}
-                      alt={project.alt}
+                      alt={
+                        project.alt ||
+                        `${project.title} website design for Toronto business`
+                      }
                       className="w-full h-full object-cover rounded-xl shadow-md"
                     />
                   </div>
 
-                  {/* Project Content */}
+                  {/* Content */}
                   <div className="flex flex-col mt-4 flex-grow">
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">
                       {project.title}
                     </h2>
-                    <p className="text-gray-600 mb-2">{project.description}</p>
+
+                    <p className="text-gray-600 mb-3">
+                      {project.description ||
+                        "Custom website designed to improve conversions and generate leads."}
+                    </p>
 
                     <Button
                       href={project.link}
@@ -114,7 +124,7 @@ const Portfolio = () => {
                       arrow
                       className="px-6 py-2 mt-auto self-start"
                     >
-                      Visit Website
+                      View Project
                     </Button>
                   </div>
                 </Card>
@@ -123,19 +133,44 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+      {/* ================= SEO BOOST (NEW) ================= */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Websites Built to Generate Real Results
+          </h2>
+
+          <p className="text-gray-600 mb-4">
+            Every project you see here is designed with one goal — turning
+            visitors into leads and customers.
+          </p>
+
+          <p className="text-gray-600">
+            From structure to messaging to performance, each website is built to
+            rank on Google and convert traffic into real business growth for
+            Toronto companies.
+          </p>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
       <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
-            Ready to Build a Website That Generates Leads?
+            Want Results Like These for Your Business?
           </h2>
+
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-            If you like what you see, let’s discuss your project and create a
-            custom website or brand design to grow your business.
+            Let’s build a website that not only looks good — but actually brings
+            you leads, calls, and clients.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button to="/contact" arrow className="px-8 py-4">
               Get a Free Quote
             </Button>
+
             <Button
               href="https://calendly.com/navdeep-dhamrait94"
               variant="outline"
