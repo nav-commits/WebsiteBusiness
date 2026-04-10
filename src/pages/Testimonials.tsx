@@ -63,7 +63,7 @@ const Testimonials = () => {
       <div className="pt-16 min-h-screen flex flex-col">
         {/* ================= HERO ================= */}
         <motion.section
-          className="bg-gray-50 py-24 text-center"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 py-24 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -73,21 +73,21 @@ const Testimonials = () => {
             variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
           >
             <motion.p
-              className="text-[#5e17eb] font-semibold mb-4"
+              className="text-white font-semibold mb-4"
               variants={fadeInUp}
             >
               Trusted by Toronto service businesses
             </motion.p>
 
             <motion.h1
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
               variants={fadeInUp}
             >
               Real Results From Real Clients
             </motion.h1>
 
             <motion.p
-              className="text-xl text-gray-600 mb-12"
+              className="text-xl text-indigo-200 mb-12"
               variants={fadeInUp}
             >
               See how businesses in Toronto are using their websites to generate

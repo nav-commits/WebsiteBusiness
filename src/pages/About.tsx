@@ -48,6 +48,37 @@ const About = () => {
           content="Meet Nav Dhamrait, a Toronto web designer helping service businesses build high-converting, SEO-optimized websites that generate real leads."
         />
       </Helmet>
+      {/* ================= TOP HERO ================= */}
+      <motion.section
+        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 mt-12  text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="max-w-5xl mx-auto px-8"
+          variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+        >
+          <motion.h1
+            className="text-4xl md:text-5xl font-extrabold mb-6"
+            variants={fadeInUp}
+          >
+            About
+          </motion.h1>
+
+          <motion.p
+            className="text-xl md:text-2xl text-indigo-200 mb-8 max-w-3xl mx-auto leading-relaxed"
+            variants={fadeInUp}
+          >
+            Toronto web designer focused on building high-converting websites
+            that turn visitors into real leads and customers.
+          </motion.p>
+
+          <p className="text-sm text-indigo-200">
+            Serving Toronto & the GTA — helping service businesses grow online.
+          </p>
+        </motion.div>
+      </motion.section>
 
       <div className="pt-16">
         {/* ================= ABOUT HERO ================= */}
@@ -73,11 +104,14 @@ const About = () => {
                 Toronto Web Designer Focused on Results — Not Just Design
               </motion.h1>
 
-              <motion.p className="text-lg text-gray-700 mb-4" variants={fadeInUp}>
+              <motion.p
+                className="text-lg text-gray-700 mb-4"
+                variants={fadeInUp}
+              >
                 I’m <span className="font-semibold">Nav Dhamrait</span>, a
                 Toronto-based web designer & developer helping service
-                businesses turn their websites into lead-generating tools —
-                not just something that looks good.
+                businesses turn their websites into lead-generating tools — not
+                just something that looks good.
               </motion.p>
 
               <motion.p className="text-gray-600 mb-6" variants={fadeInUp}>
@@ -116,9 +150,7 @@ const About = () => {
         {/* ================= DIFFERENCE ================= */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Why My Approach Works
-            </h2>
+            <h2 className="text-3xl font-bold mb-6">Why My Approach Works</h2>
 
             <p className="text-gray-600 mb-10">
               I don’t just build websites — I build systems designed to bring in
@@ -143,9 +175,7 @@ const About = () => {
               </Card>
 
               <Card className="p-6">
-                <h3 className="font-semibold mb-2">
-                  Simple & Transparent
-                </h3>
+                <h3 className="font-semibold mb-2">Simple & Transparent</h3>
                 <p className="text-sm text-gray-600">
                   Clear process, clear pricing, and no unnecessary complexity.
                 </p>
@@ -196,9 +226,7 @@ const About = () => {
                       </p>
 
                       {step.note && (
-                        <p className="text-xs text-gray-400">
-                          {step.note}
-                        </p>
+                        <p className="text-xs text-gray-400">{step.note}</p>
                       )}
                     </Card>
                   </motion.div>
@@ -216,8 +244,8 @@ const About = () => {
             </h2>
 
             <p className="text-indigo-200 mb-8">
-              If you want a website that actually generates leads and helps
-              grow your business in Toronto, let’s talk.
+              If you want a website that actually generates leads and helps grow
+              your business in Toronto, let’s talk.
             </p>
 
             <Button

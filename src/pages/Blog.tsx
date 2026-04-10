@@ -37,7 +37,7 @@ const Blog = () => {
         />
       </Helmet>
       <motion.section
-        className="bg-gray-50 py-24"
+        className="bg-gradient-to-r from-indigo-600 to-purple-600 py-24"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -45,13 +45,13 @@ const Blog = () => {
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
             variants={fadeInUp}
           >
             Blog
           </motion.h1>
           <motion.p
-            className="text-lg text-gray-700 max-w-2xl mx-auto"
+            className="text-lg text-indigo-200 max-w-2xl mx-auto"
             variants={fadeInUp}
           >
             Practical tips on web design, SEO, and growing your local business

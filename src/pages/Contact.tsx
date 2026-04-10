@@ -172,6 +172,29 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-extrabold mb-6">
+            Need a Website That Converts?
+          </h2>
+          <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
+            Let’s build a professional website that helps your business grow and attract more clients.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
+              Get a Free Quote
+            </Button>
+            <Button
+              href="https://calendly.com/navdeep-dhamrait94"
+              variant="outline"
+              className="px-8 py-4 rounded-lg"
+              arrow
+            >
+              Book a Free Call
+            </Button>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };

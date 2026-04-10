@@ -49,7 +49,7 @@ const Portfolio = () => {
 
       {/* ================= HERO ================= */}
       <motion.section
-        className="bg-gray-50 py-24 text-center"
+        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -59,14 +59,14 @@ const Portfolio = () => {
           variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
         >
           <motion.h1
-            className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-extrabold text-white mb-6"
             variants={fadeInUp}
           >
             Toronto Web Design Portfolio
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-indigo-200 mb-12 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
             Real websites built for Toronto service businesses — designed to
@@ -74,7 +74,7 @@ const Portfolio = () => {
             online.
           </motion.p>
 
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-indigo-200">
             Serving Toronto & the GTA — contractors, small businesses, and
             service companies.
           </p>
