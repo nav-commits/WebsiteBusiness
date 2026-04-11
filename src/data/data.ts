@@ -1,647 +1,170 @@
-import {
-  Calendar,
-  FileText,
-  Clipboard,
-  Code,
-  PenTool,
-  CheckCircle,
- 
-  Shield,
-} from "lucide-react";
-import type { ComponentType } from "react";
+// src/data/services.ts
 
-// ---------- WORKFLOW ----------
-export interface ProcessStep {
-  title: string;
-  description: string;
-  icon: ComponentType;
-  note?: string;
-}
-
-export const processSteps: ProcessStep[] = [
+export const services = [
+  // ================= LANDING PAGE =================
   {
-    title: "Consultation",
-    description:
-      "We discuss your business goals, website needs, style preferences, timeline, and budget.",
-    icon: Calendar,
-    note: "Free consultation via Zoom, phone, or in person.",
-  },
-  {
-    title: "Proposal & Contract",
-    description:
-      "You receive a clear proposal outlining scope, deliverables, timeline, pricing, and revision policy. Deposit is invoiced to begin.",
-    icon: FileText,
-    note: "This step protects both you and me from scope creep.",
-  },
-  {
-    title: "Content Collection",
-    description:
-      "You provide branding, text, images, and hosting/domain access through a shared folder.",
-    icon: Clipboard,
-    note: "I can assist with copywriting or stock images if needed.",
-  },
-  {
-    title: "Design Phase",
-    description:
-      "Choose from 3–4 design directions. Colors, fonts, layout, and structure are customized. Includes 2 structured revision rounds.",
-    icon: PenTool,
-  },
-  {
-    title: "Development Phase",
-    description:
-      "I build all pages and features such as forms, booking, or eCommerce, and test responsiveness, performance, and usability.",
-    icon: Code,
-  },
-  {
-    title: "Review & Launch",
-    description:
-      "Final revisions are applied, admin access is provided, domain and SSL are connected, and the site is launched. Optional Google submission included.",
-    icon: CheckCircle,
-  },
-  {
-    title: "Ongoing Support",
-    description:
-      "Optional care plans available for maintenance, updates, security, SEO, and content support.",
-    icon: Shield,
-    note: "Not required, but recommended for long-term performance.",
-  },
-];
-
-
-// ---------- PORTFOLIO PROJECTS ----------
-export interface PortfolioProject {
-  img: string;
-  alt: string;
-  title: string;
-  description: string;
-  link: string;
-  type: "website" | "logo";
-}
-
-export const portfolioProjects: PortfolioProject[] = [
-  {
-    img: "/Images/security-camera.png",
-    alt: "CMT Security Services",
-    title: "CMT Security Services",
-    description:
-      "Committed to protecting your business and community with innovative security solutions. Specializing in event, residential, and commercial security.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images/accounting.png",
-    alt: "Ajay Kalha Tax Services",
-    title: "Ajay Kalha Tax Services",
-    description:
-      "Comprehensive accounting services including bookkeeping and financial reporting to help businesses make informed decisions.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images//Psychotherapy.png",
-    alt: "The Healing Hive",
-    title: "The Healing Hive",
-    description:
-      "Compassionate virtual therapy services across Canada focused on anxiety, trauma, and life transitions.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images/realestate.png",
-    alt: "PSR Law",
-    title: "PSR Law",
-    description:
-      "Ontario-based real estate law firm delivering transparent, client-first legal services.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images/storage.png",
-    alt: "Container Storage Solutions",
-    title: "Container Storage Solutions",
-    description:
-      "Secure 24/7 monitored container and trailer storage in the GTA for freight and trucking companies.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images/vik.jpg",
-    alt: "Vik Ghankas Law Group",
-    title: "Vik Ghankas Law Group",
-    description:
-      "Family law firm serving the Lower Mainland with direct lawyer-to-client communication.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images/MarkatImage.png",
-    alt: "MARKAT Group Inc.",
-    title: "MARKAT Group Inc.",
-    description:
-      "Toronto-based advisory firm helping SMBs scale, manage risk, and lead with confidence.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images/gtc.png",
-    alt: "GTA LEC",
-    title: "GTA LEC",
-    description:
-      "Professional electrical contracting and consulting services across the GTA. Specializing in residential, commercial, and industrial electrical solutions.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images/analystics.png",
-    alt: "VA Analytics Consulting",
-    title: "VA Analytics Consulting",
-    description:
-      "Helps businesses leverage data to make smarter decisions through analysis, visualization, and actionable reporting.",
-    link: "/portfolio",
-    type: "website",
-  },
-  {
-    img: "/Images/Van-black.png",
-    alt: "Van Logo - Black Variant",
-    title: "Van Brand Logo (Black Variant)",
-    description:
-      "One of the two logo variants created for VA Analytics Consulting.",
-    link: "/portfolio",
-    type: "logo",
-  },
-  {
-    img: "/Images/van-org.png",
-    alt: "Van Logo - White Variant",
-    title: "Van Brand Logo (White Variant)",
-    description:
-      "Second logo variant created for VA Analytics Consulting as an alternate option for different backgrounds.",
-    link: "/portfolio",
-    type: "logo",
-  },
-  {
-    img: "/Images/genpathwayx.png",
-    alt: "GenPathwayX",
-    title: "GenPathwayX",
-    description:
-      "Precision-driven genomics and preventive health company transforming advanced genetic science into actionable, real-world insight.",
-    link: "/portfolio",
-    type: "website",
-  },
-];
-
-// ---------- PROJECTS ----------
-export interface Project {
-  title: string;
-  image: string;
-  description: string;
-  features: string[];
-  technology?: string; 
-  link: string;
-}
-
-export const projects: Project[] = [
-  {
-    title: "CMT Security Services",
-    image: "/Images/security-camera.png",
-    description: "Committed to protecting your business and community...",
-    features: [
-      "Comprehensive Security Solutions",
-      "Trusted & Professional Team",
-      "Client-Focused Approach",
-      "24/7 Protection & Reliability",
-    ],
-    technology: "WordPress",
-    link: "https://cmtsecured.ca/",
-  },
-  {
-    title: "Ajay Kalha Tax Services",
-    image: "/Images/accounting.png",
-    description: "We provide comprehensive accounting services...",
-    features: [
-      "User-Friendly Navigation",
-      "Informative Blog Section",
-      "Client Testimonials",
-      "Quick Contact & Consultation",
-    ],
-    technology: "WordPress",
-    link: "https://aktax.org/",
-  },
-  {
-    title: "The Healing Hive",
-    image: "Images/Psychotherapy.png",
-    description: "Providing compassionate therapy services...",
-    features: [
-      "Booking System",
-      "Comprehensive Services Overview",
-      "Meet the Therapist Section",
-      "Secure & Confidential Contact",
-    ],
-    technology: "WordPress",
-    link: "https://thehealinghive.net/",
-  },
-  {
-    title: "PSR Law",
-    image: "/Images/realestate.png",
-    description: "A dedicated real estate law firm offering expert legal guidance...",
-    features: [
-      "Real Estate Legal Services",
-      "Clear & Transparent Pricing",
-      "Expert Guidance & Support",
-      "Client-Focused Solutions",
-    ],
-    technology: "WordPress",
-    link: "https://psrlaw.ca/",
-  },
-  {
-    title: "Container Storage Solutions",
-    image: "/Images/storage.png",
-    description: "A leading storage terminal in the GTA...",
-    features: [
-      "24/7 Secure Storage",
-      "Flexible Storage Solutions",
-      "Client-First Approach",
-      "Strategic Location in GTA",
-    ],
-    technology: "WordPress",
-    link: "https://containerstorage.solutions",
-  },
-  {
-    title: "Ghankas Law Group",
-    image: "/Images/vik.jpg",
-    description: "Family Law specialists based in the Tri-Cities...",
-    features: [
-      "Personalized Client Attention",
-      "Expert Family Law Services",
-      "Clear Communication & Transparency",
-      "Trusted Local Legal Representation",
-    ],
-    technology: "WordPress",
-    link: "https://ghankaslaw.com",
-  },
-  {
-    title: "MARKAT Group Inc.",
-    image: "/Images/MarkatImage.png",
-    description: "Founded in Toronto, MARKAT is a boutique advisory & consulting firm...",
-    features: [
-      "Strategic Business Advisory",
-      "Risk Management & Compliance",
-      "Tailored Growth Strategies",
-      "Support for SMBs Ready to Scale",
-    ],
-    technology: "Wix",
-    link: "https://www.markatgroup.net/",
-  },
-  {
-    title: "GTA LEC",
-    image: "/Images/gtc.png",
-    description:
-      "Providing professional electrical contracting and consulting services across the Greater Toronto Area. GTA LEC specializes in residential, commercial, and industrial electrical solutions with a focus on safety and reliability.",
-    features: [
-      "Residential, Commercial & Industrial Services",
-      "Safety & Compliance Focused",
-      "Efficient Project Delivery",
-      "Client-Centric Solutions",
-    ],
-    technology: "Wordpress",
-    link: "https://gta-lec.ca/",
-  },
-  {
-    title: "VA Analytics Consulting",
-    image: "/Images/analystics.png",
-    description:
-      "VA Analytics Consulting helps businesses leverage data to make smarter decisions. From data analysis to visualization and reporting, they provide actionable insights that drive growth and efficiency.",
-    features: [
-      "Data-Driven Business Solutions",
-      "Custom Reporting & Dashboards",
-      "Insightful Analysis for Growth",
-      "Actionable Recommendations",
-    ],
-    link: "https://vaanalyticsconsulting.com/",
-  },
-  // Two logo variants for VA Analytics Consulting
-  {
-    title: "Van Brand Logo (Black Variant)",
-    image: "/Images/Van-black.png",
-    description:
-      "One of the two logo variants created for VA Analytics Consulting.",
-    features: [
-      "Logo Design",
-      "Brand Identity",
-      "Client: VA Analytics Consulting",
-    ],
-    link: "https://vaanalyticsconsulting.com/",
-  },
-  {
-    title: "Van Brand Logo (White Variant)",
-    image: "/Images/van-org.png",
-    description:
-      "Second logo variant created for VA Analytics Consulting as an alternate option for different backgrounds.",
-    features: [
-      "Logo Design",
-      "Brand Identity",
-      "Client: VA Analytics Consulting",
-    ],
-    link: "https://vaanalyticsconsulting.com/",
-  },
-  {
-    title: "GenPathwayX",
-    image: "/Images/genpathwayx.png",
-    description:
-      "GenPathwayX is a precision-driven genomics and preventive health company dedicated to transforming advanced genetic science into actionable, real-world insight. They empower clinics and healthcare providers with deeper clarity into human biology before disease manifests.",
-    features: [
-      "Clinically aligned DNA testing",
-      "Data-driven actionable insights",
-      "Integration with clinical and wellness workflows",
-      "Scalable platform for clinics & partners",
-    ],
-    technology: "Wix",
-    link: "https://www.genpathwayx.com/",
-  },
-  
-];
-
-// ---------- WEBSITE PACKAGES ----------
-export interface WebsitePackage {
-  title: string;
-  tagline: string;
-  price: string;
-  features: string[];
-  note?: string;
-}
-
-export const websitePackages: WebsitePackage[] = [
-  {
+    category: "package",
     title: "Landing Page",
     tagline: "High-converting single-page design",
-    price: "Starting at $500",
+    price: "Starting at $800+",
     features: [
-      "Custom landing page designed to convert visitors into clients",
-      "Designed for ads, Google traffic, or Instagram lead generation",
-      "Mobile-first, fully responsive",
-      "Call-to-action sections & lead capture forms",
-      "Optional booking or lead capture integration",
-      "SEO-friendly and fast-loading",
-      "2 structured revision rounds (design + content; additional revisions $50 each)",
-      "Delivered in 3–5 business days after content is provided",
+      "High-converting single-page design",
+      "Lead capture or booking form",
+      "Mobile-first and fast loading",
+      "Built for ads and lead generation",
+      "2 revision rounds",
     ],
-    note: "Hosting and domain not included. I can help recommend or set them up if needed.",
+    note:
+      "Ideal for running ads or targeting specific services. Hosting & domain not included (I can help set it up if needed).",
   },
+
+  // ================= WEBSITE PACKAGES =================
   {
+    category: "package",
     title: "Starter Website",
-    tagline: "Perfect for small local businesses or personal brands",
-    price: "Starting at $900",
+    tagline: "For small businesses getting online",
+    price: "Starting at $1200",
     features: [
-      "Up to 5 custom pages (Home, About, Services, Contact, Blog)",
-      "Mobile-first, fully responsive",
-      "SEO-ready foundation (metadata, sitemap, Google Search Console setup)",
-      "Contact form integration",
-      "2 structured revision rounds (design + content; additional revisions $50 each)",
-      "Delivered in 7–10 business days after content is provided",
-      "Includes Foundation Care Plan (1 year: updates & backups)",
+      "Up to 5 pages (Home, About, Services, Contact)",
+      "Mobile-friendly design",
+      "Contact form for leads",
+      "Basic SEO setup (Google-ready)",
+      "Fast-loading, clean layout",
+      "2 revision rounds",
+      "Additional pages: $150 each",
     ],
-    note: "Hosting and domain not included. I can help recommend or set them up if needed.",
+    note:
+      "Perfect for small businesses that need a professional online presence. Hosting & domain not included (I can help set it up if needed).",
   },
+
   {
-    title: "Growth Website",
-    tagline: "Advanced solution for scaling businesses",
-    price: "Starting at $1,500",
+    category: "package",
+    title: "Growth Website (Most Popular)",
+    tagline: "For businesses that want more leads",
+    price: "Starting at $2200–$3000",
     features: [
-      "Up to 10 custom pages",
-      "Mobile-first, fully responsive design",
-      "Booking system OR eCommerce integration",
-      "Basic SEO and speed optimization",
-      "2 structured revision rounds (design + content; additional revisions $50 each)",
-      "Delivered in 2–3 weeks after content is provided",
-      "Includes Growth Care Plan (5 updates/year, advanced security, quarterly performance checks)",
+      "Up to 10 pages",
+      "Conversion-focused layout (built to get calls & leads)",
+      "Booking system or lead capture setup",
+      "SEO foundation for better visibility",
+      "Speed & mobile optimization",
+      "2 revision rounds",
+      "Additional pages: $150 each",
+      "Designed to turn visitors into paying customers",
     ],
-    note: "Hosting and domain not included. I can help recommend or set them up if needed.",
+    note:
+      "Hosting & domain not included (I can help set it up if needed).",
   },
+
   {
+    category: "package",
     title: "Scale Website",
-    tagline: "Custom solutions for fast-growing businesses",
-    price: "Starting at $2,200",
+    tagline: "For businesses ready to grow fast",
+    price: "Starting at $4000+",
     features: [
-      "Unlimited pages tailored to your business needs",
-      "Mobile-first, fully responsive",
-      "Booking + eCommerce + Courses integration",
-      "Advanced SEO, speed, and security optimization",
-      "2 structured revision rounds (design + content; additional revisions $50 each)",
-      "Delivered in 3–5 weeks after content is provided",
-      "Includes Scale Care Plan (monthly updates, SEO, analytics, conversion optimization)",
+      "Up to 15 pages (additional pages $150 each)",
+      "Advanced features (booking, eCommerce, integrations)",
+      "Conversion optimization",
+      "SEO + performance optimization",
+      "Custom layouts tailored to business goals",
+      "Priority support + faster turnaround",
     ],
-    note: "Hosting and domain not included. I can help recommend or set them up if needed.",
+    note:
+      "Built for businesses ready to scale and maximize results. Hosting & domain not included (I can help set it up if needed).",
   },
-];
 
-// ---------- CARE PLANS ----------
-export interface CarePlan {
-  title: string;
-  tagline: string;
-  price: string;
-  features: string[];
-  support?: string;
-}
-
-export const carePlans: CarePlan[] = [
+  // ================= ADD-ONS =================
   {
-    title: "Foundation Care Plan",
-    tagline: "Essential updates & security",
-    price: "$150 / year",
-    features: [
-      "Annual platform, plugin, and integration updates",
-      "Weekly backups for security",
-      "Basic security monitoring",
-      "Up to 2 small content updates per year (text, images, minor layout tweaks)",
-    ],
-    support: "Email support (72-hour response time)",
-  },
-  {
-    title: "Growth Care Plan",
-    tagline: "Care + light content support",
-    price: "$400 / year",
-    features: [
-      "All Foundation Care Plan features",
-      "Up to 5 small content updates per year",
-      "Advanced security monitoring",
-      "Quarterly website performance checks",
-    ],
-    support: "Priority email support (48-hour response time)",
-  },
-  {
-    title: "Scale Care Plan",
-    tagline: "Full marketing & website support",
-    price: "$1,000 / year",
-    features: [
-      "All Growth Care Plan features",
-      "Up to 12 content updates per year",
-      "Monthly blog posts or promotional updates",
-      "Local SEO & Google Business profile maintenance",
-      "Conversion optimization support",
-      "Monthly analytics & performance reports",
-    ],
-    support: "Priority support (24–48 hour response time)",
-  },
-];
-
-// ---------- ADDITIONAL SERVICES ----------
-export interface AdditionalService {
-  title: string;
-  price: string;
-  description?: string;
-  features: string[];
-  note?: string;
-}
-
-export const additionalServices: AdditionalService[] = [
-  {
+    category: "addon",
     title: "SEO Setup",
-    price: "$300",
-    description: "Complete on-page SEO to help your site rank and convert",
+    price: "$300–$500",
     features: [
-      "Optimize page titles, meta descriptions, and headings",
-      "Set up Google Search Console and Analytics",
-      "Submit XML sitemap to Google",
-      "Optimize images for SEO (alt text, file names, compression)",
-      "Internal linking and URL structure review",
-      "Basic keyword optimization for up to 5 main pages",
-      "Ensure mobile-friendly and fast-loading pages",
-    ],
-    note: "Best paired with Growth or Scale Website packages.",
-  },
-  {
-    title: "Business Email Setup",
-    price: "$100",
-    features: [
-      "Professional email setup with Google Workspace, Zoho, or similar",
-      "Create custom domain-based email addresses",
-      "Configure inboxes on multiple devices",
-      "Set up basic security and spam protection",
-      "Optional email migration from old accounts",
+      "On-page SEO setup",
+      "Google Search Console setup",
+      "Keyword targeting basics",
     ],
   },
   {
-    title: "Logo Design",
-    price: "$200",
+    category: "addon",
+    title: "Conversion Optimization",
+    price: "$300–$800",
     features: [
-      "2 initial logo concepts",
-      "2 full revisions (extra revisions $50 each)",
-      "Delivery in AI, SVG, PNG, and JPEG formats",
-      "Optimized for web, social media, and print",
-      "Brand colors and typography included",
+      "Improve leads & conversions",
+      "CTA optimization",
+      "Layout improvements for higher sales",
     ],
   },
   {
+    category: "addon",
+    title: "Google Business Profile Optimization",
+    price: "$200–$500",
+    features: [
+      "Optimize Google listing",
+      "Improve local ranking",
+      "Setup & enhancements",
+    ],
+  },
+  {
+    category: "addon",
     title: "Website Redesign / Fix",
-    price: "Starting at $600",
+    price: "Starting at $600+",
     features: [
-      "Modern design refresh",
-      "Improve page speed and Core Web Vitals",
-      "Fully mobile-friendly optimization",
-      "Fix broken links, forms, and layout issues",
-      "Optional SEO and content upgrades",
-      "2 structured revision rounds (design + content, additional revisions $50 each)",
+      "Modern UI redesign",
+      "Fix broken layouts/forms",
+      "Speed improvements",
     ],
-    note: "Hosting and domain not included. I can help set them up if needed.",
   },
-  
-];
+  {
+    category: "addon",
+    title: "Logo Design",
+    price: "$200–$500",
+    features: ["2 logo concepts", "2 revisions", "Final files included"],
+  },
+  {
+    category: "addon",
+    title: "Business Email Setup",
+    price: "$100–$200",
+    features: [
+      "Custom domain email setup",
+      "Google Workspace or Zoho",
+      "Device setup",
+    ],
+  },
 
-
-// ---------- TESTIMONIALS ----------
-export interface Testimonial {
-  name: string;
-  role: string;
-  content: string;
-  rating: number;
-  logo: string;
-}
-
-export const testimonials: Testimonial[] = [
+  // ================= CARE PLANS =================
   {
-    name: "Ajay Kalha",
-    role: "Founder & Tax Consultant",
-    content:
-      "Nav created a beautiful, professional website that exceeded our expectations. Our traffic has increased, and the site runs flawlessly. Highly recommend his services!",
-    rating: 5,
-    logo: "/Images/ajay.png",
+    category: "care",
+    title: "Basic Care Plan",
+    tagline: "Keep your website running smoothly",
+    price: "$20/month",
+    features: ["Updates & backups", "Minor edits", "Basic monitoring"],
+    support:
+      "Keeps your website updated and running without issues.",
   },
   {
-    name: "Simona",
-    role: "Owner, The Healing Hive Psychotherapy",
-    content:
-      "Nav created a beautiful, professional website that truly represents my practice. The booking system is seamless, and clients find it easy to navigate. Highly recommend his work!",
-    rating: 5,
-    logo: "/Images/healing.png",
+    category: "care",
+    title: "Growth Care Plan",
+    tagline: "Ongoing improvements for performance",
+    price: "$75/month",
+    features: [
+      "Everything in Basic",
+      "Monthly improvements",
+      "Performance optimization",
+    ],
+    support:
+      "Helps your website stay optimized for leads and conversions.",
   },
   {
-    name: "Harry Singh",
-    role: "Owner, CMT Security Services",
-    content:
-      "Nav built a sleek, professional website that has significantly boosted my business. Clients can now easily find our services, and the site runs smoothly on all devices. Highly recommend his expertise!",
-    rating: 5,
-    logo: "/Images/security.png",
-  },
-  {
-    name: "Prabhjot Rathore",
-    role: "PSR Law",
-    content:
-      "Working with Nav has been phenomenal! He designed our website exactly how we wanted, and was always there to help whenever we had questions. Thank you for your amazing work, 5 stars!",
-    rating: 5,
-    logo: "/Images/psrlaw.png",
-  },
-  {
-    name: "Sahib Walia",
-    role: "Owner, Container Storage Solutions",
-    content:
-      "Nav completely transformed our website, taking it from outdated to professional. The new design is clean, mobile-friendly, and truly represents our brand. We’ve already seen an increase in leads and received positive feedback from clients. I’m beyond happy with the results and highly recommend Nav to any business looking to improve their online presence.",
-    rating: 5,
-    logo: "/Images/container.png",
-  },
-  {
-    name: "Vik Ghankas",
-    role: "Founder, Ghankas Law Group",
-    content:
-      "I just wanted to give a huge shoutout to my main man, Nav Dhamrait, for designing and developing my new Family Law website. He was extremely diligent and proactive throughout the entire process. I can’t recommend him enough to all my friends and family who are looking to have a website built. Thanks, Nav Dhamrait!",
-    rating: 5,
-    logo: "/Images/vik.png",
-  },
-];
-
-// ---------- FAQ / QUESTIONS ----------
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-export const faqs: FAQItem[] = [
-  {
-    question: "How long does it take to complete a website?",
-    answer:
-      "Timeline depends on the package and complexity. Starter websites typically take around 1 week, while advanced or larger websites may take 3–5 weeks from content submission to launch.",
-  },
-  {
-    question: "Do you offer ongoing maintenance?",
-    answer:
-      "Yes! Optional care plans provide regular updates, security monitoring, backups, and priority support to keep your website running smoothly year-round.",
-  },
-  {
-    question: "Will my website be mobile-friendly?",
-    answer:
-      "Absolutely! Every website I build is fully responsive and optimized for mobile devices, tablets, and desktops to ensure a seamless user experience.",
-  },
-  {
-    question: "Do you provide SEO services?",
-    answer:
-      "Yes. All websites include basic SEO setup, and I offer advanced SEO services tailored to your business goals for better search engine visibility.",
-  },
-  {
-    question: "Can I make changes after my website launches?",
-    answer:
-      "Yes! I provide post-launch support for minor updates and content changes. Major redesigns or new features are discussed separately based on scope.",
-  },
-  {
-    question: "Do you handle hosting or domain purchases?",
-    answer:
-      "I help clients choose and set up hosting plans and domains, but the client pays directly for these services. I do not charge for purchasing hosting or domains myself — I guide you to the best options and connect everything properly.",
+    category: "care",
+    title: "Scale Care Plan",
+    tagline: "Full optimization & growth support",
+    price: "$150+/month",
+    features: [
+      "Everything in Growth",
+      "Monthly improvements",
+      "SEO + conversion updates",
+    ],
+    support:
+      "Continuous optimization to increase leads and revenue.",
   },
 ];
