@@ -6,7 +6,7 @@ export const services = [
     category: "package",
     title: "Landing Page",
     tagline: "High-converting single-page design",
-    price: "Starting at $800+",
+    price: "Starting at $500+",
     features: [
       "High-converting single-page design",
       "Lead capture or booking form",
