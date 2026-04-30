@@ -24,13 +24,14 @@ const Contact = () => {
 
   const onSubmit = async (data: Record<string, unknown>) => {
     try {
-      await emailjs.send(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        data,
-        import.meta.env.VITE_PUBLIC_KEY
-      );
-
+      await fetch(import.meta.env.VITE_ZAPIER_WEBHOOK_URL,  {
+        method: "POST",
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        }),
+      });
       trackEvent("generate_lead", {
         form_name: "contact_form",
         page: "/contact",
@@ -40,17 +41,13 @@ const Contact = () => {
 
       setResponseMessage("Your message has been sent successfully!");
       reset();
-    } catch (error) {
+    } catch {
       setResponseMessage("Failed to send the message. Please try again.");
     }
   };
 
   const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 
-  const handleScheduleMeeting = () => {
-    trackEvent("book_call_click", { page: "/contact", location: "contact_page" });
-    window.open("https://calendly.com/navdeep-dhamrait94", "_blank");
-  };
 
   return (
     <main className="pt-16">
@@ -139,11 +136,8 @@ const Contact = () => {
                   <Button type="submit" disabled={isSubmitting} variant="secondary" className="flex-1 px-6 py-3">
                     {isSubmitting ? "Sending..." : "Send Message"} <Send className="ml-2 h-5 w-5" />
                   </Button>
-                  <Button onClick={handleScheduleMeeting} variant="secondary" className="flex-1 px-6 py-3 cursor-pointer">
-                    Schedule a Meeting
-                  </Button>
+                
                 </div>
-
                 {responseMessage && <p className="mt-4 text-center">{responseMessage}</p>}
               </form>
             </Card>
