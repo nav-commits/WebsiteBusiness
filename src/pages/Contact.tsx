@@ -41,6 +41,9 @@ const Contact = () => {
           budget: data.budget,
           timeline: data.timeline,
           message: data.message,
+          submittedAt: new Date().toLocaleDateString("en-CA", {
+            timeZone: "America/Toronto",
+          }),
         }),
       });
 
