@@ -1,22 +1,40 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
-import { Send, Phone, Mail, MapPin, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Send,
+  Phone,
+  Mail,
+  MapPin,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+
 import { Card } from "../components/Card";
 import { Button } from "../components/Button";
 import { client } from "../SanityClient/sanityClient";
 import { FAQ } from "../types/FAQ/faq";
 import { useAnalytics } from "../useAnalystics";
 
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: {errors, isSubmitting },
     reset,
-  } = useForm();
+  } = useForm<FormData>();
 
   const { trackEvent } = useAnalytics();
+
   const [responseMessage, setResponseMessage] = useState("");
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [faqs, setFaqs] = useState<FAQ[]>([]);
@@ -28,44 +46,44 @@ const Contact = () => {
       .catch((err) => console.error("Sanity FAQ error:", err));
   }, []);
 
-  const onSubmit = async (data: Record<string, unknown>) => {
+  const onSubmit = async (data: FormData) => {
     try {
-      await fetch(import.meta.env.VITE_ZAPIER_WEBHOOK_URL, {
-        method: "POST",
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          businessType: data.businessType,
-          projectType: data.projectType,
-          budget: data.budget,
-          timeline: data.timeline,
+      await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID, {
+          from_name: data.name,
+          from_email: data.email,
           message: data.message,
-          submittedAt: new Date().toLocaleDateString("en-CA", {
+          submitted_at: new Date().toLocaleString("en-CA", {
             timeZone: "America/Toronto",
           }),
-        }),
-      });
+        },
+        import.meta.env.VITE_PUBLIC_KEY
+      );
 
+      // KEEP TRACKING
       trackEvent("generate_lead", {
         form_name: "contact_form",
         page: "/contact",
         name: data.name,
         email: data.email,
-        budget: data.budget,
-        projectType: data.projectType,
       });
 
       setResponseMessage("Your message has been sent successfully!");
       reset();
-    } catch {
-      setResponseMessage("Failed to send the message. Please try again.");
+    } catch (error) {
+      console.error(error);
+      setResponseMessage("Failed to send message. Please try again.");
     }
   };
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -87,7 +105,10 @@ const Contact = () => {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h1 className="text-5xl font-extrabold mb-6">Let's Get Started!</h1>
+        <h1 className="text-5xl font-extrabold mb-6">
+          Let's Get Started!
+        </h1>
+
         <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
           Need a website that converts visitors into clients? Reach out today or
           schedule a free consultation.
@@ -103,91 +124,90 @@ const Contact = () => {
                 Send a Message
               </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
                 {/* NAME */}
-                <input
-                  placeholder="Your Name"
-                  {...register("name", { required: "Name is required" })}
-                  className="w-full px-4 py-3 border rounded-lg"
-                />
+                <div>
+                  <input
+                    placeholder="Your Name"
+                    {...register("name", {
+                      required: "Name is required",
+                      minLength: {
+                        value: 2,
+                        message:
+                          "Name must be at least 2 characters",
+                      },
+                    })}
+                    className={`w-full px-4 py-3 border rounded-lg outline-none transition ${
+                      errors.name
+                        ? "border-red-500 focus:ring-2 focus:ring-red-300"
+                        : "border-gray-300 focus:ring-2 focus:ring-[#5e17eb]"
+                    }`}
+                  />
+
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.name.message}
+                    </p>
+                  )}
+                </div>
 
                 {/* EMAIL */}
-                <input
-                  placeholder="Your Email"
-                  type="email"
-                  {...register("email", { required: "Email is required" })}
-                  className="w-full px-4 py-3 border rounded-lg"
-                />
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^\S+@\S+\.\S+$/i,
+                        message:
+                          "Please enter a valid email",
+                      },
+                    })}
+                    className={`w-full px-4 py-3 border rounded-lg outline-none transition ${
+                      errors.email
+                        ? "border-red-500 focus:ring-2 focus:ring-red-300"
+                        : "border-gray-300 focus:ring-2 focus:ring-[#5e17eb]"
+                    }`}
+                  />
 
-                {/* PHONE */}
-                <input
-                  placeholder="Phone (optional)"
-                  {...register("phone")}
-                  className="w-full px-4 py-3 border rounded-lg"
-                />
-
-                {/* BUSINESS TYPE */}
-                <select
-                  {...register("businessType", {
-                    required: "Business type required",
-                  })}
-                  className="w-full px-4 py-3 border rounded-lg"
-                >
-                  <option value="">Business Type</option>
-                  <option value="contractor">Contractor</option>
-                  <option value="law_finance">Law / Finance</option>
-                  <option value="service_business">Service Business</option>
-                  <option value="other">Other</option>
-                </select>
-
-                {/* PROJECT TYPE */}
-                <select
-                  {...register("projectType", {
-                    required: "Project type required",
-                  })}
-                  className="w-full px-4 py-3 border rounded-lg"
-                >
-                  <option value="">Project Type</option>
-                  <option value="new_website">New Website</option>
-                  <option value="redesign">Website Redesign</option>
-                  <option value="seo">SEO / Optimization</option>
-                  <option value="not_sure">Not Sure Yet</option>
-                </select>
-
-                {/* BUDGET */}
-                <select
-                  {...register("budget", { required: "Budget required" })}
-                  className="w-full px-4 py-3 border rounded-lg"
-                >
-                  <option value="">Budget Range</option>
-                  <option value="500-1000">$500 - $1000</option>
-                  <option value="1000-2500">$1000 - $2500</option>
-                  <option value="2500+">$2500+</option>
-                  <option value="not_sure">Not Sure</option>
-                </select>
-
-                {/* TIMELINE */}
-                <select
-                  {...register("timeline", { required: "Timeline required" })}
-                  className="w-full px-4 py-3 border rounded-lg"
-                >
-                  <option value="">Timeline</option>
-                  <option value="asap">ASAP</option>
-                  <option value="2-4_weeks">2–4 weeks</option>
-                  <option value="1-2_months">1–2 months</option>
-                  <option value="just_exploring">Just exploring</option>
-                </select>
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
 
                 {/* MESSAGE */}
-                <textarea
-                  placeholder="Tell me about your project"
-                  rows={6}
-                  {...register("message", {
-                    required: "Message is required",
-                  })}
-                  className="w-full px-4 py-3 border rounded-lg"
-                />
+                <div>
+                  <textarea
+                    rows={6}
+                    placeholder="Tell me about your project"
+                    {...register("message", {
+                      required: "Message is required",
+                      minLength: {
+                        value: 10,
+                        message:
+                          "Message must be at least 10 characters",
+                      },
+                    })}
+                    className={`w-full px-4 py-3 border rounded-lg outline-none transition ${
+                      errors.message
+                        ? "border-red-500 focus:ring-2 focus:ring-red-300"
+                        : "border-gray-300 focus:ring-2 focus:ring-[#5e17eb]"
+                    }`}
+                  />
+
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.message.message}
+                    </p>
+                  )}
+                </div>
 
                 {/* CONTACT INFO */}
                 <div className="flex flex-col sm:flex-row gap-4 text-gray-700 mt-4">
@@ -195,10 +215,12 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-[#5e17eb]" />
                     647-975-3467
                   </div>
+
                   <div className="flex items-center gap-2">
                     <Mail className="h-5 w-5 text-[#5e17eb]" />
                     info@navwebdesign.com
                   </div>
+
                   <div className="flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-[#5e17eb]" />
                     Toronto, Ontario
@@ -212,12 +234,26 @@ const Contact = () => {
                   variant="secondary"
                   className="w-full px-6 py-3"
                 >
-                  {isSubmitting ? "Sending..." : "Get My Free Website Audit"}
+                  {isSubmitting
+                    ? "Sending..."
+                    : "Get My Free Website Audit"}
+
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
 
+                {/* RESPONSE MESSAGE */}
                 {responseMessage && (
-                  <p className="mt-4 text-center">{responseMessage}</p>
+                  <p
+                    className={`mt-4 text-center font-medium ${
+                      responseMessage.includes(
+                        "successfully"
+                      )
+                        ? "text-green-600"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {responseMessage}
+                  </p>
                 )}
               </form>
             </Card>
@@ -234,7 +270,9 @@ const Contact = () => {
 
           <div className="space-y-4 text-left">
             {faqs.length === 0 ? (
-              <p className="text-gray-500 text-center">Loading FAQs...</p>
+              <p className="text-gray-500 text-center">
+                Loading FAQs...
+              </p>
             ) : (
               faqs.map((faq, index) => (
                 <motion.div key={faq._id} variants={fadeInUp}>
@@ -244,12 +282,21 @@ const Contact = () => {
                       setOpenFAQ(openFAQ === index ? null : index)
                     }
                   >
-                    <h3 className="font-semibold">{faq.question}</h3>
-                    {openFAQ === index ? <ChevronUp /> : <ChevronDown />}
+                    <h3 className="font-semibold">
+                      {faq.question}
+                    </h3>
+
+                    {openFAQ === index ? (
+                      <ChevronUp />
+                    ) : (
+                      <ChevronDown />
+                    )}
                   </div>
 
                   {openFAQ === index && (
-                    <p className="text-gray-600 mt-2">{faq.answer}</p>
+                    <p className="text-gray-600 mt-2">
+                      {faq.answer}
+                    </p>
                   )}
                 </motion.div>
               ))
