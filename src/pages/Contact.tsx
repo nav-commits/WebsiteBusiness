@@ -213,7 +213,7 @@ const Contact = () => {
                 <div className="flex flex-col sm:flex-row gap-4 text-gray-700 mt-4">
                   <div className="flex items-center gap-2">
                     <Phone className="h-5 w-5 text-[#5e17eb]" />
-                    647-975-3467
+                    647-676-3466
                   </div>
 
                   <div className="flex items-center gap-2">
