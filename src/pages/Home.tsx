@@ -19,11 +19,11 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          Toronto Web Design | Nav Dhamrait — Websites That Generate Leads
+          Toronto Web Design for Service Businesses | Lawyers, Contractors & GTA
         </title>
         <meta
           name="description"
-          content="Toronto web designer building high-converting, SEO-optimized websites for service businesses. Get more leads, calls, and clients."
+          content="Toronto web designer building high-converting SEO websites for service businesses, lawyers, contractors, and local GTA companies that want more leads and clients."
         />
       </Helmet>
 
@@ -33,13 +33,12 @@ const Home = () => {
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
             <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
               <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                Toronto Web Design for Service Businesses That Want More Leads
+                Toronto Web Design for Service Businesses, Lawyers & Contractors That Want More Leads
               </h1>
 
               <p className="text-lg md:text-xl text-indigo-200 mb-8">
-                I build high-converting, SEO-optimized websites for Toronto
-                service businesses that turn visitors into real calls, bookings,
-                and clients.
+                I build high-converting, SEO-optimized websites for Toronto & GTA service businesses —
+                including lawyers, contractors, and local companies — designed to turn visitors into real calls, bookings, and clients.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -56,9 +55,7 @@ const Home = () => {
               </div>
 
               <p className="text-sm text-indigo-200 mt-6">
-                Serving Toronto and the GTA, I specialize in web design for
-                contractors, service businesses, and small companies looking to
-                grow online.
+                Serving Toronto, Brampton, Mississauga & the GTA — helping local service businesses grow online.
               </p>
             </motion.div>
 
@@ -79,16 +76,15 @@ const Home = () => {
         <section className="bg-white py-16 border-b">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">
-              Built for Toronto Service Businesses That Want Results
+              Built for Toronto & GTA Businesses That Want More Clients
             </h2>
 
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
                 <FaBolt className="text-indigo-600 text-2xl mb-3" />
-                <h4 className="font-semibold mb-1">Toronto-Focused</h4>
+                <h4 className="font-semibold mb-1">Local SEO Focus</h4>
                 <p className="text-sm text-gray-600">
-                  I understand what Toronto customers look for before they
-                  contact a business.
+                  Optimized for Toronto, Brampton & Mississauga searches.
                 </p>
               </div>
 
@@ -96,7 +92,7 @@ const Home = () => {
                 <FaCheckCircle className="text-indigo-600 text-2xl mb-3" />
                 <h4 className="font-semibold mb-1">Conversion-Focused</h4>
                 <p className="text-sm text-gray-600">
-                  Every page is designed to guide visitors toward contacting you.
+                  Designed to turn website visitors into paying customers.
                 </p>
               </div>
 
@@ -104,7 +100,7 @@ const Home = () => {
                 <FaMobileAlt className="text-indigo-600 text-2xl mb-3" />
                 <h4 className="font-semibold mb-1">Mobile-First</h4>
                 <p className="text-sm text-gray-600">
-                  Fast-loading websites that perform smoothly on all devices.
+                  Fast, responsive websites across all devices.
                 </p>
               </div>
 
@@ -112,7 +108,7 @@ const Home = () => {
                 <FaComments className="text-indigo-600 text-2xl mb-3" />
                 <h4 className="font-semibold mb-1">Direct Communication</h4>
                 <p className="text-sm text-gray-600">
-                  Work directly with me — no delays, no confusion.
+                  Work directly with a freelancer — no agency delays.
                 </p>
               </div>
             </div>
@@ -129,26 +125,22 @@ const Home = () => {
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Most Toronto Business Websites Don’t Generate Leads
+                Most Toronto Websites Don’t Bring In Clients
               </h2>
 
               <p className="text-gray-700 text-lg leading-relaxed">
-                Most Toronto business websites look decent — but don’t actually
-                generate leads.
+                Most service business websites in Toronto look fine — but don’t generate real leads.
                 <br /><br />
-                If your site is slow, unclear, or not built for conversions,
-                visitors leave without taking action.
+                If your website isn’t optimized for SEO, speed, and conversions, potential clients leave and choose competitors.
                 <br /><br />
-                In a competitive market like Toronto, you have seconds to earn
-                trust. I design websites that clearly guide visitors and turn
-                traffic into real inquiries.
+                I build websites for lawyers, contractors, and service businesses that actually turn Google traffic into paying customers.
               </p>
             </motion.div>
 
             <motion.div variants={fadeInUp}>
               <img
                 src="Images/laptop-coffee.png"
-                alt="Website not generating leads"
+                alt="Website not generating leads Toronto"
                 className="rounded-xl shadow"
               />
             </motion.div>
@@ -159,7 +151,7 @@ const Home = () => {
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold mb-10 text-center">
-              How I Help Toronto Service Businesses Grow
+              Web Design Services for Toronto & GTA Businesses
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -167,11 +159,10 @@ const Home = () => {
                 <FaCheckCircle className="text-indigo-600 text-3xl mt-1" />
                 <div>
                   <h4 className="font-semibold text-lg mb-1">
-                    Conversion-Focused Design
+                    Lead-Generating Websites
                   </h4>
                   <p className="text-gray-700 text-sm">
-                    Strategically designed layouts that increase calls and form
-                    submissions.
+                    Built to turn visitors into calls, bookings, and inquiries.
                   </p>
                 </div>
               </div>
@@ -180,11 +171,10 @@ const Home = () => {
                 <FaSearch className="text-indigo-600 text-3xl mt-1" />
                 <div>
                   <h4 className="font-semibold text-lg mb-1">
-                    SEO-Ready Structure
+                    Local SEO Optimization
                   </h4>
                   <p className="text-gray-700 text-sm">
-                    Structured to help your website rank on Google in Toronto
-                    searches.
+                    Rank higher on Google in Toronto, Brampton & GTA searches.
                   </p>
                 </div>
               </div>
@@ -193,11 +183,10 @@ const Home = () => {
                 <FaMobileAlt className="text-indigo-600 text-3xl mt-1" />
                 <div>
                   <h4 className="font-semibold text-lg mb-1">
-                    Mobile-First Performance
+                    Mobile Performance
                   </h4>
                   <p className="text-gray-700 text-sm">
-                    Built for speed, usability, and performance across all
-                    devices.
+                    Fast, responsive, and optimized for all devices.
                   </p>
                 </div>
               </div>
@@ -206,10 +195,10 @@ const Home = () => {
                 <FaComments className="text-indigo-600 text-3xl mt-1" />
                 <div>
                   <h4 className="font-semibold text-lg mb-1">
-                    Clear Messaging
+                    Clear Messaging That Converts
                   </h4>
                   <p className="text-gray-700 text-sm">
-                    Clear messaging that builds trust and drives action.
+                    Messaging designed to build trust and drive action.
                   </p>
                 </div>
               </div>
@@ -231,35 +220,27 @@ const Home = () => {
             </h2>
 
             <p className="text-gray-700 text-lg mb-12">
-              Most agencies focus on volume — not results. You get passed between
-              teams, slow updates, and generic designs.
-              <br /><br />
-              I work directly with you to build a website focused on one thing:
-              generating real leads for your business.
+              Agencies focus on volume — I focus on results. Every website is built to generate real leads for Toronto service businesses.
             </p>
 
             <div className="grid md:grid-cols-2 gap-10 text-left">
               <div className="bg-white p-8 rounded-xl shadow border">
-                <h3 className="font-semibold mb-6 text-xl">
-                  Working With Me
-                </h3>
+                <h3 className="font-semibold mb-6 text-xl">Working With Me</h3>
                 <ul className="space-y-3">
                   <li>✔️ Direct communication</li>
                   <li>✔️ Faster turnaround</li>
                   <li>✔️ Honest pricing</li>
-                  <li>✔️ Built for results</li>
+                  <li>✔️ Focused on results</li>
                 </ul>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow border">
-                <h3 className="font-semibold mb-6 text-xl">
-                  Typical Agencies
-                </h3>
+                <h3 className="font-semibold mb-6 text-xl">Agencies</h3>
                 <ul className="space-y-3">
-                  <li>❌ High costs</li>
-                  <li>❌ Slow revisions</li>
-                  <li>❌ Generic designs</li>
-                  <li>❌ Less focus on results</li>
+                  <li>❌ Expensive retainers</li>
+                  <li>❌ Slow communication</li>
+                  <li>❌ Generic templates</li>
+                  <li>❌ Low ROI focus</li>
                 </ul>
               </div>
             </div>
@@ -270,13 +251,11 @@ const Home = () => {
         <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
           <div className="max-w-6xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-bold mb-6">
-              Turn Your Website Into a Lead Generator
+              Turn Your Website Into a Lead Machine
             </h2>
 
             <p className="text-indigo-200 mb-8">
-              If your website isn’t generating leads, I’ll show you exactly
-              what’s wrong and how to fix it — with clear, actionable
-              improvements.
+              I help Toronto service businesses turn websites into consistent sources of leads and revenue.
             </p>
 
             <Button to="/contact" className="px-8 py-4">

@@ -1,134 +1,55 @@
 // src/data/services.ts
 
 export const services = [
-  // ================= LANDING PAGE =================
-  {
-    category: "package",
-    title: "Landing Page",
-    tagline: "High-converting single-page design",
-    price: "Starting at $500+",
-    features: [
-      "High-converting single-page design",
-      "Lead capture or booking form",
-      "Mobile-first and fast loading",
-      "Built for ads and lead generation",
-      "2 revision rounds",
-    ],
-    note:
-      "Ideal for running ads or targeting specific services. Hosting & domain not included (I can help set it up if needed).",
-  },
-
   // ================= WEBSITE PACKAGES =================
   {
     category: "package",
     title: "Starter Website",
-    tagline: "For small businesses getting online",
-    price: "Starting at $1200",
+    tagline: "Get your business online and start generating inquiries",
+    price: "$1200",
     features: [
       "Up to 5 pages (Home, About, Services, Contact)",
-      "Mobile-friendly design",
-      "Contact form for leads",
+      "Mobile-friendly, fast-loading design",
+      "Lead capture form (calls & inquiries)",
       "Basic SEO setup (Google-ready)",
-      "Fast-loading, clean layout",
-      "2 revision rounds",
-      "Additional pages: $150 each",
+      "Basic analytics setup (track visitors & leads)",
     ],
-    note:
-      "Perfect for small businesses that need a professional online presence. Hosting & domain not included (I can help set it up if needed).",
+    note: "Built to get your business online and start generating inquiries.",
   },
 
   {
     category: "package",
     title: "Growth Website (Most Popular)",
-    tagline: "For businesses that want more leads",
-    price: "Starting at $2200–$3000",
+    tagline: "Designed to increase calls and leads",
+    price: "$2200–$3000",
     features: [
       "Up to 10 pages",
-      "Conversion-focused layout (built to get calls & leads)",
-      "Booking system or lead capture setup",
-      "SEO foundation for better visibility",
+      "Conversion-focused layout (designed to get calls & leads)",
+      "Lead capture or booking system setup",
+      "SEO-ready structure for better visibility",
       "Speed & mobile optimization",
-      "2 revision rounds",
-      "Additional pages: $150 each",
-      "Designed to turn visitors into paying customers",
+      "Analytics setup (track leads & user behavior)",
+      "Landing page capability for services / ads",
     ],
-    note:
-      "Hosting & domain not included (I can help set it up if needed).",
+    note: "Designed to turn visitors into paying customers.",
   },
 
   {
     category: "package",
     title: "Scale Website",
-    tagline: "For businesses ready to grow fast",
-    price: "Starting at $4000+",
+    tagline: "For businesses ready to generate consistent leads",
+    price: "$4000+",
     features: [
       "Up to 15 pages (additional pages $150 each)",
-      "Advanced features (booking, eCommerce, integrations)",
-      "Conversion optimization",
-      "SEO + performance optimization",
       "Custom layouts tailored to business goals",
+      "Advanced features (booking, integrations, etc.)",
+      "Conversion-focused structure across all pages",
+      "SEO + performance optimization",
+      "Advanced analytics tracking (monitor leads & activity)",
+      "Lead-focused landing pages for campaigns & growth",
       "Priority support + faster turnaround",
     ],
-    note:
-      "Built for businesses ready to scale and maximize results. Hosting & domain not included (I can help set it up if needed).",
-  },
-
-  // ================= ADD-ONS =================
-  {
-    category: "addon",
-    title: "SEO Setup",
-    price: "$300–$500",
-    features: [
-      "On-page SEO setup",
-      "Google Search Console setup",
-      "Keyword targeting basics",
-    ],
-  },
-  {
-    category: "addon",
-    title: "Conversion Optimization",
-    price: "$300–$800",
-    features: [
-      "Improve leads & conversions",
-      "CTA optimization",
-      "Layout improvements for higher sales",
-    ],
-  },
-  {
-    category: "addon",
-    title: "Google Business Profile Optimization",
-    price: "$200–$500",
-    features: [
-      "Optimize Google listing",
-      "Improve local ranking",
-      "Setup & enhancements",
-    ],
-  },
-  {
-    category: "addon",
-    title: "Website Redesign / Fix",
-    price: "Starting at $600+",
-    features: [
-      "Modern UI redesign",
-      "Fix broken layouts/forms",
-      "Speed improvements",
-    ],
-  },
-  {
-    category: "addon",
-    title: "Logo Design",
-    price: "$200–$500",
-    features: ["2 logo concepts", "2 revisions", "Final files included"],
-  },
-  {
-    category: "addon",
-    title: "Business Email Setup",
-    price: "$100–$200",
-    features: [
-      "Custom domain email setup",
-      "Google Workspace or Zoho",
-      "Device setup",
-    ],
+    note: "Built for businesses ready to scale and grow faster.",
   },
 
   // ================= CARE PLANS =================
@@ -139,12 +60,13 @@ export const services = [
     price: "$20/month",
     features: ["Updates & backups", "Minor edits", "Basic monitoring"],
     support:
-      "Keeps your website updated and running without issues.",
+      "Essential maintenance to keep your website secure and updated.",
   },
+
   {
     category: "care",
     title: "Growth Care Plan",
-    tagline: "Ongoing improvements for performance",
+    tagline: "Ongoing improvements and optimization",
     price: "$75/month",
     features: [
       "Everything in Basic",
@@ -152,19 +74,20 @@ export const services = [
       "Performance optimization",
     ],
     support:
-      "Helps your website stay optimized for leads and conversions.",
+      "Helps improve website performance and user experience over time.",
   },
+
   {
     category: "care",
     title: "Scale Care Plan",
-    tagline: "Full optimization & growth support",
+    tagline: "Continuous growth and lead optimization",
     price: "$150+/month",
     features: [
       "Everything in Growth",
-      "Monthly improvements",
-      "SEO + conversion updates",
+      "Ongoing improvements",
+      "Continuous optimization for leads & performance",
     ],
     support:
-      "Continuous optimization to increase leads and revenue.",
+      "Focused on increasing leads, conversions, and business growth.",
   },
 ];

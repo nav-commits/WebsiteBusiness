@@ -41,16 +41,17 @@ const About = () => {
     <>
       <Helmet>
         <title>
-          About Nav Dhamrait | Toronto Web Designer for Service Businesses
+          About | GTA Web Designer for Legal, Contract & Professional Service Businesses
         </title>
         <meta
           name="description"
-          content="Meet Nav Dhamrait, a Toronto web designer helping service businesses build high-converting, SEO-optimized websites that generate real leads."
+          content="Meet a GTA-based web designer building high-converting, SEO-optimized websites for legal, policing-adjacent, contract-based, and professional service businesses that need real leads."
         />
       </Helmet>
+
       {/* ================= TOP HERO ================= */}
       <motion.section
-        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 mt-12  text-center"
+        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 mt-12 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -70,12 +71,13 @@ const About = () => {
             className="text-xl md:text-2xl text-indigo-200 mb-8 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            Toronto web designer focused on building high-converting websites
-            that turn visitors into real leads and customers.
+            GTA-based web designer building high-trust websites for legal,
+            contract-based, and professional service businesses that rely on
+            credibility and consistent lead generation.
           </motion.p>
 
           <p className="text-sm text-indigo-200">
-            Serving Toronto & the GTA — helping service businesses grow online.
+            Serving Toronto & the GTA — focused on serious service businesses that need qualified client inquiries.
           </p>
         </motion.div>
       </motion.section>
@@ -91,7 +93,7 @@ const About = () => {
           <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <motion.img
               src="/Images/SMS_0310 Navdeep Dhamrait.jpg"
-              alt="Nav Dhamrait Toronto web designer"
+              alt="GTA web designer for professional service businesses"
               className="rounded-xl shadow-lg w-full object-cover"
               variants={fadeInUp}
             />
@@ -101,39 +103,37 @@ const About = () => {
                 className="text-4xl font-bold text-gray-900 mb-6"
                 variants={fadeInUp}
               >
-                Toronto Web Designer Focused on Results — Not Just Design
+                Websites Built for Trust, Leads, and Real Client Inquiries
               </motion.h1>
 
               <motion.p
                 className="text-lg text-gray-700 mb-4"
                 variants={fadeInUp}
               >
-                I’m <span className="font-semibold">Nav Dhamrait</span>, a
-                Toronto-based web designer & developer helping service
-                businesses turn their websites into lead-generating tools — not
-                just something that looks good.
+                I’m <span className="font-semibold">Nav Dhamrait</span>, a GTA-based web designer
+                helping law firms, contract-based businesses, and professional service providers
+                turn their websites into client acquisition systems.
               </motion.p>
 
               <motion.p className="text-gray-600 mb-6" variants={fadeInUp}>
-                Most websites fail because they’re built for appearance, not
-                performance. I focus on conversion, speed, and SEO structure so
-                your site actually brings in calls, bookings, and real business
-                growth.
+                In industries where trust matters — like legal services, enforcement-adjacent
+                work, consulting, and contract services — your website is often the first
+                impression. I build sites that make that impression count.
               </motion.p>
 
               <motion.ul
                 className="space-y-2 text-gray-700 mb-6"
                 variants={fadeInUp}
               >
-                <li>✔️ Built to generate leads and inquiries</li>
+                <li>✔️ Built for credibility and trust</li>
+                <li>✔️ Optimized for high-value client inquiries</li>
+                <li>✔️ SEO structure for GTA search visibility</li>
                 <li>✔️ Fast, mobile-first performance</li>
-                <li>✔️ SEO-ready structure for Google rankings</li>
-                <li>✔️ Clear, simple process — no confusion</li>
               </motion.ul>
 
               <p className="text-sm text-gray-500 mb-6">
-                Serving Toronto and the GTA, I work with contractors, service
-                businesses, and small companies looking to grow online.
+                Working with businesses across Toronto & the GTA that depend on reputation,
+                referrals, and consistent inbound leads.
               </p>
 
               <Button
@@ -150,34 +150,32 @@ const About = () => {
         {/* ================= DIFFERENCE ================= */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold mb-6">Why My Approach Works</h2>
+            <h2 className="text-3xl font-bold mb-6">Why My Approach Works for Serious Service Businesses</h2>
 
             <p className="text-gray-600 mb-10">
-              I don’t just build websites — I build systems designed to bring in
-              leads. Every decision is based on what helps your business grow,
-              not just what looks good.
+              For legal, contract-based, and professional services, design alone isn’t enough.
+              You need structure, clarity, and trust signals that convert visitors into real inquiries.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <Card className="p-6">
-                <h3 className="font-semibold mb-2">Strategy First</h3>
+                <h3 className="font-semibold mb-2">Trust-First Design</h3>
                 <p className="text-sm text-gray-600">
-                  We focus on your business, audience, and goals before design
-                  begins.
+                  Built to establish credibility instantly for high-trust industries.
                 </p>
               </Card>
 
               <Card className="p-6">
-                <h3 className="font-semibold mb-2">Built for Conversions</h3>
+                <h3 className="font-semibold mb-2">Lead-Focused Structure</h3>
                 <p className="text-sm text-gray-600">
-                  Every section is designed to turn visitors into leads.
+                  Every page is designed to drive qualified inquiries, not just traffic.
                 </p>
               </Card>
 
               <Card className="p-6">
-                <h3 className="font-semibold mb-2">Simple & Transparent</h3>
+                <h3 className="font-semibold mb-2">Clear & Professional Execution</h3>
                 <p className="text-sm text-gray-600">
-                  Clear process, clear pricing, and no unnecessary complexity.
+                  No clutter, no confusion — just structured paths to conversion.
                 </p>
               </Card>
             </div>
@@ -203,8 +201,8 @@ const About = () => {
               className="text-gray-600 text-center mb-14 max-w-3xl mx-auto"
               variants={fadeInUp}
             >
-              A simple, proven process designed to launch your website quickly
-              while focusing on results and performance.
+              A structured process designed for professional service businesses where clarity,
+              speed, and trust directly impact revenue.
             </motion.p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -240,12 +238,12 @@ const About = () => {
         <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-4xl font-bold mb-6">
-              Let’s Build a Website That Brings You Clients
+              Let’s Build a Website That Brings You Qualified Clients
             </h2>
 
             <p className="text-indigo-200 mb-8">
-              If you want a website that actually generates leads and helps grow
-              your business in Toronto, let’s talk.
+              If you run a legal, contract-based, or professional service business in the GTA,
+              your website should be generating consistent, high-quality inquiries.
             </p>
 
             <Button
