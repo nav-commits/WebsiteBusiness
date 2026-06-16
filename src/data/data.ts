@@ -1,6 +1,23 @@
 // src/data/services.ts
 
 export const services = [
+  // ================= ENTRY OFFER =================
+  {
+    category: "audit",
+    title: "Website Growth Audit (Entry Offer)",
+    tagline: "Find out why your website isn’t getting leads",
+    price: "$100 — 60 min Zoom Call",
+    features: [
+      "Live breakdown of your website (what’s working + what’s not)",
+      "Conversion audit (why visitors aren’t turning into leads)",
+      "SEO visibility check (why you're not ranking on Google)",
+      "Competitor comparison (what others are doing better)",
+      "Clear step-by-step action plan to get more leads",
+    ],
+    note:
+      "Perfect for business owners who have a website but aren’t getting inquiries or customers.",
+  },
+
   // ================= WEBSITE PACKAGES =================
   {
     category: "package",
@@ -57,7 +74,7 @@ export const services = [
     category: "care",
     title: "Basic Care Plan",
     tagline: "Keep your website running smoothly",
-    price: "$20/month",
+    price: "$49/month",
     features: ["Updates & backups", "Minor edits", "Basic monitoring"],
     support:
       "Essential maintenance to keep your website secure and updated.",
@@ -67,7 +84,7 @@ export const services = [
     category: "care",
     title: "Growth Care Plan",
     tagline: "Ongoing improvements and optimization",
-    price: "$75/month",
+    price: "$149/month",
     features: [
       "Everything in Basic",
       "Monthly improvements",
@@ -81,7 +98,7 @@ export const services = [
     category: "care",
     title: "Scale Care Plan",
     tagline: "Continuous growth and lead optimization",
-    price: "$150+/month",
+    price: "$250+/month",
     features: [
       "Everything in Growth",
       "Ongoing improvements",

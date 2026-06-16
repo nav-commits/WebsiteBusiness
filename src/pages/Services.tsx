@@ -18,6 +18,7 @@ const fadeInUp = {
 const Services = () => {
   const [activeTab, setActiveTab] = useState<"packages" | "care">("packages");
 
+  const audit = services.find((s) => s.category === "audit");
   const packages = services.filter((s) => s.category === "package");
   const care = services.filter((s) => s.category === "care");
 
@@ -61,7 +62,7 @@ const Services = () => {
               className="text-xl md:text-2xl text-indigo-200 mb-10 leading-relaxed"
               variants={fadeInUp}
             >
-              I build professional, SEO-optimized websites for GTA businesses — including legal services, contractors, and local companies —
+              I build professional, SEO-optimized websites for GTA businesses —
               designed to convert visitors into qualified leads and client inquiries.
             </motion.p>
 
@@ -77,6 +78,80 @@ const Services = () => {
             </p>
           </motion.div>
         </motion.section>
+
+        {/* ================= AUDIT OFFER (REFINED SIZE) ================= */}
+        {audit && (
+          <motion.section
+            className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14"
+            initial={fadeInUp.hidden}
+            whileInView={fadeInUp.visible}
+            viewport={{ once: true }}
+          >
+            <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
+
+              {/* background accent */}
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 opacity-80" />
+
+              {/* reduced padding (THIS is the main change) */}
+              <div className="relative p-8 md:p-10 text-center">
+
+                {/* badge */}
+                <div className="inline-block mb-4 rounded-full bg-indigo-600 px-4 py-1 text-xs font-bold text-white tracking-wide">
+                  ENTRY OFFER — FAST CLARITY
+                </div>
+
+                {/* title */}
+                <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3 leading-tight">
+                  {audit.title}
+                </h2>
+
+                {/* tagline */}
+                <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto mb-5">
+                  {audit.tagline}
+                </p>
+
+                {/* price */}
+                <div className="text-2xl md:text-3xl font-bold text-indigo-600 mb-6">
+                  {audit.price}
+                </div>
+
+                {/* features */}
+                <div className="grid md:grid-cols-2 gap-3 max-w-3xl mx-auto text-left mb-8">
+                  {audit.features?.map((f, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 bg-white/80 border border-gray-100 rounded-xl p-3"
+                    >
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">
+                        {f}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row justify-center gap-3">
+                  <Button
+                    href="https://calendly.com/navdeep-dhamrait94"
+                    className="px-6 py-3 text-base"
+                    variant="secondary"
+                  >
+                    Book Your Audit
+                  </Button>
+
+                 
+                </div>
+
+                {/* note */}
+                <p className="text-xs text-gray-500 mt-5 max-w-xl mx-auto">
+                  {audit.note}
+                </p>
+
+              </div>
+            </div>
+          </motion.section>
+        )}
 
         {/* ================= TABS ================= */}
         <motion.section
@@ -95,7 +170,7 @@ const Services = () => {
           />
         </motion.section>
 
-        {/* ================= GRID ================= */}
+        {/* ================= PACKAGES / CARE GRID ================= */}
         <motion.section
           className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           initial={fadeInUp.hidden}
@@ -104,7 +179,7 @@ const Services = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {getData().map((pkg, i) => {
-              const isPremium = pkg.title === "Growth Website";
+              const isPremium = pkg.title === "Growth Website (Most Popular)";
 
               return (
                 <motion.div
@@ -129,21 +204,17 @@ const Services = () => {
                       </div>
                     )}
 
-                    {pkg.tagline && (
-                      <div className="inline-block mb-4 text-xs font-bold px-4 py-2 rounded-full bg-gray-100 text-gray-900">
-                        {pkg.tagline}
-                      </div>
-                    )}
+                    <div className="inline-block mb-4 text-xs font-bold px-4 py-2 rounded-full bg-gray-100 text-gray-900">
+                      {pkg.tagline}
+                    </div>
 
                     <h3 className="text-2xl font-bold mb-4 text-gray-900">
                       {pkg.title}
                     </h3>
 
-                    {pkg.price && (
-                      <p className="text-4xl font-bold text-[#5e17eb] mb-6">
-                        {pkg.price}
-                      </p>
-                    )}
+                    <p className="text-4xl font-bold text-[#5e17eb] mb-6">
+                      {pkg.price}
+                    </p>
 
                     <ul className="space-y-4 mb-4 flex-grow">
                       {pkg.features?.map((feature, idx) => (
@@ -160,25 +231,6 @@ const Services = () => {
           </div>
         </motion.section>
 
-        {/* ================= SEO SECTION ================= */}
-        <section className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Professional Websites for GTA Law Firms & Service Businesses
-            </h2>
-
-            <p className="text-gray-600 mb-4">
-              Your website is often the first impression clients have of your business.
-              I build clean, professional, and high-trust websites that convert visitors into clients.
-            </p>
-
-            <p className="text-gray-600">
-              Every website is optimized for Google search, fast performance, and clear messaging
-              so your business stands out in competitive GTA markets like legal, contracting, and professional services.
-            </p>
-          </div>
-        </section>
-
         {/* ================= CTA ================= */}
         <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
           <div className="max-w-5xl mx-auto px-6 text-center">
@@ -187,8 +239,7 @@ const Services = () => {
             </h2>
 
             <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-              I help GTA businesses — including law firms, contractors, and service providers —
-              turn their websites into consistent lead generation systems.
+              I help GTA businesses turn their websites into consistent lead generation systems.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
