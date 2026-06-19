@@ -32,7 +32,7 @@ const Navbar = () => {
                 src="/Images/nav-logo.png"
                 alt="Nav Dhamrait"
                 className="
-                h-[90px] sm:h-[110px] md:h-[130px] lg:h-[200px]
+                h-[140px] sm:h-[110px] md:h-[130px] lg:h-[200px]
                 w-auto object-contain
               "
               />

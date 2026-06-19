@@ -17,7 +17,7 @@ const FAQPage = () => {
   }, []);
 
   return (
-    <main className="pt-24 bg-white min-h-screen">
+    <main className="pt-20 bg-white min-h-screen">
       {/* HERO */}
       <section className="text-center py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <h1 className="text-5xl font-bold mb-4">Frequently Asked Questions</h1>
