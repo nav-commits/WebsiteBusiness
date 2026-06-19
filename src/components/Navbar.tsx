@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Instagram } from "lucide-react";
+import { Button } from "./Button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,7 @@ const Navbar = () => {
     { name: "Testimonials", href: "/testimonials" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
+    { name: "FAQ", href: "/faq" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -21,60 +23,69 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* LOGO */}
-          <Link to="/" className="flex items-center flex-shrink-0 mt-4 mb-2">
-            {" "}
-            <img 
-             src="/Images/nav-logo.png"
-             alt="Nav Dhamrait"
-             className="
-               h-[180px] 
-               md:h-[80px] 
-               lg:h-[225px] 
-               w-auto 
-               object-contain
-             "
-           />
-          </Link>
-          {/* DESKTOP MENU */}
-          <div className="hidden md:flex items-center space-x-4">
+        <div className="flex items-center justify-between h-20 md:h-24">
+
+          {/* LEFT: LOGO (RESPONSIVE FIXED) */}
+          <div className="flex items-center flex-shrink-0">
+            <Link to="/">
+              <img
+                src="/Images/nav-logo.png"
+                alt="Nav Dhamrait"
+                className="
+                h-[90px] sm:h-[110px] md:h-[130px] lg:h-[200px]
+                w-auto object-contain
+              "
+              />
+            </Link>
+          </div>
+
+          {/* CENTER: NAV LINKS (HIDDEN ON SMALLER SCREENS) */}
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-7">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`${
+                className={`text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
                     ? "text-[#5e17eb]"
                     : "text-gray-700 hover:text-[#5e17eb]"
-                } px-3 py-2 text-sm font-medium transition-colors duration-200`}
+                }`}
               >
                 {item.name}
               </Link>
             ))}
+          </div>
+
+          {/* RIGHT: ICON + CTA (DESKTOP ONLY) */}
+          <div className="hidden lg:flex items-center space-x-4">
 
             {/* Instagram */}
             <a
               href="https://www.instagram.com/navdhamraitweb/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-[#5e17eb] ml-4"
+              className="text-gray-700 hover:text-[#5e17eb] transition"
             >
               <Instagram className="h-6 w-6" />
             </a>
+
+            {/* CTA Button */}
+            <Button
+              to="/contact"
+              variant="secondary"
+              className="px-5 py-2.5 text-sm"
+            >
+              Book a Free Consultation
+            </Button>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
-          <div className="md:hidden flex items-center">
+          {/* MOBILE MENU BUTTON (VISIBLE ON SMALL + MD) */}
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#5e17eb] focus:outline-none"
+              className="p-2 text-gray-700 hover:text-[#5e17eb]"
             >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isOpen ? <X /> : <Menu />}
             </button>
           </div>
         </div>
@@ -82,24 +93,36 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow">
+        <div className="lg:hidden bg-white shadow">
           <div className="pt-2 pb-4 space-y-1">
+
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`${
-                  isActive(item.href)
-                    ? "bg-indigo-50 text-[#5e17eb]"
-                    : "text-gray-700 hover:bg-gray-50 hover:text-[#5e17eb]"
-                } block px-4 py-2 text-base font-medium`}
                 onClick={() => setIsOpen(false)}
+                className={`block px-4 py-2 text-base font-medium ${
+                  isActive(item.href)
+                    ? "text-[#5e17eb] bg-indigo-50"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-[#5e17eb]"
+                }`}
               >
                 {item.name}
               </Link>
             ))}
 
-            {/* Instagram mobile */}
+            {/* MOBILE CTA */}
+            <div className="px-4 pt-4">
+              <Button
+                to="/contact"
+                variant="secondary"
+                className="w-full px-6 py-4"
+              >
+                Book a Free Consultation
+              </Button>
+            </div>
+
+            {/* MOBILE INSTAGRAM */}
             <a
               href="https://www.instagram.com/navdhamraitweb/"
               target="_blank"
@@ -108,6 +131,7 @@ const Navbar = () => {
             >
               <Instagram className="h-6 w-6" />
             </a>
+
           </div>
         </div>
       )}

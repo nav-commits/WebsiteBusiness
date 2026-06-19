@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import { useAnalytics } from "./useAnalystics";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
+import FAQPage from "./pages/FAQ";
 
 function App() {
   useAnalytics();
@@ -26,6 +27,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="*" element={<div className="pt-80 text-center">Page Not Found</div>} />
         </Routes>
       </main>

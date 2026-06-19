@@ -47,7 +47,7 @@ const Home = () => {
                 </Button>
                 <Button
                   to="/portfolio"
-                  variant="secondary"
+                  variant="outline"
                   className="px-8 py-4"
                 >
                   View My Work

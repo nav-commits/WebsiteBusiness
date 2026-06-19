@@ -1,4 +1,3 @@
-// src/pages/Services.tsx
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
@@ -16,7 +15,8 @@ const fadeInUp = {
 };
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState<"packages" | "care">("packages");
+  const [activeTab, setActiveTab] =
+    useState<"packages" | "care">("packages");
 
   const audit = services.find((s) => s.category === "audit");
   const packages = services.filter((s) => s.category === "package");
@@ -40,6 +40,7 @@ const Services = () => {
       </Helmet>
 
       <div className="pt-16">
+
         {/* ================= HERO ================= */}
         <motion.section
           className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 text-center"
@@ -79,10 +80,93 @@ const Services = () => {
           </motion.div>
         </motion.section>
 
-        {/* ================= AUDIT OFFER (REFINED SIZE) ================= */}
+        {/* ================= TABS ================= */}
+        <motion.section
+          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center"
+          initial={fadeInUp.hidden}
+          whileInView={fadeInUp.visible}
+          viewport={{ once: true }}
+        >
+          <Tabs
+            options={[
+              { label: "Website Packages", value: "packages" },
+              { label: "Care Plans", value: "care" },
+            ]}
+            selected={activeTab}
+            onChange={(value) =>
+              setActiveTab(value as "packages" | "care")
+            }
+          />
+        </motion.section>
+
+        {/* ================= PACKAGES / CARE GRID ================= */}
+        <motion.section
+          className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          initial={fadeInUp.hidden}
+          whileInView={fadeInUp.visible}
+          viewport={{ once: true }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {getData().map((pkg, i) => {
+              const isPremium =
+                pkg.title === "Growth Website (Most Popular)";
+
+              return (
+                <motion.div
+                  key={pkg.title}
+                  variants={fadeInUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="h-full"
+                >
+                  <Card
+                    className={`flex flex-col h-full p-8 transition-transform transform hover:scale-105 ${
+                      isPremium
+                        ? "border-4 border-[#5e17eb] bg-white shadow-lg"
+                        : "border border-gray-200 bg-white shadow-sm"
+                    }`}
+                  >
+                    {isPremium && (
+                      <div className="mb-4 inline-block rounded-full bg-[#5e17eb] px-4 py-2 text-xs font-bold text-white">
+                        MOST POPULAR
+                      </div>
+                    )}
+
+                    <div className="inline-block mb-4 text-xs font-bold px-4 py-2 rounded-full bg-gray-100 text-gray-900">
+                      {pkg.tagline}
+                    </div>
+
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                      {pkg.title}
+                    </h3>
+
+                    <p className="text-4xl font-bold text-[#5e17eb] mb-6">
+                      {pkg.price}
+                    </p>
+
+                    <ul className="space-y-4 mb-4 flex-grow">
+                      {pkg.features?.map((feature, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
+                          <span className="text-gray-600">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.section>
+
+        {/* ================= AUDIT OFFER (NOW AFTER SERVICES) ================= */}
         {audit && (
           <motion.section
-            className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14"
+            className="max-w-5xl mx-auto px-4 mt-20 mb-20  sm:px-6 lg:px-8 mt-20"
             initial={fadeInUp.hidden}
             whileInView={fadeInUp.visible}
             viewport={{ once: true }}
@@ -92,7 +176,6 @@ const Services = () => {
               {/* background accent */}
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 opacity-80" />
 
-              {/* reduced padding (THIS is the main change) */}
               <div className="relative p-8 md:p-10 text-center">
 
                 {/* badge */}
@@ -139,8 +222,6 @@ const Services = () => {
                   >
                     Book Your Audit
                   </Button>
-
-                 
                 </div>
 
                 {/* note */}
@@ -152,84 +233,6 @@ const Services = () => {
             </div>
           </motion.section>
         )}
-
-        {/* ================= TABS ================= */}
-        <motion.section
-          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center"
-          initial={fadeInUp.hidden}
-          whileInView={fadeInUp.visible}
-          viewport={{ once: true }}
-        >
-          <Tabs
-            options={[
-              { label: "Website Packages", value: "packages" },
-              { label: "Care Plans", value: "care" },
-            ]}
-            selected={activeTab}
-            onChange={(value) => setActiveTab(value as "packages" | "care")}
-          />
-        </motion.section>
-
-        {/* ================= PACKAGES / CARE GRID ================= */}
-        <motion.section
-          className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-          initial={fadeInUp.hidden}
-          whileInView={fadeInUp.visible}
-          viewport={{ once: true }}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getData().map((pkg, i) => {
-              const isPremium = pkg.title === "Growth Website (Most Popular)";
-
-              return (
-                <motion.div
-                  key={pkg.title}
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="h-full"
-                >
-                  <Card
-                    className={`flex flex-col h-full p-8 transition-transform transform hover:scale-105 ${
-                      isPremium
-                        ? "border-4 border-[#5e17eb] bg-white shadow-lg"
-                        : "border border-gray-200 bg-white shadow-sm"
-                    }`}
-                  >
-                    {isPremium && (
-                      <div className="mb-4 inline-block rounded-full bg-[#5e17eb] px-4 py-2 text-xs font-bold text-white">
-                        MOST POPULAR
-                      </div>
-                    )}
-
-                    <div className="inline-block mb-4 text-xs font-bold px-4 py-2 rounded-full bg-gray-100 text-gray-900">
-                      {pkg.tagline}
-                    </div>
-
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                      {pkg.title}
-                    </h3>
-
-                    <p className="text-4xl font-bold text-[#5e17eb] mb-6">
-                      {pkg.price}
-                    </p>
-
-                    <ul className="space-y-4 mb-4 flex-grow">
-                      {pkg.features?.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
-                          <span className="text-gray-600">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.section>
 
         {/* ================= CTA ================= */}
         <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
@@ -257,6 +260,7 @@ const Services = () => {
             </div>
           </div>
         </section>
+
       </div>
     </>
   );
