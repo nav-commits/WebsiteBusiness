@@ -31,6 +31,7 @@ const Home = () => {
         {/* HERO */}
         <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-32">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
             <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
               <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
                 Toronto Web Design for Service Businesses, Lawyers & Contractors That Want More Leads
@@ -41,10 +42,12 @@ const Home = () => {
                 including lawyers, contractors, and local companies — designed to turn visitors into real calls, bookings, and clients.
               </p>
 
+              {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button to="/contact" className="px-8 py-4">
-                  Get a Free Website Audit
+                  Book a Free Strategy Consultation
                 </Button>
+
                 <Button
                   to="/portfolio"
                   variant="outline"
@@ -53,6 +56,11 @@ const Home = () => {
                   View My Work
                 </Button>
               </div>
+
+              {/* MICROCOPY */}
+              <p className="text-sm text-indigo-200 mt-4 max-w-lg">
+                Let’s go over your website and identify exactly what’s stopping you from getting more calls and clients.
+              </p>
 
               <p className="text-sm text-indigo-200 mt-6">
                 Serving Toronto, Brampton, Mississauga & the GTA — helping local service businesses grow online.
@@ -123,6 +131,7 @@ const Home = () => {
           viewport={{ once: true }}
         >
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Most Toronto Websites Don’t Bring In Clients
@@ -259,7 +268,7 @@ const Home = () => {
             </p>
 
             <Button to="/contact" className="px-8 py-4">
-              Get a Free Website Audit
+              Book a Free Strategy Consultation
             </Button>
           </div>
         </section>
