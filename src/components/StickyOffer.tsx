@@ -1,10 +1,30 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 
 const StickyOffer = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  if (!isVisible) return null;
+
   return (
     <>
       {/* ================= DESKTOP ================= */}
-      <div className="hidden sm:block fixed right-5 bottom-5 z-50 w-[340px] bg-white shadow-2xl rounded-2xl border border-gray-200 overflow-hidden">
+      <div
+        className="hidden sm:block fixed z-50 w-[340px] bg-white shadow-2xl rounded-2xl border border-gray-200 overflow-hidden"
+        style={{
+          right: "20px",
+          bottom: "20px",
+          left: "auto",
+        }}
+      >
+        {/* CLOSE ICON */}
+        <button
+          onClick={() => setIsVisible(false)}
+          className="absolute top-2 right-2 text-gray-400 hover:text-black transition"
+        >
+          <FaTimes />
+        </button>
 
         <div className="bg-[#0f172a] text-white px-4 py-3">
           <p className="text-sm font-semibold">
@@ -41,22 +61,27 @@ const StickyOffer = () => {
         </div>
       </div>
 
-      {/* ================= MOBILE (STRONG BANNER) ================= */}
-      <div className="sm:hidden fixed bottom-0 left-0 w-full z-50 bg-[#0f172a] text-white shadow-2xl border-t border-white/10">
+      {/* ================= MOBILE ================= */}
+      <div className="sm:hidden fixed bottom-3 left-3 right-3 z-50 bg-[#0f172a] text-white shadow-2xl rounded-xl border border-white/10">
+        
+        {/* CLOSE ICON */}
+        <button
+          onClick={() => setIsVisible(false)}
+          className="absolute top-2 right-2 text-white/70 hover:text-white"
+        >
+          <FaTimes />
+        </button>
 
         <div className="px-4 py-3 flex flex-col gap-2">
 
-          {/* TOP LABEL */}
           <p className="text-xs tracking-wide text-indigo-300 font-semibold uppercase">
             🔥 Entry Offer — Website Growth Audit
           </p>
 
-          {/* MAIN LINE */}
           <p className="text-sm font-semibold">
             $100 — Find out why your website isn’t getting leads
           </p>
 
-          {/* CTA */}
           <Link
             to="/contact"
             className="w-full text-center bg-[#5e17eb] hover:bg-indigo-700 text-white font-bold py-3 rounded-lg text-sm transition"
@@ -64,11 +89,9 @@ const StickyOffer = () => {
             Book Your Audit
           </Link>
 
-          {/* MICRO TRUST */}
           <p className="text-[11px] text-gray-300 text-center">
             60 min Zoom • SEO + Conversion breakdown
           </p>
-
         </div>
       </div>
     </>
