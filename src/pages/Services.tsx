@@ -121,42 +121,121 @@ const Services = () => {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   className="h-full"
                 >
-                  <Card
-                    className={`flex flex-col h-full p-8 transition-transform transform hover:scale-105 ${
-                      isPremium
-                        ? "border-4 border-[#5e17eb] bg-white shadow-lg"
-                        : "border border-gray-200 bg-white shadow-sm"
-                    }`}
-                  >
-                    {isPremium && (
-                      <div className="mb-4 inline-block rounded-full bg-[#5e17eb] px-4 py-2 text-xs font-bold text-white">
-                        MOST POPULAR
-                      </div>
-                    )}
+               <Card
+  className={`flex flex-col h-full p-8 transition-all duration-300 hover:-translate-y-2 ${
+    isPremium
+      ? "border-4 border-[#5e17eb] bg-white shadow-xl"
+      : "border border-gray-200 bg-white shadow-sm"
+  }`}
+>
+  {isPremium && (
+    <div className="mb-4 inline-block rounded-full bg-[#5e17eb] px-4 py-2 text-xs font-bold text-white">
+      ⭐ MOST POPULAR
+    </div>
+  )}
 
-                    <div className="inline-block mb-4 text-xs font-bold px-4 py-2 rounded-full bg-gray-100 text-gray-900">
-                      {pkg.tagline}
-                    </div>
+  <div className="inline-block mb-4 text-xs font-bold px-4 py-2 rounded-full bg-gray-100 text-gray-900">
+    {pkg.tagline}
+  </div>
 
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                      {pkg.title}
-                    </h3>
+  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+    {pkg.title}
+  </h3>
 
-                    <p className="text-4xl font-bold text-[#5e17eb] mb-6">
-                      {pkg.price}
-                    </p>
+  <p className="text-4xl font-extrabold text-[#5e17eb] mb-8">
+    {pkg.price}
+  </p>
 
-                    <ul className="space-y-4 mb-4 flex-grow">
-                      {pkg.features?.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
-                          <span className="text-gray-600">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
+  {/* Features */}
+
+  <ul className="space-y-3 mb-6">
+    {pkg.features?.map((feature, idx) => (
+      <li key={idx} className="flex items-start">
+        <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+        <span className="text-gray-600 text-sm">
+          {feature}
+        </span>
+      </li>
+    ))}
+  </ul>
+
+  {/* Client Provides */}
+
+  {pkg.clientProvides && (
+    <>
+      <div className="border-t my-6" />
+
+      <h4 className="font-semibold text-gray-900 mb-3">
+        Client Provides
+      </h4>
+
+      <ul className="space-y-2 mb-6">
+        {pkg.clientProvides.map((item, i) => (
+          <li key={i} className="flex items-start">
+            <CheckCircle className="h-4 w-4 text-indigo-600 mr-2 mt-1" />
+            <span className="text-sm text-gray-600">
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {/* Timeline */}
+
+  {pkg.timeline && (
+    <>
+      <div className="border-t my-6" />
+
+      <h4 className="font-semibold text-gray-900 mb-1">
+        Timeline
+      </h4>
+
+      <p className="text-sm text-gray-600">
+        {pkg.timeline}
+      </p>
+    </>
+  )}
+
+  {/* Best For */}
+
+  {pkg.bestFor && (
+    <>
+      <div className="border-t my-6" />
+
+      <h4 className="font-semibold text-gray-900 mb-2">
+        Best For
+      </h4>
+
+      <p className="text-sm text-gray-600">
+        {pkg.bestFor}
+      </p>
+    </>
+  )}
+
+  {/* Note */}
+
+  {pkg.note && (
+    <p className="text-xs text-gray-500 mt-6 italic">
+      {pkg.note}
+    </p>
+  )}
+
+  {/* CTA */}
+
+{/* CTA */}
+<div className="mt-auto pt-8">
+  <Button
+    href="https://calendly.com/navdeep-dhamrait94"
+    variant="secondary"
+    className="w-full py-3"
+    arrow
+  >
+    Get Started
+  </Button>
+</div>
+</Card>
                 </motion.div>
               );
             })}
