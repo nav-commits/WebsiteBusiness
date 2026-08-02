@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
 
 import { Card } from "../components/Card";
@@ -70,6 +71,17 @@ const Contact = () => {
 
   return (
     <main className="pt-16">
+      <Helmet>
+        <title>
+          Contact | Book a Free Web Design Consultation in Toronto & the GTA
+        </title>
+        <meta
+          name="description"
+          content="Get in touch for a free consultation. Toronto & GTA web design for lawyers, contractors, and service businesses that want more leads."
+        />
+        <link rel="canonical" href="https://navwebdesign.com/contact" />
+      </Helmet>
+
       {/* HERO */}
       <motion.section
         className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 text-center"
@@ -175,12 +187,16 @@ const Contact = () => {
                 <div className="flex flex-col sm:flex-row gap-4 text-gray-700 mt-4">
                   <div className="flex items-center gap-2">
                     <Phone className="h-5 w-5 text-[#5e17eb]" />
-                    647-676-3466
+                    <a href="tel:+16476763466" className="hover:text-[#5e17eb] transition">
+                      647-676-3466
+                    </a>
                   </div>
 
                   <div className="flex items-center gap-2">
                     <Mail className="h-5 w-5 text-[#5e17eb]" />
-                    info@navwebdesign.com
+                    <a href="mailto:info@navwebdesign.com" className="hover:text-[#5e17eb] transition">
+                      info@navwebdesign.com
+                    </a>
                   </div>
 
                   <div className="flex items-center gap-2">

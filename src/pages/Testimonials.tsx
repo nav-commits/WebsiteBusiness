@@ -8,10 +8,10 @@ import { Star } from "lucide-react";
 import { Card } from "../components/Card";
 import { useEffect, useState } from "react";
 import { client } from "../SanityClient/sanityClient";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { Testimonial } from "../types/Testimonal/testimonal";
 
-const builder = imageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 const urlFor = (source: string) => builder.image(source);
 
 const fadeInUp = {
@@ -58,6 +58,7 @@ const Testimonials = () => {
           name="description"
           content="Read real client testimonials from Toronto businesses. See how high-converting websites helped generate leads, calls, and growth."
         />
+        <link rel="canonical" href="https://navwebdesign.com/testimonials" />
       </Helmet>
 
       <div className="pt-16 min-h-screen flex flex-col">
@@ -100,9 +101,30 @@ const Testimonials = () => {
         <section className="py-20 bg-white flex-grow">
           <div className="max-w-3xl mx-auto px-4">
             {testimonials.length === 0 && (
-              <p className="text-center text-gray-500">
-                Loading testimonials...
-              </p>
+              <div className="p-4">
+                <Card className="flex flex-col p-8 rounded-2xl shadow-lg min-h-[360px] animate-pulse">
+                  <div className="mb-4 flex justify-center">
+                    <div className="h-16 w-24 bg-gray-200 rounded" />
+                  </div>
+
+                  <div className="flex flex-col items-center mb-4 space-y-2">
+                    <div className="h-4 w-32 bg-gray-200 rounded" />
+                    <div className="h-3 w-24 bg-gray-200 rounded" />
+                  </div>
+
+                  <div className="flex justify-center gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="h-5 w-5 bg-gray-200 rounded-full" />
+                    ))}
+                  </div>
+
+                  <div className="flex-grow flex flex-col items-center gap-2 w-full">
+                    <div className="h-3 w-full bg-gray-200 rounded" />
+                    <div className="h-3 w-full bg-gray-200 rounded" />
+                    <div className="h-3 w-2/3 bg-gray-200 rounded" />
+                  </div>
+                </Card>
+              </div>
             )}
 
             {testimonials.length > 0 && (

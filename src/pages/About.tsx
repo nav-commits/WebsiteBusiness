@@ -47,6 +47,7 @@ const About = () => {
           name="description"
           content="Meet a GTA-based web designer building high-converting, SEO-optimized websites for legal, policing-adjacent, contract-based, and professional service businesses that need real leads."
         />
+        <link rel="canonical" href="https://navwebdesign.com/about" />
       </Helmet>
 
       {/* ================= TOP HERO ================= */}

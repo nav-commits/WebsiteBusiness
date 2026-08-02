@@ -29,12 +29,16 @@ const Footer = () => {
 
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-[#5e17eb]" />
-                <span>647-676-3466</span>
+                <a href="tel:+16476763466" className="hover:text-[#5e17eb] transition">
+                  647-676-3466
+                </a>
               </div>
 
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-[#5e17eb]" />
-                <span>info@navwebdesign.com</span>
+                <a href="mailto:info@navwebdesign.com" className="hover:text-[#5e17eb] transition">
+                  info@navwebdesign.com
+                </a>
               </div>
 
               <div className="flex items-center gap-2">

@@ -45,6 +45,10 @@ const BlogDetail = () => {
       <Helmet>
         <title>{post.title} | Nav Dhamrait</title>
         <meta name="description" content={post.excerpt} />
+        <link
+          rel="canonical"
+          href={`https://navwebdesign.com/blog/${slug}`}
+        />
       </Helmet>
       <motion.section
         className="bg-gray-50 py-20"

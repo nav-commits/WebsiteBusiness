@@ -35,6 +35,7 @@ const Blog = () => {
           name="description"
           content="Web design, SEO, and marketing insights for local businesses by Nav Dhamrait."
         />
+        <link rel="canonical" href="https://navwebdesign.com/blog" />
       </Helmet>
       <motion.section
         className="bg-gradient-to-r from-indigo-600 to-purple-600 py-24"

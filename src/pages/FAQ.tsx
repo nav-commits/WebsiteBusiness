@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 import { client } from "../SanityClient/sanityClient";
 import { FAQ } from "../types/FAQ/faq";
@@ -18,6 +19,17 @@ const FAQPage = () => {
 
   return (
     <main className="pt-20 bg-white min-h-screen">
+      <Helmet>
+        <title>
+          FAQ | Web Design Pricing, Process & Timeline Questions Answered
+        </title>
+        <meta
+          name="description"
+          content="Answers to common questions about pricing, timelines, and the process of building a lead-generating website with a Toronto & GTA web designer."
+        />
+        <link rel="canonical" href="https://navwebdesign.com/faq" />
+      </Helmet>
+
       {/* HERO */}
       <section className="text-center py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <h1 className="text-5xl font-bold mb-4">Frequently Asked Questions</h1>
@@ -31,9 +43,13 @@ const FAQPage = () => {
         <div className="max-w-3xl mx-auto px-6">
           <div className="space-y-4">
             {faqs.length === 0 ? (
-              <p className="text-gray-500 text-center">
-                Loading FAQs...
-              </p>
+              <div className="space-y-4 animate-pulse">
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="border rounded-lg p-5">
+                    <div className="h-4 w-2/3 bg-gray-200 rounded" />
+                  </div>
+                ))}
+              </div>
             ) : (
               faqs.map((faq, index) => (
                 <motion.div

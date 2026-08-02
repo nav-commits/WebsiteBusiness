@@ -37,6 +37,7 @@ const Services = () => {
           name="description"
           content="High-converting, SEO-optimized websites for GTA businesses including law firms, contractors, and service providers designed to generate leads and client inquiries."
         />
+        <link rel="canonical" href="https://navwebdesign.com/services" />
       </Helmet>
 
       <div className="pt-16">

@@ -25,6 +25,7 @@ const Home = () => {
           name="description"
           content="Toronto web designer building high-converting SEO websites for service businesses, lawyers, contractors, and local GTA companies that want more leads and clients."
         />
+        <link rel="canonical" href="https://navwebdesign.com/" />
       </Helmet>
 
       <div className="pt-16">
