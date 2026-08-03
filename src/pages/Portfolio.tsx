@@ -1,19 +1,25 @@
 // /pages/Portfolio.tsx
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { client } from "../SanityClient/sanityClient";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { PortfolioProject } from "../types/PortfolioProject/PortfolioProject";
+import { slugify } from "../utils/slugify";
+import { portfolioDetails } from "../data/portfolioDetails";
+
+const builder = createImageUrlBuilder(client);
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const urlFor = (source: string) => imageUrlBuilder(client).image(source);
+const urlFor = (source: string) => builder.image(source);
 
 const Portfolio = () => {
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
@@ -92,26 +98,54 @@ const Portfolio = () => {
                 variants={fadeInUp}
                 transition={{ delay: index * 0.08 }}
               >
-                <Card className="flex flex-col h-full bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <Card className="group flex flex-col h-full bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
 
                   {/* IMAGE */}
-                  <div className="w-full aspect-[16/10] overflow-hidden rounded-xl mb-4">
-                    <img
-                      src={urlFor(project.img).width(800).url()}
-                      alt={
-                        project.alt ||
-                        `${project.title} website design`
-                      }
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                    />
+                  <div className="relative w-full aspect-[16/10] overflow-hidden">
+                    <Link
+                      to={`/portfolio/${slugify(project.title)}`}
+                      className="absolute inset-0 block"
+                    >
+                      <img
+                        src={urlFor(project.img).width(800).url()}
+                        alt={
+                          project.alt ||
+                          `${project.title} website design`
+                        }
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span className="flex items-center gap-2 text-white font-semibold text-sm">
+                          View Case Study
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </Link>
+
+                    {/* QUICK LINK TO LIVE SITE */}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        aria-label={`Visit ${project.title} live site`}
+                        title="Visit live site"
+                        className="absolute top-3 right-3 z-10 bg-white/90 hover:bg-white text-gray-600 hover:text-[#5e17eb] p-2 rounded-full shadow transition"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    )}
                   </div>
 
                   {/* CONTENT */}
-                  <div className="flex flex-col flex-grow">
-                    {/* TYPE BADGE */}
-                    {project.type && (
+                  <div className="flex flex-col flex-grow p-6">
+                    {/* INDUSTRY BADGE */}
+                    {(portfolioDetails[slugify(project.title)]?.industry ||
+                      project.type) && (
                       <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-1 rounded w-fit mb-3">
-                        {project.type}
+                        {portfolioDetails[slugify(project.title)]?.industry ||
+                          project.type}
                       </span>
                     )}
 
@@ -128,12 +162,12 @@ const Portfolio = () => {
 
                     {/* BUTTON */}
                     <Button
-                      href={project.link}
+                      to={`/portfolio/${slugify(project.title)}`}
                       variant="secondary"
                       arrow
                       className="mt-auto px-5 py-2 self-start"
                     >
-                      View Project
+                      View Case Study
                     </Button>
                   </div>
                 </Card>

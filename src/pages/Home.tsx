@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Button } from "../components/Button";
+import { client } from "../SanityClient/sanityClient";
 import {
   FaCheckCircle,
   FaBolt,
@@ -15,6 +17,15 @@ const fadeInUp = {
 };
 
 const Home = () => {
+  const [projectCount, setProjectCount] = useState(0);
+
+  useEffect(() => {
+    client
+      .fetch(`count(*[_type == "portfolioProject"])`)
+      .then((count: number) => setProjectCount(count))
+      .catch((err) => console.error("Sanity fetch error:", err));
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -34,6 +45,12 @@ const Home = () => {
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
             <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+              {projectCount > 0 && (
+                <p className="text-sm font-semibold text-indigo-200 uppercase tracking-wide mb-4">
+                  Trusted by {projectCount}+ Toronto & GTA Businesses
+                </p>
+              )}
+
               <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
                 Toronto Web Design for Service Businesses, Lawyers & Contractors That Want More Leads
               </h1>
