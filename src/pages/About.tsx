@@ -5,7 +5,17 @@ import { motion } from "framer-motion";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { client } from "../SanityClient/sanityClient";
-import * as LucideIcons from "lucide-react";
+import {
+  CheckCircle,
+  Circle,
+  Code,
+  Layout,
+  MessageSquare,
+  Palette,
+  PenTool,
+  Rocket,
+  Search,
+} from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
 import { ProcessStep } from "../types/ProcessStep/processStep";
 
@@ -15,12 +25,22 @@ const fadeInUp = {
 };
 
 const getIcon = (iconName: string): ComponentType<SVGProps<SVGSVGElement>> => {
-  const icons = LucideIcons as unknown as Record<
+  const icons: Record<
     string,
     ComponentType<SVGProps<SVGSVGElement>>
-  >;
+  > = {
+    CheckCircle,
+    Circle,
+    Code,
+    Layout,
+    MessageSquare,
+    Palette,
+    PenTool,
+    Rocket,
+    Search,
+  };
   const normalizedName = iconName.charAt(0).toUpperCase() + iconName.slice(1);
-  return icons[normalizedName] || icons.Circle;
+  return icons[normalizedName] || Circle;
 };
 
 const About = () => {
@@ -83,7 +103,7 @@ const About = () => {
         </motion.div>
       </motion.section>
 
-      <div className="pt-16">
+      <div className="pt-28">
         {/* ================= ABOUT HERO ================= */}
         <motion.section
           className="bg-gray-50 py-20"
@@ -93,7 +113,9 @@ const About = () => {
         >
           <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <motion.img
-              src="/Images/SMS_0310 Navdeep Dhamrait.jpg"
+              src="/Images/navdeep-dhamrait-optimized.jpg"
+              loading="lazy"
+              decoding="async"
               alt="GTA web designer for professional service businesses"
               className="rounded-xl shadow-lg w-full object-cover"
               variants={fadeInUp}

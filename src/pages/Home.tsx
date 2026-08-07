@@ -39,7 +39,7 @@ const Home = () => {
         <link rel="canonical" href="https://navwebdesign.com/" />
       </Helmet>
 
-      <div className="pt-16">
+      <div className="pt-28">
         {/* HERO */}
         <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-32">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
@@ -90,9 +90,10 @@ const Home = () => {
               animate={{ opacity: 1, x: 0 }}
             >
               <img
-                src="Images/torontotower.png"
+                src="/Images/torontotower-optimized.jpg"
                 alt="Toronto web design for service businesses"
                 className="rounded-xl shadow-xl w-full h-[420px] md:h-[460px] lg:h-[500px] object-cover"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -166,9 +167,11 @@ const Home = () => {
 
             <motion.div variants={fadeInUp}>
               <img
-                src="Images/laptop-coffee.png"
+                src="/Images/laptop-coffee-optimized.jpg"
                 alt="Website not generating leads Toronto"
                 className="rounded-xl shadow"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>

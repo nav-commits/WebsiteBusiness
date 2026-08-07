@@ -11,17 +11,17 @@ declare global {
   }
 }
 
-export function useAnalytics() {
+export function useAnalytics(trackPageViews = true) {
   const location = useLocation();
 
   // Track pageviews on route change
   useEffect(() => {
-    if (window.gtag) {
+    if (trackPageViews && window.gtag) {
       window.gtag("config", "G-1QKCRRGTHZ", {
         page_path: location.pathname + location.search,
       });
     }
-  }, [location]);
+  }, [location, trackPageViews]);
 
   // Custom event helper
   const trackEvent = (eventName: string, params?: Record<string, unknown>) => {

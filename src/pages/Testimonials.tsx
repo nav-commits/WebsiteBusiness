@@ -61,7 +61,7 @@ const Testimonials = () => {
         <link rel="canonical" href="https://navwebdesign.com/testimonials" />
       </Helmet>
 
-      <div className="pt-16 min-h-screen flex flex-col">
+      <div className="pt-28 min-h-screen flex flex-col">
         {/* ================= HERO ================= */}
         <motion.section
           className="bg-gradient-to-r from-indigo-600 to-purple-600 py-24 text-center"
@@ -144,6 +144,8 @@ const Testimonials = () => {
                             <img
                               src={urlFor(t.logo).width(120).url()}
                               alt={`${t.name} business logo`}
+                              loading="lazy"
+                              decoding="async"
                               className="h-16 object-contain"
                             />
                           </div>

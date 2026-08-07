@@ -25,7 +25,7 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-sm border-b border-indigo-100 fixed w-full z-50">
+    <nav aria-label="Primary navigation" className="bg-white shadow-sm border-b border-indigo-100 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* HEIGHT INCREASED */}
@@ -33,7 +33,7 @@ const Navbar = () => {
 
           {/* LOGO (BIGGER + MORE BALANCED) */}
           <div className="flex items-center flex-shrink-0">
-            <Link to="/">
+            <Link to="/" aria-label="Nav Web Design home">
               <img
                 src="/Images/nav-logo.png"
                 alt="Nav Dhamrait"
@@ -66,6 +66,8 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
+                aria-expanded={dropdownOpen}
+                aria-haspopup="true"
                 className="flex items-center text-[15px] font-medium text-gray-700 hover:text-[#5e17eb]"
               >
                 More <ChevronDown className="h-4 w-4 ml-1" />
@@ -95,6 +97,7 @@ const Navbar = () => {
               href="https://www.instagram.com/navdhamraitweb/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Nav Web Design on Instagram"
               className="text-gray-700 hover:text-[#5e17eb] transition"
             >
               <Instagram className="h-6 w-6" />
@@ -114,6 +117,9 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
               className="p-3 text-gray-700"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -124,7 +130,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {isOpen && (
-        <div className="lg:hidden bg-white shadow-lg border-t border-gray-100">
+        <div id="mobile-navigation" className="lg:hidden bg-white shadow-lg border-t border-gray-100">
           <div className="py-5 space-y-2">
 
             {[...navigation, ...moreLinks].map((item) => (
@@ -153,6 +159,7 @@ const Navbar = () => {
                 href="https://www.instagram.com/navdhamraitweb/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Nav Web Design on Instagram"
                 className="text-gray-700"
               >
                 <Instagram className="h-6 w-6" />

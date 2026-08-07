@@ -68,7 +68,7 @@ const PortfolioDetail = () => {
   const enrichment = slug ? portfolioDetails[slug] : undefined;
 
   return (
-    <div className="pt-16">
+    <div className="pt-28">
       <Helmet>
         <title>{project.title} | Toronto Web Design Case Study</title>
         <meta
@@ -122,6 +122,8 @@ const PortfolioDetail = () => {
                 <img
                   src={urlFor(project.img).width(1200).url()}
                   alt={project.alt || `${project.title} website design`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>

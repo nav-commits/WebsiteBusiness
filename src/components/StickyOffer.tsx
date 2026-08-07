@@ -47,6 +47,7 @@ const StickyOffer = () => {
         {/* CLOSE ICON */}
         <button
           onClick={handleClose}
+          aria-label="Dismiss website growth audit offer"
           className="absolute top-2 right-2 text-gray-400 hover:text-black transition"
         >
           <FaTimes />
@@ -93,6 +94,7 @@ const StickyOffer = () => {
         {/* CLOSE ICON */}
         <button
           onClick={handleClose}
+          aria-label="Dismiss website growth audit offer"
           className="absolute top-2 right-2 text-white/70 hover:text-white"
         >
           <FaTimes />

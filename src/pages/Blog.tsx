@@ -28,7 +28,7 @@ const Blog = () => {
   }, [])
 
   return (
-    <div className="pt-16">
+    <div className="pt-28">
       <Helmet>
         <title>Blog | Nav Dhamrait — Toronto Web Developer</title>
         <meta

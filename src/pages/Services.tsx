@@ -40,7 +40,7 @@ const Services = () => {
         <link rel="canonical" href="https://navwebdesign.com/services" />
       </Helmet>
 
-      <div className="pt-16">
+      <div className="pt-28">
 
         {/* ================= HERO ================= */}
         <motion.section

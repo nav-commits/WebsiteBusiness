@@ -41,7 +41,7 @@ const BlogDetail = () => {
     );
   }
   return (
-    <div className="pt-16">
+    <div className="pt-28">
       <Helmet>
         <title>{post.title} | Nav Dhamrait</title>
         <meta name="description" content={post.excerpt} />

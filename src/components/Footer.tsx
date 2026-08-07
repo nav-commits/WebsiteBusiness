@@ -18,6 +18,8 @@ const Footer = () => {
                 src="/Images/nav-logo.png"
                 alt="Nav Web Design"
                 className="h-[170px] w-auto object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 

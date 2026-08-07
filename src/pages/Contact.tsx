@@ -15,6 +15,11 @@ type FormData = {
   message: string;
 };
 
+type EmailJSError = {
+  status?: number;
+  text?: string;
+};
+
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
 
@@ -25,15 +30,31 @@ const Contact = () => {
     reset,
   } = useForm<FormData>();
 
-  const { trackEvent } = useAnalytics();
+  // App already owns route-level pageview tracking. This instance is only
+  // used for the successful lead event.
+  const { trackEvent } = useAnalytics(false);
 
   const [responseMessage, setResponseMessage] = useState("");
 
   const onSubmit = async (data: FormData) => {
+    setResponseMessage("");
+
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const templateId = import.meta.env.VITE_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS configuration is missing.");
+      setResponseMessage(
+        "The contact form is temporarily unavailable. Please email info@navwebdesign.com."
+      );
+      return;
+    }
+
     try {
       await emailjs.send(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           from_name: data.name,
           from_email: data.email,
@@ -42,21 +63,25 @@ const Contact = () => {
             timeZone: "America/Toronto",
           }),
         },
-        import.meta.env.VITE_PUBLIC_KEY
+        publicKey
       );
 
       trackEvent("generate_lead", {
         form_name: "contact_form",
         page: "/contact",
-        name: data.name,
-        email: data.email,
       });
 
       setResponseMessage("Your message has been sent successfully!");
       reset();
-    } catch (error) {
-      console.error(error);
-      setResponseMessage("Failed to send message. Please try again.");
+    } catch (error: unknown) {
+      const emailError = error as EmailJSError;
+      console.error("EmailJS submission failed:", {
+        status: emailError.status,
+        message: emailError.text || "Unknown EmailJS error",
+      });
+      setResponseMessage(
+        "Your message could not be sent. Please try again or email info@navwebdesign.com."
+      );
     }
   };
 
@@ -70,7 +95,7 @@ const Contact = () => {
   };
 
   return (
-    <main className="pt-16">
+    <main className="pt-28">
       <Helmet>
         <title>
           Contact | Book a Free Web Design Consultation in Toronto & the GTA
@@ -115,7 +140,12 @@ const Contact = () => {
                 className="space-y-6"
               >
                 {/* NAME */}
+                <label htmlFor="contact-name" className="block text-sm font-medium text-gray-800 mb-2">
+                  Name
+                </label>
                 <input
+                  id="contact-name"
+                  autoComplete="name"
                   placeholder="Your Name"
                   {...register("name", {
                     required: "Name is required",
@@ -137,7 +167,12 @@ const Contact = () => {
                 )}
 
                 {/* EMAIL */}
+                <label htmlFor="contact-email" className="block text-sm font-medium text-gray-800 mb-2">
+                  Email
+                </label>
                 <input
+                  id="contact-email"
+                  autoComplete="email"
                   type="email"
                   placeholder="Your Email"
                   {...register("email", {
@@ -160,7 +195,11 @@ const Contact = () => {
                 )}
 
                 {/* MESSAGE */}
+                <label htmlFor="contact-message" className="block text-sm font-medium text-gray-800 mb-2">
+                  Project details
+                </label>
                 <textarea
+                  id="contact-message"
                   rows={6}
                   placeholder="Tell me about your project"
                   {...register("message", {
@@ -170,7 +209,12 @@ const Contact = () => {
                       message:
                         "Message must be at least 10 characters",
                     },
+                    maxLength: {
+                      value: 3000,
+                      message: "Message must be under 3,000 characters",
+                    },
                   })}
+                  maxLength={3000}
                   className={`w-full px-4 py-3 border rounded-lg outline-none transition ${
                     errors.message
                       ? "border-red-500 focus:ring-2 focus:ring-red-300"
@@ -221,6 +265,8 @@ const Contact = () => {
                 {/* RESPONSE */}
                 {responseMessage && (
                   <p
+                    role="status"
+                    aria-live="polite"
                     className={`mt-4 text-center font-medium ${
                       responseMessage.includes("successfully")
                         ? "text-green-600"
