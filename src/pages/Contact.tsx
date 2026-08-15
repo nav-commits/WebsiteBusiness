@@ -106,7 +106,7 @@ const Contact = () => {
         </title>
         <meta
           name="description"
-          content="Get in touch for a free consultation. Toronto & GTA web design for lawyers, contractors, and service businesses that want more leads."
+          content="Book a free strategy consultation for Toronto web design tailored to law firms and high-trust professional service businesses."
         />
         <link rel="canonical" href="https://navwebdesign.com/contact" />
       </Helmet>
@@ -120,18 +120,43 @@ const Contact = () => {
         variants={fadeInUp}
       >
         <h1 className="text-5xl font-extrabold mb-6">
-          Let's Get Started!
+          Let’s Talk About Your Website
         </h1>
 
         <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-          Need a website that converts visitors into clients? Reach out today or
-          schedule a free consultation.
+          Tell me where your website is now, where you want the business to go,
+          and I’ll recommend a practical next step.
         </p>
       </motion.section>
 
       {/* FORM */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-10 items-stretch">
+            <aside className="relative min-h-[420px] lg:min-h-full rounded-2xl overflow-hidden shadow-xl bg-[#0f172a] text-white">
+              <img
+                src="/Images/consultation-workspace-stock.jpg"
+                alt="People collaborating with a laptop and taking notes during a website consultation"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/65 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-300 mb-3">
+                  A practical first conversation
+                </p>
+                <h2 className="text-2xl md:text-3xl font-extrabold mb-4">
+                  Clear advice before any commitment
+                </h2>
+                <ul className="space-y-2 text-sm text-slate-200">
+                  <li>✓ Discuss your goals and current challenges</li>
+                  <li>✓ Identify the right website scope</li>
+                  <li>✓ Leave with a clear recommended next step</li>
+                </ul>
+              </div>
+            </aside>
+
           <motion.div variants={fadeInUp}>
             <Card className="p-10 hover:shadow-xl transition">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -327,6 +352,7 @@ const Contact = () => {
               </form>
             </Card>
           </motion.div>
+          </div>
         </div>
       </section>
     </main>

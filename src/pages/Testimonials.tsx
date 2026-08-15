@@ -77,7 +77,7 @@ const Testimonials = () => {
               className="text-white font-semibold mb-4"
               variants={fadeInUp}
             >
-              Trusted by Toronto service businesses
+              Trusted by Toronto professionals and service businesses
             </motion.p>
 
             <motion.h1

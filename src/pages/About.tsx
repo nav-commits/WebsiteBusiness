@@ -61,11 +61,11 @@ const About = () => {
     <>
       <Helmet>
         <title>
-          About | GTA Web Designer for Legal, Contract & Professional Service Businesses
+          About | Toronto Web Designer for Law Firms & High-Trust Service Businesses
         </title>
         <meta
           name="description"
-          content="Meet a GTA-based web designer building high-converting, SEO-optimized websites for legal, policing-adjacent, contract-based, and professional service businesses that need real leads."
+          content="Meet a Toronto web designer creating credible, conversion-focused websites for law firms and high-trust professional service businesses."
         />
         <link rel="canonical" href="https://navwebdesign.com/about" />
       </Helmet>
@@ -92,8 +92,8 @@ const About = () => {
             className="text-xl md:text-2xl text-indigo-200 mb-8 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            GTA-based web designer building high-trust websites for legal,
-            contract-based, and professional service businesses that rely on
+            GTA-based web designer building high-trust websites for law firms,
+            consultants, healthcare providers, and professional service businesses that rely on
             credibility and consistent lead generation.
           </motion.p>
 
@@ -134,7 +134,7 @@ const About = () => {
                 variants={fadeInUp}
               >
                 I’m <span className="font-semibold">Nav Dhamrait</span>, a GTA-based web designer
-                helping law firms, contract-based businesses, and professional service providers
+                helping law firms, consultants, healthcare providers, and professional service businesses
                 turn their websites into client acquisition systems.
               </motion.p>
 
@@ -176,7 +176,7 @@ const About = () => {
             <h2 className="text-3xl font-bold mb-6">Why My Approach Works for Serious Service Businesses</h2>
 
             <p className="text-gray-600 mb-10">
-              For legal, contract-based, and professional services, design alone isn’t enough.
+              For legal, healthcare, consulting, and professional services, design alone isn’t enough.
               You need structure, clarity, and trust signals that convert visitors into real inquiries.
             </p>
 
@@ -201,6 +201,44 @@ const About = () => {
                   No clutter, no confusion — just structured paths to conversion.
                 </p>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= STRATEGY IN PRACTICE ================= */}
+        <section className="py-20 bg-indigo-50">
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+            <div className="relative">
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 blur-xl" aria-hidden="true" />
+              <img
+                src="/Images/web-design-workspace-stock.jpg"
+                alt="Web development workspace with a laptop displaying source code"
+                className="relative w-full h-[420px] rounded-2xl object-cover shadow-xl"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#5e17eb] mb-3">
+                Strategy before decoration
+              </p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-5">
+                Every design decision needs a business reason
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-700 mb-6">
+                Before choosing layouts or visual effects, I map what a visitor needs to understand, what builds trust, and what should move them toward contacting your business.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="rounded-xl bg-white border border-indigo-100 p-5 shadow-sm">
+                  <h3 className="font-bold text-gray-900 mb-1">Clear structure</h3>
+                  <p className="text-sm text-gray-600">Pages organized around client questions and decision points.</p>
+                </div>
+                <div className="rounded-xl bg-white border border-indigo-100 p-5 shadow-sm">
+                  <h3 className="font-bold text-gray-900 mb-1">Purposeful execution</h3>
+                  <p className="text-sm text-gray-600">Design, content, and code working toward the same outcome.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -265,7 +303,7 @@ const About = () => {
             </h2>
 
             <p className="text-indigo-200 mb-8">
-              If you run a legal, contract-based, or professional service business in the GTA,
+              If you run a law firm or high-trust professional service business in the GTA,
               your website should be generating consistent, high-quality inquiries.
             </p>
 

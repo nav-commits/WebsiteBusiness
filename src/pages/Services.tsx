@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "../components/Button";
@@ -31,11 +31,11 @@ const Services = () => {
     <>
       <Helmet>
         <title>
-          GTA Web Design Services for Lawyers, Contractors & Service Businesses
+          Toronto Web Design Packages for Law Firms & High-Trust Service Businesses
         </title>
         <meta
           name="description"
-          content="High-converting, SEO-optimized websites for GTA businesses including law firms, contractors, and service providers designed to generate leads and client inquiries."
+          content="Transparent Toronto web design packages for law firms and high-trust service businesses. Conversion strategy, local SEO foundations, responsive design, and clear project timelines."
         />
         <link rel="canonical" href="https://navwebdesign.com/services" />
       </Helmet>
@@ -57,22 +57,21 @@ const Services = () => {
               className="text-4xl md:text-5xl font-extrabold mb-6"
               variants={fadeInUp}
             >
-              GTA Web Design for Law Firms, Contractors & Service Businesses That Need More Clients
+              Websites Built for Trust, Qualified Leads & Growth
             </motion.h1>
 
             <motion.p
               className="text-xl md:text-2xl text-indigo-200 mb-10 leading-relaxed"
               variants={fadeInUp}
             >
-              I build professional, SEO-optimized websites for GTA businesses —
-              designed to convert visitors into qualified leads and client inquiries.
+              Transparent website packages for Toronto law firms and high-trust service businesses that need credibility, clear messaging, and more qualified inquiries.
             </motion.p>
 
             <Button
               href="https://calendly.com/navdeep-dhamrait94"
               className="px-8 py-4"
             >
-              Book a Free Consultation
+              Book a Free Strategy Consultation
             </Button>
 
             <p className="text-sm text-indigo-200 mt-6">
@@ -88,6 +87,15 @@ const Services = () => {
           whileInView={fadeInUp.visible}
           viewport={{ once: true }}
         >
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#5e17eb] mb-3">
+            Transparent pricing
+          </p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+            Choose the level of strategy your business needs
+          </h2>
+          <p className="text-gray-600 max-w-3xl mx-auto mb-8">
+            Each package includes responsive design, launch support, and a clear scope. The difference is how much content, conversion strategy, and growth infrastructure your website needs.
+          </p>
           <Tabs
             options={[
               { label: "Website Packages", value: "packages" },
@@ -98,6 +106,9 @@ const Services = () => {
               setActiveTab(value as "packages" | "care")
             }
           />
+          <p className="mt-6 text-sm text-gray-600">
+            All prices are in Canadian dollars. Final scope is confirmed before work begins—no surprise fees.
+          </p>
         </motion.section>
 
         {/* ================= PACKAGES / CARE GRID ================= */}
@@ -110,7 +121,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {getData().map((pkg, i) => {
               const isPremium =
-                pkg.title === "Growth Website (Most Popular)";
+                pkg.title === "Lead Generation Website (Most Popular)";
 
               return (
                 <motion.div
@@ -123,7 +134,7 @@ const Services = () => {
                   className="h-full"
                 >
                <Card
-  className={`flex flex-col h-full p-8 transition-all duration-300 hover:-translate-y-2 ${
+  className={`premium-card flex flex-col h-full p-8 ${
     isPremium
       ? "border-4 border-[#5e17eb] bg-white shadow-xl"
       : "border border-gray-200 bg-white shadow-sm"
@@ -147,10 +158,17 @@ const Services = () => {
     {pkg.price}
   </p>
 
-  {/* Features */}
+  {pkg.outcome && (
+    <div className="mb-7 rounded-xl border border-indigo-100 bg-indigo-50 p-4">
+      <p className="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Expected outcome</p>
+      <p className="text-sm leading-relaxed text-gray-700">{pkg.outcome}</p>
+    </div>
+  )}
+
+  {/* Key features stay visible for quick comparison. */}
 
   <ul className="space-y-3 mb-6">
-    {pkg.features?.map((feature, idx) => (
+    {pkg.features.slice(0, 5).map((feature, idx) => (
       <li key={idx} className="flex items-start">
         <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
         <span className="text-gray-600 text-sm">
@@ -159,29 +177,6 @@ const Services = () => {
       </li>
     ))}
   </ul>
-
-  {/* Client Provides */}
-
-  {pkg.clientProvides && (
-    <>
-      <div className="border-t my-6" />
-
-      <h4 className="font-semibold text-gray-900 mb-3">
-        Client Provides
-      </h4>
-
-      <ul className="space-y-2 mb-6">
-        {pkg.clientProvides.map((item, i) => (
-          <li key={i} className="flex items-start">
-            <CheckCircle className="h-4 w-4 text-indigo-600 mr-2 mt-1" />
-            <span className="text-sm text-gray-600">
-              {item}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </>
-  )}
 
   {/* Timeline */}
 
@@ -215,12 +210,58 @@ const Services = () => {
     </>
   )}
 
-  {/* Note */}
+  {/* Secondary details expand in place instead of lengthening every card. */}
+  {(pkg.features.length > 5 || pkg.clientProvides || pkg.notIdealFor || pkg.note) && (
+    <details className="group mt-6 rounded-xl border border-indigo-100 bg-indigo-50/50 open:bg-white">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-[#5e17eb] transition hover:bg-indigo-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5e17eb] [&::-webkit-details-marker]:hidden">
+        <span>
+          <span className="group-open:hidden">See everything included</span>
+          <span className="hidden group-open:inline">Hide package details</span>
+        </span>
+        <ChevronDown className="h-4 w-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180" />
+      </summary>
 
-  {pkg.note && (
-    <p className="text-xs text-gray-500 mt-6 italic">
-      {pkg.note}
-    </p>
+      <div className="border-t border-indigo-100 px-4 py-5">
+        {pkg.features.length > 5 && (
+          <div className="mb-5">
+            <h4 className="font-semibold text-gray-900 mb-3">Additional features</h4>
+            <ul className="space-y-2">
+              {pkg.features.slice(5).map((feature, idx) => (
+                <li key={idx} className="flex items-start">
+                  <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm text-gray-600">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {pkg.clientProvides && (
+          <div className="mb-5">
+            <h4 className="font-semibold text-gray-900 mb-3">What I’ll need from you</h4>
+            <ul className="space-y-2">
+              {pkg.clientProvides.map((item, idx) => (
+                <li key={idx} className="flex items-start">
+                  <CheckCircle className="h-4 w-4 text-indigo-600 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-sm text-gray-600">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {pkg.notIdealFor && (
+          <div className="rounded-lg bg-gray-50 p-4">
+            <h4 className="font-semibold text-gray-900 mb-1">Not ideal for</h4>
+            <p className="text-sm text-gray-600">{pkg.notIdealFor}</p>
+          </div>
+        )}
+
+        {pkg.note && (
+          <p className="text-xs text-gray-500 mt-4 italic">{pkg.note}</p>
+        )}
+      </div>
+    </details>
   )}
 
   {/* CTA */}
@@ -233,7 +274,7 @@ const Services = () => {
     className="w-full py-3"
     arrow
   >
-    Get Started
+    Discuss This Package
   </Button>
 </div>
 </Card>
@@ -322,7 +363,7 @@ const Services = () => {
             </h2>
 
             <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">
-              I help GTA businesses turn their websites into consistent lead generation systems.
+              Tell me about your business and I’ll recommend the right scope—without pushing you into a larger package.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -330,12 +371,8 @@ const Services = () => {
                 Book a Free Strategy Consultation
               </Button>
 
-              <Button
-                href="https://calendly.com/navdeep-dhamrait94"
-                variant="outline"
-                className="px-8 py-4"
-              >
-                Book a Free Strategy Consultation
+              <Button to="/portfolio" variant="outline" className="px-8 py-4">
+                View Client Work
               </Button>
             </div>
           </div>

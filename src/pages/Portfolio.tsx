@@ -48,7 +48,7 @@ const Portfolio = () => {
         </title>
         <meta
           name="description"
-          content="View web design projects by a Toronto web designer. High-converting websites built for service businesses to generate leads, calls, and clients."
+          content="Explore Toronto web design case studies for law firms, healthcare providers, consultants, and high-trust service businesses."
         />
         <link rel="canonical" href="https://navwebdesign.com/portfolio" />
       </Helmet>
@@ -75,12 +75,12 @@ const Portfolio = () => {
             className="text-xl md:text-2xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            Real websites built for service businesses — designed to generate
-            leads, increase conversions, and grow revenue.
+            Real websites built for law firms, healthcare providers, consultants,
+            and other high-trust service businesses.
           </motion.p>
 
           <p className="text-sm text-indigo-200">
-            Serving Toronto & GTA — contractors, clinics, and service companies.
+            Explore the strategy, structure, and trust signals behind each project.
           </p>
         </motion.div>
       </motion.section>

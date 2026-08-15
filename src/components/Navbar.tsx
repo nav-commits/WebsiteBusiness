@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Instagram, ChevronDown } from "lucide-react";
 import { Button } from "./Button";
@@ -7,6 +7,42 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
+  const navRef = useRef<HTMLElement | null>(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handlePointerDown = (event: MouseEvent) => {
+      const target = event.target as Node;
+
+      if (dropdownOpen && dropdownRef.current && !dropdownRef.current.contains(target)) {
+        setDropdownOpen(false);
+      }
+
+      if (isOpen && navRef.current && !navRef.current.contains(target)) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setDropdownOpen(false);
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [dropdownOpen, isOpen]);
+
+  useEffect(() => {
+    setDropdownOpen(false);
+    setIsOpen(false);
+  }, [location.pathname]);
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -23,9 +59,10 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isMoreActive = moreLinks.some((item) => isActive(item.href));
 
   return (
-    <nav aria-label="Primary navigation" className="bg-white shadow-sm border-b border-indigo-100 fixed w-full z-50">
+    <nav ref={navRef} aria-label="Primary navigation" className="bg-white shadow-sm border-b border-indigo-100 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* HEIGHT INCREASED */}
@@ -50,37 +87,52 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-[15px] font-medium tracking-wide transition relative group ${
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={`text-[15px] tracking-wide transition-all duration-200 rounded-lg px-3 py-2 ${
                     isActive(item.href)
-                      ? "text-[#5e17eb]"
-                      : "text-gray-700 hover:text-[#5e17eb]"
+                      ? "font-semibold text-[#5e17eb] bg-indigo-50 shadow-sm ring-1 ring-inset ring-indigo-100"
+                      : "text-gray-700 hover:text-[#5e17eb] hover:bg-indigo-50/60"
                   }`}
                 >
                   {item.name}
-                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#5e17eb] transition-all group-hover:w-full"></span>
                 </Link>
               )
             )}
 
             {/* MORE */}
-            <div className="relative">
+            <div ref={dropdownRef} className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 aria-expanded={dropdownOpen}
                 aria-haspopup="true"
-                className="flex items-center text-[15px] font-medium text-gray-700 hover:text-[#5e17eb]"
+                aria-controls="more-navigation"
+                className={`flex items-center rounded-lg px-3 py-2 text-[15px] font-medium transition-all duration-200 ${
+                  isMoreActive
+                    ? "bg-indigo-50 font-semibold text-[#5e17eb] shadow-sm ring-1 ring-inset ring-indigo-100"
+                    : "text-gray-700 hover:bg-indigo-50/60 hover:text-[#5e17eb]"
+                }`}
               >
-                More <ChevronDown className="h-4 w-4 ml-1" />
+                More
+                <ChevronDown
+                  className={`h-4 w-4 ml-1 transition-transform duration-200 ${
+                    dropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
               {dropdownOpen && (
-                <div className="absolute top-10 left-0 bg-white shadow-xl rounded-xl py-2 w-48 border border-gray-100">
+                <div id="more-navigation" className="absolute top-10 left-0 bg-white shadow-xl rounded-xl py-2 w-48 border border-gray-100">
                   {moreLinks.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
                       onClick={() => setDropdownOpen(false)}
-                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#5e17eb]"
+                      aria-current={isActive(item.href) ? "page" : undefined}
+                      className={`mx-2 block rounded-lg px-4 py-3 text-sm transition ${
+                        isActive(item.href)
+                          ? "bg-indigo-50 font-semibold text-[#5e17eb]"
+                          : "text-gray-700 hover:bg-gray-50 hover:text-[#5e17eb]"
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -107,7 +159,9 @@ const Navbar = () => {
             <Button
               to="/contact"
               variant="secondary"
-              className="px-7 py-3 text-sm font-semibold shadow-md hover:shadow-lg transition"
+              className={`px-7 py-3 text-sm font-semibold shadow-md hover:shadow-lg transition ${
+                isActive("/contact") ? "ring-4 ring-indigo-100" : ""
+              }`}
             >
               Book a Free Strategy Consultation
             </Button>
@@ -138,9 +192,10 @@ const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-6 py-3 text-base font-medium ${
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={`mx-3 block rounded-xl px-5 py-3 text-base font-medium transition ${
                   isActive(item.href)
-                    ? "text-[#5e17eb] bg-indigo-50"
+                    ? "text-[#5e17eb] bg-indigo-50 shadow-sm border-l-4 border-[#5e17eb]"
                     : "text-gray-700 hover:bg-gray-50 hover:text-[#5e17eb]"
                 }`}
               >

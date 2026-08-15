@@ -1,4 +1,18 @@
-export const services = [
+export type ServiceOffer = {
+  category: "audit" | "package" | "care";
+  title: string;
+  tagline: string;
+  price: string;
+  features: string[];
+  outcome?: string;
+  clientProvides?: string[];
+  timeline?: string;
+  bestFor?: string;
+  notIdealFor?: string;
+  note?: string;
+};
+
+export const services: ServiceOffer[] = [
   // ================= FREE STRATEGY CONSULTATION =================
   {
     category: "audit",
@@ -21,9 +35,9 @@ export const services = [
 
   {
     category: "package",
-    title: "Starter Website",
-    tagline: "Professional website for small businesses",
-    price: "$1,200",
+    title: "Website Essentials",
+    tagline: "A credible foundation for a growing business",
+    price: "$1,200 CAD",
     features: [
       "Up to 5 pages (Home, About, Services, Contact + 1 additional page)",
       "Mobile-friendly responsive design",
@@ -43,17 +57,21 @@ export const services = [
       "Images & branding",
     ],
     timeline: "2–4 weeks",
+    outcome:
+      "A polished, mobile-ready website that makes your business easier to trust and contact.",
     bestFor:
-      "Businesses that need a professional website that builds trust and helps customers contact them.",
+      "Newer service businesses that need a professional online presence and a clear inquiry path.",
+    notIdealFor:
+      "Businesses that need multiple service-area pages, advanced lead funnels, or custom integrations.",
   },
 
   {
     category: "package",
-    title: "Growth Website (Most Popular)",
+    title: "Lead Generation Website (Most Popular)",
     tagline: "Conversion-focused website built for more leads",
-    price: "$2,200–$3,000",
+    price: "$2,200–$3,000 CAD",
     features: [
-      "Everything in Starter",
+      "Everything in Website Essentials",
       "Up to 10 pages",
       "Conversion-focused page structure",
       "Customer journey planning",
@@ -67,17 +85,21 @@ export const services = [
       "3 rounds of revisions",
     ],
     timeline: "4–6 weeks",
+    outcome:
+      "A conversion-focused website structured to attract qualified visitors and move them toward an inquiry.",
     bestFor:
-      "Contractors, lawyers, and service businesses that want consistent leads.",
+      "Law firms and high-trust service businesses that depend on qualified calls, bookings, or consultations.",
+    notIdealFor:
+      "Businesses looking for a basic brochure site with minimal strategy or content structure.",
   },
 
   {
     category: "package",
-    title: "Scale Website",
+    title: "Custom Growth Website",
     tagline: "Custom website built for growth",
-    price: "$4,000+",
+    price: "$4,000+ CAD",
     features: [
-      "Everything in Growth",
+      "Everything in Lead Generation Website",
       "Up to 15 pages",
       "Fully custom website design",
       "Advanced integrations",
@@ -92,6 +114,10 @@ export const services = [
     ],
     bestFor:
       "Established businesses investing heavily in online growth and customer acquisition.",
+    outcome:
+      "A scalable website platform for multiple services, campaigns, locations, and advanced customer journeys.",
+    notIdealFor:
+      "Early-stage businesses that only need a small informational website.",
   },
 
   // ================= CARE PLANS =================

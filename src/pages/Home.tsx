@@ -18,6 +18,8 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
+const revealViewport = { once: true, amount: 0.18 };
+
 const Home = () => {
   const [projectCount, setProjectCount] = useState(0);
 
@@ -32,11 +34,11 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          Toronto Web Design for Service Businesses | Lawyers, Contractors & GTA
+          Toronto Web Design for Law Firms & High-Trust Service Businesses
         </title>
         <meta
           name="description"
-          content="Toronto web designer building high-converting SEO websites for service businesses, lawyers, contractors, and local GTA companies that want more leads and clients."
+          content="Toronto web designer creating high-trust, conversion-focused websites for law firms and professional service businesses across the GTA."
         />
         <link rel="canonical" href="https://navwebdesign.com/" />
       </Helmet>
@@ -54,11 +56,11 @@ const Home = () => {
               )}
 
               <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                Toronto Websites Built to Generate More Leads
+                Toronto Websites for Law Firms &amp; High-Trust Service Businesses
               </h1>
 
               <p className="text-lg md:text-xl text-indigo-200 mb-8">
-                For lawyers, contractors, and service businesses across the GTA. Every site is built to turn visitors into calls, bookings, and clients.
+                Build credibility quickly, explain complex services clearly, and turn more qualified visitors into calls, bookings, and consultations.
               </p>
 
               {/* CTA */}
@@ -100,9 +102,70 @@ const Home = () => {
           </div>
         </section>
 
+        {/* FEATURED CASE STUDY */}
+        <section className="py-20 md:py-24 bg-white" aria-labelledby="featured-case-study-heading">
+          <motion.div
+            className="max-w-6xl mx-auto px-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            variants={fadeInUp}
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center rounded-3xl bg-[#0f172a] text-white p-7 md:p-10 lg:p-12 overflow-hidden shadow-xl">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-300 mb-4">
+                  Featured case study
+                </p>
+                <h2 id="featured-case-study-heading" className="text-3xl md:text-4xl font-extrabold mb-5">
+                  Markat Group: Turning Complex Advisory Services Into a Clear Client Journey
+                </h2>
+                <p className="text-slate-300 text-lg leading-relaxed mb-7">
+                  A professional services website designed to explain five advisory disciplines, build credibility, and guide business owners toward a consultation.
+                </p>
+
+                <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                  {[
+                    { label: "Industry", value: "Business advisory" },
+                    { label: "Focus", value: "Clarity & trust" },
+                    { label: "Primary action", value: "Consultation" },
+                  ].map((item) => (
+                    <div key={item.label} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      <p className="text-xs uppercase tracking-wider text-indigo-300 mb-1">{item.label}</p>
+                      <p className="font-semibold">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <Button to="/portfolio/markat-group-inc" className="px-7 py-3" arrow>
+                  Read the Case Study
+                </Button>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -inset-6 bg-gradient-to-br from-indigo-500/30 to-purple-500/30 blur-3xl" aria-hidden="true" />
+                <div className="premium-image relative rounded-2xl border border-white/10 bg-white p-3 shadow-2xl rotate-1 hover:rotate-0 transition duration-500">
+                  <img
+                    src="/Images/MarkatImage.png"
+                    alt="Markat Group business advisory website shown as a featured case study"
+                    className="w-full rounded-xl object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
         {/* CLIENT PROOF */}
         <section className="bg-gradient-to-b from-white to-indigo-50 border-b" aria-labelledby="client-proof-heading">
-          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+          <motion.div
+            className="max-w-6xl mx-auto px-6 py-16 md:py-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            variants={fadeInUp}
+          >
             <div className="text-center mb-10">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#5e17eb] mb-3">
                 Client success
@@ -120,7 +183,7 @@ const Home = () => {
               ].map((logo) => (
                 <div
                   key={logo.alt}
-                  className={`${logo.className} min-h-40 md:min-h-48 rounded-2xl border border-white/60 shadow-md flex items-center justify-center p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl`}
+                  className={`${logo.className} premium-card min-h-40 md:min-h-48 rounded-2xl border border-white/60 shadow-md flex items-center justify-center p-6`}
                 >
                   <img
                     src={logo.src}
@@ -156,18 +219,24 @@ const Home = () => {
                 </div>
               </div>
             </figure>
-          </div>
+          </motion.div>
         </section>
 
         {/* TRUST / VALUE */}
         <section className="bg-white py-16 border-b">
-          <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            className="max-w-6xl mx-auto px-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            variants={fadeInUp}
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">
-              Built for Toronto & GTA Businesses That Want More Clients
+              Built for Businesses Where Trust Drives the Sale
             </h2>
 
             <div className="grid md:grid-cols-4 gap-6">
-              <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
+              <div className="premium-card bg-gray-50 p-6 rounded-xl border border-transparent shadow-sm">
                 <FaBolt className="text-indigo-600 text-2xl mb-3" />
                 <h3 className="font-semibold mb-1">Local SEO Focus</h3>
                 <p className="text-sm text-gray-600">
@@ -175,7 +244,7 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
+              <div className="premium-card bg-gray-50 p-6 rounded-xl border border-transparent shadow-sm">
                 <FaCheckCircle className="text-indigo-600 text-2xl mb-3" />
                 <h3 className="font-semibold mb-1">Conversion-Focused</h3>
                 <p className="text-sm text-gray-600">
@@ -183,7 +252,7 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
+              <div className="premium-card bg-gray-50 p-6 rounded-xl border border-transparent shadow-sm">
                 <FaMobileAlt className="text-indigo-600 text-2xl mb-3" />
                 <h3 className="font-semibold mb-1">Mobile-First</h3>
                 <p className="text-sm text-gray-600">
@@ -191,7 +260,7 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
+              <div className="premium-card bg-gray-50 p-6 rounded-xl border border-transparent shadow-sm">
                 <FaComments className="text-indigo-600 text-2xl mb-3" />
                 <h3 className="font-semibold mb-1">Direct Communication</h3>
                 <p className="text-sm text-gray-600">
@@ -199,7 +268,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* PROBLEM */}
@@ -221,7 +290,7 @@ const Home = () => {
                 <br /><br />
                 If your website isn’t optimized for SEO, speed, and conversions, potential clients leave and choose competitors.
                 <br /><br />
-                I build websites for lawyers, contractors, and service businesses that actually turn Google traffic into paying customers.
+                I build websites for law firms and high-trust service businesses that turn expertise into clear, credible reasons to get in touch.
               </p>
             </motion.div>
 
@@ -239,7 +308,13 @@ const Home = () => {
 
         {/* SERVICES */}
         <section className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            className="max-w-6xl mx-auto px-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            variants={fadeInUp}
+          >
             <h2 className="text-3xl font-bold mb-10 text-center">
               Web Design Services for Toronto & GTA Businesses
             </h2>
@@ -299,12 +374,18 @@ const Home = () => {
                 View Services
               </Button>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* WHY ME */}
         <section className="py-28 bg-gray-100">
-          <div className="max-w-6xl mx-auto px-6 text-center">
+          <motion.div
+            className="max-w-6xl mx-auto px-6 text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            variants={fadeInUp}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Why Work With a Freelance Web Designer Instead of an Agency?
             </h2>
@@ -314,7 +395,7 @@ const Home = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-10 text-left">
-              <div className="bg-white p-8 rounded-xl shadow border">
+              <div className="premium-card bg-white p-8 rounded-xl shadow border">
                 <h3 className="font-semibold mb-6 text-xl">Working With Me</h3>
                 <ul className="space-y-3">
                   <li>✔️ Direct communication</li>
@@ -324,7 +405,7 @@ const Home = () => {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow border">
+              <div className="premium-card bg-white p-8 rounded-xl shadow border">
                 <h3 className="font-semibold mb-6 text-xl">Agencies</h3>
                 <ul className="space-y-3">
                   <li>❌ Expensive retainers</li>
@@ -334,12 +415,18 @@ const Home = () => {
                 </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* CTA */}
         <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-          <div className="max-w-6xl mx-auto px-6 text-center">
+          <motion.div
+            className="max-w-6xl mx-auto px-6 text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            variants={fadeInUp}
+          >
             <h2 className="text-4xl font-bold mb-6">
               Turn Your Website Into a Lead Machine
             </h2>
@@ -351,7 +438,7 @@ const Home = () => {
             <Button to="/contact" className="px-8 py-4">
               Book a Free Strategy Consultation
             </Button>
-          </div>
+          </motion.div>
         </section>
       </div>
     </>

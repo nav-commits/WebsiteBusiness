@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
 
             <p className="text-base text-gray-700 mb-6 leading-relaxed max-w-md">
-              High-converting websites for Toronto service businesses designed to generate real leads, calls, and clients.
+              High-trust websites for Toronto law firms and professional service businesses—built to generate qualified calls, bookings, and consultations.
             </p>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-3 text-sm text-gray-800">
@@ -126,7 +126,7 @@ const Footer = () => {
           </p>
 
           <p className="text-xs text-gray-500">
-            Built for Toronto & GTA service businesses that want more leads.
+            Built for Toronto businesses where credibility drives the sale.
           </p>
 
         </div>
