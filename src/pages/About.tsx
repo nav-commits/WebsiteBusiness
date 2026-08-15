@@ -122,12 +122,12 @@ const About = () => {
             />
 
             <div>
-              <motion.h1
+              <motion.h2
                 className="text-4xl font-bold text-gray-900 mb-6"
                 variants={fadeInUp}
               >
                 Websites Built for Trust, Leads, and Real Client Inquiries
-              </motion.h1>
+              </motion.h2>
 
               <motion.p
                 className="text-lg text-gray-700 mb-4"
@@ -164,7 +164,7 @@ const About = () => {
                 className="px-6 py-3"
                 variant="secondary"
               >
-                Book a Free Call
+                Book a Free Strategy Consultation
               </Button>
             </div>
           </div>
@@ -273,7 +273,7 @@ const About = () => {
               href="https://calendly.com/navdeep-dhamrait94"
               className="px-8 py-4"
             >
-              Book a Free Call
+              Book a Free Strategy Consultation
             </Button>
           </div>
         </section>

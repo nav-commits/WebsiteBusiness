@@ -243,7 +243,7 @@ const Services = () => {
           </div>
         </motion.section>
 
-        {/* ================= AUDIT OFFER (NOW AFTER SERVICES) ================= */}
+        {/* ================= STRATEGY CONSULTATION ================= */}
         {audit && (
           <motion.section
             className="max-w-5xl mx-auto px-4 mt-20 mb-20  sm:px-6 lg:px-8 mt-20"
@@ -260,7 +260,7 @@ const Services = () => {
 
                 {/* badge */}
                 <div className="inline-block mb-4 rounded-full bg-indigo-600 px-4 py-1 text-xs font-bold text-white tracking-wide">
-                  ENTRY OFFER — FAST CLARITY
+                  FREE STRATEGY CONSULTATION
                 </div>
 
                 {/* title */}
@@ -300,7 +300,7 @@ const Services = () => {
                     className="px-6 py-3 text-base"
                     variant="secondary"
                   >
-                    Book Your Audit
+                    Book a Free Strategy Consultation
                   </Button>
                 </div>
 
@@ -327,7 +327,7 @@ const Services = () => {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button to="/contact" className="px-8 py-4">
-                Get a Free Quote
+                Book a Free Strategy Consultation
               </Button>
 
               <Button
@@ -335,7 +335,7 @@ const Services = () => {
                 variant="outline"
                 className="px-8 py-4"
               >
-                Book a Free Call
+                Book a Free Strategy Consultation
               </Button>
             </div>
           </div>

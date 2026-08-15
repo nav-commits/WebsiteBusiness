@@ -106,7 +106,7 @@ const Blog = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
-              Get a Free Quote
+              Book a Free Strategy Consultation
             </Button>
             <Button
               href="https://calendly.com/navdeep-dhamrait94"
@@ -114,7 +114,7 @@ const Blog = () => {
               className="px-8 py-4 rounded-lg"
               arrow
             >
-              Book a Free Call
+              Book a Free Strategy Consultation
             </Button>
           </div>
         </div>

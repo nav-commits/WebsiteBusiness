@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 
-const STORAGE_KEY = "growthAuditOfferDismissed";
-const SHOW_DELAY_MS = 3500;
+const STORAGE_KEY = "strategyConsultationOfferDismissed";
+const SHOW_DELAY_MS = 8000;
 
 const StickyOffer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,13 +12,30 @@ const StickyOffer = () => {
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) return;
 
-    const showTimer = setTimeout(() => {
-      setIsVisible(true);
-      // Let the element mount before animating in.
-      requestAnimationFrame(() => setHasEntered(true));
+    let delayHasElapsed = false;
+
+    const maybeShowOffer = () => {
+      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = pageHeight > 0 ? window.scrollY / pageHeight : 0;
+
+      if (delayHasElapsed && scrollProgress >= 0.25) {
+        setIsVisible(true);
+        requestAnimationFrame(() => setHasEntered(true));
+        window.removeEventListener("scroll", maybeShowOffer);
+      }
+    };
+
+    const showTimer = window.setTimeout(() => {
+      delayHasElapsed = true;
+      maybeShowOffer();
     }, SHOW_DELAY_MS);
 
-    return () => clearTimeout(showTimer);
+    window.addEventListener("scroll", maybeShowOffer, { passive: true });
+
+    return () => {
+      window.clearTimeout(showTimer);
+      window.removeEventListener("scroll", maybeShowOffer);
+    };
   }, []);
 
   const handleClose = () => {
@@ -47,7 +64,7 @@ const StickyOffer = () => {
         {/* CLOSE ICON */}
         <button
           onClick={handleClose}
-          aria-label="Dismiss website growth audit offer"
+          aria-label="Dismiss free strategy consultation offer"
           className="absolute top-2 right-2 text-gray-400 hover:text-black transition"
         >
           <FaTimes />
@@ -55,35 +72,34 @@ const StickyOffer = () => {
 
         <div className="bg-[#0f172a] text-white px-4 py-3">
           <p className="text-sm font-semibold">
-            Entry Offer — Limited Time
+            Free Website Strategy Consultation
           </p>
         </div>
 
         <div className="p-4">
           <h3 className="text-base font-bold text-gray-900 mb-2">
-            Website Growth Audit
+            Find Your Next Growth Opportunity
           </h3>
 
           <p className="text-sm text-gray-600 mb-3">
-            Find out exactly why your website isn’t generating leads.
+            Get clear, practical feedback on how your website can generate more leads.
           </p>
 
           <div className="text-sm text-gray-700 space-y-1 mb-4">
-            <p>✔ $100 — 60 min Zoom Call</p>
-            <p>✔ Conversion + SEO breakdown</p>
-            <p>✔ Competitor comparison</p>
-            <p>✔ Action plan to get more leads</p>
+            <p>✔ 30-minute discovery call</p>
+            <p>✔ Website goals and challenges</p>
+            <p>✔ Clear recommended next steps</p>
           </div>
 
           <Link
             to="/contact"
             className="block text-center bg-[#5e17eb] hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition"
           >
-            Book Audit
+            Book a Free Strategy Consultation
           </Link>
 
           <p className="text-[11px] text-gray-400 mt-3 text-center">
-            For businesses struggling to get leads
+            No pressure. Just a focused conversation.
           </p>
         </div>
       </div>
@@ -94,32 +110,29 @@ const StickyOffer = () => {
         {/* CLOSE ICON */}
         <button
           onClick={handleClose}
-          aria-label="Dismiss website growth audit offer"
+          aria-label="Dismiss free strategy consultation offer"
           className="absolute top-2 right-2 text-white/70 hover:text-white"
         >
           <FaTimes />
         </button>
 
-        <div className="px-4 py-3 flex flex-col gap-2">
+        <div className="px-4 py-3 flex items-center gap-3 pr-9">
 
-          <p className="text-xs tracking-wide text-indigo-300 font-semibold uppercase">
-            🔥 Entry Offer — Website Growth Audit
-          </p>
-
-          <p className="text-sm font-semibold">
-            $100 — Find out why your website isn’t getting leads
-          </p>
+          <div className="min-w-0 flex-1">
+            <p className="text-xs tracking-wide text-indigo-300 font-semibold uppercase">
+              Free Strategy Consultation
+            </p>
+            <p className="text-xs text-gray-300 mt-1">
+              Get clear next steps for your website.
+            </p>
+          </div>
 
           <Link
             to="/contact"
-            className="w-full text-center bg-[#5e17eb] hover:bg-indigo-700 text-white font-bold py-3 rounded-lg text-sm transition"
+            className="shrink-0 text-center bg-[#5e17eb] hover:bg-indigo-700 text-white font-bold px-4 py-2.5 rounded-lg text-xs transition"
           >
-            Book Your Audit
+            Book Now
           </Link>
-
-          <p className="text-[11px] text-gray-300 text-center">
-            60 min Zoom • SEO + Conversion breakdown
-          </p>
         </div>
       </div>
     </>

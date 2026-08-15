@@ -209,7 +209,7 @@ const Portfolio = () => {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button to="/contact" arrow className="px-8 py-4">
-              Get a Free Quote
+              Book a Free Strategy Consultation
             </Button>
 
             <Button
@@ -217,7 +217,7 @@ const Portfolio = () => {
               variant="outline"
               className="px-8 py-4"
             >
-              Book a Free Call
+              Book a Free Strategy Consultation
             </Button>
           </div>
         </div>

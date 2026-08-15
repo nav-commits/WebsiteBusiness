@@ -12,6 +12,8 @@ import { useAnalytics } from "../useAnalystics";
 type FormData = {
   name: string;
   email: string;
+  service?: string;
+  budget?: string;
   message: string;
 };
 
@@ -58,6 +60,8 @@ const Contact = () => {
         {
           from_name: data.name,
           from_email: data.email,
+          service: data.service || "Not specified",
+          budget: data.budget || "Not specified",
           message: data.message,
           submitted_at: new Date().toLocaleString("en-CA", {
             timeZone: "America/Toronto",
@@ -194,6 +198,46 @@ const Contact = () => {
                   </p>
                 )}
 
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="contact-service" className="block text-sm font-medium text-gray-800 mb-2">
+                      Service needed <span className="font-normal text-gray-500">(optional)</span>
+                    </label>
+                    <select
+                      id="contact-service"
+                      defaultValue=""
+                      {...register("service")}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white outline-none transition focus:ring-2 focus:ring-[#5e17eb]"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="New website">New website</option>
+                      <option value="Website redesign">Website redesign</option>
+                      <option value="SEO and conversion improvements">SEO &amp; conversion improvements</option>
+                      <option value="Website care plan">Website care plan</option>
+                      <option value="Not sure yet">Not sure yet</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="contact-budget" className="block text-sm font-medium text-gray-800 mb-2">
+                      Estimated budget <span className="font-normal text-gray-500">(optional)</span>
+                    </label>
+                    <select
+                      id="contact-budget"
+                      defaultValue=""
+                      {...register("budget")}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white outline-none transition focus:ring-2 focus:ring-[#5e17eb]"
+                    >
+                      <option value="">Select a range</option>
+                      <option value="$1,200–$2,000">$1,200–$2,000</option>
+                      <option value="$2,000–$3,500">$2,000–$3,500</option>
+                      <option value="$3,500–$5,000">$3,500–$5,000</option>
+                      <option value="$5,000+">$5,000+</option>
+                      <option value="Not sure yet">Not sure yet</option>
+                    </select>
+                  </div>
+                </div>
+
                 {/* MESSAGE */}
                 <label htmlFor="contact-message" className="block text-sm font-medium text-gray-800 mb-2">
                   Project details
@@ -258,9 +302,13 @@ const Contact = () => {
                 >
                   {isSubmitting
                     ? "Sending..."
-                    : "Get My Free Website Audit"}
+                    : "Request a Free Strategy Consultation"}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
+
+                <p className="text-sm text-gray-500 text-center">
+                  I’ll personally reply within one business day. No pressure and no obligation.
+                </p>
 
                 {/* RESPONSE */}
                 {responseMessage && (

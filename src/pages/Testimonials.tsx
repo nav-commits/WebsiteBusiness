@@ -212,7 +212,7 @@ const Testimonials = () => {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button to="/contact" className="px-8 py-4" arrow>
-                Get a Free Quote
+                Book a Free Strategy Consultation
               </Button>
 
               <Button
@@ -221,7 +221,7 @@ const Testimonials = () => {
                 className="px-8 py-4"
                 arrow
               >
-                Book a Free Call
+                Book a Free Strategy Consultation
               </Button>
             </div>
           </div>

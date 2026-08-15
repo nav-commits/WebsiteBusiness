@@ -1,20 +1,20 @@
 export const services = [
-  // ================= WEBSITE GROWTH AUDIT =================
+  // ================= FREE STRATEGY CONSULTATION =================
   {
     category: "audit",
-    title: "Website Growth Audit",
-    tagline: "Find out why your website isn't generating enough leads",
-    price: "$100 — 60 Minute Strategy Call",
+    title: "Free Website Strategy Consultation",
+    tagline: "Get clarity on the best next step for your website",
+    price: "Free — 30 Minute Discovery Call",
     features: [
       "Website conversion review",
       "SEO visibility check",
-      "Competitor comparison",
-      "Mobile & speed analysis",
-      "Lead generation opportunities",
-      "Step-by-step improvement plan",
+      "Your goals and current challenges",
+      "The best-fit website approach",
+      "High-level conversion opportunities",
+      "Clear recommended next steps",
     ],
     note:
-      "Perfect for businesses that already have a website but aren't getting enough calls or customers.",
+      "A focused, no-pressure conversation for GTA service businesses considering a new website or redesign.",
   },
 
   // ================= WEBSITE PACKAGES =================

@@ -109,7 +109,7 @@ const Navbar = () => {
               variant="secondary"
               className="px-7 py-3 text-sm font-semibold shadow-md hover:shadow-lg transition"
             >
-              Book a Free Call
+              Book a Free Strategy Consultation
             </Button>
           </div>
 
@@ -150,7 +150,7 @@ const Navbar = () => {
 
             <div className="px-6 pt-4">
               <Button to="/contact" variant="secondary" className="w-full py-4">
-                Book a Free Call
+                Book a Free Strategy Consultation
               </Button>
             </div>
 

@@ -3,31 +3,31 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-black border-t border-gray-200">
+    <footer className="bg-[#f8f7ff] text-gray-900 border-t-4 border-[#5e17eb]">
 
-      <div className="max-w-7xl mx-auto py-14 px-6 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto pt-14 pb-8 px-6 sm:px-8 lg:px-12">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 lg:gap-12 items-start">
 
           {/* ================= BRAND + LOGO ================= */}
-          <div>
+          <div className="md:col-span-5 lg:col-span-5">
 
-            {/* BIGGER LOGO */}
-            <div className="mb-6">
+            {/* Crop the logo's square source canvas to its visible wordmark. */}
+            <div className="relative h-16 w-56 overflow-hidden mb-5 -ml-3">
               <img
                 src="/Images/nav-logo.png"
                 alt="Nav Web Design"
-                className="h-[170px] w-auto object-contain"
+                className="absolute h-[180px] w-[180px] max-w-none left-0 top-1/2 -translate-y-1/2 object-contain"
                 loading="lazy"
                 decoding="async"
               />
             </div>
 
-            <p className="text-sm text-gray-700 mb-6 leading-relaxed">
+            <p className="text-base text-gray-700 mb-6 leading-relaxed max-w-md">
               High-converting websites for Toronto service businesses designed to generate real leads, calls, and clients.
             </p>
 
-            <div className="space-y-3 text-sm text-gray-800">
+            <div className="grid sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-3 text-sm text-gray-800">
 
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-[#5e17eb]" />
@@ -52,9 +52,9 @@ const Footer = () => {
           </div>
 
           {/* ================= QUICK LINKS ================= */}
-          <div className="pt-10 md:pt-16">
+          <div className="md:col-span-3 lg:col-span-3">
 
-            <h3 className="text-lg font-semibold mb-5 text-black">
+            <h3 className="text-lg font-bold mb-5 text-gray-900">
               Quick Links
             </h3>
 
@@ -89,28 +89,28 @@ const Footer = () => {
           </div>
 
           {/* ================= HOURS ================= */}
-          <div className="pt-10 md:pt-16">
+          <div className="md:col-span-4 lg:col-span-4">
 
-            <h3 className="text-lg font-semibold mb-5 text-black">
+            <h3 className="text-lg font-bold mb-5 text-gray-900">
               Working Hours
             </h3>
 
-            <p className="text-sm text-gray-700 mb-4">
+            <p className="text-sm text-gray-700 mb-5 leading-relaxed max-w-sm">
               Available for new website projects and consultations across Toronto & GTA.
             </p>
 
-            <div className="text-sm text-gray-700 space-y-1">
-              <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
-              <p>Saturday: 10:00 AM - 4:00 PM</p>
-              <p>Sunday: Closed</p>
+            <div className="text-sm text-gray-700 space-y-2">
+              <p className="flex justify-between gap-4 max-w-xs"><span>Monday–Friday</span><span className="font-medium text-gray-900">9 AM–5 PM</span></p>
+              <p className="flex justify-between gap-4 max-w-xs"><span>Saturday</span><span className="font-medium text-gray-900">10 AM–4 PM</span></p>
+              <p className="flex justify-between gap-4 max-w-xs"><span>Sunday</span><span className="font-medium text-gray-900">Closed</span></p>
             </div>
 
             <div className="mt-6">
               <Link
                 to="/contact"
-                className="inline-block bg-[#5e17eb] hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-3 rounded-lg transition"
+                className="inline-flex items-center justify-center bg-[#5e17eb] hover:bg-indigo-700 text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition"
               >
-                Book a Consultation
+                Book a Free Strategy Consultation
               </Link>
             </div>
 
@@ -119,13 +119,13 @@ const Footer = () => {
         </div>
 
         {/* ================= BOTTOM BAR ================= */}
-        <div className="mt-10 pt-6 border-t border-gray-300 text-center">
+        <div className="mt-12 pt-6 border-t border-indigo-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
 
           <p className="text-sm text-gray-600">
             © {new Date().getFullYear()} Nav Web Design. All rights reserved.
           </p>
 
-          <p className="text-xs text-gray-500 mt-2">
+          <p className="text-xs text-gray-500">
             Built for Toronto & GTA service businesses that want more leads.
           </p>
 
