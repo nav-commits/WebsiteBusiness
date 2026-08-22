@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Instagram, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, ChevronDown, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "./Button";
 
@@ -158,6 +158,16 @@ const Navbar = () => {
               <Instagram className="h-6 w-6" />
             </a>
 
+            <a
+              href="https://www.linkedin.com/in/nav-dhamrait/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Nav Dhamrait on LinkedIn"
+              className="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-slate-600 transition hover:border-indigo-200 hover:bg-indigo-50 hover:text-[#5e17eb]"
+            >
+              <Linkedin className="h-6 w-6" />
+            </a>
+
             {/* ✅ USING YOUR SECONDARY BUTTON PROPERLY */}
             <Button
               to="/contact"
@@ -213,7 +223,7 @@ const Navbar = () => {
               </Button>
             </div>
 
-            <div className="flex px-6 pt-4 pb-6">
+            <div className="flex gap-5 px-6 pt-4 pb-6">
               <a
                 href="https://www.instagram.com/navdhamraitweb/"
                 target="_blank"
@@ -222,6 +232,15 @@ const Navbar = () => {
                 className="text-gray-700"
               >
                 <Instagram className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nav-dhamrait/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Nav Dhamrait on LinkedIn"
+                className="text-gray-700 transition hover:text-[#5e17eb]"
+              >
+                <Linkedin className="h-6 w-6" />
               </a>
             </div>
 

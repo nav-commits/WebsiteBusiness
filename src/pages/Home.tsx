@@ -47,23 +47,23 @@ const Home = () => {
       <div className="pt-24 lg:pt-28">
         {/* HERO */}
         <section className="page-hero text-white">
-          <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-[1.08fr_.92fr] md:py-24 lg:px-10 lg:py-28">
+          <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-7 py-20 md:grid-cols-[1.08fr_.92fr] md:gap-16 md:px-8 md:py-24 lg:px-10 lg:py-28">
 
-            <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+            <motion.div className="min-w-0 text-center md:pr-2 md:text-left lg:pr-4" initial="hidden" animate="visible" variants={fadeInUp}>
               <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-indigo-100 backdrop-blur-sm">
                   {projectCount > 0 ? `Trusted by ${projectCount}+ Toronto & GTA businesses` : "Independent Toronto web designer"}
               </p>
 
-              <h1 className="mb-7 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.055em] sm:text-5xl lg:text-6xl xl:text-7xl">
-                Toronto Websites Built to <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-indigo-200">Earn Trust and Generate Leads</span>
+              <h1 className="mb-7 max-w-3xl overflow-visible pr-2 text-4xl font-black leading-[1.02] tracking-[-0.015em] sm:pr-3 sm:text-5xl sm:tracking-[-0.025em] lg:text-6xl xl:text-7xl">
+                Toronto <span className="inline-block pr-2">Websites</span> Built to <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-indigo-200">Earn Trust and Generate Leads</span>
               </h1>
 
-              <p className="mb-9 max-w-2xl text-lg leading-relaxed text-indigo-100 md:text-xl">
+              <p className="mx-auto mb-9 max-w-2xl text-lg leading-relaxed text-indigo-100 md:mx-0 md:text-xl">
                 Strategic web design for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA—built to turn qualified visitors into calls and consultations.
               </p>
 
               {/* CTA */}
-              <div className="flex flex-col gap-4 sm:flex-row">
+              <div className="flex flex-col gap-4 sm:items-center md:flex-row md:items-stretch">
                 <Button to="/contact" className="px-8 py-4" arrow>
                   Book a Free Strategy Consultation
                 </Button>
@@ -78,9 +78,9 @@ const Home = () => {
               </div>
 
               {/* MICROCOPY */}
-              <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col items-center gap-5 md:flex-row md:items-center">
                 <GoogleReviews />
-                <p className="max-w-xs text-sm leading-relaxed text-indigo-200">
+                <p className="max-w-xs text-center text-sm leading-relaxed text-indigo-200 md:text-left">
                   Serving Toronto, Brampton, Mississauga and businesses across the GTA.
                 </p>
               </div>

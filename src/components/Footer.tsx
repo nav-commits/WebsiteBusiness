@@ -1,4 +1,4 @@
-import { ArrowUpRight, Instagram, Mail, Phone, MapPin, Star } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Mail, Phone, MapPin, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { GOOGLE_REVIEWS_URL } from "./GoogleReviews";
 
@@ -107,6 +107,7 @@ const Footer = () => {
                 5.0 on Google <ArrowUpRight className="h-4 w-4" />
               </a>
               <a href="https://www.instagram.com/navdhamraitweb/" target="_blank" rel="noopener noreferrer" aria-label="Nav Web Design on Instagram" className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"><Instagram className="h-5 w-5" /></a>
+              <a href="https://www.linkedin.com/in/nav-dhamrait/" target="_blank" rel="noopener noreferrer" aria-label="Nav Dhamrait on LinkedIn" className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"><Linkedin className="h-5 w-5" /></a>
             </div>
 
             <div className="mt-6">
