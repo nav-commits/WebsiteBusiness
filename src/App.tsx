@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import StickyOffer from "./components/StickyOffer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -22,6 +23,8 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
+      <ScrollToTop />
+
       {/* NAVBAR */}
       <Navbar />
 

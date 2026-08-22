@@ -16,6 +16,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-anchor: none;
+}
+
+html.route-scroll-reset {
+  scroll-behavior: auto !important;
 }
 
 body {
