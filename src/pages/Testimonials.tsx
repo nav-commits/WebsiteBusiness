@@ -1,238 +1,86 @@
-import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Button } from "../components/Button";
+import ElfsightReviews from "../components/ElfsightReviews";
 import GoogleReviews from "../components/GoogleReviews";
-import { Star } from "lucide-react";
-import { Card } from "../components/Card";
-import { useEffect, useState } from "react";
-import { client } from "../SanityClient/sanityClient";
-import { createImageUrlBuilder } from "@sanity/image-url";
-import { Testimonial } from "../types/Testimonal/testimonal";
-
-const builder = createImageUrlBuilder(client);
-const urlFor = (source: string) => builder.image(source);
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+const Testimonials = () => (
+  <>
+    <Helmet>
+      <title>Google Reviews | Nav Web Design Toronto</title>
+      <meta
+        name="description"
+        content="Read verified Google reviews for Nav Web Design and see what Toronto and GTA businesses say about working directly with freelance web designer Nav Dhamrait."
+      />
+      <link rel="canonical" href="https://navwebdesign.com/testimonials" />
+    </Helmet>
 
-  useEffect(() => {
-    client
-      .fetch(`*[_type == "testimonial"] | order(_createdAt desc){
-        _id,
-        name,
-        role,
-        content,
-        rating,
-        logo
-      }`)
-      .then((data) => setTestimonials(data))
-      .catch((err) => console.error("Sanity fetch error:", err));
-  }, []);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-    pauseOnHover: true,
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>
-          Client Testimonials | Toronto Web Design Results & Reviews
-        </title>
-        <meta
-          name="description"
-          content="Read real client testimonials from Toronto businesses. See how high-converting websites helped generate leads, calls, and growth."
-        />
-        <link rel="canonical" href="https://navwebdesign.com/testimonials" />
-      </Helmet>
-
-      <div className="pt-28 min-h-screen flex flex-col">
-        {/* ================= HERO ================= */}
-        <motion.section
-          className="page-hero py-20 text-center md:py-28"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+    <div className="flex min-h-screen flex-col pt-24 lg:pt-28">
+      <motion.section
+        className="page-hero py-20 text-center md:py-28"
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          className="mx-auto max-w-4xl px-6"
+          variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
         >
-          <motion.div
-            className="max-w-4xl mx-auto px-6"
-            variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+          <motion.p className="mb-4 font-semibold text-white" variants={fadeInUp}>
+            Verified feedback from real clients
+          </motion.p>
+          <motion.h1
+            className="mb-6 text-4xl font-black text-white md:text-5xl"
+            variants={fadeInUp}
           >
-            <motion.p
-              className="text-white font-semibold mb-4"
-              variants={fadeInUp}
-            >
-              Trusted by Toronto professionals and service businesses
-            </motion.p>
-
-            <motion.h1
-              className="text-4xl md:text-5xl font-bold text-white mb-6"
-              variants={fadeInUp}
-            >
-              Real Results From Real Clients
-            </motion.h1>
-
-            <motion.p
-              className="mb-7 text-xl text-indigo-200"
-              variants={fadeInUp}
-            >
-              See how businesses in Toronto are using their websites to generate
-              more leads, calls, and customers.
-            </motion.p>
-            <motion.div variants={fadeInUp} className="flex justify-center">
-              <GoogleReviews />
-            </motion.div>
+            Google Reviews From GTA Businesses
+          </motion.h1>
+          <motion.p className="mb-7 text-xl text-indigo-200" variants={fadeInUp}>
+            See what clients say about the design process, communication, and the websites I’ve delivered.
+          </motion.p>
+          <motion.div variants={fadeInUp} className="flex justify-center">
+            <GoogleReviews />
           </motion.div>
-        </motion.section>
+        </motion.div>
+      </motion.section>
 
-        {/* ================= TESTIMONIALS ================= */}
-        <section className="py-20 bg-white flex-grow">
-          <div className="max-w-3xl mx-auto px-4">
-            {testimonials.length === 0 && (
-              <div className="p-4">
-                <Card className="flex flex-col p-8 rounded-2xl shadow-lg min-h-[360px] animate-pulse">
-                  <div className="mb-4 flex justify-center">
-                    <div className="h-16 w-24 bg-gray-200 rounded" />
-                  </div>
-
-                  <div className="flex flex-col items-center mb-4 space-y-2">
-                    <div className="h-4 w-32 bg-gray-200 rounded" />
-                    <div className="h-3 w-24 bg-gray-200 rounded" />
-                  </div>
-
-                  <div className="flex justify-center gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="h-5 w-5 bg-gray-200 rounded-full" />
-                    ))}
-                  </div>
-
-                  <div className="flex-grow flex flex-col items-center gap-2 w-full">
-                    <div className="h-3 w-full bg-gray-200 rounded" />
-                    <div className="h-3 w-full bg-gray-200 rounded" />
-                    <div className="h-3 w-2/3 bg-gray-200 rounded" />
-                  </div>
-                </Card>
-              </div>
-            )}
-
-            {testimonials.length > 0 && (
-              <Slider {...settings}>
-                {testimonials.map((t, index) => (
-                  <div key={t._id} className="p-4">
-                    <motion.div
-                      variants={fadeInUp}
-                      initial="hidden"
-                      whileInView="visible"
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <Card className="flex flex-col p-8 rounded-2xl shadow-lg min-h-[360px]">
-                        {/* Logo */}
-                        {t.logo && (
-                          <div className="mb-4 flex justify-center">
-                            <img
-                              src={urlFor(t.logo).width(120).url()}
-                              alt={`${t.name} business logo`}
-                              loading="lazy"
-                              decoding="async"
-                              className="h-16 object-contain"
-                            />
-                          </div>
-                        )}
-
-                        {/* Name */}
-                        <div className="text-center mb-4">
-                          <h3 className="text-lg font-semibold text-gray-900">
-                            {t.name}
-                          </h3>
-                          <p className="text-gray-600">{t.role}</p>
-                        </div>
-
-                        {/* Stars */}
-                        <div className="flex justify-center mb-4">
-                          {[...Array(Math.min(t.rating || 5, 5))].map((_, i) => (
-                            <Star key={i} className="h-5 w-5 text-yellow-400" />
-                          ))}
-                        </div>
-
-                        {/* Content */}
-                        <p className="text-gray-600 italic text-center flex-grow">
-                          "{t.content}"
-                        </p>
-                      </Card>
-                    </motion.div>
-                  </div>
-                ))}
-              </Slider>
-            )}
-          </div>
-        </section>
-
-        {/* ================= SEO BOOST ================= */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Websites That Deliver Real Business Results
+      <section className="flex-grow bg-slate-50 py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 text-center">
+            <p className="section-eyebrow">Client feedback</p>
+            <h2 className="mt-4 text-3xl font-black text-slate-900 sm:text-4xl">
+              Reviews pulled directly from Google
             </h2>
-
-            <p className="text-gray-600 mb-4">
-              These testimonials reflect the results of building websites
-              focused on conversions, performance, and clear messaging.
-            </p>
-
-            <p className="text-gray-600">
-              If you’re a Toronto business looking to generate more leads from
-              your website, the same approach can be applied to your business.
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+              No edited quotes or anonymous testimonials—just feedback connected to my public Google Business Profile.
             </p>
           </div>
-        </section>
+          <ElfsightReviews />
+        </div>
+      </section>
 
-        {/* ================= CTA ================= */}
-        <section className="page-hero py-24 text-white">
-          <div className="max-w-5xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-extrabold mb-6">
-              Want Results Like These?
-            </h2>
-
-            <p className="text-lg text-indigo-100 mb-10">
-              Let’s build a website that actually brings you leads, calls, and
-              clients.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button to="/contact" className="px-8 py-4" arrow>
-                Book a Free Strategy Consultation
-              </Button>
-
-              <Button
-                to="/services"
-                variant="outline"
-                className="px-8 py-4"
-                arrow
-              >
-                View Services &amp; Pricing
-              </Button>
-            </div>
+      <section className="page-hero py-24 text-white">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <h2 className="mb-6 text-4xl font-extrabold">Ready to Improve Your Website?</h2>
+          <p className="mx-auto mb-10 max-w-3xl text-lg text-indigo-100">
+            Work directly with me to build a credible, conversion-focused website for your business.
+          </p>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Button to="/contact" className="px-8 py-4" arrow>
+              Book a Free Strategy Consultation
+            </Button>
+            <Button to="/services" variant="outline" className="px-8 py-4" arrow>
+              View Services &amp; Pricing
+            </Button>
           </div>
-        </section>
-      </div>
-    </>
-  );
-};
+        </div>
+      </section>
+    </div>
+  </>
+);
 
 export default Testimonials;

@@ -156,6 +156,11 @@ p {
   .premium-image:hover img {
     transform: scale(1.025);
   }
+
+  /* The page supplies its own solo-voice heading above the embedded reviews. */
+  .elfsight-app-7f1bce33-a3f9-4620-8a00-218c1a619a90 [class*="WidgetTitle__Inner"] {
+    display: none !important;
+  }
 }
 
 @media (min-width: 640px) {
