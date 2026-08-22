@@ -85,7 +85,7 @@ const PortfolioDetail = () => {
       </Helmet>
 
       <motion.section
-        className="bg-gray-50 py-20"
+        className="page-hero py-20 text-white md:py-28"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -94,14 +94,14 @@ const PortfolioDetail = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           {(enrichment?.industry || project.type) && (
             <motion.span
-              className="inline-block text-xs font-medium text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full mb-4"
+              className="mb-4 inline-block rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold text-indigo-100"
               variants={fadeInUp}
             >
               {enrichment?.industry || project.type}
             </motion.span>
           )}
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="mb-4 text-4xl font-black text-white md:text-5xl"
             variants={fadeInUp}
           >
             {project.title}
@@ -116,7 +116,7 @@ const PortfolioDetail = () => {
           viewport={{ once: true }}
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
-          <Card className="p-10 space-y-8">
+          <Card className="surface-card space-y-8 p-6 sm:p-10">
             {project.img && (
               <div className="w-full aspect-[16/10] overflow-hidden rounded-xl">
                 <img
@@ -136,7 +136,7 @@ const PortfolioDetail = () => {
             {enrichment?.highlights && enrichment.highlights.length > 0 && (
               <div>
                 <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                  What We Built
+                  What I Built
                 </h2>
                 <ul className="space-y-3">
                   {enrichment.highlights.map((highlight, i) => (
@@ -169,7 +169,7 @@ const PortfolioDetail = () => {
         </motion.div>
       </section>
 
-      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <section className="page-hero py-24 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
             Want Results Like These?

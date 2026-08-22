@@ -51,7 +51,7 @@ const BlogDetail = () => {
         />
       </Helmet>
       <motion.section
-        className="bg-gray-50 py-20"
+        className="page-hero py-20 text-white md:py-28"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -59,13 +59,13 @@ const BlogDetail = () => {
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="mb-4 text-4xl font-black text-white md:text-5xl"
             variants={fadeInUp}
           >
             {post.title}
           </motion.h1>
           <motion.div
-            className="text-sm text-gray-500 mb-2"
+            className="mb-2 text-sm text-indigo-100"
             variants={fadeInUp}
           >
             By {post.author} •{" "}
@@ -80,7 +80,7 @@ const BlogDetail = () => {
           viewport={{ once: true }}
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
-          <Card className="p-10 space-y-8">
+          <Card className="surface-card space-y-8 p-6 sm:p-10">
             <article className="prose max-w-none text-gray-700">
             <PortableText value={post.content} />
             </article>

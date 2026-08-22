@@ -40,7 +40,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="pt-28">
+    <div className="pt-24 lg:pt-28">
       {/* ================= SEO ================= */}
       <Helmet>
         <title>
@@ -48,14 +48,14 @@ const Portfolio = () => {
         </title>
         <meta
           name="description"
-          content="Explore Toronto web design case studies for law firms, healthcare providers, consultants, and high-trust service businesses."
+          content="Explore Toronto web design work for lawyers, contractors, healthcare providers, consultants, and established service businesses."
         />
         <link rel="canonical" href="https://navwebdesign.com/portfolio" />
       </Helmet>
 
       {/* ================= HERO ================= */}
       <motion.section
-        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 text-center"
+        className="page-hero py-20 text-center text-white md:py-28"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -75,8 +75,8 @@ const Portfolio = () => {
             className="text-xl md:text-2xl text-indigo-200 mb-10 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            Real websites built for law firms, healthcare providers, consultants,
-            and other high-trust service businesses.
+            Real websites built for lawyers, contractors, healthcare providers,
+            consultants, and other established service businesses.
           </motion.p>
 
           <p className="text-sm text-indigo-200">
@@ -98,7 +98,7 @@ const Portfolio = () => {
                 variants={fadeInUp}
                 transition={{ delay: index * 0.08 }}
               >
-                <Card className="group flex flex-col h-full bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <Card className="premium-card group flex h-full flex-col overflow-hidden border border-slate-200 bg-white shadow-[0_20px_50px_-38px_rgba(15,23,42,.45)]">
 
                   {/* IMAGE */}
                   <div className="relative w-full aspect-[16/10] overflow-hidden">
@@ -197,7 +197,7 @@ const Portfolio = () => {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <section className="page-hero py-24 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
             Want Results Like These?
@@ -208,8 +208,8 @@ const Portfolio = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button to="/contact" arrow className="px-8 py-4">
-              Book a Free Strategy Consultation
+            <Button to="/services" arrow className="px-8 py-4">
+              See Services & Pricing
             </Button>
 
             <Button

@@ -99,21 +99,21 @@ const Contact = () => {
   };
 
   return (
-    <main className="pt-28">
+    <main className="pt-24 lg:pt-28">
       <Helmet>
         <title>
           Contact | Book a Free Web Design Consultation in Toronto & the GTA
         </title>
         <meta
           name="description"
-          content="Book a free strategy consultation for Toronto web design tailored to law firms and high-trust professional service businesses."
+          content="Book a free Toronto web design consultation for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA."
         />
         <link rel="canonical" href="https://navwebdesign.com/contact" />
       </Helmet>
 
       {/* HERO */}
       <motion.section
-        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 text-center"
+        className="page-hero px-6 py-20 text-center text-white md:py-28"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -133,7 +133,7 @@ const Contact = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-10 items-stretch">
-            <aside className="relative min-h-[420px] lg:min-h-full rounded-2xl overflow-hidden shadow-xl bg-[#0f172a] text-white">
+            <aside className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-slate-800 bg-[#0f172a] text-white shadow-[0_30px_70px_-40px_rgba(15,23,42,.7)] lg:min-h-full">
               <img
                 src="/Images/consultation-workspace-stock.jpg"
                 alt="People collaborating with a laptop and taking notes during a website consultation"
@@ -158,7 +158,7 @@ const Contact = () => {
             </aside>
 
           <motion.div variants={fadeInUp}>
-            <Card className="p-10 hover:shadow-xl transition">
+            <Card className="surface-card p-6 sm:p-8 lg:p-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Send a Message
               </h2>

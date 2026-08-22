@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Button } from "../components/Button";
+import GoogleReviews from "../components/GoogleReviews";
 import { Star } from "lucide-react";
 import { Card } from "../components/Card";
 import { useEffect, useState } from "react";
@@ -64,7 +65,7 @@ const Testimonials = () => {
       <div className="pt-28 min-h-screen flex flex-col">
         {/* ================= HERO ================= */}
         <motion.section
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 py-24 text-center"
+          className="page-hero py-20 text-center md:py-28"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -88,12 +89,15 @@ const Testimonials = () => {
             </motion.h1>
 
             <motion.p
-              className="text-xl text-indigo-200 mb-12"
+              className="mb-7 text-xl text-indigo-200"
               variants={fadeInUp}
             >
               See how businesses in Toronto are using their websites to generate
               more leads, calls, and customers.
             </motion.p>
+            <motion.div variants={fadeInUp} className="flex justify-center">
+              <GoogleReviews />
+            </motion.div>
           </motion.div>
         </motion.section>
 
@@ -199,7 +203,7 @@ const Testimonials = () => {
         </section>
 
         {/* ================= CTA ================= */}
-        <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <section className="page-hero py-24 text-white">
           <div className="max-w-5xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-extrabold mb-6">
               Want Results Like These?
@@ -216,12 +220,12 @@ const Testimonials = () => {
               </Button>
 
               <Button
-                href="https://calendly.com/navdeep-dhamrait94"
+                to="/services"
                 variant="outline"
                 className="px-8 py-4"
                 arrow
               >
-                Book a Free Strategy Consultation
+                View Services &amp; Pricing
               </Button>
             </div>
           </div>

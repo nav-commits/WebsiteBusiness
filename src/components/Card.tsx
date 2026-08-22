@@ -9,7 +9,7 @@ type CardProps = {
 export const Card = ({ children, className = "", bgColor = "bg-white" }: CardProps) => {
   return (
     <div
-      className={`${bgColor} rounded-xl shadow-md flex flex-col ${className}`}
+      className={`${bgColor} flex flex-col rounded-2xl shadow-sm ${className}`}
     >
       {children}
     </div>

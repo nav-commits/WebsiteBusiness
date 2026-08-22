@@ -31,20 +31,20 @@ const Services = () => {
     <>
       <Helmet>
         <title>
-          Toronto Web Design Packages for Law Firms & High-Trust Service Businesses
+          Toronto Web Design Packages for Lawyers, Contractors & Service Businesses
         </title>
         <meta
           name="description"
-          content="Transparent Toronto web design packages for law firms and high-trust service businesses. Conversion strategy, local SEO foundations, responsive design, and clear project timelines."
+          content="Transparent Toronto web design packages for lawyers, contractors, consultants, healthcare providers, and service businesses. Local SEO, responsive design, and clear timelines."
         />
         <link rel="canonical" href="https://navwebdesign.com/services" />
       </Helmet>
 
-      <div className="pt-28">
+      <div className="pt-24 lg:pt-28">
 
         {/* ================= HERO ================= */}
         <motion.section
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 text-center"
+          className="page-hero py-20 text-center text-white md:py-28"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -64,7 +64,7 @@ const Services = () => {
               className="text-xl md:text-2xl text-indigo-200 mb-10 leading-relaxed"
               variants={fadeInUp}
             >
-              Transparent website packages for Toronto law firms and high-trust service businesses that need credibility, clear messaging, and more qualified inquiries.
+              Transparent website packages for Toronto lawyers, contractors, consultants, healthcare providers, and service businesses that need credibility and more qualified inquiries.
             </motion.p>
 
             <Button
@@ -356,7 +356,7 @@ const Services = () => {
         )}
 
         {/* ================= CTA ================= */}
-        <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <section className="page-hero py-24 text-white">
           <div className="max-w-5xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-extrabold mb-6">
               Ready to Get More Clients From Your Website?

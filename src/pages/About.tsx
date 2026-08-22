@@ -11,6 +11,7 @@ import {
   Code,
   Layout,
   MessageSquare,
+  MapPin,
   Palette,
   PenTool,
   Rocket,
@@ -61,18 +62,18 @@ const About = () => {
     <>
       <Helmet>
         <title>
-          About | Toronto Web Designer for Law Firms & High-Trust Service Businesses
+          About Nav | Toronto Web Designer for Service Businesses
         </title>
         <meta
           name="description"
-          content="Meet a Toronto web designer creating credible, conversion-focused websites for law firms and high-trust professional service businesses."
+          content="Meet Nav Dhamrait, a Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and service businesses."
         />
         <link rel="canonical" href="https://navwebdesign.com/about" />
       </Helmet>
 
       {/* ================= TOP HERO ================= */}
       <motion.section
-        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-24 mt-12 text-center"
+        className="page-hero mt-24 py-20 text-center text-white md:mt-28 md:py-28"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -92,8 +93,8 @@ const About = () => {
             className="text-xl md:text-2xl text-indigo-200 mb-8 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
-            GTA-based web designer building high-trust websites for law firms,
-            consultants, healthcare providers, and professional service businesses that rely on
+            GTA-based freelance web designer building high-trust websites for lawyers,
+            contractors, consultants, healthcare providers, and service businesses that rely on
             credibility and consistent lead generation.
           </motion.p>
 
@@ -103,23 +104,53 @@ const About = () => {
         </motion.div>
       </motion.section>
 
-      <div className="pt-28">
+      <div>
         {/* ================= ABOUT HERO ================= */}
         <motion.section
-          className="bg-gray-50 py-20"
+          className="bg-slate-50 py-20 lg:py-28"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <motion.img
-              src="/Images/navdeep-dhamrait-optimized.jpg"
-              loading="lazy"
-              decoding="async"
-              alt="GTA web designer for professional service businesses"
-              className="rounded-xl shadow-lg w-full object-cover"
+            <motion.div
+              className="group relative mx-auto w-full max-w-lg"
               variants={fadeInUp}
-            />
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.995 }}
+              transition={{ type: "spring", stiffness: 220, damping: 22 }}
+            >
+              <div className="absolute -left-4 -top-4 h-24 w-24 rounded-[2rem] border-l-2 border-t-2 border-[#5e17eb]/50" aria-hidden="true" />
+              <div className="absolute -bottom-5 -right-5 h-40 w-40 rounded-full bg-indigo-300/30 blur-3xl transition duration-700 group-hover:scale-125" aria-hidden="true" />
+              <div className="relative overflow-hidden rounded-[2rem] border-[6px] border-white bg-white shadow-[0_30px_70px_-38px_rgba(15,23,42,.65)]">
+                <motion.img
+                  src="/Images/navdeep-dhamrait-optimized.jpg"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Nav Dhamrait, GTA web designer for professional service businesses"
+                  className="aspect-[4/5] w-full object-cover"
+                  whileHover={{ scale: 1.045 }}
+                  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent opacity-70 transition duration-500 group-hover:opacity-45" />
+              </div>
+
+              <motion.div
+                className="absolute -bottom-5 left-4 right-4 flex items-center gap-3 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-xl shadow-slate-900/10 backdrop-blur-md sm:left-7 sm:right-auto sm:min-w-64"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.35, duration: 0.5 }}
+              >
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-50 text-[#5e17eb]">
+                  <MapPin className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-xs font-extrabold uppercase tracking-[0.14em] text-[#5e17eb]">Based in the GTA</span>
+                  <span className="mt-0.5 block text-sm font-semibold text-slate-700">Working directly with every client</span>
+                </span>
+              </motion.div>
+            </motion.div>
 
             <div>
               <motion.h2
@@ -134,7 +165,7 @@ const About = () => {
                 variants={fadeInUp}
               >
                 I’m <span className="font-semibold">Nav Dhamrait</span>, a GTA-based web designer
-                helping law firms, consultants, healthcare providers, and professional service businesses
+                helping lawyers, contractors, consultants, healthcare providers, and professional service businesses
                 turn their websites into client acquisition systems.
               </motion.p>
 
@@ -181,21 +212,21 @@ const About = () => {
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 text-left">
-              <Card className="p-6">
+              <Card className="premium-card surface-card p-7">
                 <h3 className="font-semibold mb-2">Trust-First Design</h3>
                 <p className="text-sm text-gray-600">
                   Built to establish credibility instantly for high-trust industries.
                 </p>
               </Card>
 
-              <Card className="p-6">
+              <Card className="premium-card surface-card p-7">
                 <h3 className="font-semibold mb-2">Lead-Focused Structure</h3>
                 <p className="text-sm text-gray-600">
                   Every page is designed to drive qualified inquiries, not just traffic.
                 </p>
               </Card>
 
-              <Card className="p-6">
+              <Card className="premium-card surface-card p-7">
                 <h3 className="font-semibold mb-2">Clear & Professional Execution</h3>
                 <p className="text-sm text-gray-600">
                   No clutter, no confusion — just structured paths to conversion.
@@ -208,16 +239,41 @@ const About = () => {
         {/* ================= STRATEGY IN PRACTICE ================= */}
         <section className="py-20 bg-indigo-50">
           <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
-            <div className="relative">
+            <motion.div
+              className="group relative"
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 blur-xl" aria-hidden="true" />
-              <img
-                src="/Images/web-design-workspace-stock.jpg"
-                alt="Web development workspace with a laptop displaying source code"
-                className="relative w-full h-[420px] rounded-2xl object-cover shadow-xl"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+              <div className="relative overflow-hidden rounded-[2rem] border-[6px] border-white bg-white shadow-[0_30px_70px_-40px_rgba(15,23,42,.6)]">
+                <motion.img
+                  src="/Images/web-design-workspace-stock.jpg"
+                  alt="Web development workspace with a laptop displaying source code"
+                  className="h-[360px] w-full object-cover sm:h-[420px]"
+                  loading="lazy"
+                  decoding="async"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                />
+                <div className="absolute inset-x-5 bottom-5 flex flex-wrap gap-2">
+                  {["Strategy", "Design", "Development"].map((label, index) => (
+                    <motion.span
+                      key={label}
+                      className="rounded-full border border-white/20 bg-slate-950/75 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-md"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.25 + index * 0.1 }}
+                    >
+                      {label}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
 
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#5e17eb] mb-3">
@@ -296,14 +352,14 @@ const About = () => {
         </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
+        <section className="page-hero py-24 text-center text-white">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-4xl font-bold mb-6">
               Let’s Build a Website That Brings You Qualified Clients
             </h2>
 
             <p className="text-indigo-200 mb-8">
-              If you run a law firm or high-trust professional service business in the GTA,
+              If you run a law firm, contracting company, consultancy, healthcare practice, or established service business in the GTA,
               your website should be generating consistent, high-quality inquiries.
             </p>
 

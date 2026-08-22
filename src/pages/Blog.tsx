@@ -28,7 +28,7 @@ const Blog = () => {
   }, [])
 
   return (
-    <div className="pt-28">
+    <div className="pt-24 lg:pt-28">
       <Helmet>
         <title>Blog | Nav Dhamrait — Toronto Web Developer</title>
         <meta
@@ -38,7 +38,7 @@ const Blog = () => {
         <link rel="canonical" href="https://navwebdesign.com/blog" />
       </Helmet>
       <motion.section
-        className="bg-gradient-to-r from-indigo-600 to-purple-600 py-24"
+        className="page-hero py-20 md:py-28"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -72,7 +72,7 @@ const Blog = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="flex flex-col p-6 h-full hover:shadow-lg transition">
+              <Card className="premium-card surface-card flex h-full flex-col p-7">
                 <div className="flex items-center mb-2">
                   <CheckCircle className="h-6 w-6 text-[#5e17eb] mr-2" />
                   <h3 className="text-xl font-semibold text-gray-900">
@@ -84,7 +84,7 @@ const Blog = () => {
                 </div>
                 <p className="text-gray-600 flex-grow">{post.excerpt}</p>
                 <Button
-                 href={`/blog/${post.slug}`} 
+                 to={`/blog/${post.slug}`}
                   variant="secondary"
                   arrow
                   className="px-6 py-3 mt-6 self-start"
@@ -96,7 +96,7 @@ const Blog = () => {
           ))}
         </div>
       </section>
-      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <section className="page-hero py-24 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
             Need a Website That Converts?
@@ -105,13 +105,13 @@ const Blog = () => {
             Let’s build a professional website that helps your business grow and attract more clients.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button to="/contact" className="px-8 py-4 rounded-lg" arrow>
-              Book a Free Strategy Consultation
+            <Button to="/services" className="px-8 py-4" arrow>
+              Explore Website Packages
             </Button>
             <Button
               href="https://calendly.com/navdeep-dhamrait94"
               variant="outline"
-              className="px-8 py-4 rounded-lg"
+              className="px-8 py-4"
               arrow
             >
               Book a Free Strategy Consultation

@@ -18,7 +18,7 @@ const FAQPage = () => {
   }, []);
 
   return (
-    <main className="pt-20 bg-white min-h-screen">
+    <main className="min-h-screen bg-white pt-24 lg:pt-28">
       <Helmet>
         <title>
           FAQ | Web Design Pricing, Process & Timeline Questions Answered
@@ -31,8 +31,8 @@ const FAQPage = () => {
       </Helmet>
 
       {/* HERO */}
-      <section className="text-center py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-        <h1 className="text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+      <section className="page-hero px-6 py-20 text-center text-white md:py-28">
+        <h1 className="mb-5 text-4xl font-black sm:text-5xl lg:text-6xl">Frequently Asked Questions</h1>
         <p className="text-indigo-100 max-w-2xl mx-auto text-lg">
           Everything you need to know about working with me and getting your website built.
         </p>
@@ -57,7 +57,7 @@ const FAQPage = () => {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="border rounded-lg p-5"
+                  className="surface-card overflow-hidden p-5 transition hover:border-indigo-200"
                 >
                   <div
                     className="flex justify-between items-center cursor-pointer"

@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "../components/Button";
+import GoogleReviews from "../components/GoogleReviews";
 import { client } from "../SanityClient/sanityClient";
 import {
   FaCheckCircle,
@@ -34,38 +35,36 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          Toronto Web Design for Law Firms & High-Trust Service Businesses
+          Toronto Web Design for Lawyers, Contractors & Service Businesses
         </title>
         <meta
           name="description"
-          content="Toronto web designer creating high-trust, conversion-focused websites for law firms and professional service businesses across the GTA."
+          content="Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA."
         />
         <link rel="canonical" href="https://navwebdesign.com/" />
       </Helmet>
 
-      <div className="pt-28">
+      <div className="pt-24 lg:pt-28">
         {/* HERO */}
-        <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-32">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        <section className="page-hero text-white">
+          <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-[1.08fr_.92fr] md:py-24 lg:px-10 lg:py-28">
 
             <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
-              {projectCount > 0 && (
-                <p className="text-sm font-semibold text-indigo-200 uppercase tracking-wide mb-4">
-                  Trusted by {projectCount}+ Toronto & GTA Businesses
-                </p>
-              )}
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-indigo-100 backdrop-blur-sm">
+                  {projectCount > 0 ? `Trusted by ${projectCount}+ Toronto & GTA businesses` : "Independent Toronto web designer"}
+              </p>
 
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                Toronto Websites for Law Firms &amp; High-Trust Service Businesses
+              <h1 className="mb-7 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.055em] sm:text-5xl lg:text-6xl xl:text-7xl">
+                Toronto Websites Built to <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-indigo-200">Earn Trust and Generate Leads</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-indigo-200 mb-8">
-                Build credibility quickly, explain complex services clearly, and turn more qualified visitors into calls, bookings, and consultations.
+              <p className="mb-9 max-w-2xl text-lg leading-relaxed text-indigo-100 md:text-xl">
+                Strategic web design for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA—built to turn qualified visitors into calls and consultations.
               </p>
 
               {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button to="/contact" className="px-8 py-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button to="/contact" className="px-8 py-4" arrow>
                   Book a Free Strategy Consultation
                 </Button>
 
@@ -79,25 +78,33 @@ const Home = () => {
               </div>
 
               {/* MICROCOPY */}
-              <p className="text-sm text-indigo-200 mt-4 max-w-lg">
-                Let’s go over your website and identify exactly what’s stopping you from getting more calls and clients.
-              </p>
-
-              <p className="text-sm text-indigo-200 mt-6">
-                Serving Toronto, Brampton, Mississauga & the GTA — helping local service businesses grow online.
-              </p>
+              <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+                <GoogleReviews />
+                <p className="max-w-xs text-sm leading-relaxed text-indigo-200">
+                  Serving Toronto, Brampton, Mississauga and businesses across the GTA.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75, delay: 0.15 }}
+              className="relative"
             >
-              <img
-                src="/Images/torontotower-optimized.jpg"
-                alt="Toronto web design for service businesses"
-                className="rounded-xl shadow-xl w-full h-[420px] md:h-[460px] lg:h-[500px] object-cover"
-                decoding="async"
-              />
+              <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-white/20 to-purple-300/10 blur-2xl" aria-hidden="true" />
+              <div className="premium-image relative overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 p-2 shadow-[0_32px_80px_-25px_rgba(15,23,42,.65)] backdrop-blur-sm">
+                <img
+                  src="/Images/torontotower-optimized.jpg"
+                  alt="Toronto skyline representing web design services across the GTA"
+                  className="h-[380px] w-full rounded-[1.55rem] object-cover sm:h-[460px] md:h-[520px]"
+                  decoding="async"
+                />
+                <div className="absolute inset-x-7 bottom-7 rounded-2xl border border-white/20 bg-[#0f172a]/75 p-5 shadow-xl backdrop-blur-xl">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-200">Work directly with Nav</p>
+                  <p className="mt-2 text-lg font-bold text-white">No account managers. No handoffs. Just focused work.</p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -111,7 +118,7 @@ const Home = () => {
             viewport={revealViewport}
             variants={fadeInUp}
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-center rounded-3xl bg-[#0f172a] text-white p-7 md:p-10 lg:p-12 overflow-hidden shadow-xl">
+            <div className="grid items-center gap-12 overflow-hidden rounded-[2rem] border border-slate-800 bg-[#0f172a] p-7 text-white shadow-[0_35px_80px_-45px_rgba(15,23,42,.75)] md:p-10 lg:grid-cols-2 lg:p-12">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-300 mb-4">
                   Featured case study
@@ -195,7 +202,7 @@ const Home = () => {
               ))}
             </div>
 
-            <figure className="max-w-4xl mx-auto rounded-3xl bg-white border border-indigo-100 px-7 py-8 md:px-12 md:py-10 shadow-lg relative overflow-hidden">
+            <figure className="surface-card relative mx-auto max-w-4xl overflow-hidden px-7 py-8 md:px-12 md:py-10">
               <div className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-indigo-600 to-purple-600" />
               <div className="flex flex-col md:flex-row md:items-start gap-6">
                 <div className="w-12 h-12 rounded-2xl bg-indigo-100 text-[#5e17eb] flex items-center justify-center shrink-0">
@@ -290,7 +297,7 @@ const Home = () => {
                 <br /><br />
                 If your website isn’t optimized for SEO, speed, and conversions, potential clients leave and choose competitors.
                 <br /><br />
-                I build websites for law firms and high-trust service businesses that turn expertise into clear, credible reasons to get in touch.
+                I build websites for lawyers, contractors, consultants, and other service businesses that turn real expertise into clear reasons to get in touch.
               </p>
             </motion.div>
 
@@ -419,7 +426,7 @@ const Home = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <section className="page-hero py-24 text-white">
           <motion.div
             className="max-w-6xl mx-auto px-6 text-center"
             initial="hidden"

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Instagram, ChevronDown } from "lucide-react";
+import { Menu, X, Instagram, ChevronDown, ArrowRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "./Button";
 
 const Navbar = () => {
@@ -62,25 +63,25 @@ const Navbar = () => {
   const isMoreActive = moreLinks.some((item) => isActive(item.href));
 
   return (
-    <nav ref={navRef} aria-label="Primary navigation" className="bg-white shadow-sm border-b border-indigo-100 fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <nav ref={navRef} aria-label="Primary navigation" className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 shadow-[0_10px_40px_-30px_rgba(15,23,42,0.45)] backdrop-blur-xl">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 xl:px-12">
 
         {/* HEIGHT INCREASED */}
-        <div className="flex items-center justify-between h-28">
+        <div className="flex h-24 items-center justify-between lg:h-28">
 
           {/* LOGO (BIGGER + MORE BALANCED) */}
-          <div className="flex items-center flex-shrink-0">
-            <Link to="/" aria-label="Nav Web Design home">
+          <div className="flex min-w-0 flex-shrink-0 items-center">
+            <Link to="/" aria-label="Nav Web Design home" className="group relative block h-20 w-52 overflow-hidden sm:w-60 lg:h-24 lg:w-64">
               <img
                 src="/Images/nav-logo.png"
                 alt="Nav Dhamrait"
-                className="h-[150px] sm:h-[160px] md:h-[180px] w-auto object-contain"
+                className="absolute left-0 top-1/2 h-[165px] w-[165px] max-w-none -translate-y-1/2 object-contain transition-transform duration-300 group-hover:scale-[1.02] sm:h-[180px] sm:w-[180px] lg:h-[205px] lg:w-[205px]"
               />
             </Link>
           </div>
 
           {/* DESKTOP NAV */}
-          <div className="hidden lg:flex items-center space-x-9">
+          <div className="hidden items-center gap-1 xl:flex">
 
             {navigation.map((item) =>
               item.cta ? null : (
@@ -88,10 +89,10 @@ const Navbar = () => {
                   key={item.name}
                   to={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`text-[15px] tracking-wide transition-all duration-200 rounded-lg px-3 py-2 ${
+                  className={`rounded-xl px-4 py-2.5 text-[15px] tracking-[-0.01em] transition-all duration-200 ${
                     isActive(item.href)
-                      ? "font-semibold text-[#5e17eb] bg-indigo-50 shadow-sm ring-1 ring-inset ring-indigo-100"
-                      : "text-gray-700 hover:text-[#5e17eb] hover:bg-indigo-50/60"
+                      ? "bg-indigo-50 font-bold text-[#5e17eb] ring-1 ring-inset ring-indigo-100"
+                      : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#5e17eb]"
                   }`}
                 >
                   {item.name}
@@ -106,7 +107,7 @@ const Navbar = () => {
                 aria-expanded={dropdownOpen}
                 aria-haspopup="true"
                 aria-controls="more-navigation"
-                className={`flex items-center rounded-lg px-3 py-2 text-[15px] font-medium transition-all duration-200 ${
+                className={`flex items-center rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-all duration-200 ${
                   isMoreActive
                     ? "bg-indigo-50 font-semibold text-[#5e17eb] shadow-sm ring-1 ring-inset ring-indigo-100"
                     : "text-gray-700 hover:bg-indigo-50/60 hover:text-[#5e17eb]"
@@ -120,8 +121,9 @@ const Navbar = () => {
                 />
               </button>
 
+              <AnimatePresence>
               {dropdownOpen && (
-                <div id="more-navigation" className="absolute top-10 left-0 bg-white shadow-xl rounded-xl py-2 w-48 border border-gray-100">
+                <motion.div id="more-navigation" initial={{opacity:0,y:-8,scale:.98}} animate={{opacity:1,y:0,scale:1}} exit={{opacity:0,y:-6,scale:.98}} transition={{duration:.18}} className="absolute left-0 top-12 w-52 rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl shadow-slate-900/10">
                   {moreLinks.map((item) => (
                     <Link
                       key={item.name}
@@ -137,20 +139,21 @@ const Navbar = () => {
                       {item.name}
                     </Link>
                   ))}
-                </div>
+                </motion.div>
               )}
+              </AnimatePresence>
             </div>
           </div>
 
           {/* RIGHT SIDE CTA */}
-          <div className="hidden lg:flex items-center space-x-5">
+          <div className="hidden items-center gap-4 xl:flex">
 
             <a
               href="https://www.instagram.com/navdhamraitweb/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Nav Web Design on Instagram"
-              className="text-gray-700 hover:text-[#5e17eb] transition"
+              className="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-slate-600 transition hover:border-indigo-200 hover:bg-indigo-50 hover:text-[#5e17eb]"
             >
               <Instagram className="h-6 w-6" />
             </a>
@@ -159,7 +162,7 @@ const Navbar = () => {
             <Button
               to="/contact"
               variant="secondary"
-              className={`px-7 py-3 text-sm font-semibold shadow-md hover:shadow-lg transition ${
+              className={`px-6 py-3 text-sm ${
                 isActive("/contact") ? "ring-4 ring-indigo-100" : ""
               }`}
             >
@@ -168,13 +171,13 @@ const Navbar = () => {
           </div>
 
           {/* MOBILE */}
-          <div className="lg:hidden flex items-center">
+          <div className="flex items-center xl:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
-              className="p-3 text-gray-700"
+              className="grid h-12 w-12 place-items-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-[#5e17eb]"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -183,9 +186,10 @@ const Navbar = () => {
       </div>
 
       {/* MOBILE MENU */}
+      <AnimatePresence>
       {isOpen && (
-        <div id="mobile-navigation" className="lg:hidden bg-white shadow-lg border-t border-gray-100">
-          <div className="py-5 space-y-2">
+        <motion.div id="mobile-navigation" initial={{opacity:0,height:0}} animate={{opacity:1,height:"auto"}} exit={{opacity:0,height:0}} transition={{duration:.25}} className="overflow-hidden border-t border-slate-100 bg-white shadow-xl xl:hidden">
+          <div className="mx-auto max-w-2xl space-y-1 px-2 py-5">
 
             {[...navigation, ...moreLinks].map((item) => (
               <Link
@@ -195,11 +199,11 @@ const Navbar = () => {
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={`mx-3 block rounded-xl px-5 py-3 text-base font-medium transition ${
                   isActive(item.href)
-                    ? "text-[#5e17eb] bg-indigo-50 shadow-sm border-l-4 border-[#5e17eb]"
+                    ? "bg-indigo-50 text-[#5e17eb] shadow-sm ring-1 ring-inset ring-indigo-100"
                     : "text-gray-700 hover:bg-gray-50 hover:text-[#5e17eb]"
                 }`}
               >
-                {item.name}
+                <span className="flex items-center justify-between">{item.name}<ArrowRight className="h-4 w-4 opacity-50" /></span>
               </Link>
             ))}
 
@@ -222,8 +226,9 @@ const Navbar = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </nav>
   );
 };
