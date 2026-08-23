@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Button } from "../components/Button";
 import { Tabs } from "../components/Tabs";
 import { Card } from "../components/Card";
+import PackageFinder from "../components/PackageFinder";
 
 import { services } from "../data/data";
 
@@ -80,9 +81,12 @@ const Services = () => {
           </motion.div>
         </motion.section>
 
+        <PackageFinder />
+
         {/* ================= TABS ================= */}
         <motion.section
-          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center"
+          id="pricing"
+          className="mx-auto mt-12 max-w-5xl scroll-mt-28 px-4 text-center sm:px-6 lg:px-8"
           initial={fadeInUp.hidden}
           whileInView={fadeInUp.visible}
           viewport={{ once: true }}
@@ -212,7 +216,7 @@ const Services = () => {
 
   {/* Secondary details expand in place instead of lengthening every card. */}
   {(pkg.features.length > 5 || pkg.clientProvides || pkg.notIdealFor || pkg.note) && (
-    <details className="group mt-6 rounded-xl border border-indigo-100 bg-indigo-50/50 open:bg-white">
+    <details data-analytics="package-details" data-package={pkg.title} className="group mt-6 rounded-xl border border-indigo-100 bg-indigo-50/50 open:bg-white">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-[#5e17eb] transition hover:bg-indigo-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5e17eb] [&::-webkit-details-marker]:hidden">
         <span>
           <span className="group-open:hidden">See everything included</span>

@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "../components/Button";
 import GoogleReviews from "../components/GoogleReviews";
+import IndustryPathways from "../components/IndustryPathways";
+import PackageFinder from "../components/PackageFinder";
 import { client } from "../SanityClient/sanityClient";
 import {
   FaCheckCircle,
@@ -228,6 +230,10 @@ const Home = () => {
             </figure>
           </motion.div>
         </section>
+
+        <IndustryPathways />
+
+        <PackageFinder />
 
         {/* TRUST / VALUE */}
         <section className="bg-white py-16 border-b">

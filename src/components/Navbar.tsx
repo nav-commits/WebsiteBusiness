@@ -54,6 +54,7 @@ const Navbar = () => {
   ];
 
   const moreLinks = [
+    { name: "Industries", href: "/industries" },
     { name: "Testimonials", href: "/testimonials" },
     { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "/faq" },

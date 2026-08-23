@@ -9,7 +9,7 @@ const resetScroll = () => {
 };
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     const previousScrollRestoration = window.history.scrollRestoration;
@@ -49,19 +49,34 @@ const ScrollToTop = () => {
   }, []);
 
   useEffect(() => {
-    resetScroll();
-    const frame = window.requestAnimationFrame(resetScroll);
-    const timeout = window.setTimeout(() => {
+    const scrollToDestination = () => {
+      if (hash) {
+        const destination = document.getElementById(hash.slice(1));
+        if (destination) {
+          document.documentElement.classList.add("route-scroll-reset");
+          destination.scrollIntoView({ block: "start", behavior: "auto" });
+          return;
+        }
+      }
+
       resetScroll();
+    };
+
+    resetScroll();
+    const frame = window.requestAnimationFrame(scrollToDestination);
+    const timeout = window.setTimeout(scrollToDestination, 150);
+    const lateTimeout = window.setTimeout(() => {
+      scrollToDestination();
       document.documentElement.classList.remove("route-scroll-reset");
-    }, 150);
+    }, hash ? 500 : 180);
 
     return () => {
       window.cancelAnimationFrame(frame);
       window.clearTimeout(timeout);
+      window.clearTimeout(lateTimeout);
       document.documentElement.classList.remove("route-scroll-reset");
     };
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 };

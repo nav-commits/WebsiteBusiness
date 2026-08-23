@@ -15,6 +15,8 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 const FAQPage = lazy(() => import("./pages/FAQ"));
+const Industries = lazy(() => import("./pages/Industries"));
+const IndustryDetail = lazy(() => import("./pages/IndustryDetail"));
 
 import { useAnalytics } from "./useAnalystics";
 
@@ -48,6 +50,8 @@ function App() {
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/industries/:slug" element={<IndustryDetail />} />
             <Route
               path="*"
               element={<div className="pt-80 text-center">Page Not Found</div>}

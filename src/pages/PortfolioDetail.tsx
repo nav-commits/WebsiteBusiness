@@ -18,6 +18,19 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
+const industrySlugByProject: Record<string, { slug: string; label: string }> = {
+  "mars-law": { slug: "lawyers", label: "law firms" },
+  "psr-law": { slug: "lawyers", label: "law firms" },
+  "vik-ghankas-law-group": { slug: "lawyers", label: "law firms" },
+  "axis-health-centre": { slug: "healthcare", label: "healthcare providers" },
+  genpathwayx: { slug: "healthcare", label: "healthcare providers" },
+  "restore-health": { slug: "healthcare", label: "healthcare providers" },
+  "the-healing-hive": { slug: "healthcare", label: "healthcare providers" },
+  "markat-group-inc": { slug: "consultants", label: "consultants" },
+  "ajay-kalha-tax-services": { slug: "consultants", label: "consultants" },
+  "container-storage-solutions": { slug: "contractors", label: "service businesses" },
+};
+
 const PortfolioDetail = () => {
   const { slug } = useParams();
   const [project, setProject] = useState<PortfolioProject | null | undefined>(
@@ -66,6 +79,7 @@ const PortfolioDetail = () => {
   }
 
   const enrichment = slug ? portfolioDetails[slug] : undefined;
+  const relatedIndustry = slug ? industrySlugByProject[slug] : undefined;
 
   return (
     <div className="pt-28">
@@ -185,11 +199,11 @@ const PortfolioDetail = () => {
             </Button>
 
             <Button
-              href="https://calendly.com/navdeep-dhamrait94"
+              to={relatedIndustry ? `/industries/${relatedIndustry.slug}` : "/services"}
               variant="outline"
               className="px-8 py-4"
             >
-              Book a Free Strategy Consultation
+              {relatedIndustry ? `Web Design for ${relatedIndustry.label}` : "Explore Services & Pricing"}
             </Button>
           </div>
         </div>

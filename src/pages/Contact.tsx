@@ -4,6 +4,7 @@ import { Send, Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
+import { useSearchParams } from "react-router-dom";
 
 import { Card } from "../components/Card";
 import { Button } from "../components/Button";
@@ -15,6 +16,9 @@ type FormData = {
   service?: string;
   budget?: string;
   message: string;
+  recommendedPackage?: string;
+  industry?: string;
+  source?: string;
 };
 
 type EmailJSError = {
@@ -24,13 +28,28 @@ type EmailJSError = {
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
+  const hasTrackedFormStart = useRef(false);
+  const [searchParams] = useSearchParams();
+  const suggestedService = searchParams.get("service") || "";
+  const suggestedBudget = searchParams.get("budget") || "";
+  const recommendedPackage = searchParams.get("package") || "";
+  const suggestedIndustry = searchParams.get("industry") || "";
+  const referralSource = searchParams.get("source") || "";
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<FormData>();
+  } = useForm<FormData>({
+    defaultValues: {
+      service: suggestedService,
+      budget: suggestedBudget,
+      recommendedPackage,
+      industry: suggestedIndustry,
+      source: referralSource,
+    },
+  });
 
   // App already owns route-level pageview tracking. This instance is only
   // used for the successful lead event.
@@ -62,6 +81,9 @@ const Contact = () => {
           from_email: data.email,
           service: data.service || "Not specified",
           budget: data.budget || "Not specified",
+          recommended_package: data.recommendedPackage || "Not specified",
+          industry: data.industry || "Not specified",
+          lead_source: data.source || "Direct contact page",
           message: data.message,
           submitted_at: new Date().toLocaleString("en-CA", {
             timeZone: "America/Toronto",
@@ -166,8 +188,20 @@ const Contact = () => {
               <form
                 ref={formRef}
                 onSubmit={handleSubmit(onSubmit)}
+                onFocus={() => {
+                  if (hasTrackedFormStart.current) return;
+                  hasTrackedFormStart.current = true;
+                  trackEvent("form_start", {
+                    form_name: "contact_form",
+                    source: referralSource || "direct",
+                    recommended_package: recommendedPackage || undefined,
+                  });
+                }}
                 className="space-y-6"
               >
+                <input type="hidden" {...register("recommendedPackage")} />
+                <input type="hidden" {...register("industry")} />
+                <input type="hidden" {...register("source")} />
                 {/* NAME */}
                 <label htmlFor="contact-name" className="block text-sm font-medium text-gray-800 mb-2">
                   Name
@@ -230,7 +264,6 @@ const Contact = () => {
                     </label>
                     <select
                       id="contact-service"
-                      defaultValue=""
                       {...register("service")}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white outline-none transition focus:ring-2 focus:ring-[#5e17eb]"
                     >
@@ -249,7 +282,6 @@ const Contact = () => {
                     </label>
                     <select
                       id="contact-budget"
-                      defaultValue=""
                       {...register("budget")}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white outline-none transition focus:ring-2 focus:ring-[#5e17eb]"
                     >
