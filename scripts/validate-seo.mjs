@@ -33,6 +33,15 @@ for (const route of seoRoutes) {
   if (!html.includes(`href="${expectedCanonical}"`)) {
     errors.push(`${route.path}: canonical URL does not match the route`);
   }
+  if (!html.includes('href="/favicon.svg"')) {
+    errors.push(`${route.path}: expected favicon link`);
+  }
+  if (!html.includes('name="viewport"')) {
+    errors.push(`${route.path}: expected viewport metadata`);
+  }
+  if (!html.includes('href="/site.webmanifest"')) {
+    errors.push(`${route.path}: expected web manifest link`);
+  }
   if (!html.includes('<div id="root">') || html.includes('<div id="root"></div>')) {
     errors.push(`${route.path}: expected server-rendered body content`);
   }

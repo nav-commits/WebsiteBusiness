@@ -124,12 +124,12 @@ const pageSchemas = (route) => {
 
 const removeRouteMetadata = (html) =>
   html
-    .replace(/<title>[\s\S]*?<\/title>\s*/i, "")
+    .replace(/<title\b[^>]*>[\s\S]*?<\/title>\s*/i, "")
     .replace(
-      /<meta[\s\S]*?(?:name|property)=["'](?:description|robots|og:type|og:site_name|og:title|og:description|og:url|og:image|twitter:card|twitter:title|twitter:description|twitter:image)["'][\s\S]*?>\s*/gi,
+      /<meta\b[^>]*(?:name|property)=["'](?:description|robots|og:type|og:site_name|og:title|og:description|og:url|og:image|twitter:card|twitter:title|twitter:description|twitter:image)["'][^>]*>\s*/gi,
       ""
     )
-    .replace(/<link[\s\S]*?rel=["']canonical["'][\s\S]*?>\s*/gi, "");
+    .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>\s*/gi, "");
 
 const routeHead = (route, { noindex = false } = {}) => {
   const canonical = `${siteUrl}${route.path === "/" ? "/" : route.path}`;
