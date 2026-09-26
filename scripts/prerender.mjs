@@ -1,13 +1,14 @@
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import {
   LAST_SIGNIFICANT_UPDATE,
   defaultSocialImage,
   seoRoutes,
 } from "./seo-routes.mjs";
 
-const projectRoot = resolve(import.meta.dirname, "..");
+const scriptDir = dirname(fileURLToPath(import.meta.url));
+const projectRoot = resolve(scriptDir, "..");
 const distDir = resolve(projectRoot, "dist");
 const serverDir = resolve(projectRoot, "dist-server");
 const templatePath = resolve(distDir, "index.html");

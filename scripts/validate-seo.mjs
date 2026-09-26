@@ -1,8 +1,10 @@
 import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { seoRoutes } from "./seo-routes.mjs";
 
-const distDir = resolve(import.meta.dirname, "..", "dist");
+const scriptDir = dirname(fileURLToPath(import.meta.url));
+const distDir = resolve(scriptDir, "..", "dist");
 const siteUrl = "https://navwebdesign.com";
 
 const outputPathFor = (routePath) =>
