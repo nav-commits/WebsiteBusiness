@@ -30,7 +30,7 @@ const IndustryDetail = () => {
   return (
     <div className="pt-24 lg:pt-28">
       <Helmet>
-        <title>{industry.label} | Nav Web Design</title>
+        <title>{industry.seoTitle}</title>
         <meta name="description" content={industry.metaDescription} />
         <link rel="canonical" href={`https://navwebdesign.com/industries/${industry.slug}`} />
       </Helmet>

@@ -30,10 +30,10 @@ const Blog = () => {
   return (
     <div className="pt-24 lg:pt-28">
       <Helmet>
-        <title>Blog | Nav Dhamrait — Toronto Web Developer</title>
+        <title>Toronto Web Design & SEO Insights | Nav Web Design</title>
         <meta
           name="description"
-          content="Web design, SEO, and marketing insights for local businesses by Nav Dhamrait."
+          content="Practical web design, local SEO, and website conversion insights for Toronto and GTA service businesses from freelance web designer Nav Dhamrait."
         />
         <link rel="canonical" href="https://navwebdesign.com/blog" />
       </Helmet>
@@ -49,7 +49,7 @@ const Blog = () => {
             className="text-4xl md:text-5xl font-bold text-white mb-6"
             variants={fadeInUp}
           >
-            Blog
+            Toronto Web Design & SEO Insights
           </motion.h1>
           <motion.p
             className="text-lg text-indigo-200 max-w-2xl mx-auto"

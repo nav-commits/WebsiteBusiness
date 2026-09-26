@@ -20,19 +20,17 @@ const FAQPage = () => {
   return (
     <main className="min-h-screen bg-white pt-24 lg:pt-28">
       <Helmet>
-        <title>
-          FAQ | Web Design Pricing, Process & Timeline Questions Answered
-        </title>
+        <title>Web Design Pricing, Process & Timeline FAQ | Toronto</title>
         <meta
           name="description"
-          content="Answers to common questions about pricing, timelines, and the process of building a lead-generating website with a Toronto & GTA web designer."
+          content="Get answers about Toronto web design pricing, project timelines, SEO foundations, website ownership, revisions, and working directly with Nav Dhamrait."
         />
         <link rel="canonical" href="https://navwebdesign.com/faq" />
       </Helmet>
 
       {/* HERO */}
       <section className="page-hero px-6 py-20 text-center text-white md:py-28">
-        <h1 className="mb-5 text-4xl font-black sm:text-5xl lg:text-6xl">Frequently Asked Questions</h1>
+        <h1 className="mb-5 text-4xl font-black sm:text-5xl lg:text-6xl">Toronto Web Design FAQs</h1>
         <p className="text-indigo-100 max-w-2xl mx-auto text-lg">
           Everything you need to know about working with me and getting your website built.
         </p>

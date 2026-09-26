@@ -31,12 +31,10 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Toronto Web Design Packages for Lawyers, Contractors & Service Businesses
-        </title>
+        <title>Toronto Web Design Services & Pricing | Nav Web Design</title>
         <meta
           name="description"
-          content="Transparent Toronto web design packages for lawyers, contractors, consultants, healthcare providers, and service businesses. Local SEO, responsive design, and clear timelines."
+          content="Explore transparent Toronto web design services and pricing for lawyers, contractors, consultants, healthcare providers, and established service businesses."
         />
         <link rel="canonical" href="https://navwebdesign.com/services" />
       </Helmet>
@@ -58,14 +56,14 @@ const Services = () => {
               className="text-4xl md:text-5xl font-extrabold mb-6"
               variants={fadeInUp}
             >
-              Websites Built for Trust, Qualified Leads & Growth
+              Toronto Web Design Services Built for Trust & Growth
             </motion.h1>
 
             <motion.p
               className="text-xl md:text-2xl text-indigo-200 mb-10 leading-relaxed"
               variants={fadeInUp}
             >
-              Transparent website packages for Toronto lawyers, contractors, consultants, healthcare providers, and service businesses that need credibility and more qualified inquiries.
+              Transparent website design packages and pricing for Toronto lawyers, contractors, consultants, healthcare providers, and service businesses that need credibility and more qualified inquiries.
             </motion.p>
 
             <Button

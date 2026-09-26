@@ -61,12 +61,10 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>
-          About Nav | Toronto Web Designer for Service Businesses
-        </title>
+        <title>Freelance Web Designer Toronto | About Nav Dhamrait</title>
         <meta
           name="description"
-          content="Meet Nav Dhamrait, a Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and service businesses."
+          content="Meet Nav Dhamrait, a freelance Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and service businesses."
         />
         <link rel="canonical" href="https://navwebdesign.com/about" />
       </Helmet>
@@ -86,7 +84,7 @@ const About = () => {
             className="text-4xl md:text-5xl font-extrabold mb-6"
             variants={fadeInUp}
           >
-            About
+            Freelance Web Designer in Toronto
           </motion.h1>
 
           <motion.p

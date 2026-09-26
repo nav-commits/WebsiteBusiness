@@ -4,4 +4,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/", // Set to "/your-repo-name/" if needed
+  ssr: {
+    noExternal: ["react-helmet-async"],
+  },
 });

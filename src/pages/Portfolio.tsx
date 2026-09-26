@@ -43,9 +43,7 @@ const Portfolio = () => {
     <div className="pt-24 lg:pt-28">
       {/* ================= SEO ================= */}
       <Helmet>
-        <title>
-          Toronto Web Design Portfolio | Websites That Generate Leads
-        </title>
+        <title>Toronto Web Design Portfolio | Nav Web Design</title>
         <meta
           name="description"
           content="Explore Toronto web design work for lawyers, contractors, healthcare providers, consultants, and established service businesses."

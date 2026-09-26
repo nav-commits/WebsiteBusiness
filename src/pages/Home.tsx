@@ -36,9 +36,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Toronto Web Design for Lawyers, Contractors & Service Businesses
-        </title>
+        <title>Toronto Web Design for Service Businesses | Nav Dhamrait</title>
         <meta
           name="description"
           content="Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA."
@@ -57,7 +55,7 @@ const Home = () => {
               </p>
 
               <h1 className="mb-7 max-w-3xl overflow-visible pr-2 text-4xl font-black leading-[1.02] tracking-[-0.015em] sm:pr-3 sm:text-5xl sm:tracking-[-0.025em] lg:text-6xl xl:text-7xl">
-                Toronto <span className="inline-block pr-2">Websites</span> Built to <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-indigo-200">Earn Trust and Generate Leads</span>
+                Toronto <span className="inline-block pr-2">Web Design</span> Built to <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-indigo-200">Earn Trust and Generate Leads</span>
               </h1>
 
               <p className="mx-auto mb-9 max-w-2xl text-lg leading-relaxed text-indigo-100 md:mx-0 md:text-xl">

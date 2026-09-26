@@ -9,6 +9,7 @@ import { createImageUrlBuilder } from "@sanity/image-url";
 import { PortfolioProject } from "../types/PortfolioProject/PortfolioProject";
 import { slugify } from "../utils/slugify";
 import { portfolioDetails } from "../data/portfolioDetails";
+import { portfolioSeoFallbacks } from "../data/seoFallbacks";
 
 const builder = createImageUrlBuilder(client);
 const urlFor = (source: string) => builder.image(source);
@@ -36,6 +37,7 @@ const PortfolioDetail = () => {
   const [project, setProject] = useState<PortfolioProject | null | undefined>(
     undefined
   );
+  const seoFallback = slug ? portfolioSeoFallbacks[slug] : undefined;
 
   useEffect(() => {
     if (!slug) return;
@@ -61,8 +63,24 @@ const PortfolioDetail = () => {
 
   if (project === undefined) {
     return (
-      <div className="max-w-4xl mx-auto py-20 px-6 text-center">
-        <p>Loading...</p>
+      <div className="pt-28" aria-busy="true">
+        <Helmet>
+          <title>{seoFallback?.title || "Website Project"} | Toronto Web Design Case Study</title>
+          <meta
+            name="description"
+            content={seoFallback?.description || "Explore a Toronto web design case study from Nav Web Design."}
+          />
+          {slug && <link rel="canonical" href={`https://navwebdesign.com/portfolio/${slug}`} />}
+        </Helmet>
+        <section className="page-hero py-20 text-center text-white md:py-28">
+          <div className="mx-auto max-w-4xl px-6">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-indigo-200">Website case study</p>
+            <h1 className="text-4xl font-black md:text-5xl">{seoFallback?.title || "Website Project"}</h1>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-indigo-100">
+              {seoFallback?.description || "Loading the full project details…"}
+            </p>
+          </div>
+        </section>
       </div>
     );
   }

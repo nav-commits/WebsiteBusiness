@@ -2,6 +2,7 @@ export type IndustryPageData = {
   slug: string;
   shortName: string;
   label: string;
+  seoTitle: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -20,6 +21,7 @@ export const industryPages: IndustryPageData[] = [
     slug: "lawyers",
     shortName: "Law firms",
     label: "Web Design for Toronto Lawyers",
+    seoTitle: "Law Firm Web Design Toronto | Nav Web Design",
     eyebrow: "Legal website design",
     title: "Law Firm Websites Built to Earn Trust Before the First Call",
     description:
@@ -93,6 +95,7 @@ export const industryPages: IndustryPageData[] = [
     slug: "contractors",
     shortName: "Contractors",
     label: "Web Design for Toronto Contractors",
+    seoTitle: "Contractor Website Design Toronto | Nav Web Design",
     eyebrow: "Contractor website design",
     title: "Contractor Websites Built to Turn Local Searches Into Quote Requests",
     description:
@@ -156,6 +159,7 @@ export const industryPages: IndustryPageData[] = [
     slug: "healthcare",
     shortName: "Healthcare",
     label: "Web Design for GTA Healthcare Providers",
+    seoTitle: "Healthcare Website Design Toronto | Nav Web Design",
     eyebrow: "Healthcare website design",
     title: "Healthcare Websites That Make the Next Step Feel Clear and Reassuring",
     description:
@@ -229,6 +233,7 @@ export const industryPages: IndustryPageData[] = [
     slug: "consultants",
     shortName: "Consultants",
     label: "Web Design for Toronto Consultants",
+    seoTitle: "Consultant Website Design Toronto | Nav Web Design",
     eyebrow: "Consulting website design",
     title: "Consulting Websites That Turn Complex Expertise Into a Clear Reason to Call",
     description:

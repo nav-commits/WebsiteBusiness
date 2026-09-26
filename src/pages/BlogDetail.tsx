@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { client } from "../SanityClient/sanityClient";
 import { PortableText } from "@portabletext/react";
 import { BlogPost } from "../types/BlogPost/blogPost";
+import { blogSeoFallbacks } from "../data/seoFallbacks";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -15,6 +16,7 @@ const fadeInUp = {
 const BlogDetail = () => {
   const { slug } = useParams();
   const [post, setPost] = useState<BlogPost | null>(null);
+  const seoFallback = slug ? blogSeoFallbacks[slug] : undefined;
   useEffect(() => {
     if (!slug) return;
     client
@@ -35,15 +37,31 @@ const BlogDetail = () => {
   }, [slug]);
   if (!post) {
     return (
-      <div className="max-w-4xl mx-auto py-20 px-6 text-center">
-        <p>Loading...</p>
+      <div className="pt-28" aria-busy="true">
+        <Helmet>
+          <title>{seoFallback?.title || "Web Design Insight"} | Nav Web Design</title>
+          <meta
+            name="description"
+            content={seoFallback?.description || "Practical web design and SEO guidance for Toronto service businesses."}
+          />
+          {slug && <link rel="canonical" href={`https://navwebdesign.com/blog/${slug}`} />}
+        </Helmet>
+        <section className="page-hero py-20 text-center text-white md:py-28">
+          <div className="mx-auto max-w-4xl px-6">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-indigo-200">Web design insight</p>
+            <h1 className="text-4xl font-black md:text-5xl">{seoFallback?.title || "Web Design Insight"}</h1>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-indigo-100">
+              {seoFallback?.description || "Loading the full article…"}
+            </p>
+          </div>
+        </section>
       </div>
     );
   }
   return (
     <div className="pt-28">
       <Helmet>
-        <title>{post.title} | Nav Dhamrait</title>
+        <title>{post.title} | Nav Web Design</title>
         <meta name="description" content={post.excerpt} />
         <link
           rel="canonical"

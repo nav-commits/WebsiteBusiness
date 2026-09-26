@@ -123,12 +123,10 @@ const Contact = () => {
   return (
     <main className="pt-24 lg:pt-28">
       <Helmet>
-        <title>
-          Contact | Book a Free Web Design Consultation in Toronto & the GTA
-        </title>
+        <title>Contact a Toronto Web Designer | Free Strategy Call</title>
         <meta
           name="description"
-          content="Book a free Toronto web design consultation for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA."
+          content="Book a free website strategy consultation with Toronto web designer Nav Dhamrait for a new website, redesign, or conversion-focused web design project."
         />
         <link rel="canonical" href="https://navwebdesign.com/contact" />
       </Helmet>
@@ -142,7 +140,7 @@ const Contact = () => {
         variants={fadeInUp}
       >
         <h1 className="text-5xl font-extrabold mb-6">
-          Let’s Talk About Your Website
+          Talk to a Toronto Web Designer
         </h1>
 
         <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
