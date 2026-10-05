@@ -275,7 +275,7 @@ const Home = () => {
                 <FaComments className="text-indigo-600 text-2xl mb-3" />
                 <h3 className="font-semibold mb-1">Direct Communication</h3>
                 <p className="text-sm text-gray-600">
-                  Work directly with a freelancer — no agency delays.
+                  Discuss your project directly with the person designing and building it.
                 </p>
               </div>
             </div>
@@ -293,11 +293,11 @@ const Home = () => {
 
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Most Toronto Websites Don’t Bring In Clients
+                Does Your Website Reflect the Quality of Your Business?
               </h2>
 
               <p className="text-gray-700 text-lg leading-relaxed">
-                Most service business websites in Toronto look fine — but don’t generate real leads.
+                An outdated website, unclear services, or a difficult inquiry process can make it harder for visitors to choose your business.
                 <br /><br />
                 If your website isn’t optimized for SEO, speed, and conversions, potential clients leave and choose competitors.
                 <br /><br />
@@ -350,7 +350,7 @@ const Home = () => {
                     Local SEO Optimization
                   </h3>
                   <p className="text-gray-700 text-sm">
-                    Rank higher on Google in Toronto, Brampton & GTA searches.
+                    On-page SEO foundations that help search engines understand your services and locations.
                   </p>
                 </div>
               </div>
@@ -398,11 +398,11 @@ const Home = () => {
             variants={fadeInUp}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why Work With a Freelance Web Designer Instead of an Agency?
+              Work Directly With the Person Building Your Website
             </h2>
 
             <p className="text-gray-700 text-lg mb-12">
-              Agencies focus on volume — I focus on results. Every website is built to generate real leads for Toronto service businesses.
+              Work with Nav on a new website or a redesign, with a clear scope and a practical plan for helping visitors understand your services and get in touch.
             </p>
 
             <div className="grid md:grid-cols-2 gap-10 text-left">
@@ -410,19 +410,19 @@ const Home = () => {
                 <h3 className="font-semibold mb-6 text-xl">Working With Me</h3>
                 <ul className="space-y-3">
                   <li>✔️ Direct communication</li>
-                  <li>✔️ Faster turnaround</li>
+                  <li>✔️ Agreed milestones and review rounds</li>
                   <li>✔️ Honest pricing</li>
                   <li>✔️ Focused on results</li>
                 </ul>
               </div>
 
               <div className="premium-card bg-white p-8 rounded-xl shadow border">
-                <h3 className="font-semibold mb-6 text-xl">Agencies</h3>
+                <h3 className="font-semibold mb-6 text-xl">Built Around Your Business</h3>
                 <ul className="space-y-3">
-                  <li>❌ Expensive retainers</li>
-                  <li>❌ Slow communication</li>
-                  <li>❌ Generic templates</li>
-                  <li>❌ Low ROI focus</li>
+                  <li>✔️ Clear service information and client proof</li>
+                  <li>✔️ Easy quote requests or consultation bookings</li>
+                  <li>✔️ Mobile usability and SEO foundations</li>
+                  <li>✔️ Optional support after launch</li>
                 </ul>
               </div>
             </div>
@@ -439,11 +439,11 @@ const Home = () => {
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold mb-6">
-              Turn Your Website Into a Lead Machine
+              Give Customers a Clear Reason to Choose You
             </h2>
 
             <p className="text-indigo-200 mb-8">
-              I help Toronto service businesses turn websites into consistent sources of leads and revenue.
+              Build or redesign your website so visitors can understand your expertise, see your work, and take the next step with confidence.
             </p>
 
             <Button to="/contact" className="px-8 py-4">

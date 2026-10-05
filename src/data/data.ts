@@ -43,7 +43,7 @@ export const services: ServiceOffer[] = [
       "Mobile-friendly responsive design",
       "Professional custom layout tailored to your business",
       "Contact form setup",
-      "Basic on-page SEO",
+      "On-page SEO: page titles, descriptions, and heading structure",
       "Website speed optimization",
       "Google Analytics setup",
       "Google Search Console connection",
@@ -86,7 +86,7 @@ export const services: ServiceOffer[] = [
     ],
     timeline: "4–6 weeks",
     outcome:
-      "A conversion-focused website structured to attract qualified visitors and move them toward an inquiry.",
+      "A website that helps qualified visitors understand your services and move toward an inquiry or booking.",
     bestFor:
       "Law firms and high-trust service businesses that depend on qualified calls, bookings, or consultations.",
     notIdealFor:
@@ -102,14 +102,14 @@ export const services: ServiceOffer[] = [
       "Everything in Lead Generation Website",
       "Up to 15 pages",
       "Fully custom website design",
-      "Advanced integrations",
-      "Custom booking systems",
-      "Multiple landing pages",
+      "Integrations defined in your project scope",
+      "Booking workflows scoped to your requirements",
+      "Landing pages within the agreed page allowance",
       "Advanced tracking & reporting",
       "SEO strategy recommendations",
       "Performance optimization",
       "Priority support",
-      "Faster turnaround",
+      "Project milestones agreed before work begins",
       "4 rounds of revisions",
     ],
     bestFor:
@@ -118,6 +118,8 @@ export const services: ServiceOffer[] = [
       "A scalable website platform for multiple services, campaigns, locations, and advanced customer journeys.",
     notIdealFor:
       "Early-stage businesses that only need a small informational website.",
+    note:
+      "Starting price depends on complexity. Bespoke software, integrations, migration work, and third-party subscriptions are itemized in your proposal.",
   },
 
   // ================= CARE PLANS =================
@@ -125,18 +127,18 @@ export const services: ServiceOffer[] = [
   {
     category: "care",
     title: "Basic Care Plan",
-    tagline: "Keep your website secure and updated",
+    tagline: "Routine website maintenance and small updates",
     price: "$49/month",
     features: [
       "Website updates",
-      "Regular backups",
-      "Security monitoring",
+      "Backup arrangements for your website platform",
+      "Routine security checks",
       "Software/plugin updates",
       "Minor content changes",
       "Website health checks",
     ],
     note:
-      "Minor updates include small text or image changes. Larger changes are quoted separately.",
+      "Small text or image edits within an agreed monthly allowance. Your care agreement specifies included time, backup frequency, response times, and any hosting or software costs. Larger changes are quoted separately.",
   },
 
   {
@@ -146,32 +148,36 @@ export const services: ServiceOffer[] = [
     price: "$149/month",
     features: [
       "Everything in Basic",
-      "Monthly website improvements",
+      "A prioritized monthly website improvement plan",
       "Performance optimization",
       "Conversion improvements",
-      "SEO improvements",
+      "On-page SEO refinements within the agreed scope",
       "Analytics review",
       "Recommendations to increase inquiries",
-      "Ongoing website improvements",
+      "Work completed within your monthly allowance",
     ],
     bestFor:
       "Businesses that want their website to continue improving after launch.",
+    note:
+      "Monthly tasks and included time are agreed before the plan starts. This is website care, not a full ongoing SEO or advertising service; extra work is quoted separately.",
   },
 
   {
     category: "care",
     title: "Scale Care Plan",
-    tagline: "Complete growth support",
+    tagline: "Website support for a broader scope",
     price: "$250+/month",
     features: [
       "Everything in Growth",
       "Priority support",
-      "Landing page creation",
+      "Landing page work scoped in your care agreement",
       "Advanced website improvements",
-      "Campaign support",
+      "Website support for your campaigns",
       "Ongoing conversion optimization",
       "Strategy calls",
       "Custom growth recommendations",
     ],
+    note:
+      "From $250/month, with a written scope and monthly work allowance. New pages, integrations, and strategy calls are included only as specified. Advertising spend and campaign management are not included.",
   },
 ];

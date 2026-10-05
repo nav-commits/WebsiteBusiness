@@ -81,6 +81,26 @@ const Services = () => {
 
         <PackageFinder />
 
+        <section aria-labelledby="project-scope-heading" className="max-w-6xl mx-auto px-6 py-12">
+          <h2 id="project-scope-heading" className="text-3xl font-bold text-gray-900 mb-6">
+            New websites and redesigns, with a clear scope
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-xl border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold mb-3">Already have a website?</h3>
+              <p className="text-gray-600">A redesign can improve service information, mobile usability, and the path to an inquiry. We review your existing content, URLs, and integrations before deciding what to keep or rebuild. Migration and redirect work are scoped in your proposal.</p>
+            </div>
+            <div className="rounded-xl border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold mb-3">What website SEO includes</h3>
+              <p className="text-gray-600">Packages include on-page SEO foundations and search setup as listed. Ongoing content, Google Business Profile management, link building, and paid advertising require a separate scope. Rankings, traffic, and inquiry volumes are not guaranteed.</p>
+            </div>
+            <div className="rounded-xl border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold mb-3">Know the full commitment</h3>
+              <p className="text-gray-600">The proposal confirms content responsibilities, any copywriting, ownership and account access, hosting and subscription costs, applicable taxes, payment milestones, and post-launch support before work begins.</p>
+            </div>
+          </div>
+        </section>
+
         {/* ================= TABS ================= */}
         <motion.section
           id="pricing"
@@ -111,6 +131,13 @@ const Services = () => {
           <p className="mt-6 text-sm text-gray-600">
             All prices are in Canadian dollars. Final scope is confirmed before work begins—no surprise fees.
           </p>
+          {activeTab === "care" && (
+            <p className="mt-4 mx-auto max-w-3xl rounded-xl bg-indigo-50 p-4 text-sm text-gray-700">
+              Care plans have an agreed monthly work allowance, not unlimited edits.
+              Included tasks, response times, backup arrangements, and recurring costs
+              are confirmed in your care agreement. Additional work is quoted before it begins.
+            </p>
+          )}
         </motion.section>
 
         {/* ================= PACKAGES / CARE GRID ================= */}
