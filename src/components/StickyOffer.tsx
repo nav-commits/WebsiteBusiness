@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 
 const STORAGE_KEY = "strategyConsultationOfferDismissed";
-const SHOW_DELAY_MS = 8000;
 
 const StickyOffer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,30 +11,9 @@ const StickyOffer = () => {
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) return;
 
-    let delayHasElapsed = false;
-
-    const maybeShowOffer = () => {
-      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollProgress = pageHeight > 0 ? window.scrollY / pageHeight : 0;
-
-      if (delayHasElapsed && scrollProgress >= 0.25) {
-        setIsVisible(true);
-        requestAnimationFrame(() => setHasEntered(true));
-        window.removeEventListener("scroll", maybeShowOffer);
-      }
-    };
-
-    const showTimer = window.setTimeout(() => {
-      delayHasElapsed = true;
-      maybeShowOffer();
-    }, SHOW_DELAY_MS);
-
-    window.addEventListener("scroll", maybeShowOffer, { passive: true });
-
-    return () => {
-      window.clearTimeout(showTimer);
-      window.removeEventListener("scroll", maybeShowOffer);
-    };
+    setIsVisible(true);
+    const animationFrame = requestAnimationFrame(() => setHasEntered(true));
+    return () => cancelAnimationFrame(animationFrame);
   }, []);
 
   const handleClose = () => {

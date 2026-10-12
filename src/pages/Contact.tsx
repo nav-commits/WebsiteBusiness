@@ -206,6 +206,7 @@ const Contact = () => {
                 <input type="hidden" {...register("industry")} />
                 <input type="hidden" {...register("source")} />
                 {/* NAME */}
+                <div>
                 <label htmlFor="contact-name" className="block text-sm font-medium text-gray-800 mb-2">
                   Name
                 </label>
@@ -231,8 +232,10 @@ const Contact = () => {
                     {errors.name.message}
                   </p>
                 )}
+                </div>
 
                 {/* EMAIL */}
+                <div>
                 <label htmlFor="contact-email" className="block text-sm font-medium text-gray-800 mb-2">
                   Email
                 </label>
@@ -259,6 +262,7 @@ const Contact = () => {
                     {errors.email.message}
                   </p>
                 )}
+                </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
@@ -299,6 +303,7 @@ const Contact = () => {
                 </div>
 
                 {/* MESSAGE */}
+                <div>
                 <label htmlFor="contact-message" className="block text-sm font-medium text-gray-800 mb-2">
                   Project details
                 </label>
@@ -330,26 +335,27 @@ const Contact = () => {
                     {errors.message.message}
                   </p>
                 )}
+                </div>
 
                 {/* CONTACT INFO */}
-                <div className="flex flex-col sm:flex-row gap-4 text-gray-700 mt-4">
+                <div className="grid grid-cols-1 gap-3 rounded-xl bg-slate-50 p-4 text-sm text-gray-700">
                   <div className="flex items-center gap-2">
-                    <Phone className="h-5 w-5 text-[#5e17eb]" />
-                    <a href="tel:+16476763466" className="hover:text-[#5e17eb] transition">
+                    <Phone className="h-5 w-5 shrink-0 text-[#5e17eb]" />
+                    <a href="tel:+16476763466" className="whitespace-nowrap hover:text-[#5e17eb] transition">
                       647-676-3466
                     </a>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <Mail className="h-5 w-5 text-[#5e17eb]" />
-                    <a href="mailto:info@navwebdesign.com" className="hover:text-[#5e17eb] transition">
+                  <div className="flex min-w-0 items-center gap-2">
+                    <Mail className="h-5 w-5 shrink-0 text-[#5e17eb]" />
+                    <a href="mailto:info@navwebdesign.com" className="min-w-0 break-words hover:text-[#5e17eb] transition">
                       info@navwebdesign.com
                     </a>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-5 w-5 text-[#5e17eb]" />
-                    GTA-based · Serving Toronto &amp; the GTA
+                  <div className="flex items-start gap-2">
+                    <MapPin className="h-5 w-5 shrink-0 text-[#5e17eb]" />
+                    <span>GTA-based · Serving Toronto &amp; the GTA</span>
                   </div>
                 </div>
 
