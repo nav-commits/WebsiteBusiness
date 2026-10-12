@@ -177,7 +177,7 @@ const Navbar = () => {
                 isActive("/contact") ? "ring-4 ring-indigo-100" : ""
               }`}
             >
-              Book a Free Strategy Consultation
+              Discuss Your Website Project
             </Button>
           </div>
 
@@ -220,7 +220,7 @@ const Navbar = () => {
 
             <div className="px-6 pt-4">
               <Button to="/contact" variant="secondary" className="w-full py-4">
-                Book a Free Strategy Consultation
+                Discuss Your Website Project
               </Button>
             </div>
 

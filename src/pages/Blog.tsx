@@ -109,12 +109,12 @@ const Blog = () => {
               Explore Website Packages
             </Button>
             <Button
-              href="https://calendly.com/navdeep-dhamrait94"
+              to="/contact"
               variant="outline"
               className="px-8 py-4"
               arrow
             >
-              Book a Free Strategy Consultation
+              Discuss Your Website Project
             </Button>
           </div>
         </div>

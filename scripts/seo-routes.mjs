@@ -1,13 +1,13 @@
 const DEFAULT_IMAGE = "https://navwebdesign.com/Images/torontotower-optimized.jpg";
 
-export const LAST_SIGNIFICANT_UPDATE = "2026-09-26";
+export const LAST_SIGNIFICANT_UPDATE = "2026-10-12";
 
 export const seoRoutes = [
   {
     path: "/",
     title: "Toronto Web Design for Service Businesses | Nav Dhamrait",
     description:
-      "Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and service businesses across the GTA.",
+      "GTA-based web designer serving Toronto, creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA.",
     label: "Home",
     type: "home",
   },
@@ -15,7 +15,7 @@ export const seoRoutes = [
     path: "/about",
     title: "Freelance Web Designer Toronto | About Nav Dhamrait",
     description:
-      "Meet Nav Dhamrait, a freelance Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and service businesses.",
+      "Meet Nav Dhamrait, a GTA-based freelance web designer serving Toronto, creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and service businesses.",
     label: "About Nav",
     type: "about",
   },
@@ -53,9 +53,9 @@ export const seoRoutes = [
   },
   {
     path: "/contact",
-    title: "Contact a Toronto Web Designer | Free Strategy Call",
+    title: "Discuss Your Website Project | Toronto & GTA | Nav Web Design",
     description:
-      "Book a free website strategy consultation with Toronto web designer Nav Dhamrait for a new website, redesign, or conversion-focused web design project.",
+      "Discuss a new website, redesign, or care plan with Nav, a GTA-based web designer serving Toronto. Project inquiries are free; optional 60-minute audits cost $100 CAD.",
     label: "Contact",
     type: "contact",
   },

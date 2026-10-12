@@ -39,7 +39,7 @@ const Home = () => {
         <title>Toronto Web Design for Service Businesses | Nav Dhamrait</title>
         <meta
           name="description"
-          content="Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA."
+          content="GTA-based web designer serving Toronto, creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and established service businesses across the GTA."
         />
         <link rel="canonical" href="https://navwebdesign.com/" />
       </Helmet>
@@ -51,7 +51,7 @@ const Home = () => {
 
             <motion.div className="min-w-0 text-center md:pr-2 md:text-left lg:pr-4" initial="hidden" animate="visible" variants={fadeInUp}>
               <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-indigo-100 backdrop-blur-sm">
-                  {projectCount > 0 ? `Trusted by ${projectCount}+ Toronto & GTA businesses` : "Independent Toronto web designer"}
+                  {projectCount > 0 ? `${projectCount} featured website projects` : "GTA-based web designer serving Toronto"}
               </p>
 
               <h1 className="mb-7 max-w-3xl overflow-visible pr-2 text-4xl font-black leading-[1.02] tracking-[-0.015em] sm:pr-3 sm:text-5xl sm:tracking-[-0.025em] lg:text-6xl xl:text-7xl">
@@ -65,7 +65,7 @@ const Home = () => {
               {/* CTA */}
               <div className="flex flex-col gap-4 sm:items-center md:flex-row md:items-stretch">
                 <Button to="/contact" className="px-8 py-4" arrow>
-                  Book a Free Strategy Consultation
+                  Discuss Your Website Project
                 </Button>
 
                 <Button
@@ -447,7 +447,7 @@ const Home = () => {
             </p>
 
             <Button to="/contact" className="px-8 py-4">
-              Book a Free Strategy Consultation
+              Discuss Your Website Project
             </Button>
           </motion.div>
         </section>

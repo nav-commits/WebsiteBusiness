@@ -207,7 +207,7 @@ const IndustryDetail = () => {
             className="mt-8 px-8 py-4"
             onClick={() => trackEvent("industry_cta_click", { industry: industry.slug, location: "footer" })}
           >
-            Book a Free Strategy Consultation
+            Discuss Your Website Project
           </Button>
         </div>
       </section>

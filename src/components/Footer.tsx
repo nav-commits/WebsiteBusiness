@@ -47,7 +47,7 @@ const Footer = () => {
 
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-[#5e17eb]" />
-                <span>Toronto, Ontario, Canada</span>
+                <span>GTA-based · Serving Toronto &amp; the GTA</span>
               </div>
 
             </div>
@@ -121,7 +121,7 @@ const Footer = () => {
                 to="/contact"
                 className="button-premium inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#5e17eb] to-indigo-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-950/30 transition hover:-translate-y-0.5"
               >
-                Book a Free Strategy Consultation
+                Discuss Your Website Project
               </Link>
             </div>
 

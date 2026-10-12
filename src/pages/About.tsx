@@ -64,7 +64,7 @@ const About = () => {
         <title>Freelance Web Designer Toronto | About Nav Dhamrait</title>
         <meta
           name="description"
-          content="Meet Nav Dhamrait, a freelance Toronto web designer creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and service businesses."
+          content="Meet Nav Dhamrait, a GTA-based freelance web designer serving Toronto, creating conversion-focused websites for lawyers, contractors, consultants, healthcare providers, and service businesses."
         />
         <link rel="canonical" href="https://navwebdesign.com/about" />
       </Helmet>
@@ -84,7 +84,7 @@ const About = () => {
             className="text-4xl md:text-5xl font-extrabold mb-6"
             variants={fadeInUp}
           >
-            Freelance Web Designer in Toronto
+            GTA-Based Web Designer Serving Toronto
           </motion.h1>
 
           <motion.p
@@ -189,11 +189,11 @@ const About = () => {
               </p>
 
               <Button
-                href="https://calendly.com/navdeep-dhamrait94"
+                to="/contact"
                 className="px-6 py-3"
                 variant="secondary"
               >
-                Book a Free Strategy Consultation
+                Discuss Your Website Project
               </Button>
             </div>
           </div>
@@ -362,10 +362,10 @@ const About = () => {
             </p>
 
             <Button
-              href="https://calendly.com/navdeep-dhamrait94"
+              to="/contact"
               className="px-8 py-4"
             >
-              Book a Free Strategy Consultation
+              Discuss Your Website Project
             </Button>
           </div>
         </section>

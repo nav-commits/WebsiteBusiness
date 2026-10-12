@@ -73,15 +73,13 @@ const recommendations = {
     summary:
       "A focused professional website that establishes credibility, works smoothly on mobile, and gives visitors a clear way to contact you.",
     reasons: ["Up to 5 core pages", "Mobile-first design", "Basic on-page SEO", "Clear inquiry path"],
-    budget: "$1,200–$2,000",
   },
   "lead-generation": {
     name: "Lead Generation Website",
     price: "$2,200–$3,000 CAD",
     summary:
       "A conversion-focused website with deeper service content, stronger SEO foundations, and a customer journey planned around qualified inquiries.",
-    reasons: ["Up to 10 pages", "Conversion-focused structure", "Service-page SEO", "Advanced inquiry or booking flow"],
-    budget: "$2,000–$3,500",
+    reasons: ["Up to 10 pages total", "Conversion-focused structure", "Service-page SEO", "One booking-tool integration or inquiry form"],
   },
   "custom-growth": {
     name: "Custom Growth Website",
@@ -89,7 +87,6 @@ const recommendations = {
     summary:
       "A scalable website platform for established businesses with multiple services, audiences, campaigns, locations, or advanced integrations.",
     reasons: ["Custom page architecture", "Advanced integrations", "Multiple conversion journeys", "Growth-ready foundation"],
-    budget: "$5,000+",
   },
 };
 
@@ -164,7 +161,7 @@ const PackageFinder = () => {
   const contactParams = new URLSearchParams({
     package: recommendationKey,
     service: serviceFromStage[answers.stage || ""] || "Not sure yet",
-    budget: recommendation.budget,
+    budget: questions.find((question) => question.key === "investment")?.options.find((option) => option.value === answers.investment)?.label.replace("I am not sure yet", "Not sure yet") || "",
     industry: answers.industry || "other",
     source: "package-finder",
   });

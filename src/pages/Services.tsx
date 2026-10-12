@@ -67,10 +67,10 @@ const Services = () => {
             </motion.p>
 
             <Button
-              href="https://calendly.com/navdeep-dhamrait94"
+              to="/contact"
               className="px-8 py-4"
             >
-              Book a Free Strategy Consultation
+              Discuss Your Website Project
             </Button>
 
             <p className="text-sm text-indigo-200 mt-6">
@@ -80,6 +80,16 @@ const Services = () => {
         </motion.section>
 
         <PackageFinder />
+
+        <section aria-labelledby="working-together-heading" className="max-w-6xl mx-auto px-6 pt-12">
+          <h2 id="working-together-heading" className="text-2xl font-bold text-gray-900 mb-4">How project scope and support work</h2>
+          <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 space-y-4 text-gray-700">
+            <p><strong>Content and revisions:</strong> You supply approved copy, images, and business information for all packages unless content creation is separately quoted. Each revision round is one consolidated feedback list on the agreed design and pages. New features, additional pages, and a change of direction are quoted separately.</p>
+            <p><strong>Scheduling:</strong> Work and consultations are scheduled during evenings and weekends. Start dates depend on current availability. Delivery estimates assume content is ready and feedback arrives on time; changes or delays can move the delivery date.</p>
+            <p><strong>Care allowances:</strong> Monthly time covers maintenance, investigation, edits, reviews, and calls together. Unused time does not roll over. Work beyond the allowance requires an approved quote. Hosting, domains, paid software, new pages, and major repairs are separate unless explicitly included in your agreement.</p>
+            <p><strong>Support:</strong> Response windows are confirmed in your agreement and are not completion guarantees. Care is scheduled support, not 24/7 monitoring or an emergency response service. Sites built elsewhere need a suitability review before a care plan starts.</p>
+          </div>
+        </section>
 
         <section aria-labelledby="project-scope-heading" className="max-w-6xl mx-auto px-6 py-12">
           <h2 id="project-scope-heading" className="text-3xl font-bold text-gray-900 mb-6">
@@ -298,7 +308,7 @@ const Services = () => {
 {/* CTA */}
 <div className="mt-auto pt-8">
   <Button
-    href="https://calendly.com/navdeep-dhamrait94"
+    to="/contact"
     variant="secondary"
     className="w-full py-3"
     arrow
@@ -330,7 +340,7 @@ const Services = () => {
 
                 {/* badge */}
                 <div className="inline-block mb-4 rounded-full bg-indigo-600 px-4 py-1 text-xs font-bold text-white tracking-wide">
-                  FREE STRATEGY CONSULTATION
+                  WEBSITE AUDIT & STRATEGY SESSION
                 </div>
 
                 {/* title */}
@@ -366,11 +376,11 @@ const Services = () => {
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row justify-center gap-3">
                   <Button
-                    href="https://calendly.com/navdeep-dhamrait94"
+                    to="/contact?service=Website%20audit%20%E2%80%94%20%24100%20CAD"
                     className="px-6 py-3 text-base"
                     variant="secondary"
                   >
-                    Book a Free Strategy Consultation
+                    Book a Website Audit — $100 CAD
                   </Button>
                 </div>
 
@@ -397,7 +407,7 @@ const Services = () => {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button to="/contact" className="px-8 py-4">
-                Book a Free Strategy Consultation
+                Discuss Your Website Project
               </Button>
 
               <Button to="/portfolio" variant="outline" className="px-8 py-4">

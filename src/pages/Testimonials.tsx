@@ -71,7 +71,7 @@ const Testimonials = () => (
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button to="/contact" className="px-8 py-4" arrow>
-              Book a Free Strategy Consultation
+              Discuss Your Website Project
             </Button>
             <Button to="/services" variant="outline" className="px-8 py-4" arrow>
               View Services &amp; Pricing

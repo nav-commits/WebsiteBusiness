@@ -64,7 +64,7 @@ const StickyOffer = () => {
         {/* CLOSE ICON */}
         <button
           onClick={handleClose}
-          aria-label="Dismiss free strategy consultation offer"
+          aria-label="Dismiss website audit offer"
           className="absolute top-2 right-2 text-gray-400 hover:text-black transition"
         >
           <FaTimes />
@@ -72,34 +72,35 @@ const StickyOffer = () => {
 
         <div className="bg-[#0f172a] text-white px-4 py-3">
           <p className="text-sm font-semibold">
-            Free Website Strategy Consultation
+            60-Minute Website Audit &amp; Strategy Session
           </p>
         </div>
 
         <div className="p-4">
           <h3 className="text-base font-bold text-gray-900 mb-2">
-            Find Your Next Growth Opportunity
+            Leave With Three Clear Priorities
           </h3>
 
           <p className="text-sm text-gray-600 mb-3">
-            Get clear, practical feedback on how your website can generate more leads.
+            Review your website live with Nav and identify practical ways to make it clearer and easier to contact you.
           </p>
 
           <div className="text-sm text-gray-700 space-y-1 mb-4">
-            <p>✔ 30-minute discovery call</p>
-            <p>✔ Website goals and challenges</p>
-            <p>✔ Clear recommended next steps</p>
+            <p>✔ $100 CAD · 60 minutes, one-to-one with Nav</p>
+            <p>✔ Messaging, trust, and inquiry journey</p>
+            <p>✔ Mobile usability, SEO basics, and speed checks</p>
+            <p>✔ Three prioritized next steps</p>
           </div>
 
           <Link
-            to="/contact"
+            to="/contact?service=Website%20audit%20%E2%80%94%20%24100%20CAD"
             className="block text-center bg-[#5e17eb] hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition"
           >
-            Book a Free Strategy Consultation
+            Book a Website Audit — $100 CAD
           </Link>
 
           <p className="text-[11px] text-gray-400 mt-3 text-center">
-            No pressure. Just a focused conversation.
+            Selected pages reviewed live. No obligation to book further services. Implementation and a written report aren’t included.
           </p>
         </div>
       </div>
@@ -110,7 +111,7 @@ const StickyOffer = () => {
         {/* CLOSE ICON */}
         <button
           onClick={handleClose}
-          aria-label="Dismiss free strategy consultation offer"
+          aria-label="Dismiss website audit offer"
           className="absolute top-2 right-2 text-white/70 hover:text-white"
         >
           <FaTimes />
@@ -120,15 +121,15 @@ const StickyOffer = () => {
 
           <div className="min-w-0 flex-1">
             <p className="text-xs tracking-wide text-indigo-300 font-semibold uppercase">
-              Free Strategy Consultation
+              Website Audit &amp; Strategy Session
             </p>
             <p className="text-xs text-gray-300 mt-1">
-              Get clear next steps for your website.
+              $100 CAD · 60 minutes with Nav. Three clear priorities.
             </p>
           </div>
 
           <Link
-            to="/contact"
+            to="/contact?service=Website%20audit%20%E2%80%94%20%24100%20CAD"
             className="shrink-0 text-center bg-[#5e17eb] hover:bg-indigo-700 text-white font-bold px-4 py-2.5 rounded-lg text-xs transition"
           >
             Book Now

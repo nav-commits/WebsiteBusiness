@@ -13,22 +13,22 @@ export type ServiceOffer = {
 };
 
 export const services: ServiceOffer[] = [
-  // ================= FREE STRATEGY CONSULTATION =================
+  // ================= 60-MINUTE WEBSITE AUDIT =================
   {
     category: "audit",
-    title: "Free Website Strategy Consultation",
-    tagline: "Get clarity on the best next step for your website",
-    price: "Free — 30 Minute Discovery Call",
+    title: "60-Minute Website Audit & Strategy Session",
+    tagline: "A live review with Nav and three priorities you can act on",
+    price: "$100 CAD — 60 Minutes With Nav",
     features: [
-      "Website conversion review",
-      "SEO visibility check",
-      "Your goals and current challenges",
-      "The best-fit website approach",
-      "High-level conversion opportunities",
-      "Clear recommended next steps",
+      "Your business goals, audience, and main website concern",
+      "Homepage and one key service page — clarity, credibility, and calls to action",
+      "Mobile navigation and the inquiry or booking journey",
+      "Basic on-page SEO and page-speed checks",
+      "Your three highest-priority improvements and next steps",
+      "Questions and a recap you can take notes from",
     ],
     note:
-      "A focused, no-pressure conversation for GTA service businesses considering a new website or redesign.",
+      "For GTA service businesses with an existing website. Share your URL and main goal before the session. Leave with three prioritized recommendations discussed live; no obligation to purchase further services. This is a focused review, not a full technical, security, or accessibility audit. Implementation and a written report are not included. Appointments are subject to availability; if you do not have a website yet, we can use the hour to plan your key pages and inquiry journey.",
   },
 
   // ================= WEBSITE PACKAGES =================
@@ -47,7 +47,7 @@ export const services: ServiceOffer[] = [
       "Website speed optimization",
       "Google Analytics setup",
       "Google Search Console connection",
-      "Social media integration",
+      "Links to your existing social profiles",
       "Website launch testing",
       "2 rounds of revisions",
     ],
@@ -56,7 +56,7 @@ export const services: ServiceOffer[] = [
       "Website content",
       "Images & branding",
     ],
-    timeline: "2–4 weeks",
+    timeline: "Typically 4–6 weeks from the agreed start date, once content is ready",
     outcome:
       "A polished, mobile-ready website that makes your business easier to trust and contact.",
     bestFor:
@@ -72,19 +72,19 @@ export const services: ServiceOffer[] = [
     price: "$2,200–$3,000 CAD",
     features: [
       "Everything in Website Essentials",
-      "Up to 10 pages",
+      "Up to 10 pages total, including any landing page",
       "Conversion-focused page structure",
       "Customer journey planning",
       "SEO-optimized service pages",
       "Lead-focused calls-to-action",
-      "Booking system or advanced inquiry forms",
-      "Advanced analytics tracking",
-      "Competitor analysis",
-      "Landing page for ads or promotions",
-      "Additional conversion improvements",
+      "One existing booking-tool integration or one custom inquiry form",
+      "Tracking for agreed inquiry and booking actions",
+      "Review of up to 3 competitor websites",
+      "One landing page for ads or promotions within the page allowance",
+      "Conversion refinements to the agreed pages before launch",
       "3 rounds of revisions",
     ],
-    timeline: "4–6 weeks",
+    timeline: "Typically 6–8 weeks from the agreed start date, once content is ready",
     outcome:
       "A website that helps qualified visitors understand your services and move toward an inquiry or booking.",
     bestFor:
@@ -105,15 +105,16 @@ export const services: ServiceOffer[] = [
       "Integrations defined in your project scope",
       "Booking workflows scoped to your requirements",
       "Landing pages within the agreed page allowance",
-      "Advanced tracking & reporting",
+      "Tracking events and reporting setup defined in your proposal",
       "SEO strategy recommendations",
       "Performance optimization",
-      "Priority support",
+      "Scheduled project check-ins",
       "Project milestones agreed before work begins",
       "4 rounds of revisions",
     ],
+    timeline: "Estimated after discovery; start date and milestones confirmed in the proposal",
     bestFor:
-      "Established businesses investing heavily in online growth and customer acquisition.",
+      "Established businesses needing a larger website with clearly scoped integrations.",
     outcome:
       "A scalable website platform for multiple services, campaigns, locations, and advanced customer journeys.",
     notIdealFor:
@@ -130,15 +131,15 @@ export const services: ServiceOffer[] = [
     tagline: "Routine website maintenance and small updates",
     price: "$49/month",
     features: [
-      "Website updates",
+      "Up to 30 minutes of website care per month in total",
       "Backup arrangements for your website platform",
       "Routine security checks",
-      "Software/plugin updates",
+      "Applicable routine software or plugin updates within the allowance",
       "Minor content changes",
       "Website health checks",
     ],
     note:
-      "Small text or image edits within an agreed monthly allowance. Your care agreement specifies included time, backup frequency, response times, and any hosting or software costs. Larger changes are quoted separately.",
+      "The allowance covers maintenance, checks, and small edits together. Tasks are prioritized within that time; larger fixes are quoted separately. Backup coverage and frequency depend on your platform and are confirmed before the plan starts.",
   },
 
   {
@@ -147,19 +148,17 @@ export const services: ServiceOffer[] = [
     tagline: "Most Popular",
     price: "$149/month",
     features: [
-      "Everything in Basic",
-      "A prioritized monthly website improvement plan",
-      "Performance optimization",
-      "Conversion improvements",
-      "On-page SEO refinements within the agreed scope",
-      "Analytics review",
-      "Recommendations to increase inquiries",
-      "Work completed within your monthly allowance",
+      "Up to 1 hour of website care and improvements per month in total",
+      "Basic Care task types included within this allowance",
+      "A prioritized monthly task list",
+      "Small content, usability, or on-page SEO improvements",
+      "Brief analytics review when tracking data is available",
+      "Maintenance, review, and improvement work share the same hour",
     ],
     bestFor:
       "Businesses that want their website to continue improving after launch.",
     note:
-      "Monthly tasks and included time are agreed before the plan starts. This is website care, not a full ongoing SEO or advertising service; extra work is quoted separately.",
+      "Choose priorities each month; every type of improvement is not performed every month. This is website care, not a full ongoing SEO or advertising service. Extra work is quoted separately.",
   },
 
   {
@@ -168,16 +167,14 @@ export const services: ServiceOffer[] = [
     tagline: "Website support for a broader scope",
     price: "$250+/month",
     features: [
-      "Everything in Growth",
-      "Priority support",
-      "Landing page work scoped in your care agreement",
-      "Advanced website improvements",
-      "Website support for your campaigns",
-      "Ongoing conversion optimization",
-      "Strategy calls",
-      "Custom growth recommendations",
+      "From 2 hours of website care and improvements per month in total",
+      "Growth Care task types included within this allowance",
+      "A scheduled monthly review of website priorities",
+      "Updates to existing campaign or service pages",
+      "Scoped usability and inquiry-flow improvements",
+      "Strategy calls count toward the monthly allowance",
     ],
     note:
-      "From $250/month, with a written scope and monthly work allowance. New pages, integrations, and strategy calls are included only as specified. Advertising spend and campaign management are not included.",
+      "The $250 starting plan includes 2 hours total, not additional hours on top of the other plans. Larger allowances are quoted separately. New landing pages, integrations, advertising spend, and campaign management are not included in the starting plan.",
   },
 ];

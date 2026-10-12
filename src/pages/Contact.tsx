@@ -123,10 +123,10 @@ const Contact = () => {
   return (
     <main className="pt-24 lg:pt-28">
       <Helmet>
-        <title>Contact a Toronto Web Designer | Free Strategy Call</title>
+        <title>Discuss Your Website Project | Toronto &amp; GTA | Nav Web Design</title>
         <meta
           name="description"
-          content="Book a free website strategy consultation with Toronto web designer Nav Dhamrait for a new website, redesign, or conversion-focused web design project."
+          content="Discuss a new website, redesign, or care plan with Nav, a GTA-based web designer serving Toronto. Project inquiries are free; optional 60-minute audits cost $100 CAD."
         />
         <link rel="canonical" href="https://navwebdesign.com/contact" />
       </Helmet>
@@ -140,12 +140,13 @@ const Contact = () => {
         variants={fadeInUp}
       >
         <h1 className="text-5xl font-extrabold mb-6">
-          Talk to a Toronto Web Designer
+          Discuss Your Website Project
         </h1>
 
         <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-          Tell me where your website is now, where you want the business to go,
-          and I’ll recommend a practical next step.
+          Tell me about your new website, redesign, or care needs. Project inquiries
+          are free and do not require a paid audit. I’m GTA-based, serving Toronto
+          and surrounding communities, with appointments during selected evenings and weekends.
         </p>
       </motion.section>
 
@@ -167,12 +168,12 @@ const Contact = () => {
                   A practical first conversation
                 </p>
                 <h2 className="text-2xl md:text-3xl font-extrabold mb-4">
-                  Clear advice before any commitment
+                  Start With Your Project Goals
                 </h2>
                 <ul className="space-y-2 text-sm text-slate-200">
                   <li>✓ Discuss your goals and current challenges</li>
                   <li>✓ Identify the right website scope</li>
-                  <li>✓ Leave with a clear recommended next step</li>
+                  <li>✓ Confirm scope, availability, and next steps</li>
                 </ul>
               </div>
             </aside>
@@ -182,6 +183,10 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Send a Message
               </h2>
+              <div className="mb-6 rounded-xl border border-indigo-100 bg-indigo-50 p-4 text-sm text-gray-700">
+                <h3 className="font-semibold mb-2">Want a focused review of your existing website?</h3>
+                <p>The optional Website Audit &amp; Strategy Session is $100 CAD for 60 minutes with Nav. Select it below and share your URL and main concern. Sending this form is an inquiry, not a payment or confirmed booking.</p>
+              </div>
 
               <form
                 ref={formRef}
@@ -270,6 +275,7 @@ const Contact = () => {
                       <option value="Website redesign">Website redesign</option>
                       <option value="SEO and conversion improvements">SEO &amp; conversion improvements</option>
                       <option value="Website care plan">Website care plan</option>
+                      <option value="Website audit — $100 CAD">Website audit — $100 CAD / 60 minutes</option>
                       <option value="Not sure yet">Not sure yet</option>
                     </select>
                   </div>
@@ -285,9 +291,8 @@ const Contact = () => {
                     >
                       <option value="">Select a range</option>
                       <option value="$1,200–$2,000">$1,200–$2,000</option>
-                      <option value="$2,000–$3,500">$2,000–$3,500</option>
-                      <option value="$3,500–$5,000">$3,500–$5,000</option>
-                      <option value="$5,000+">$5,000+</option>
+                      <option value="$2,200–$3,500">$2,200–$3,500</option>
+                      <option value="$4,000+">$4,000+</option>
                       <option value="Not sure yet">Not sure yet</option>
                     </select>
                   </div>
@@ -344,7 +349,7 @@ const Contact = () => {
 
                   <div className="flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-[#5e17eb]" />
-                    Toronto, Ontario
+                    GTA-based · Serving Toronto &amp; the GTA
                   </div>
                 </div>
 
@@ -357,7 +362,7 @@ const Contact = () => {
                 >
                   {isSubmitting
                     ? "Sending..."
-                    : "Request a Free Strategy Consultation"}
+                    : "Send My Inquiry"}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
 
