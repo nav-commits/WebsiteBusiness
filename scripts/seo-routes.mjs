@@ -31,7 +31,7 @@ export const seoRoutes = [
     path: "/portfolio",
     title: "Toronto Web Design Portfolio | Nav Web Design",
     description:
-      "Explore Toronto web design work for lawyers, contractors, healthcare providers, consultants, and established service businesses.",
+      "Explore client website projects for Toronto and GTA service businesses, plus separately labelled personal web apps and frontend prototypes.",
     label: "Portfolio",
     type: "portfolio",
   },
