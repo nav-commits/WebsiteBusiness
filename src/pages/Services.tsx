@@ -7,6 +7,7 @@ import { Button } from "../components/Button";
 import { Tabs } from "../components/Tabs";
 import { Card } from "../components/Card";
 import PackageFinder from "../components/PackageFinder";
+import WebsiteCapabilities from "../components/WebsiteCapabilities";
 
 import { services } from "../data/data";
 
@@ -81,6 +82,8 @@ const Services = () => {
 
         <PackageFinder />
 
+        <WebsiteCapabilities />
+
         <section aria-labelledby="working-together-heading" className="max-w-6xl mx-auto px-6 pt-12">
           <h2 id="working-together-heading" className="text-2xl font-bold text-gray-900 mb-4">How project scope and support work</h2>
           <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 space-y-4 text-gray-700">
@@ -102,7 +105,7 @@ const Services = () => {
             </div>
             <div className="rounded-xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold mb-3">What website SEO includes</h3>
-              <p className="text-gray-600">Packages include on-page SEO foundations and search setup as listed. Ongoing content, Google Business Profile management, link building, and paid advertising require a separate scope. Rankings, traffic, and inquiry volumes are not guaranteed.</p>
+              <p className="text-gray-600">Packages include on-page SEO foundations and search setup as listed—not ongoing SEO campaigns. Google Business Profile management, link building, advertising, and recurring content production are not standard services or care-plan inclusions. Any request beyond the listed services is reviewed before a commitment is made. Rankings, traffic, and inquiry volumes are not guaranteed.</p>
             </div>
             <div className="rounded-xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold mb-3">Know the full commitment</h3>

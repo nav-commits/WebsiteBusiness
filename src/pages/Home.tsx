@@ -335,10 +335,10 @@ const Home = () => {
                 <FaCheckCircle className="text-indigo-600 text-3xl mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">
-                    Lead-Generating Websites
+                    Custom Websites & Redesigns
                   </h3>
                   <p className="text-gray-700 text-sm">
-                    Built to turn visitors into calls, bookings, and inquiries.
+                    Responsive websites with clear navigation and a practical path to calls, bookings, and inquiries.
                   </p>
                 </div>
               </div>
@@ -347,7 +347,7 @@ const Home = () => {
                 <FaSearch className="text-indigo-600 text-3xl mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">
-                    Local SEO Optimization
+                    SEO Foundations
                   </h3>
                   <p className="text-gray-700 text-sm">
                     On-page SEO foundations that help search engines understand your services and locations.
@@ -362,7 +362,7 @@ const Home = () => {
                     Mobile Performance
                   </h3>
                   <p className="text-gray-700 text-sm">
-                    Fast, responsive, and optimized for all devices.
+                    Image optimization, page-speed checks, and responsive layouts for mobile and desktop.
                   </p>
                 </div>
               </div>
@@ -371,15 +371,20 @@ const Home = () => {
                 <FaComments className="text-indigo-600 text-3xl mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">
-                    Clear Messaging That Converts
+                    Clear Content & Inquiry Paths
                   </h3>
                   <p className="text-gray-700 text-sm">
-                    Messaging designed to build trust and drive action.
+                    Your approved content organized to explain your services and help visitors take the next step.
                   </p>
                 </div>
               </div>
             </div>
 
+            <p className="mt-8 text-sm text-gray-600">
+              Analytics setup is included in website packages; agreed inquiry tracking starts with Lead Generation.
+              Optional care plans provide scheduled maintenance within a monthly allowance.
+              Additional integrations are reviewed and quoted before work begins.
+            </p>
             <div className="mt-10">
               <Button to="/services" variant="secondary" className="px-8 py-4">
                 View Services
