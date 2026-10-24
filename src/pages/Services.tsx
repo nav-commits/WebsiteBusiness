@@ -74,45 +74,23 @@ const Services = () => {
               Discuss Your Website Project
             </Button>
 
+            <nav aria-label="Explore services" className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap">
+              <a href="#pricing" onClick={() => setActiveTab("packages")} className="rounded-xl border border-white/50 px-5 py-3 font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                View Website Packages — from $1,200 CAD
+              </a>
+              <a href="#pricing" onClick={() => setActiveTab("care")} className="rounded-xl border border-white/50 px-5 py-3 font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                View Care Plans — from $49 CAD/month
+              </a>
+              <a href="#website-audit" className="rounded-xl border border-white/50 px-5 py-3 font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                Website Audit — $100 CAD / 60 minutes
+              </a>
+            </nav>
+
             <p className="text-sm text-indigo-200 mt-6">
               Serving Toronto, Brampton, Mississauga & surrounding GTA regions.
             </p>
           </motion.div>
         </motion.section>
-
-        <PackageFinder />
-
-        <WebsiteCapabilities />
-
-        <section aria-labelledby="working-together-heading" className="max-w-6xl mx-auto px-6 pt-12">
-          <h2 id="working-together-heading" className="text-2xl font-bold text-gray-900 mb-4">How project scope and support work</h2>
-          <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 space-y-4 text-gray-700">
-            <p><strong>Content and revisions:</strong> You supply approved copy, images, and business information for all packages unless content creation is separately quoted. Each revision round is one consolidated feedback list on the agreed design and pages. New features, additional pages, and a change of direction are quoted separately.</p>
-            <p><strong>Scheduling:</strong> Work and consultations are scheduled during evenings and weekends. Start dates depend on current availability. Delivery estimates assume content is ready and feedback arrives on time; changes or delays can move the delivery date.</p>
-            <p><strong>Care allowances:</strong> Monthly time covers maintenance, investigation, edits, reviews, and calls together. Unused time does not roll over. Work beyond the allowance requires an approved quote. Hosting, domains, paid software, new pages, and major repairs are separate unless explicitly included in your agreement.</p>
-            <p><strong>Support:</strong> Response windows are confirmed in your agreement and are not completion guarantees. Care is scheduled support, not 24/7 monitoring or an emergency response service. Sites built elsewhere need a suitability review before a care plan starts.</p>
-          </div>
-        </section>
-
-        <section aria-labelledby="project-scope-heading" className="max-w-6xl mx-auto px-6 py-12">
-          <h2 id="project-scope-heading" className="text-3xl font-bold text-gray-900 mb-6">
-            New websites and redesigns, with a clear scope
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="rounded-xl border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold mb-3">Already have a website?</h3>
-              <p className="text-gray-600">A redesign can improve service information, mobile usability, and the path to an inquiry. We review your existing content, URLs, and integrations before deciding what to keep or rebuild. Migration and redirect work are scoped in your proposal.</p>
-            </div>
-            <div className="rounded-xl border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold mb-3">What website SEO includes</h3>
-              <p className="text-gray-600">Packages include on-page SEO foundations and search setup as listed—not ongoing SEO campaigns. Google Business Profile management, link building, advertising, and recurring content production are not standard services or care-plan inclusions. Any request beyond the listed services is reviewed before a commitment is made. Rankings, traffic, and inquiry volumes are not guaranteed.</p>
-            </div>
-            <div className="rounded-xl border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold mb-3">Know the full commitment</h3>
-              <p className="text-gray-600">The proposal confirms content responsibilities, any copywriting, ownership and account access, hosting and subscription costs, applicable taxes, payment milestones, and post-launch support before work begins.</p>
-            </div>
-          </div>
-        </section>
 
         {/* ================= TABS ================= */}
         <motion.section
@@ -126,10 +104,12 @@ const Services = () => {
             Transparent pricing
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-            Choose the level of strategy your business needs
+            {activeTab === "packages" ? "Compare website packages" : "Compare monthly care plans"}
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto mb-8">
-            Each package includes responsive design, launch support, and a clear scope. The difference is how much content, conversion strategy, and growth infrastructure your website needs.
+            {activeTab === "packages"
+              ? "For a new website or redesign. Compare page limits, features, and timelines below. Monthly care is optional and priced separately."
+              : "For ongoing support after launch. Compare monthly time allowances below. Care plans do not include a new website build."}
           </p>
           <Tabs
             options={[
@@ -329,7 +309,8 @@ const Services = () => {
         {/* ================= STRATEGY CONSULTATION ================= */}
         {audit && (
           <motion.section
-            className="max-w-5xl mx-auto px-4 mt-20 mb-20  sm:px-6 lg:px-8 mt-20"
+            id="website-audit"
+            className="max-w-5xl mx-auto scroll-mt-28 px-4 my-20 sm:px-6 lg:px-8"
             initial={fadeInUp.hidden}
             whileInView={fadeInUp.visible}
             viewport={{ once: true }}
@@ -398,6 +379,40 @@ const Services = () => {
         )}
 
         {/* ================= CTA ================= */}
+        <PackageFinder />
+
+        <WebsiteCapabilities />
+
+        <section aria-labelledby="working-together-heading" className="max-w-6xl mx-auto px-6 pt-12">
+          <h2 id="working-together-heading" className="text-2xl font-bold text-gray-900 mb-4">How project scope and support work</h2>
+          <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 space-y-4 text-gray-700">
+            <p><strong>Content and revisions:</strong> You supply approved copy, images, and business information for all packages unless content creation is separately quoted. Each revision round is one consolidated feedback list on the agreed design and pages. New features, additional pages, and a change of direction are quoted separately.</p>
+            <p><strong>Scheduling:</strong> Work and consultations are scheduled during evenings and weekends. Start dates depend on current availability. Delivery estimates assume content is ready and feedback arrives on time; changes or delays can move the delivery date.</p>
+            <p><strong>Care allowances:</strong> Monthly time covers maintenance, investigation, edits, reviews, and calls together. Unused time does not roll over. Work beyond the allowance requires an approved quote. Hosting, domains, paid software, new pages, and major repairs are separate unless explicitly included in your agreement.</p>
+            <p><strong>Support:</strong> Response windows are confirmed in your agreement and are not completion guarantees. Care is scheduled support, not 24/7 monitoring or an emergency response service. Sites built elsewhere need a suitability review before a care plan starts.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="project-scope-heading" className="max-w-6xl mx-auto px-6 py-12">
+          <h2 id="project-scope-heading" className="text-3xl font-bold text-gray-900 mb-6">
+            New websites and redesigns, with a clear scope
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-xl border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold mb-3">Already have a website?</h3>
+              <p className="text-gray-600">A redesign can improve service information, mobile usability, and the path to an inquiry. We review your existing content, URLs, and integrations before deciding what to keep or rebuild. Migration and redirect work are scoped in your proposal.</p>
+            </div>
+            <div className="rounded-xl border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold mb-3">What website SEO includes</h3>
+              <p className="text-gray-600">Packages include on-page SEO foundations and search setup as listed—not ongoing SEO campaigns. Google Business Profile management, link building, advertising, and recurring content production are not standard services or care-plan inclusions. Any request beyond the listed services is reviewed before a commitment is made. Rankings, traffic, and inquiry volumes are not guaranteed.</p>
+            </div>
+            <div className="rounded-xl border border-gray-200 p-6">
+              <h3 className="text-lg font-semibold mb-3">Know the full commitment</h3>
+              <p className="text-gray-600">The proposal confirms content responsibilities, any copywriting, ownership and account access, hosting and subscription costs, applicable taxes, payment milestones, and post-launch support before work begins.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="page-hero py-24 text-white">
           <div className="max-w-5xl mx-auto px-6 text-center">
             <h2 className="text-4xl font-extrabold mb-6">
