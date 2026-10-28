@@ -28,7 +28,6 @@ type EmailJSError = {
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
-  const hasTrackedFormStart = useRef(false);
   const [searchParams] = useSearchParams();
   const suggestedService = searchParams.get("service") || "";
   const suggestedBudget = searchParams.get("budget") || "";
@@ -51,8 +50,8 @@ const Contact = () => {
     },
   });
 
-  // App already owns route-level pageview tracking. This instance is only
-  // used for the successful lead event.
+  // Enhanced Measurement owns page views and form starts. Only send the
+  // successful lead event here; never send form values or URL parameters.
   const { trackEvent } = useAnalytics(false);
 
   const [responseMessage, setResponseMessage] = useState("");
@@ -189,17 +188,10 @@ const Contact = () => {
               </div>
 
               <form
+                id="contact-form"
+                name="contact_form"
                 ref={formRef}
                 onSubmit={handleSubmit(onSubmit)}
-                onFocus={() => {
-                  if (hasTrackedFormStart.current) return;
-                  hasTrackedFormStart.current = true;
-                  trackEvent("form_start", {
-                    form_name: "contact_form",
-                    source: referralSource || "direct",
-                    recommended_package: recommendedPackage || undefined,
-                  });
-                }}
                 className="space-y-6"
               >
                 <input type="hidden" {...register("recommendedPackage")} />

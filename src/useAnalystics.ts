@@ -20,14 +20,9 @@ const sendEvent = (eventName: string, params?: Record<string, unknown>) => {
 export function useAnalytics(trackPageViews = true) {
   const location = useLocation();
 
-  // Track pageviews on route change
-  useEffect(() => {
-    if (trackPageViews && window.gtag) {
-      window.gtag("config", "G-1QKCRRGTHZ", {
-        page_path: location.pathname + location.search,
-      });
-    }
-  }, [location, trackPageViews]);
+  // The Google tag handles the initial page view. GA4 Enhanced Measurement
+  // must have browser-history page changes enabled for React Router navigation.
+  // Do not send a second config/page_view here: it duplicates automatic views.
 
   useEffect(() => {
     if (!trackPageViews) return;
