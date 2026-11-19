@@ -69,7 +69,7 @@ const questions: Question[] = [
 const recommendations = {
   essentials: {
     name: "Website Essentials",
-    price: "$1,200 CAD",
+    price: "From $1,200 CAD",
     summary:
       "A focused professional website that establishes credibility, works smoothly on mobile, and gives visitors a clear way to contact you.",
     reasons: ["Up to 5 core pages", "Mobile-first design", "Basic on-page SEO", "Clear inquiry path"],
@@ -83,7 +83,7 @@ const recommendations = {
   },
   "custom-growth": {
     name: "Custom Growth Website",
-    price: "$4,000+ CAD",
+    price: "From $4,000 CAD",
     summary:
       "A scalable website platform for established businesses with multiple services, audiences, campaigns, locations, or advanced integrations.",
     reasons: ["Custom page architecture", "Advanced integrations", "Multiple conversion journeys", "Growth-ready foundation"],

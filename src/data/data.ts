@@ -37,7 +37,7 @@ export const services: ServiceOffer[] = [
     category: "package",
     title: "Website Essentials",
     tagline: "A credible foundation for a growing business",
-    price: "$1,200 CAD",
+    price: "From $1,200 CAD",
     features: [
       "Up to 5 pages (Home, About, Services, Contact + 1 additional page)",
       "Mobile-friendly responsive design",
@@ -57,13 +57,15 @@ export const services: ServiceOffer[] = [
       "Website content",
       "Images & branding",
     ],
-    timeline: "Typically 4–6 weeks from the agreed start date, once content is ready",
+    timeline: "Estimated 4–6 weeks from your reserved start date, subject to scope, availability, and ready-to-use content",
     outcome:
       "A polished, mobile-ready website that makes your business easier to trust and contact.",
     bestFor:
       "Newer service businesses that need a professional online presence and a clear inquiry path.",
     notIdealFor:
       "Businesses that need multiple service-area pages, advanced lead funnels, or custom integrations.",
+    note:
+      "The starting price covers a straightforward website within the listed page and revision limits, using your approved content and branding. Additional complexity is quoted before work begins. Final pricing, deliverables, and timelines are confirmed in your proposal.",
   },
 
   {
@@ -85,7 +87,7 @@ export const services: ServiceOffer[] = [
       "Conversion refinements to the agreed pages before launch",
       "3 rounds of revisions",
     ],
-    timeline: "Typically 6–8 weeks from the agreed start date, once content is ready",
+    timeline: "Estimated 6–8 weeks from your reserved start date, subject to scope, availability, and ready-to-use content",
     outcome:
       "A website that helps qualified visitors understand your services and move toward an inquiry or booking.",
     bestFor:
@@ -98,7 +100,7 @@ export const services: ServiceOffer[] = [
     category: "package",
     title: "Custom Growth Website",
     tagline: "Custom website built for growth",
-    price: "$4,000+ CAD",
+    price: "From $4,000 CAD",
     features: [
       "Everything in Lead Generation Website",
       "Up to 15 pages",

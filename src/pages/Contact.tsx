@@ -145,7 +145,7 @@ const Contact = () => {
         <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
           Tell me about your new website, redesign, or care needs. Project inquiries
           are free and do not require a paid audit. I’m GTA-based, serving Toronto
-          and surrounding communities, with appointments during selected evenings and weekends.
+          and surrounding communities, with appointments during selected evenings (generally 7–9 p.m. Toronto time) and weekends. Project inquiries are free; the paid audit is optional.
         </p>
       </motion.section>
 
@@ -365,7 +365,7 @@ const Contact = () => {
                 </Button>
 
                 <p className="text-sm text-gray-500 text-center">
-                  I’ll personally reply within one business day. No pressure and no obligation.
+                  I aim to reply within two business days, usually in the evening. No pressure and no obligation. Sending an inquiry does not reserve a project start date.
                 </p>
 
                 {/* RESPONSE */}

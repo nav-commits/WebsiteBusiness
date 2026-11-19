@@ -122,7 +122,7 @@ const Services = () => {
             }
           />
           <p className="mt-6 text-sm text-gray-600">
-            All prices are in Canadian dollars. Final scope is confirmed before work begins—no surprise fees.
+            All prices are in Canadian dollars. Website prices are starting prices or ranges for the scope listed. Final pricing, deliverables, and timelines are confirmed in your proposal before work begins. Applicable taxes and third-party costs are identified separately.
           </p>
           {activeTab === "care" && (
             <p className="mt-4 mx-auto max-w-3xl rounded-xl bg-indigo-50 p-4 text-sm text-gray-700">
@@ -387,7 +387,7 @@ const Services = () => {
           <h2 id="working-together-heading" className="text-2xl font-bold text-gray-900 mb-4">How project scope and support work</h2>
           <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 space-y-4 text-gray-700">
             <p><strong>Content and revisions:</strong> You supply approved copy, images, and business information for all packages unless content creation is separately quoted. Each revision round is one consolidated feedback list on the agreed design and pages. New features, additional pages, and a change of direction are quoted separately.</p>
-            <p><strong>Scheduling:</strong> Work and consultations are scheduled during evenings and weekends. Start dates depend on current availability. Delivery estimates assume content is ready and feedback arrives on time; changes or delays can move the delivery date.</p>
+            <p><strong>Scheduling:</strong> You work directly with Nav. Project work and appointments are scheduled in selected evening slots, generally 7–9 p.m. Toronto time, and on weekends. These are appointment windows, not daily live-support hours. Each project gets an agreed start date based on available capacity. Delivery estimates run from that date, with approved content ready and timely feedback—not from the day you inquire.</p>
             <p><strong>Care allowances:</strong> Monthly time covers maintenance, investigation, edits, reviews, and calls together. Unused time does not roll over. Work beyond the allowance requires an approved quote. Hosting, domains, paid software, new pages, and major repairs are separate unless explicitly included in your agreement.</p>
             <p><strong>Support:</strong> Response windows are confirmed in your agreement and are not completion guarantees. Care is scheduled support, not 24/7 monitoring or an emergency response service. Sites built elsewhere need a suitability review before a care plan starts.</p>
           </div>

@@ -63,7 +63,7 @@ const IndustryDetail = () => {
                 View Client Work
               </Button>
             </div>
-            <p className="mt-5 text-sm text-indigo-200">Work directly with Nav · Replies within one business day</p>
+            <p className="mt-5 text-sm text-indigo-200">Work directly with Nav · Evening and weekend appointments · Aim to reply within two business days</p>
           </div>
 
           <div className="rounded-[2rem] border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur-sm md:p-8">
