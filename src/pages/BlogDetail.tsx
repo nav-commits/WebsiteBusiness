@@ -16,9 +16,15 @@ const fadeInUp = {
 const BlogDetail = () => {
   const { slug } = useParams();
   const [post, setPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [failed, setFailed] = useState(false);
   const seoFallback = slug ? blogSeoFallbacks[slug] : undefined;
   useEffect(() => {
     if (!slug) return;
+    let active = true;
+    setPost(null);
+    setLoading(true);
+    setFailed(false);
     client
       .fetch(
         `*[_type == "blogPost" && slug.current == $slug][0]{
@@ -32,12 +38,14 @@ const BlogDetail = () => {
         }`,
         { slug }
       )
-      .then((data) => setPost(data))
-      .catch((err) => console.error("Sanity fetch error:", err));
+      .then((data) => { if (active) setPost(data); })
+      .catch(() => { if (active) setFailed(true); })
+      .finally(() => { if (active) setLoading(false); });
+    return () => { active = false; };
   }, [slug]);
   if (!post) {
     return (
-      <div className="pt-28" aria-busy="true">
+      <div className="pt-28" aria-busy={loading}>
         <Helmet>
           <title>{seoFallback?.title || "Web Design Insight"} | Nav Web Design</title>
           <meta
@@ -55,6 +63,7 @@ const BlogDetail = () => {
             </p>
           </div>
         </section>
+        {!loading && <div className="mx-auto max-w-4xl px-6 py-12"><p role="status" className="mb-6">{failed ? 'This article is temporarily unavailable. Please refresh to try again.' : 'This article could not be found.'}</p><Button to="/blog" variant="secondary">Back to Blog</Button></div>}
       </div>
     );
   }
@@ -100,7 +109,7 @@ const BlogDetail = () => {
         >
           <Card className="surface-card space-y-8 p-6 sm:p-10">
             <article className="prose max-w-none text-gray-700">
-            <PortableText value={post.content} />
+            <PortableText value={post.content ?? []} />
             </article>
             <div className="flex justify-start mt-4">
               <Button to="/blog" variant="secondary" className="px-8 py-4" arrow>

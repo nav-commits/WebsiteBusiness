@@ -38,9 +38,13 @@ const PortfolioDetail = () => {
     undefined
   );
   const seoFallback = slug ? portfolioSeoFallbacks[slug] : undefined;
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     if (!slug) return;
+    let active = true;
+    setProject(undefined);
+    setFailed(false);
 
     client
       .fetch(
@@ -56,14 +60,15 @@ const PortfolioDetail = () => {
       )
       .then((projects: PortfolioProject[]) => {
         const match = projects.find((p) => slugify(p.title) === slug);
-        setProject(match ?? null);
+        if (active) setProject(match ?? null);
       })
-      .catch((err) => console.error("Sanity fetch error:", err));
+      .catch(() => { if (active) setFailed(true); });
+    return () => { active = false; };
   }, [slug]);
 
   if (project === undefined) {
     return (
-      <div className="pt-28" aria-busy="true">
+      <div className="pt-28" aria-busy={!failed}>
         <Helmet>
           <title>{seoFallback?.title || "Website Project"} | Toronto Web Design Case Study</title>
           <meta
@@ -77,7 +82,7 @@ const PortfolioDetail = () => {
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-indigo-200">Website case study</p>
             <h1 className="text-4xl font-black md:text-5xl">{seoFallback?.title || "Website Project"}</h1>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-indigo-100">
-              {seoFallback?.description || "Loading the full project details…"}
+              {failed ? 'Project details are temporarily unavailable. Please refresh to try again or return to the portfolio.' : seoFallback?.description || "Loading the full project details…"}
             </p>
           </div>
         </section>
@@ -204,7 +209,7 @@ const PortfolioDetail = () => {
       <section className="page-hero py-24 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6">
-            Want Results Like These?
+            Want a Website Like This?
           </h2>
 
           <p className="text-lg text-indigo-100 mb-10 max-w-3xl mx-auto">

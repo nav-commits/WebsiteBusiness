@@ -12,6 +12,8 @@ const fadeInUp = {
 }
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [failed, setFailed] = useState(false);
   useEffect(() => {
     client
       .fetch(`*[_type == "blogPost"] | order(publishedAt desc){
@@ -24,7 +26,8 @@ const Blog = () => {
         "slug": slug.current
       }`)
       .then((data) => setPosts(data))
-      .catch((err) => console.error('Sanity fetch error:', err))
+      .catch(() => setFailed(true))
+      .finally(() => setLoading(false))
   }, [])
 
   return (
@@ -62,7 +65,7 @@ const Blog = () => {
       </motion.section>
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.length === 0 && <p>Loading posts...</p>}
+          {posts.length === 0 && <p role="status">{loading ? 'Loading posts...' : failed ? 'Articles are temporarily unavailable. Please refresh to try again.' : 'New articles are coming soon.'}</p>}
           {posts.map((post, index) => (
             <motion.div
               key={post._id}

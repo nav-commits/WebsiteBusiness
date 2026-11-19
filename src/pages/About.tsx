@@ -1,10 +1,9 @@
 // /pages/About.tsx
 import { Helmet } from "react-helmet-async";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
-import { client } from "../SanityClient/sanityClient";
+import { serviceProcess as processSteps } from "../data/serviceGuidance";
 import {
   CheckCircle,
   Circle,
@@ -18,7 +17,6 @@ import {
   Search,
 } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
-import { ProcessStep } from "../types/ProcessStep/processStep";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -45,18 +43,6 @@ const getIcon = (iconName: string): ComponentType<SVGProps<SVGSVGElement>> => {
 };
 
 const About = () => {
-  const [processSteps, setProcessSteps] = useState<ProcessStep[]>([]);
-
-  useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "processStep"] | order(order asc){
-        _id, title, description, icon, note, order
-      }`
-      )
-      .then((data) => setProcessSteps(data))
-      .catch((err) => console.error("Sanity fetch error:", err));
-  }, []);
 
   return (
     <>
@@ -164,12 +150,12 @@ const About = () => {
               >
                 I’m <span className="font-semibold">Nav Dhamrait</span>, a GTA-based web designer
                 helping lawyers, contractors, consultants, healthcare providers, and professional service businesses
-                turn their websites into client acquisition systems.
+                explain their services clearly and make it easier for visitors to inquire.
               </motion.p>
 
               <motion.p className="text-gray-600 mb-6" variants={fadeInUp}>
-                In industries where trust matters — like legal services, enforcement-adjacent
-                work, consulting, and contract services — your website is often the first
+                In industries where trust matters — like legal services, healthcare,
+                consulting, and the trades — your website is often the first
                 impression. I build sites that make that impression count.
               </motion.p>
 
@@ -358,7 +344,7 @@ const About = () => {
 
             <p className="text-indigo-200 mb-8">
               If you run a law firm, contracting company, consultancy, healthcare practice, or established service business in the GTA,
-              your website should be generating consistent, high-quality inquiries.
+              your website should clearly explain your services and make the next step easy.
             </p>
 
             <Button
