@@ -74,7 +74,7 @@ const StickyOffer = () => {
             to="/contact?service=Website%20audit%20%E2%80%94%20%24100%20CAD"
             className="block text-center bg-[#5e17eb] hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition"
           >
-            Book a Website Audit — $100 CAD
+            Request a Website Audit — $100 CAD
           </Link>
 
           <p className="text-[11px] text-gray-400 mt-3 text-center">
@@ -110,7 +110,7 @@ const StickyOffer = () => {
             to="/contact?service=Website%20audit%20%E2%80%94%20%24100%20CAD"
             className="shrink-0 text-center bg-[#5e17eb] hover:bg-indigo-700 text-white font-bold px-4 py-2.5 rounded-lg text-xs transition"
           >
-            Book Now
+            Request Audit
           </Link>
         </div>
       </div>

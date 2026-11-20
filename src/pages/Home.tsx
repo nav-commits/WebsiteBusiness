@@ -231,6 +231,23 @@ const Home = () => {
 
         <IndustryPathways />
 
+        <section aria-labelledby="homepage-audit-heading" className="bg-indigo-50 py-16 md:py-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 md:grid-cols-[1.3fr_1fr]">
+            <div>
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-indigo-700">For businesses with an existing website</p>
+              <h2 id="homepage-audit-heading" className="mb-5 text-3xl font-bold text-slate-900 md:text-4xl">Already have a website? Start with a clear plan.</h2>
+              <p className="text-lg leading-relaxed text-slate-700">Review your homepage and one key service page with Nav. Explore messaging, mobile usability, the inquiry journey, and basic SEO and speed checks—without committing to a redesign.</p>
+            </div>
+            <div className="rounded-2xl border border-indigo-100 bg-white p-6 shadow-sm sm:p-8">
+              <h3 className="mb-3 text-xl font-bold text-slate-900">Website Audit &amp; Strategy Session</h3>
+              <p className="mb-2 text-2xl font-bold text-indigo-700">$100 CAD · 60 minutes</p>
+              <p className="mb-6 text-slate-700">Leave with three prioritized recommendations discussed live.</p>
+              <Button to="/services#website-audit" variant="secondary" className="w-full px-5 py-3">Explore the Website Audit</Button>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600">A focused live review, not a full technical audit. Implementation and a written report are not included. Project inquiries remain free; the audit is optional.</p>
+            </div>
+          </div>
+        </section>
+
         <PackageFinder />
 
         {/* TRUST / VALUE */}

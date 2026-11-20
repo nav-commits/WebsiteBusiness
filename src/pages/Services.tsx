@@ -364,7 +364,7 @@ const Services = () => {
                     className="px-6 py-3 text-base"
                     variant="secondary"
                   >
-                    Book a Website Audit — $100 CAD
+                    Request a Website Audit — $100 CAD
                   </Button>
                 </div>
 
